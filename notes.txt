@@ -1,0 +1,32 @@
+date: 2023-maerz-5
+
+slide notes for DPG
+
+outline what alignment is for the viewer
+-> show pictures of ideal detector vs possible real detector with rotations and movements
+talk about survey in 1 or 2 slides
+
+1. using tracking script to study Q2 behaviour
+2. additional to the TrackSelector added more stuff to FTTrackSelector to study quarters individually
+3. in doing so, it became clear, hat Q0 is problematic and not Q2
+-> plot for individual layers for hits on tracks (nodeX vs nodeY)
+4. trackslopes in x (tx) show gaussian as per usual but in Q0 we see a small bump in the slopes
+5. general performance improvement from v1 to v2 seen in nodeX (hits on tracks in x)
+--> way better in A side, a little worse on C side
+6. also seen when plotting chi2 versus phi
+-> we want a flat sitribution overall: A side good, C side lower for small angles
+7. 25.01. RTA nice presentation:
+7.1: tx < -0.09 bump
+C side quarters way better performing
+8. 11 min hits instead of 9: not much different but less events overall
+9. shapes are similar: cut only useful if we need more events
+10. T2X2 in globalModuleIndex has VERY few hits
+11. tx vs nodeX: how are are the track slopes for these hits on tracks?
+12. 08.02.: horrendous T2X2: onto that
+13. seeding tracks in simulation close to identical to from v2 -> alignment tracks problematic
+14. err residual: 3 peak feature in seeding and sim, 2 peaks in alignment tracks
+15. 15.02.: mean residual for each layer for performance evaluation -> weighted with nHits per layer vs
+total hits per layer to reduce impact from layers with fewer/more hits
+16. individual residuals per layer
+17. plan on modifying xmls bc we are quite sure alignment or survey are the issue for T2X2
+18. photogrammetry: sun heating on T2X1 and T2U
