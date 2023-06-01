@@ -123,6 +123,11 @@
 %------------------------------ Bibliographie ---------------------------------
 %------------------------------------------------------------------------------
 
+\setbeamertemplate{itemize/enumerate body begin}{\tiny}
+\setbeamertemplate{itemize/enumerate subbody begin}{\tiny}
+\setbeamertemplate{itemize/enumerate subsubbody begin}{\tiny}
+\usepackage{moresize}
+
 \usepackage[
   backend=biber,   % use modern biber backend
   autolang=hyphen, % load hyphenation rules for if language of bibentry is not
@@ -166,336 +171,309 @@
 % \setbeamertemplate{itemize subitem}{\scriptsize$\blacktriangleright$}
 
 %Titel:
-\title{Understanding the Alignment of LHCb's Scintillating Fibre Tracker}
+\title{SciFi reconstruction and alignment}
 %Autor
-\author[N.Breer]{\textbf{Nils Breer}, Sophie Hollitt, Johannes Albrecht}
+\author[N.Breer]{\textbf{Nils Breer} + SciFi alignment + calibration team}
 %Lehrstuhl/Fakultät
-\institute{DPG spring Conference, Dresden}
+\institute{SciFi general at 108th LHCb week - 5th june 2023}
 %Titelgrafik muss ich einfueren!!!
 %\titlegraphic{\includegraphics[width=0.3\textwidth]{content/Bilder/interferenz.jpg}}
-\date{16.03.2023}
+% \date{16.03.2023}
 
 \begin{document}
 \maketitle
 
-\begin{frame}\frametitle{Overview}
-  % \begin{columns}
-  %   \begin{column}[c]{0.48\textwidth}
-  \begin{itemize}
-    \item $\bullet$\, The SciFi Detector Upgrade
-    \item $\bullet$\, Importance of the SciFi and Alignment
-    \item $\bullet$\, Understanding first alignments on 2022 data
-  \end{itemize}
-  %   \end{column}
-  %   \begin{column}[c]{0.48\textwidth}
-  %     \begin{figure}
-  %       \includegraphics[width=0.9\textwidth]{logos/upgrade_lhcb.png}
-  %     \end{figure}
-  %   \end{column}
-  % \end{columns}
-\end{frame}
-
-\begin{frame}\frametitle{Importance of alignments}
-  \begin{itemize}
-    \item $\bullet$\, Alignment is part of the LHCb trigger system
-    \item $\bullet$\, Physics performance tied to alignment performance
-    \item $\bullet$\, with optimal alignment:
-    \begin{itemize}
-      \item $\bullet$\, \to\, remove systematic biases for asymmetry measurements
-      \item $\bullet$\, best possible mass resolution
-    \end{itemize}
-  \end{itemize}
-  \begin{figure}
-      \includegraphics[width=0.9\textwidth]{logos/dataflow.png}%
-    % \caption{Hits on tracks in x-direction with run 256145 data on 20000 ents using 9 minimum hits against 11 minimum hits.}
-  \end{figure}
-\end{frame}
-
-\begin{frame}\frametitle{LHCb upgraded with the SciFi}
+\begin{frame}\frametitle{Reconstruction and alignment overview}
   \begin{columns}
-    \begin{column}[c]{0.48\textwidth}
-      \begin{figure}
-        \includegraphics[width=\textwidth]{logos/upgrade_lhcb.png}
-        % \caption{Visualization of the SciFi tracking stations.}
-      \end{figure}
-    \end{column}
-    \begin{column}{0.48\textwidth}
+    \begin{column}[c]{0.66\textwidth}
       \begin{itemize}
-        \item $\bullet$\, Consists of 3 stations: T1, T2, T3
-        \item $\bullet$\, 4 layers per station: X1, U, V, X2
-	\item $\bullet$\, replaces former IT and OT to cope with the increased instantaneous luminosity
-	\item $\bullet$\, crucial part of tracking system
-      \end{itemize}
-      \includegraphics[width=0.5\textwidth]{track.png}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}\frametitle{The Scintillating Fibre Tracker}
-  \begin{columns}
-    \begin{column}[c]{0.48\textwidth}
-      \begin{figure}
-        \includegraphics[width=0.9\textwidth]{logos/scifi.png}
-        % \caption{Visualization of the SciFi tracking stations.}
-      \end{figure}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{itemize}
-        \item $\bullet$\, Front two stations have 5 modules per side
-        \item $\bullet$\, Back station has 6 modules on each side
-        \item $\bullet$\, U, V layers have a $\mp 5 \deg$ stereo angle respectively
-        \item $\bullet$\, \to\, used for determining y-position of tracks by comparing hitposition at different angles
-      \end{itemize}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}\frametitle{SciFi terminology}
-layers are divided into two halves commonly labeled as A-side and C-side
-  % \begin{itemize}
-  %   \item $\bullet$\, layers are divided into two halves commonly labeled as A-side and C-side
-  % \end{itemize}
-  \input{objects.tex}
-\end{frame}
-
-\begin{frame}\frametitle{What is Alignment and why do we need it?}
-  \begin{columns}
-    \begin{column}[c]{0.48\textwidth}
-      \input{detector.tex}
-    \end{column}
-    \begin{column}[c]{0.48\textwidth}
-      \begin{itemize}
-        \item $\bullet$\, top: ideal detector, bottom: physical detector
-        \item $\bullet$\, Surveys are used to find the rotation and position of each detector component
-        \item $\bullet$\, Are used as starting positions for software alignment
-        \item $\bullet$\, Building tracks accurately requires positions in reconstruction to be as similar as possible to real positions
-      \end{itemize}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}\frametitle{The survey: what is it and the different types}
-  \begin{columns}
-    \begin{column}[c]{0.48\textwidth}
-      $\bullet$\, measure distance of some points on the detector with a laser
-      \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{logos/survey.png}
-        % \caption{}
-      \end{figure}
-    \end{column}
-    \begin{column}[c]{0.48\textwidth}
-      \begin{itemize}
-        \item $\bullet$\, 2022: photogrammetry was recorded in assembly hall \to\, not quite perfect
-        \item $\bullet$\, 2023: photogrammetry will be recorded in cavern
-        \item $\bullet$\, relative angles and positions between points are compared to simulation
-        \item $\bullet$\, layer survey: performed in the cavern on the layer in  the front in closed state (both halves together)
-        \item $\bullet$\, module survey: performed inside assembly hall using reflective stickers keeping track of all positions
-        % \item $\bullet$\, layer survey: performed in the cavern on the layer n the front in closed state (both halves together)
-      \end{itemize}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}\frametitle{Alignment: track fits with the Kalman Filter}
-  \begin{columns}
-    \begin{column}[c]{0.4\textwidth}
-      \begin{figure}
-        \centering
-        \includegraphics[width=0.72\textwidth]{logos/kalman.png}
-        % \caption{Alignment with Kalman Filter.}
-      \end{figure}
-    \end{column}
-    \begin{column}[c]{0.55\textwidth}
-      \begin{itemize}
-        \item $\bullet$\, Use survey information as starting point
-        \item $\bullet$\, aligning the detector by minimizing the residuals of the track hits
-        \item $\bullet$\, basically a $\chi^2$ minimization problem with alignment parameters $\alpha$
-        \item $\bullet$\, Why Kalman Filter?
+        \item $\bullet$\, SciFi simulation and reconstruction
         \begin{itemize}
-          \item $\bullet$\, easily models material interactions as well as multiple scattering
+          \item $\bullet$\, Weekly group meetings: Monday, 13:00h
+          \item $\bullet$\, Mailing list: lhcb-upgrade-ft-software
+          \item $\bullet$\, \href{https://twiki.cern.ch/twiki/bin/view/LHCb/SciFiSimulation}{Twiki}
         \end{itemize}
-        \item $\bullet$\, propagation of nodes, minimization, smooth error sizes by back propagation
-      \end{itemize}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}\frametitle{Alignment versions in use}
-  \begin{columns}
-    \begin{column}[c]{0.33\textwidth}
-      \centering
-      \includegraphics[width=\textwidth]{logos/LHCb-FIGURE-2022-018/Run251342Preliminary_BestLong_chi2_per_ndof.pdf}
-    \end{column}
-    \begin{column}[c]{0.33\textwidth}
-      \begin{itemize}
-        \item $\bullet$\, V1: First ever SciFi alignments for the upgraded LHCb detector
-	\item $\bullet$\, Using early tracks from comissioning
-        \item $\bullet$\, use full length modules
-        \item $\bullet$\, alignable degrees of freedom: Tx Rz (x translation, rotation around z \to beam pipe axis)
+        \item $\bullet$\, Updates since \href{https://indico.cern.ch/event/1253790/}{last LHCb week}
+        \begin{itemize}
+          \item $\bullet$\, Alignment:
+          \begin{itemize}
+            \item $\bullet$\, published Alignment v10
+            \item $\bullet$\, new and improved photogrammetry taken
+            \item $\bullet$\, readout map improved
+            \item $\bullet$\,
+          \end{itemize}
+        \end{itemize}
+        % \item $\bullet$\, gutes bild in lhcb week 106 von sophie
       \end{itemize}
     \end{column}
     \begin{column}[c]{0.33\textwidth}
       \begin{itemize}
-        \item $\bullet$\, V2: Updated alignment version with what we learned from V1 %(hard work from detector experts)
-        \item $\bullet$\, aligned using half modules
-        \item $\bullet$\, uses newest time alignment
+        \item \scriptsize \textbf{People working with SciFi}
+        \item \textbf{align and calibration}
+        \item $\bullet$\, Blake Leverington
+        \item $\bullet$\, Fred Blanc
+        \item $\bullet$\, Izaac Sanderswood
+        \item $\bullet$\, Maria Vieites Diaz
+        \item $\bullet$\, Zehua Xu
+        \item $\bullet$\, Jessy Daniel
+        \item $\bullet$\, Louis Henry
+        \item $\bullet$\, Emmy Gabriel
+        \item $\bullet$\, Sophie Hollitt
+        \item $\bullet$\, Biljana Mitreska
+        \item $\bullet$\, Miguel Ruiz Diaz
+        \item $\bullet$\, Giulia Tuci
+        \item \textbf{People from different projects}
+        \item $\bullet$\, Laurent Dufour
+        \item \textbf{SciFi in general, RTA alignment and reconstruction helped a lot during commissioning}
+      \end{itemize}
+      % \normalsize
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Overview of the topics}
+\begin{figure}
+  \includegraphics[width=0.9\textwidth]{plots/align_reco_overview.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}\frametitle{Readoup Map adaptations}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item Readout map \to Cabling Map
+        \item automatic fetching of deactivated links
+        \item \to deactivate links without changing readout map!
+      \end{itemize}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item 2022: no active link map \to  empty events
+        \item \href{https://gitlab.cern.ch/lhcb/LHCb/-/merge_requests/4129}{LHCb!4129} improved flexibility
+        \item 2023: allows to ignore dynamic link deactivation if no active link found
       \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}\frametitle{Hit distribution per quarter in V1 and V2 alignment}
-  \begin{itemize}
-    \item $\bullet$\, Improvements to V2 visible on A-side, losing some performance on C-side
-    \item $\bullet$\, Alignment performance difference in each quarter \to\, seperately analyse quarters!
-    \item $\bullet$\, $\chi2$ per quarter can provide more insights about alignment performance in each detector part
-  \end{itemize}
-  \begin{mybox}{green}{}
-    \begin{itemize}
-      \item $\bullet$\, analysis of each quarter seperately makes finding possible issues easier
-    \end{itemize}
-  \end{mybox}
-  \begin{figure}
-      \includegraphics[width=0.8\textwidth]{logos/v1_v2.png}%
-      % \includegraphics[width=0.45\textwidth]{logos/hit_dist_v2.png}%
-  \end{figure}
-\end{frame}
-
-%\begin{frame}\frametitle{Why analyse the quarters separately?}
-%  \begin{itemize}
-%    \item $\bullet$\, perfomance in each quarter might be very different from one another
-%    \item $\bullet$\, \to $\chi^2$ per quarter can provide more insights about the performance in each detector part
-%    \item $\bullet$\, v2 alignment shows improvements from v1 alignment but not across the whole SciFi
-%    \item $\bullet$\, analysis of each quarter seperately makes finding possible issues easier
-%  \end{itemize}
-  % \to\, run 256145 data is used because it is one of the first runs with the updated SciFi timing alignment. This run is therefor>
-%\end{frame}
-
-%\begin{frame}\frametitle{Looking for causes of the v2 quarter problem}
-%    \begin{columns}
-%      \begin{column}[c]{0.48\textwidth}
-%        \begin{figure}
-%          \centering
-%          \includegraphics[width=0.9\textwidth]{2023-mar-9-DPG/meanResidual_AlignTracks_weighted.pdf}
-          % \caption{mean Residual per layer weighted with quarter hits.}
-%        \end{figure}
-%      \end{column}
-%      \begin{column}{0.48\textwidth}
-%        \begin{itemize}
-%          \item $\bullet$\, mean residual per quarter weighted: $
-%              \overline{\text{Res}_{L}} = \sum_{\text{layer}, \text{quarter}} \frac{\text{hits quarter of layer}}{\text{hits layer}}$
-%          \item $\bullet$\, goal: residual around 0 per layer
-%          \item $\bullet$\, V2 alignment shows overall improvement in alignment quality in every layer of the SciFi
-%          \item $\bullet$\, Investigating why T2X2 has a larger mean residual than any other layer
-%        \end{itemize}
-%      \end{column}
-%    \end{columns}
-%  \to\, V2 best performing alignment version for now, but still uses half modules
-%  \to\, long modules as in the physical SciFi preferred in the long run
-%\end{frame}
-
-\begin{frame}\frametitle{Track hits comparison of V2 and simulation}
-\begin{mybox}{green}{}
-  \begin{itemize}
-    \item $\bullet$\, MC: hits on \textbf{reconstructed} tracks fill whole detector
-    \item $\bullet$\, data: filling tracks into A-side \to\, good!
-  \end{itemize}
-\end{mybox}
-\begin{mybox}{orange}{}
-  \begin{itemize}
-    \item \to\, scan C-side quarters for possible issues in distinct layers
-  \end{itemize}
-\end{mybox}
+\begin{frame}\frametitle{Survey and Photogrammetry}
   \begin{columns}
     \begin{column}[c]{0.48\textwidth}
       \begin{figure}
-        \centering
-        \includegraphics[width=0.6\textwidth]{logos/nodeXY_MC.pdf}%
+        \includegraphics[width=0.9\textwidth]{plots/survey_photo.png}
       \end{figure}
     \end{column}
     \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, photogrammetry taken: feb 20th - march 9th
+        \item $\bullet$\, 4 measurement points per C-frame at corners
+        \item $\bullet$\, target: keep inner modules as close to nominal as possible, outer edges can move as needed
+        \item $\bullet$\, summary: 450 microns in z, most frames within 200 microns from nominal
+        \item $\bullet$\, 400 microns in x, 1.5 mm in y
+        \item $\bullet$\, on average 400 - 600 microns in y, 50 - 200 microns in the center
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Photogrammetry}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
       \begin{figure}
-        \centering
-        \includegraphics[width=0.6\textwidth]{tuples_out/combining_2D_nodeXY_v2.pdf}%
+        \includegraphics[width=0.5\textwidth]{plots/survey_top.png}
+        \includegraphics[width=0.5\textwidth]{plots/survey_bottom.png}
+      \end{figure}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, top/bottom view of the respective edges $\pm 2.5m$ above/below beam pipe
+        \item $\bullet$\, 200 $\mu m$ survey uncertainty
+        \item $\bullet$\, A-side \to +x, C-side \to -x
+        \item $\bullet$\, T1, T2: outer layers surveyed \to L0 and L3
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Survey and Photogrammetry}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.5\textwidth]{plots/survey_T1.png}
+        \includegraphics[width=0.5\textwidth]{plots/survey_T2.png}
+      \end{figure}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, T3: L0 and L2 surveyed (L3 targets in RICH volume)
+        \item $\bullet$\, T3L2 measured between L1 and L2 with smaller targets
+        \item $\bullet$\, possible movement during measurement
+      \end{itemize}
+      \begin{figure}
+        \includegraphics[width=0.5\textwidth]{plots/survey_T3.png}
       \end{figure}
     \end{column}
   \end{columns}
 \end{frame}
 
-% \begin{frame}\frametitle{old slide}
-%   \begin{itemize}
-%     \item $\bullet$\, Changes based on V2 alignment positions
-%     \item $\bullet$\, Manually scan rotations/positions of T2X2Q0 and register alignment tracks
-%     \item $\bullet$\, Original V2 alignment has little to no tracks in Q0 because parts of the SciFi are too far out of alignment
-%     \item $\bullet$\, Mean position/rotation per quarter subtracted from V2 position/rotation in T2X2. Now yielding tracks in more modules!
-%   \end{itemize}
-%   \begin{figure}
-%     \includegraphics[width=0.26\textwidth]{2023-feb-07/v2_layers/2D_nodeXY_v2_7.pdf}%
-%     \includegraphics[width=0.26\textwidth]{2023-mar-9-DPG/extendedVars/2D_nodeXY_quartermean_7.pdf}%
-%     \includegraphics[width=0.26\textwidth]{logos/bad_layer.png}%
-%   \end{figure}
-% \end{frame}
-
-\begin{frame}\frametitle{New Q0 positions in T2X2 layer}
-  \begin{itemize}
-    \item $\bullet$\, Changes based on V2 alignment positions
-    \item $\bullet$\, test incremental shifts of position/rotation until we found an improvement
-    \item $\bullet$\, rotations are with regard to the local frame of the module
-    \item $\bullet$\, positions: translations relative to the nominal position for each module
-    \item $\bullet$\, V2 alignment has only few tracks in Q0 because parts of the SciFi are too far out of alignment
-  \end{itemize}
-  \begin{figure}
-    \includegraphics[width=0.26\textwidth]{logos/2D_nodeXY_v2_7_left.pdf}%
-    \includegraphics[width=0.26\textwidth]{logos/2D_nodeXY_quartermean_7_left.pdf}%
-    \includegraphics[width=0.26\textwidth]{problem_layer.png}%
-  \end{figure}
+\begin{frame}\frametitle{VELO drift situation}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.5\textwidth]{plots/velo_axes.png}
+        \includegraphics[width=0.5\textwidth]{plots/c_side_drift_freiss.png}
+      \end{figure}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, The situation:
+        \item $\bullet$\, Monitoring, alignment and material scan are consistent
+        \item $\bullet$\, During closing, C-side starts rotating around y with pivot point at around 850 mm
+        \item $\bullet$\, \to upstream region lacks behind
+        \item $\bullet$\, complications:
+        \begin{itemize}
+          \item $\bullet$\, start of drift unpredictable
+          \item $\bullet$\, drift amount differs over time
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% \begin{frame}\frametitle{Summary old}
-%   \begin{itemize}
-%     \item $\bullet$\, Trying to solve a puzzle with tracking alignment regarding C-side especially Quarter 0
-%     \item $\bullet$\, Source of complications: parts of the SciFi being too far out of alignment to be updated by the existing tracking alignment settings
-%     \item $\bullet$\, \to\, An improvement of the alignment track hits in T2X2Q0 was achieved which results in more tracks in additional modules \to\, Further investigation in progress.
-%     \item $\bullet$\, A-side showed an improvement from V1 to V2
-%     \item $\bullet$\, Next steps:
-%     \item $\bullet$\, Test these starting condition in alignment + compare to current survey
-%     \item $\bullet$\, More investigation for T2X2Q2 as well configuration
-%     \item $\bullet$\, new survey/photogrammetry in progress to improve alignment starting conditions this year
-%   \end{itemize}
-% \end{frame}
+\begin{frame}\frametitle{VELO drift impact for SciFi alignment}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, Goal: estimate impact of VELO movement on reconstructed mass
+        \item $\bullet$\, DoFs: Tx, Rz long modules aligned, GoodLongTracks
+        \item $\bullet$\, data set: $\symup{B}_0 \to D^{*}\pi$ and $\symup{D}_0 \to \symup{K}\pi$
+        % \item $\bullet$\,
+      \end{itemize}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.5\textwidth]{reading_material/current_stuff/velo_drift_plots/plots/D0_massvalue_smallVPTx.png}
+        \includegraphics[width=0.5\textwidth]{reading_material/current_stuff/velo_drift_plots/plots/D0_massvalue_largeVPTx.png}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{VELO drift impact for SciFi alignment}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.8\textwidth]{reading_material/current_stuff/velo_drift_plots/plots/Fit_VpTx20Iter4.pdf}
+      \end{figure}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, $\symbf{\symup{Ry}}$ shows no impact on SciFi alignment and mass distribution
+        \item $\bullet$\, mass peak slightly affected for drifts below $20 \mu m$
+        \item $\bullet$\, large movements impact on mass resolution visibly
+        \item $\bullet$\, alignment with VELO drift also negatively impacts resolution slightly
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{SciFi alignment with 2022 data}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.9\textwidth]{plots/alignment_version_flow.png}
+      \end{figure}
+      from \href{https://indico.cern.ch/event/1275405/contributions/5372370/attachments/2636783/4562038/SciFiAlignUpdate_20230427.pdf}{Sophie's slides}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, half modules yield better performance than long modules
+        \item $\bullet$\, why? becasue if starting conditions not quite correct, half modules can correct it better
+        \item $\bullet$\, beam angle fix + better fine timing
+        \item $\bullet$\, VELO z-drift studies (later in the talk)
+        \item $\bullet$\, discovered low efficiency C-side \to improved starting conditions
+        \item $\bullet$\, mats need to correct for SiPM positions
+        \item $\bullet$\, loose track matching/params in first iterations yield performance boost
+        \item $\bullet$\, Final v3: TxTzRz, halflayers + modules, long tracks to D0 particles + Tx mat alignment
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{SciFi Mats: from v9 to v10}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.9\textwidth]{plots/modules_and_mats.png}
+      \end{figure}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, v9 featured no z correction in survey and shifting of whole module in x
+        \item $\bullet$\, v9 + mats: SiPMs being aligned and not glued mats
+        \item $\bullet$\, \to still unphysical movement out of the module
+        \item $\bullet$\, v10: modules movement in x and z allows for physical 'mat movement'
+        \item $\bullet$\, yield: largest efficiency improvement from module alignment but mats needed
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}\frametitle{Mat alignment}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+      from \href{https://indico.cern.ch/event/1275394/contributions/5359493/attachments/2628409/4549668/SciFi_mat_alignment.pdf}{Zehua's slides}
+      \begin{figure}
+        \includegraphics[width=0.9\textwidth]{plots/scifi_mats.png}
+      \end{figure}
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \begin{itemize}
+        \item $\bullet$\, real mats glued together with fine tolerance
+        \item $\bullet$\, but preliminary mat alignment sees movement up to 1.5mm
+        \item $\bullet$\, Mat alignment: moving mats in software to match best hit position in tracking
+        \begin{itemize}
+          \item $\bullet$\, depends on module alignment quality
+          \item $\bullet$\, depends on relative position of glued SiPM readout relativ to mats
+        \end{itemize}
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
 
 \begin{frame}\frametitle{Summary}
-  \begin{itemize}
-    \item $\bullet$\, Trying to solve a puzzle on unexpected lower number of alignment tracks on the C-side
-    \item $\bullet$\, Source of complications: SciFi parts too far out of alignment to be correctly updated
-    \item $\bullet$\, \to\, Varying the positions and rotations of Q0 modules yielded more tracks in more modules
-    \item $\bullet$\, Feeding this back into tracking alignment to get the fine tuning right
-    \item $\bullet$\, new survey/photogrammetry in progress to improve alignment starting conditions this year
-  \end{itemize}
-  \textbf{Thank you for your attention!}
+  \begin{columns}
+    \begin{column}[c]{0.48\textwidth}
+
+    \end{column}
+    \begin{column}[c]{0.48\textwidth}
+      \to Goal:
+      \begin{itemize}
+        \item $\bullet$\, correct for hit positions in readout without moving mat material in simulation
+        \item $\bullet$\, understand rotations in survey positions that may produce z movement in reco
+        \item $\bullet$\, understand true variations in SiPM positions
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-%\begin{frame}
-%  \input{problem_layer.tex}
-%\end{frame}
-
-% \begin{frame}\frametitle{throwaway: what was in the talk earlier}
-%   $\textbf{Motivation}$
-%     \begin{itemize}
-%       \item $\bullet$\, Performance studies of alignments on run 256145 data
-%       \item \to\, unexpected different results!
-%       \item \to\, analysis of individual quarters
-%     \end{itemize}
+% \begin{frame}\frametitle{}
+%   \begin{columns}
+%     \begin{column}[c]{0.48\textwidth}
+%
+%     \end{column}
+%     \begin{column}[c]{0.48\textwidth}
+%
+%     \end{column}
+%   \end{columns}
 % \end{frame}
 
-% not needed
-% \begin{frame}\frametitle{Sources}
-%   \begin{itemize}
-%     \item $\bullet$\,SciFi Conference Talk: \url{https://twiki.cern.ch/twiki/pub/LHCb/SciFiConference/fee_2018.pdf}
-%     \item $\bullet$\,LHCb SciFi: From performance requirements to an operational detector: \url{https://indico.cern.ch/event/1163878/}
-%     \item $\bullet$\, BCAM \url{https://accelconf.web.cern.ch/ipac2018/papers/wepaf067.pdf}
-%   \end{itemize}
-% \end{frame}
+\begin{frame}\frametitle{Monitoring}
+
+\end{frame}
+
+\begin{frame}\frametitle{Cluster bias}
+
+\end{frame}
 
 \end{document}
