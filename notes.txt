@@ -30,3 +30,58 @@ total hits per layer to reduce impact from layers with fewer/more hits
 16. individual residuals per layer
 17. plan on modifying xmls bc we are quite sure alignment or survey are the issue for T2X2
 18. photogrammetry: sun heating on T2X1 and T2U
+------------------------------------------
+lhcb week news:
+
+biljana send me a logbook entry with plots
+these are for scifi alignment v3 -> v5, run 265581
+--> big improvements seen in phi distribution and track quality 
+which is very good!
+
+more notes from biljana:
+
+I think you should send the slides to all these people whose work you are presenting.
+Also it's good if you write the persons name on each slide who worked on each of the separate topic and also link their slides if they presented to the working group  
+
+Slide 1: 
+SciFi alignment + calibration team  -> you can just say on behalf of the SciFi alignment 
+and reconstruction team, you have the names of all people later in the slides
+
+Slide 3: if you want to have like a table of contents on the right side you should add the checks 
+with VELO open and the dd4hep. 
+Also on this slide the font size left and right is not uniform, maybe you can fix this.
+Slide 4: 
+Monitoring, alignment and material scan are consistent  -> The VELO drift has been confirmed 
+with  monitoring, alignment and material scan
+Slide 5:
+GoodLongTracks  -> you can put the track selection if you wish otherwise GoodLongTracks 
+doesn't mean anything to the rest of the audience
+the mass is fine -> the mean value of the mass is consistent. I would remove the word slightly 
+for the resolution, if you know how much it is just add the number
+Slide 6:
+loose track matching/params in first iterations yield performance boost -> 
+Did we really have loose tracking in the final versions, confirm this with Sophie? 
+Slide 10 and 11:
+Please link the presentation from Lukas in WP4
+Slide 11: Did Lukas have this plot for MC? If yes you can put it as a reference 
+-> My comment: have not found one so no
+Slide 12: I can send you my improved script that accounts for the sign and everything 
+correct in case you want to redo the plot
+Me: i alsready corrected the bug with 1e-5 -> 1e+00 and mislabelling
+- most translations are within 1 mm which is expected 
+-> this is expected from the survey measurements 
+Slide 17: SciFi alignment in run control -> SciFi online alignment 
+Then on the right side the first bullet point should be:  
+SciFi alignment was added in the alignment  run control
+SciFi job was tested for 10000 events  -> remove this not needed here 
+enough to run alignment -> enough to test the online alignment 
+You can add the dd4hep MR here in this slide as a last point since all the jobs in the run control 
+use the developments from there 
+You need another slide after this with title: 
+ScFi alignment with 2023 data and you can put some of my plots. You need to stress that 
+we are not with v3 anymore when running online. 
+See https://lblogbook.cern.ch/Alignment+and+calibration/42 and also my slides. 
+In case you want I can draft you a slide later tonight or over the weekend. 
+Slide 18: you need to add an important point in the alignment outlook:
+estimate SciFi alignment accuracy needed to trigger automatic update of constant
+add automatic alignment monitoring
