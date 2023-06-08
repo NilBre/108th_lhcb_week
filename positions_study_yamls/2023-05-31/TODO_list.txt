@@ -1,0 +1,5 @@
+write a script that compares two runs
+
+1. take run 256145 as a baseline and compare the other uns to it
+2. plot histogram of the difference between the runs
+3. difference of Tx, not difference of run labels

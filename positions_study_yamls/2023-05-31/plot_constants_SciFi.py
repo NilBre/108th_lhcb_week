@@ -190,9 +190,9 @@ if __name__ == '__main__':
     path_run_folder = "/Users/nibreer/Documents/108th_lhcb_week/positions_study_yamls/2023-05-31"
     magUp_yaml_files = [path_run_folder + '/256290/Modules.yml']
     magDown_yaml_files = [
+                        path_run_folder + "/256145/Modules.yml",
                         path_run_folder + "/256163/Modules.yml",
                         path_run_folder + "/256159/Modules.yml",
-                        path_run_folder + "/256145/Modules.yml",
                         path_run_folder + "/256030/Modules.yml",
     ]
     md_runs = ["/256163/Modules.yml", "/256159/Modules.yml", "/256145/Modules.yml", "/256030/Modules.yml"]
@@ -286,6 +286,9 @@ if __name__ == '__main__':
 
     run_labels = [runs_T1, runs_V_T1, runs_X1_T1, runs_X2_T1, runs_T2, runs_V_T2, runs_X1_T2, runs_X2_T2, runs, runs_V_T3, runs_X1_T3, runs_X2_T3]
     out_labels = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
+
+    run_order = ['256145','256163','256159','256030']
+
     for i in range(12):
         plt.xticks(x, run_labels[i])
         colors = ['black', 'red', 'blue', 'green']
@@ -295,6 +298,17 @@ if __name__ == '__main__':
             for j in range(len(runs_md)):
                 runs_md[j] = abs(pos[i][j])
                 runs_md[j] = [i * 1e3 if i < 1 else i * 1e-2 for i in runs_md[j]]
+            base_run = runs_md[0]
+            comparison_runs = []
+            for num in range(1, len(runs_md)):
+                comparison_runs.append(abs(np.array(base_run) - np.array(runs_md[num])))
+            n, bins, ptches = plt.hist(comparison_runs[num-1], label=f'compare to {run_order[num-1]}')
+            plt.savefig(f'{outdir1}/run_comparison_base_to_{run_order[num]}.pdf')
+            plt.xlabel(f'Tx diff (base run, {run_order[num-1]})')
+            plt.ylabel('a.U.')
+            plt.grid()
+            plt.legend()
+#            plt.clf()
             Tx1 = plt.scatter(x, runs_md[0], color=colors[0], s=20, label=f'{md_run_numbers[0]}')
             Tx2 = plt.scatter(x, runs_md[1], color=colors[1], s=20, label=f'{md_run_numbers[1]}')
             Tx3 = plt.scatter(x, runs_md[2], color=colors[2], s=20, label=f'{md_run_numbers[2]}')
