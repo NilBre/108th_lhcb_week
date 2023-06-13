@@ -170,6 +170,18 @@ def get_positions(files, degree_of_freedom, spatial_object):
         iter_num += 1
     return np.array(T1U_Tx), np.array(T1V_Tx), np.array(T1X1_Tx), np.array(T1X2_Tx), np.array(T2U_Tx), np.array(T2V_Tx), np.array(T2X1_Tx), np.array(T2X2_Tx), np.array(T3U_Tx), np.array(T3V_Tx), np.array(T3X1_Tx), np.array(T3X2_Tx)
 
+def replace_string(get_len_from_string, arr, str1, str2):
+    arr = []
+    for i in range(0,len(get_len_from_string)):
+       string = get_len_from_string[i]
+       arr.append(string.replace(str1, str2))
+    return arr
+
+
+# def multiplot():
+
+#     return
+
 if __name__ == '__main__':
     hep.style.use(hep.style.LHCb2)
     import matplotlib.patches as mpl_patches
@@ -181,6 +193,7 @@ if __name__ == '__main__':
 
     DoF = 'Rz'
     position_or_rotation = 'rotation'
+    MagPol = 'MD'
 
     stations = ["T1", "T2", "T3"]
     layers = ["U", "V", "X1", "X2"]
@@ -188,16 +201,28 @@ if __name__ == '__main__':
     # folder on pc
 #    path_run_folder = "/mnt/c/Users/Nils/Desktop/Promotion/SciFi/positions_study_yamls/2023-05-31"
     path_run_folder = "/Users/nibreer/Documents/108th_lhcb_week/positions_study_yamls/2023-05-31"
-    magUp_yaml_files = [path_run_folder + '/256290/Modules.yml']
+    magUp_yaml_files = [
+                        path_run_folder + '/256267/Modules_run_256267.yml', 
+                        path_run_folder + '/256272/Modules_run_256272.yml', 
+                        path_run_folder + '/256273/Modules_run_256273.yml',
+                        path_run_folder + '/256278/Modules_run_256278.yml',
+                        path_run_folder + '/256290/Modules.yml'
+                        ]
     magDown_yaml_files = [
                         path_run_folder + "/256145/Modules.yml",
                         path_run_folder + "/256163/Modules.yml",
                         path_run_folder + "/256159/Modules.yml",
                         path_run_folder + "/256030/Modules.yml",
     ]
+    mixed_yaml_files = [
+        path_run_folder + '/256290/Modules.yml',
+        path_run_folder + '/256267/Modules_run_256267.yml',
+        path_run_folder + "/256163/Modules.yml",
+        path_run_folder + "/256159/Modules.yml"
+    ]
     md_runs = ["/256163/Modules.yml", "/256159/Modules.yml", "/256145/Modules.yml", "/256030/Modules.yml"]
-    mu_runs = ['/256290/Modules.yml']
-    md_vs_mu = [path_run_folder + '/256290/Modules.yml', path_run_folder + "/256163/Modules.yml"]
+    mu_runs = ['/256267/Modules_run_256267.yml', '/256272/Modules_run_256272.yml', '/256273/Modules_run_256273.yml', "/256278/Modules_run_256278.yml", '/256290/Modules.yml']
+    md_vs_mu = ['/256290/Modules.yml', '/256267/Modules_run_256267.yml', "/256163/Modules.yml", "/256159/Modules.yml"]
 
     runs_T1 = ["T1UHL0Q0M0", "T1UHL0Q0M1", "T1UHL0Q0M2", "T1UHL0Q0M3", "T1UHL0Q0M4", "T1UHL0Q2M0", "T1UHL0Q2M1", "T1UHL0Q2M2", "T1UHL0Q2M3", "T1UHL0Q2M4", "T1UHL1Q1M0",
     "T1UHL1Q1M1", "T1UHL1Q1M2", "T1UHL1Q1M3", "T1UHL1Q1M4", "T1UHL1Q3M0", "T1UHL1Q3M1", "T1UHL1Q3M2", "T1UHL1Q3M3", "T1UHL1Q3M4"]
@@ -211,67 +236,52 @@ if __name__ == '__main__':
 
     # T1
     runs_V_T1 = []
-    for i in range(0,len(runs_T1)):
-       string = runs_T1[i]
-       runs_V_T1.append(string.replace("U", "V"))
+    runs_V_T1 = replace_string(runs_T1, runs_V_T1, "U", "V")
 
     runs_X1_T1 = []
-    for i in range(0,len(runs_T1)):
-       string = runs_T1[i]
-       runs_X1_T1.append(string.replace("U", "X1"))
+    runs_X1_T1 = replace_string(runs_T1, runs_X1_T1, "U", "X1")
 
     runs_X2_T1 = []
-    for i in range(0,len(runs_T1)):
-       string = runs_T1[i]
-       runs_X2_T1.append(string.replace("U", "X2"))
+    runs_X2_T1 = replace_string(runs_T1, runs_X2_T1, "U", "X2")
 
     # T2
     runs_V_T2 = []
-    for i in range(0,len(runs_T2)):
-       string = runs_T2[i]
-       runs_V_T2.append(string.replace("U", "V"))
+    runs_V_T2 = replace_string(runs_T2, runs_V_T2, "U", "V")
 
     runs_X1_T2 = []
-    for i in range(0,len(runs_T2)):
-       string = runs_T2[i]
-       runs_X1_T2.append(string.replace("U", "X1"))
+    runs_X1_T2 = replace_string(runs_T2, runs_X1_T2, "U", "X1")
 
     runs_X2_T2 = []
-    for i in range(0,len(runs_T2)):
-       string = runs_T2[i]
-       runs_X2_T2.append(string.replace("U", "X2"))
+    runs_X2_T2 = replace_string(runs_T2, runs_X2_T2, "U", "X2")
 
     # T3
     runs_V_T3 = []
-    for i in range(0,len(runs)):
-       string = runs[i]
-       runs_V_T3.append(string.replace("U", "V"))
+    runs_V_T3 = replace_string(runs, runs_V_T3, "U", "V")
 
     runs_X1_T3 = []
-    for i in range(0,len(runs)):
-       string = runs[i]
-       runs_X1_T3.append(string.replace("U", "X1"))
+    runs_X1_T3 = replace_string(runs, runs_X1_T3, "U", "X1")
 
     runs_X2_T3 = []
-    for i in range(0,len(runs)):
-       string = runs[i]
-       runs_X2_T3.append(string.replace("U", "X2"))
+    runs_X2_T3 = replace_string(runs, runs_X2_T3, "U", "X2")
 
     x = list(range(len(runs)))
 
     # extract run numbers from file names
-    mu_run_numbers, md_run_numbers = [], []
+    mu_run_numbers, md_run_numbers, mixed_run_numbers = [], [], []
     for file in md_runs:
         num = re.findall(r'\d+', file)
         md_run_numbers.append(num[0])
     for file in mu_runs:
         num = re.findall(r'\d+', file)
         mu_run_numbers.append(num[0])
+    for file in md_vs_mu:
+        num = re.findall(r'\d+', file)
+        mixed_run_numbers.append(num[0])
 
     outdir1 = 'MD_outfiles'
     outdir2 = 'MU_vs_MD_outfiles'
 
-    pos = get_positions(magDown_yaml_files, DoF, position_or_rotation)
+    pos = get_positions(magUp_yaml_files, DoF, position_or_rotation)
 
     # plot T2X2 for full magDown
     fig, ax = plt.subplots(1,1, figsize=(10,10))
@@ -287,37 +297,35 @@ if __name__ == '__main__':
     run_labels = [runs_T1, runs_V_T1, runs_X1_T1, runs_X2_T1, runs_T2, runs_V_T2, runs_X1_T2, runs_X2_T2, runs, runs_V_T3, runs_X1_T3, runs_X2_T3]
     out_labels = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
 
+    # magnet down run order
     run_order = ['256145','256163','256159','256030']
+
+    # magUp run_order
+    mu_run_order = ['256267', '267272', '256273', '256278', '256290']
 
     for i in range(12):
         plt.xticks(x, run_labels[i])
-        colors = ['black', 'red', 'blue', 'green']
+        colors = ['black', 'red', 'blue', 'green', 'yellow']
 
         if DoF == 'Rz':
-            runs_md = [[] for _ in range(len(magDown_yaml_files))]
+            runs_md = [[] for _ in range(len(magUp_yaml_files))]
             for j in range(len(runs_md)):
                 runs_md[j] = abs(pos[i][j])
+                # print('BEFORE: ', runs_md[j])
                 runs_md[j] = [i * 1e3 if i < 1 else i * 1e-2 for i in runs_md[j]]
+                # print('AFTER: ', runs_md[j])
             base_run = runs_md[0]
-            comparison_runs = []
-            for num in range(1, len(runs_md)):
-                comparison_runs.append(abs(np.array(base_run) - np.array(runs_md[num])))
-            n, bins, ptches = plt.hist(comparison_runs[num-1], label=f'compare to {run_order[num-1]}')
-            plt.savefig(f'{outdir1}/run_comparison_base_to_{run_order[num]}.pdf')
-            plt.xlabel(f'Tx diff (base run, {run_order[num-1]})')
-            plt.ylabel('a.U.')
-            plt.grid()
-            plt.legend()
-#            plt.clf()
-            Tx1 = plt.scatter(x, runs_md[0], color=colors[0], s=20, label=f'{md_run_numbers[0]}')
-            Tx2 = plt.scatter(x, runs_md[1], color=colors[1], s=20, label=f'{md_run_numbers[1]}')
-            Tx3 = plt.scatter(x, runs_md[2], color=colors[2], s=20, label=f'{md_run_numbers[2]}')
-            Tx4 = plt.scatter(x, runs_md[3], color=colors[3], s=20, label=f'{md_run_numbers[3]}')
+            Tx1 = plt.scatter(x, runs_md[0], color=colors[0], s=20, label=f'{mu_run_numbers[0]}')
+            Tx2 = plt.scatter(x, runs_md[1], color=colors[1], s=20, label=f'{mu_run_numbers[1]}')
+            Tx3 = plt.scatter(x, runs_md[2], color=colors[2], s=20, label=f'{mu_run_numbers[2]}')
+            Tx4 = plt.scatter(x, runs_md[3], color=colors[3], s=20, label=f'{mu_run_numbers[3]}')
+            Tx5 = plt.scatter(x, runs_md[4], color=colors[4], s=20, label=f'{mu_run_numbers[4]}')
         else:
-            Tx1 = plt.scatter(x, abs(pos[i][0]), color=colors[0], s=20, label=f'{md_run_numbers[0]}')
-            Tx2 = plt.scatter(x, abs(pos[i][1]), color=colors[1], s=20, label=f'{md_run_numbers[1]}')
-            Tx3 = plt.scatter(x, abs(pos[i][2]), color=colors[2], s=20, label=f'{md_run_numbers[2]}')
-            Tx4 = plt.scatter(x, abs(pos[i][3]), color=colors[3], s=20, label=f'{md_run_numbers[3]}')
+            Tx1 = plt.scatter(x, abs(pos[i][0]), color=colors[0], s=20, label=f'{mu_run_numbers[0]}')
+            Tx2 = plt.scatter(x, abs(pos[i][1]), color=colors[1], s=20, label=f'{mu_run_numbers[1]}')
+            Tx3 = plt.scatter(x, abs(pos[i][2]), color=colors[2], s=20, label=f'{mu_run_numbers[2]}')
+            Tx4 = plt.scatter(x, abs(pos[i][3]), color=colors[3], s=20, label=f'{mu_run_numbers[3]}')
+            Tx5 = plt.scatter(x, abs(pos[i][4]), color=colors[4], s=20, label=f'{mu_run_numbers[4]}')
         plt.legend(loc='best')
         handles = [mpl_patches.Rectangle((0, 0), 1, 1, fc="white", ec="white",
                 lw=0, alpha=0)] * 2
@@ -343,7 +351,7 @@ if __name__ == '__main__':
                 plt.ylabel(f'T2 modules {DoF}[mrad]')
             if i > 7:
                 plt.ylabel(f'T3 modules {DoF}[mrad]')
-        plt.savefig(f"{outdir1}/{out_labels[i]}_{DoF}_constrain.pdf",bbox_inches='tight')
+        plt.savefig(f"{outdir1}/{DoF}/{out_labels[i]}_{DoF}_{MagPol}_constrain.pdf",bbox_inches='tight')
         plt.clf()
 
     # magup
@@ -355,28 +363,35 @@ if __name__ == '__main__':
     g2 = 141/255
     b2 = 89/255
     
-    pos_up = get_positions(md_vs_mu, DoF, position_or_rotation)
+    # print('md run numbers:', mu_run_numbers)
+    # print('mixed run numbers:', mixed_run_numbers)
+
+    pos_up = get_positions(mixed_yaml_files, DoF, position_or_rotation)
     # magup vs magdown
     for i in range(12):
         plt.xticks(x, run_labels[i])
-        colors = ['black', 'red']
+        colors = ['black', 'red', 'blue', 'green']
 
         if DoF == 'Rz':
             runs = [[] for _ in range(len(md_vs_mu))]
             for j in range(len(runs)):
-                runs[j] = abs(pos[i][j])
+                runs[j] = abs(pos_up[i][j])
                 runs[j] = [i * 1e3 if i < 1 else i * 1e-2 for i in runs[j]]
-            Tx1 = ax1.scatter(x, runs[0], color=colors[0], s=20, label=f'{md_vs_mu[0]}')
-            Tx2 = ax1.scatter(x, runs[1], color=colors[1], s=20, label=f'{md_vs_mu[1]}')
+            Tx1 = plt.scatter(x, runs[0], color=colors[0], s=20, label=f'{mixed_run_numbers[0]}')
+            Tx2 = plt.scatter(x, runs[1], color=colors[1], s=20, label=f'{mixed_run_numbers[1]}')
+            Tx3 = plt.scatter(x, runs[2], color=colors[2], s=20, label=f'{mixed_run_numbers[2]}')
+            Tx4 = plt.scatter(x, runs[3], color=colors[3], s=20, label=f'{mixed_run_numbers[3]}')
         else:
-            Tx1 = ax1.scatter(x, abs(pos_up[i][0]), color=colors[0], s=20, label=f'{md_vs_mu[0]}')
-            Tx2 = ax1.scatter(x, abs(pos_up[i][1]), color=colors[1], s=20, label=f'{md_vs_mu[1]}')
+            Tx1 = plt.scatter(x, abs(pos_up[i][0]), color=colors[0], s=20, label=f'{mixed_run_numbers[0]}')
+            Tx2 = plt.scatter(x, abs(pos_up[i][1]), color=colors[1], s=20, label=f'{mixed_run_numbers[1]}')
+            Tx3 = plt.scatter(x, abs(pos_up[i][2]), color=colors[2], s=20, label=f'{mixed_run_numbers[2]}')
+            Tx4 = plt.scatter(x, abs(pos_up[i][3]), color=colors[3], s=20, label=f'{mixed_run_numbers[3]}')
         plt.legend(loc='best')
         handles = [mpl_patches.Rectangle((0, 0), 1, 1, fc="white", ec="white",
                 lw=0, alpha=0)] * 2
-        textstr = '\n'.join((r'LHCb internal', r'magUp vs. magDown'))
+        textstr = '\n'.join((r'LHCb internal', r'MU vs. MD'))
         props = dict(boxstyle='square', facecolor='white', alpha=0.7)
-        plt.text(0.05, 0.95, textstr, transform=ax.transAxes, fontsize=20,
+        plt.text(0.05, 0.95, textstr, transform=ax1.transAxes, fontsize=20,
         verticalalignment='top', bbox=props)
 
         plt.tick_params(axis='x', labelrotation = 45, labelsize=16)
@@ -395,5 +410,5 @@ if __name__ == '__main__':
                 plt.ylabel(f'T2 modules {DoF}[mrad]')
             if i > 7:
                 plt.ylabel(f'T3 modules {DoF}[mrad]')
-        plt.savefig(f"{outdir2}/{out_labels[i]}_{DoF}_MU_vs_MD.pdf")#,bbox_inches='tight')
+        plt.savefig(f"{outdir2}/{DoF}/{out_labels[i]}_{DoF}_MU_vs_MD.pdf",bbox_inches='tight')
         plt.clf()
