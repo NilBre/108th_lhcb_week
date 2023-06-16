@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<DDDB>
+    <condition classID="6" name="T1X1Q0M0">
+      <paramVector name="dPosXYZ" type="double">-2.137 0.256 -0.323</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0033426128939767616 0.0010808359566133123 -1.8064099602066963e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q0M1">
+      <paramVector name="dPosXYZ" type="double">-1.975 0.334 -0.145</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0034762523823470112 0.0004059930261713077 -7.0566783254215e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q0M2">
+      <paramVector name="dPosXYZ" type="double">-1.944 -0.057 -0.302</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003455326487941547 0.00043098556290593713 -7.445986680714897e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q0M3">
+      <paramVector name="dPosXYZ" type="double">-1.579 -0.345 -0.285</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0035859000514500456 0.0003561504634982796 -6.385606736949942e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q0M4">
+      <paramVector name="dPosXYZ" type="double">-1.802 -0.307 -0.341</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0037314140022191374 0.0003813131871426752 -7.114195169388621e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q2M0">
+      <paramVector name="dPosXYZ" type="double">0.395 0.062 -0.369</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004025143044098694 -0.0010318132556031599 -2.0766009622542294e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q2M1">
+      <paramVector name="dPosXYZ" type="double">0.883 0.12175000000000001 -0.28425</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0039370486099495755 -0.000600302027005012 -1.1827123978220149e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q2M2">
+      <paramVector name="dPosXYZ" type="double">0.974 0.076 -0.303</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004021526055562022 -0.00020657490685232894 -4.153737464518294e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q2M3">
+      <paramVector name="dPosXYZ" type="double">1.134 0.169 -0.249</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0038753494937473734 -0.0005814194659009161 -1.1266032581297128e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q2M4">
+      <paramVector name="dPosXYZ" type="double">1.029 0.18 -0.216</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0038261758463902142 -0.0005814004796636434 -1.1122716244522878e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q1M4">
+      <paramVector name="dPosXYZ" type="double">0.525 -0.499 0.851</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003357381356076992 -0.0007372001959372824 1.2375323152706207e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q1M3">
+      <paramVector name="dPosXYZ" type="double">0.094 -0.521 0.657</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0035490746236650265 -0.00028248030046762863 5.012723625368146e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q1M2">
+      <paramVector name="dPosXYZ" type="double">0.788 -0.418 0.862</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0038921472377234537 -0.00015299749085602487 2.977447571610793e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q1M1">
+      <paramVector name="dPosXYZ" type="double">0.539 -0.554 0.641</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003907856002209155 -0.00028546396938636774 5.577767567115391e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q1M0">
+      <paramVector name="dPosXYZ" type="double">0.549 -0.406 0.261</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003855567396505386 -0.0005604110255045569 1.0803526058864234e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q3M4">
+      <paramVector name="dPosXYZ" type="double">0.08 0.023 0.323</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003289375951132901 -0.00046812408942037745 -7.699187692124883e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q3M3">
+      <paramVector name="dPosXYZ" type="double">0.118 -0.048 0.365</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0033335795832931813 -7.297212641097635e-05 -1.2162930806692277e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q3M2">
+      <paramVector name="dPosXYZ" type="double">-0.166 0.102 0.676</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003035383773014089 -0.0001959114875776223 -2.973335044126603e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q3M1">
+      <paramVector name="dPosXYZ" type="double">-0.456 0.021 0.546</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003079099630177941 2.6832696023301182e-05 4.131030484157821e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T1X1Q3M0">
+      <paramVector name="dPosXYZ" type="double">-0.326 -0.03 0.153</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003226950604064432 0.0007445004219156059 1.2012341409904437e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ0M0">
+      <paramVector name="dPosXYZ" type="double">1.623 -0.06 -0.216</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003891905136283834 0.0006311019029773822 1.228095959776272e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ0M1">
+      <paramVector name="dPosXYZ" type="double">1.298 -0.301 -0.272</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0039201884359700775 0.00040279462358048943 7.895164344895871e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ0M2">
+      <paramVector name="dPosXYZ" type="double">1.221 0.341 -0.513</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004085179205656243 0.00028812116562777843 5.885141197982243e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ0M3">
+      <paramVector name="dPosXYZ" type="double">1.56 -0.322 -0.161</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.00395006903574864 -0.0001518541180316171 -2.999175153391205e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ0M4">
+      <paramVector name="dPosXYZ" type="double">1.484 -0.213 -0.14</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0041153074756518195 0.0003107406008642828 6.39397466397826e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ2M0">
+      <paramVector name="dPosXYZ" type="double">-0.812 0.213 -0.116</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003699208891032806 -0.0002461998097508018 4.5537278418298185e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ2M1">
+      <paramVector name="dPosXYZ" type="double">-0.496 0.154 -0.239</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003644440100870751 -0.0006273350086718022 1.1431437338964207e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ2M2">
+      <paramVector name="dPosXYZ" type="double">-0.669 0.243 -0.612</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003429765767977366 -0.00034475872356633794 5.912214195650107e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ2M3">
+      <paramVector name="dPosXYZ" type="double">-0.153 0.085 -0.319</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003566986093684118 0.0002192589720319972 -3.910472682640708e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ2M4">
+      <paramVector name="dPosXYZ" type="double">-0.361 0.108 -0.303</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003526332576161278 -0.0001858023133146748 3.2760071550319056e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ1M4">
+      <paramVector name="dPosXYZ" type="double">-0.305 -0.705 -1.394</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0035946358035353365 -0.0006872336787248115 -1.235178772103984e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ1M3">
+      <paramVector name="dPosXYZ" type="double">-0.723 -0.846 -1.321</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004009928089556199 -2.6474914800544145e-05 -5.30813233936387e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ1M2">
+      <paramVector name="dPosXYZ" type="double">-0.6 -0.285 -1.495</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004292963986777739 -0.00010688888993034769 -2.294354301131516e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ1M1">
+      <paramVector name="dPosXYZ" type="double">-0.663 -0.311 -0.911</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004110478901595938 -0.0003441988427670411 -7.074120435964911e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ1M0">
+      <paramVector name="dPosXYZ" type="double">-0.849 -0.132 -0.503</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004049240323192238 -0.00056964293830439 -1.153312184831251e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ3M4">
+      <paramVector name="dPosXYZ" type="double">-0.089 0.037 -0.742</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.002987174641204324 -0.00043874870199051523 6.553099960252058e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ3M3">
+      <paramVector name="dPosXYZ" type="double">0.172 0.111 -0.936</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.002850458168960548 -0.0002700408677071381 3.848703615862197e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ3M2">
+      <paramVector name="dPosXYZ" type="double">0.0 0.076 -1.196</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0026018826305165294 -0.0002194603165640769 2.855051550913476e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ3M1">
+      <paramVector name="dPosXYZ" type="double">-0.073 0.123 -0.836</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0028330744005604785 -0.0001111167525348973 1.574011189811696e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1UQ3M0">
+      <paramVector name="dPosXYZ" type="double">-0.106 0.039 -0.641</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0028945051811271275 0.00024831437520895513 -3.593738755496064e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ0M0">
+      <paramVector name="dPosXYZ" type="double">-1.881 0.529 -0.874</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003593630180707729 0.00023512374575610943 -4.2247435108057915e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ0M1">
+      <paramVector name="dPosXYZ" type="double">-1.789 0.086 -0.47</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.00391903906343212 6.296308324464432e-05 -1.2337754934736042e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ0M2">
+      <paramVector name="dPosXYZ" type="double">-1.874 0.433 -0.286</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003886859333516377 0.0004114764014041341 -7.996764637138907e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ0M3">
+      <paramVector name="dPosXYZ" type="double">-1.7915 0.2665 -0.36824999999999997</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0039068430206904235 4.304061574059861e-05 -5.237586812358792e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ0M4">
+      <paramVector name="dPosXYZ" type="double">-1.622 0.018 0.157</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004227843505105466 -0.0005374007674424934 1.1360248916474785e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ2M0">
+      <paramVector name="dPosXYZ" type="double">0.449 0.016 -0.873</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005149727779219426 -0.0010748369295827097 -2.767565179892272e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ2M1">
+      <paramVector name="dPosXYZ" type="double">0.463 -0.113 -0.505</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005004746812740222 0.00019264486564941774 4.820703963872842e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ2M2">
+      <paramVector name="dPosXYZ" type="double">0.097 0.086 -0.344</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004782464096992128 -0.00013923894026193764 -3.329532514990055e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ2M3">
+      <paramVector name="dPosXYZ" type="double">1.469 -0.213 -0.129</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0045803269314504845 0.00028063055503971853 6.426909723420077e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ2M4">
+      <paramVector name="dPosXYZ" type="double">0.373 0.03 -0.213</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004460460599039847 0.0009181073704854232 2.0475944145612245e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ1M4">
+      <paramVector name="dPosXYZ" type="double">0.867 -0.089 0.284</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0031331460062946435 0.00010510619347950858 -1.6465666001761739e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ1M3">
+      <paramVector name="dPosXYZ" type="double">0.802 -0.438 0.222</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0029693175611166535 0.0005979529550882538 -8.877567838518406e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ1M2">
+      <paramVector name="dPosXYZ" type="double">1.011 -0.114 -0.01</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.002873055684086512 -0.0005798851555266029 8.330217674559987e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ1M1">
+      <paramVector name="dPosXYZ" type="double">0.75 -0.051 -0.135</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003101045662672462 -0.0009718703795120005 1.5069085387397083e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ1M0">
+      <paramVector name="dPosXYZ" type="double">0.423 -0.157 0.037</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003690691325006714 -0.0007023262632795137 1.29603624800995e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ3M4">
+      <paramVector name="dPosXYZ" type="double">-0.196 -0.015 -0.092</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003554141579256851 -4.6217029075906e-05 -8.213101882489219e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ3M3">
+      <paramVector name="dPosXYZ" type="double">-0.121 -0.141 -0.268</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003663723020532533 -0.0001937430518729348 -3.549108377112016e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ3M2">
+      <paramVector name="dPosXYZ" type="double">-0.338 0.028 -0.482</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003917018493332353 0.00032884408888984813 6.440450180733415e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ3M1">
+      <paramVector name="dPosXYZ" type="double">-0.172 0.106 -0.41</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0038338312626983824 -0.00023105625653901303 -4.429158943591089e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1VQ3M0">
+      <paramVector name="dPosXYZ" type="double">0.372 0.033 0.05</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0034535348164614482 -0.00024335783026684134 -4.2022278957953464e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q0M0">
+      <paramVector name="dPosXYZ" type="double">1.276 0.425 0.019</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004067472716509644 0.0006276690469792119 1.2765151636263883e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q0M1">
+      <paramVector name="dPosXYZ" type="double">1.487 0.235 -0.142</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004257593617422643 0.0006777884499992655 1.442876124174983e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q0M2">
+      <paramVector name="dPosXYZ" type="double">1.324 0.241 -0.256</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004272913594496427 0.0008027560456570128 1.7150563118054973e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q0M3">
+      <paramVector name="dPosXYZ" type="double">2.042 0.131 -0.244</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004283670890921832 0.00032798059411969546 7.024815424081954e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q0M4">
+      <paramVector name="dPosXYZ" type="double">1.474 -0.162 -0.188</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004373159966754275 -0.00029718282334591136 -6.498150533316709e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q2M0">
+      <paramVector name="dPosXYZ" type="double">-0.387 0.063 -0.147</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004223937621085119 -0.002102733888120167 4.440916627634984e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q2M1">
+      <paramVector name="dPosXYZ" type="double">-0.579 0.089 -0.449</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004116794759059732 9.727201119576007e-05 -2.0022473588895938e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q2M2">
+      <paramVector name="dPosXYZ" type="double">-0.95 0.211 -0.393</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003990483514325731 -0.00035267524861054035 7.036733238113958e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q2M3">
+      <paramVector name="dPosXYZ" type="double">-1.048 0.187 -0.35</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003930411656554373 -0.0004776569775694202 9.386955025089745e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q2M4">
+      <paramVector name="dPosXYZ" type="double">-0.807 0.09 -0.192</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0038341208713820758 4.7450178916351815e-05 -9.096497211984486e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q1M4">
+      <paramVector name="dPosXYZ" type="double">-1.554 -0.632 -0.323</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0031200394346369673 0.0007130572842943073 1.1123843725984152e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q1M3">
+      <paramVector name="dPosXYZ" type="double">-1.248 0.182 -0.214</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0029934278488574395 0.000165560829698083 2.477973847497868e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q1M2">
+      <paramVector name="dPosXYZ" type="double">-1.15 -0.186 0.018</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0030018730199430823 -0.0005644456599184944 -8.471977575516746e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q1M1">
+      <paramVector name="dPosXYZ" type="double">-1.224 -0.176 -0.015</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0033639366654865583 -0.0009123392695767319 -1.5345273136545697e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q1M0">
+      <paramVector name="dPosXYZ" type="double">-1.144 0.037 -0.269</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0038330262529634226 -0.0006102418786254547 -1.1695380389221096e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q3M4">
+      <paramVector name="dPosXYZ" type="double">0.534 -0.087 0.101</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0035341492045879697 0.00037248527181438094 -6.582099562605831e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q3M3">
+      <paramVector name="dPosXYZ" type="double">-0.303 -0.166 0.275</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0036379798975118218 -0.00021244632339305488 3.864381545614305e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q3M2">
+      <paramVector name="dPosXYZ" type="double">0.306 -0.139 0.281</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0036590773842157913 -9.95411978882274e-06 1.8211467618896243e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q3M1">
+      <paramVector name="dPosXYZ" type="double">0.442 -0.123 0.147</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0034541769757761645 -0.00033760211738650926 5.830693156960457e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T1X2Q3M0">
+      <paramVector name="dPosXYZ" type="double">0.638 -0.1 -0.426</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003340150827370055 -0.0010799935088942102 1.8036724583636412e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q0M0">
+      <paramVector name="dPosXYZ" type="double">-0.493 -0.168 0.413</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0038929735467893127 0.0007253030096805274 -1.4117945599453388e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q0M1">
+      <paramVector name="dPosXYZ" type="double">-0.615 -0.318 0.612</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003703570341579111 0.001200174968646245 -2.2224690164276946e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q0M2">
+      <paramVector name="dPosXYZ" type="double">-0.527 -0.687 0.931</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003773453368309597 5.0125271017780916e-05 -9.45727986176816e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q0M3">
+      <paramVector name="dPosXYZ" type="double">-0.546 -0.725 0.951</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003721523635619453 0.00035010264803411414 -6.514583983076596e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q0M4">
+      <paramVector name="dPosXYZ" type="double">-0.709 -0.802 1.156</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003895773053507493 -0.00019977585406793355 3.8914118797186365e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q2M0">
+      <paramVector name="dPosXYZ" type="double">0.18425000000000002 0.052 0.6612499999999999</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0028794643430203925 -0.0003243561487403008 -4.5084034048662026e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q2M1">
+      <paramVector name="dPosXYZ" type="double">0.174 0.04 0.402</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003036028469966279 0.00020054256565164668 3.0442670423651456e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q2M2">
+      <paramVector name="dPosXYZ" type="double">-0.013 0.065 0.627</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.002811728525292558 -4.915142518840038e-05 -6.910027766893583e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q2M3">
+      <paramVector name="dPosXYZ" type="double">0.383 0.076 0.609</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0028544657811104745 5.056792327904339e-05 7.217225233111892e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q2M4">
+      <paramVector name="dPosXYZ" type="double">0.193 0.027 1.007</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0028156345957122573 -0.001499383658703493 -2.1108600408451787e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q1M4">
+      <paramVector name="dPosXYZ" type="double">1.662 -0.384 1.099</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0035879592129129307 0.0010759213289679138 -1.9301831791956386e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q1M3">
+      <paramVector name="dPosXYZ" type="double">1.792 -0.208 1.025</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003755938746678359 0.0003007189983274749 -5.647417370008038e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q1M2">
+      <paramVector name="dPosXYZ" type="double">1.672 -0.498 0.647</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003959797756909466 -0.0008246420613726644 1.632710118371004e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q1M1">
+      <paramVector name="dPosXYZ" type="double">1.888 0.053 0.395</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003926366142171802 0.000600589718216657 -1.1790691176583288e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q1M0">
+      <paramVector name="dPosXYZ" type="double">1.466 -0.395 0.158</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003937122748661574 0.0005006596223987045 -9.855804880467885e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q3M4">
+      <paramVector name="dPosXYZ" type="double">-0.579 -0.084 0.506</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003253058549958732 -0.0006262531007112743 -1.0186199334309366e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q3M3">
+      <paramVector name="dPosXYZ" type="double">-0.744 -0.066 0.509</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0032320609491977336 -0.0010762636389338293 -1.7392765211811868e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q3M2">
+      <paramVector name="dPosXYZ" type="double">-0.673 -0.155 0.526</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0033023927013523103 -0.0009012559563624749 -1.4881519993585976e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q3M1">
+      <paramVector name="dPosXYZ" type="double">-0.949 -0.245 0.284</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0034374522103858334 -0.0010260558580766834 -1.7635108798613577e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X1Q3M0">
+      <paramVector name="dPosXYZ" type="double">-0.814 -0.124 0.342</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003549284741684628 -0.001600848890131539 -2.8409378588259097e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ0M0">
+      <paramVector name="dPosXYZ" type="double">0.748 0.139 -0.183</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.00414176468220017 0.0008216421841301037 1.7015268179055908e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ0M1">
+      <paramVector name="dPosXYZ" type="double">0.815 -0.035 -0.669</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003920702544094989 0.00036403752060672786 7.136423386461872e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ0M2">
+      <paramVector name="dPosXYZ" type="double">0.16 -0.01 -1.3</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0040161443531627145 0.0001046494453491249 2.1014392215032568e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ0M3">
+      <paramVector name="dPosXYZ" type="double">0.549 -0.164 -1.729</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003755916524052797 -0.000876420251441547 -1.645882692413556e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ0M4">
+      <paramVector name="dPosXYZ" type="double">0.675 0.053 -2.158</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004035385319098219 0.00037914588738074885 7.650009211583635e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ2M0">
+      <paramVector name="dPosXYZ" type="double">-0.668 0.168 -0.205</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0030300489899925914 0.0024616943566908734 -3.729531986434366e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ2M1">
+      <paramVector name="dPosXYZ" type="double">-0.144 0.163 -0.177</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.002869163300479655 0.000398113310875523 -5.711264498390461e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ2M2">
+      <paramVector name="dPosXYZ" type="double">0.3 0.287 -0.707</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0026204435052052284 0.0003517364705007859 -4.6085304329771633e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ2M3">
+      <paramVector name="dPosXYZ" type="double">-0.19 0.274 -1.065</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.002723836262083792 0.0009376247723233888 -1.2769690606103664e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ2M4">
+      <paramVector name="dPosXYZ" type="double">-0.065 0.117 -1.622</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0027546776287213845 -0.001117486565129753 1.539158754144912e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ1M4">
+      <paramVector name="dPosXYZ" type="double">-2.335 -0.287 -1.525</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0037170135417908547 0.0007782830228181506 1.4464460059572164e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ1M3">
+      <paramVector name="dPosXYZ" type="double">-1.505 -0.211 -1.173</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003769257870629142 0.00015786241741225782 2.975124325092625e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ1M2">
+      <paramVector name="dPosXYZ" type="double">-2.122 -0.047 -0.945</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003985704959092379 0.0005877470979746504 1.1712948458473503e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ1M1">
+      <paramVector name="dPosXYZ" type="double">-2.247 -0.02 -0.67</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004005762426095249 0.000522128569355488 1.045762924486506e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ1M0">
+      <paramVector name="dPosXYZ" type="double">-1.689 0.01 -0.657</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004205257582675254 0.0011814050757331493 2.484060276105374e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ3M4">
+      <paramVector name="dPosXYZ" type="double">0.691 -0.163 -0.503</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003406018995261459 -0.0007590760695002756 1.2927150675832282e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ3M3">
+      <paramVector name="dPosXYZ" type="double">0.834 -0.17 -0.382</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003417348396896606 -0.0010337112594930203 1.7662776339441995e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ3M2">
+      <paramVector name="dPosXYZ" type="double">0.675 -0.172 -0.454</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0034170837408469355 -0.001413538503314141 2.415092470475881e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ3M1">
+      <paramVector name="dPosXYZ" type="double">1.1 -0.215 -0.415</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003517576521167028 -0.001321586480540882 2.3243935223441606e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2UQ3M0">
+      <paramVector name="dPosXYZ" type="double">0.644 -0.093 -0.624</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003612615753213736 -0.0019564321064081697 3.533923694493665e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ0M0">
+      <paramVector name="dPosXYZ" type="double">-1.001 -0.211 0.721</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0036785250878825083 0.0013871773823029441 -2.5513866872163114e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ0M1">
+      <paramVector name="dPosXYZ" type="double">-1.024 -0.191 1.082</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0037215686913872454 0.0001862680806077489 -3.4660512954174053e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ0M2">
+      <paramVector name="dPosXYZ" type="double">-1.509 0.337 0.754</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0035681898398191533 -0.00020355946746244882 3.631697983758817e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ0M3">
+      <paramVector name="dPosXYZ" type="double">-1.045 -0.428 0.75</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003746887533564308 -0.0004138513338906373 7.75328119998142e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ0M4">
+      <paramVector name="dPosXYZ" type="double">-1.257 -0.141 0.438</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0036960675391095234 -0.0002676220050031345 4.945750687027213e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ2M0">
+      <paramVector name="dPosXYZ" type="double">0.55 0.045 0.584</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0029224138770849056 8.898397533947094e-06 1.3002409472525941e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ2M1">
+      <paramVector name="dPosXYZ" type="double">0.208 0.063 0.653</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0028645311535279746 8.939536617225595e-05 1.2803799332774013e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ2M2">
+      <paramVector name="dPosXYZ" type="double">0.679 -0.119 0.45</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003062007937526922 0.0001472274746801868 2.254060245687947e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ2M3">
+      <paramVector name="dPosXYZ" type="double">0.409 0.486 0.482</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0029749877654174713 -4.5733195772049915e-05 -6.802789913321551e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ2M4">
+      <paramVector name="dPosXYZ" type="double">0.406 0.022 0.398</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0031062409276694266 -0.0004085758008437062 -6.345679563770431e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ1M4">
+      <paramVector name="dPosXYZ" type="double">0.172 -0.575 0.132</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003415382452874561 -2.3769446428910077e-05 4.059091458304067e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ1M3">
+      <paramVector name="dPosXYZ" type="double">0.403 -1.077 -0.133</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003631802876316319 -0.0004817412439297483 8.747955961360087e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ1M2">
+      <paramVector name="dPosXYZ" type="double">0.44 -0.798 -0.081</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0037430433485881025 -7.042180154097627e-05 1.3179608185730206e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ1M1">
+      <paramVector name="dPosXYZ" type="double">0.223 -0.803 0.026</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003906696456238782 0.00034550642628063333 -6.748952306629476e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ1M0">
+      <paramVector name="dPosXYZ" type="double">0.331 -0.643 -0.064</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0037337500716429295 0.0005814203130395486 -1.0854403593112581e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ3M4">
+      <paramVector name="dPosXYZ" type="double">-0.024 -0.001 -0.18</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003751593372226152 -5.599906921294486e-06 -1.0504299165724809e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ3M3">
+      <paramVector name="dPosXYZ" type="double">-0.321 -0.067 -0.282</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003612470332677213 -4.367803804321064e-05 -7.889289411852404e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ3M2">
+      <paramVector name="dPosXYZ" type="double">-0.495 -0.041 -0.01</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003438579269629716 -0.000505379859250279 -8.688952282858502e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ3M1">
+      <paramVector name="dPosXYZ" type="double">-0.162 0.021 0.137</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0033569619693621273 -0.0009501928991513558 -1.5948823307546678e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2VQ3M0">
+      <paramVector name="dPosXYZ" type="double">-0.539 0.001 0.005</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003593218571264405 8.349769144736397e-05 1.5001288927449103e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q0M0">
+      <paramVector name="dPosXYZ" type="double">1.418 0.106 -0.726</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0037863510936634462 0.0007499472225948517 1.419783505995829e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q0M1">
+      <paramVector name="dPosXYZ" type="double">1.683 -0.238 -0.948</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0039084808686940115 -0.0001751126450703549 -3.422126480795819e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q0M2">
+      <paramVector name="dPosXYZ" type="double">1.688 -0.628 -0.847</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003834067573723218 -0.0001750527496734156 -3.355824475545846e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q0M3">
+      <paramVector name="dPosXYZ" type="double">2.141 -0.561 -0.556</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003852762850052033 -0.0005749905431431213 -1.1076525025398322e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q0M4">
+      <paramVector name="dPosXYZ" type="double">1.652 -0.501 -0.393</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003967033665073521 -0.0008751608219660627 -1.7358986088789532e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q2M0">
+      <paramVector name="dPosXYZ" type="double">-0.584 0.106 -0.686</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.002758885908699889 -0.0002751882045851085 3.7960667311056564e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q2M1">
+      <paramVector name="dPosXYZ" type="double">-0.834 0.19 -0.918</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0026229346977315153 -0.00037538976028305776 4.923117017410168e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q2M2">
+      <paramVector name="dPosXYZ" type="double">-0.646 0.111 -0.807</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0027167467112237846 0.0002997570979939514 -4.071823085607766e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q2M3">
+      <paramVector name="dPosXYZ" type="double">-0.985 0.072 -0.791</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0027893165244339004 -7.531764154472123e-05 1.0504243922572956e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q2M4">
+      <paramVector name="dPosXYZ" type="double">-0.505 0.065 -0.679</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0027723646493007657 -0.0003250114937497246 4.505254804717428e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q1M4">
+      <paramVector name="dPosXYZ" type="double">-0.724 -0.714 -0.068</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0036427734051492143 0.00021506403105161473 3.917152010345463e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q1M3">
+      <paramVector name="dPosXYZ" type="double">-0.585 -0.563 -0.1</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003706346366012268 0.0001400384908240736 2.59515873288868e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q1M2">
+      <paramVector name="dPosXYZ" type="double">-0.78 -0.316 -0.3</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004008684302064616 0.0005650434283650108 1.1325419073885317e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q1M1">
+      <paramVector name="dPosXYZ" type="double">-0.895 -0.542 -0.302</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003980580255161315 0.0008401601177529009 1.6721646942682412e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q1M0">
+      <paramVector name="dPosXYZ" type="double">-0.897 -0.368 -0.398</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0038706714723474064 0.0012402604991565396 2.4003237706959898e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q3M4">
+      <paramVector name="dPosXYZ" type="double">0.436 -0.067 -0.019</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003474685417336848 0.000309955670548722 -5.384997703449312e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q3M3">
+      <paramVector name="dPosXYZ" type="double">0.338 -0.064 -0.022</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0033616367720406587 -0.0006152485945097419 1.0341221560960183e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q3M2">
+      <paramVector name="dPosXYZ" type="double">0.457 -0.136 -0.321</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0031355512667064693 -0.000840350936820206 1.3174828791676404e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q3M1">
+      <paramVector name="dPosXYZ" type="double">0.539 -0.056 -0.432</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003114012232483677 -0.00116545339531069 1.814619736465073e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T2X2Q3M0">
+      <paramVector name="dPosXYZ" type="double">0.74 -0.062 -0.424</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0034217226855695285 -0.0013904584322454508 2.3788842847847014e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q0M0">
+      <paramVector name="dPosXYZ" type="double">-1.0388 -0.4683999999999999 -0.294</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0034030137112059508 0.00018491322749327298 -3.229947720512135e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q0M1">
+      <paramVector name="dPosXYZ" type="double">-1.133 -0.291 -0.505</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003100672535079919 0.00017477276661669337 -2.709567764392788e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q0M2">
+      <paramVector name="dPosXYZ" type="double">-0.808 -0.183 -0.251</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003331459652751056 4.993434328041299e-05 -8.317720190932571e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q0M3">
+      <paramVector name="dPosXYZ" type="double">-1.282 -0.217 -0.252</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003458273883730598 7.491144583283624e-05 -1.295322775155132e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q0M4">
+      <paramVector name="dPosXYZ" type="double">-0.74 -0.814 -0.302</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0034768166488054076 9.998143039846371e-05 -1.7380872612220285e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q0M5">
+      <paramVector name="dPosXYZ" type="double">-1.231 -0.837 -0.16</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003647845835662774 0.0005249661513379586 -9.57498878269747e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q2M0">
+      <paramVector name="dPosXYZ" type="double">0.121 0.017 -0.66</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.00401722750129796 0.0002498605765375458 5.018740673314363e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q2M1">
+      <paramVector name="dPosXYZ" type="double">0.639 0.1 -0.66</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003947612805850104 -7.503211460596245e-05 -1.480990606307407e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q2M2">
+      <paramVector name="dPosXYZ" type="double">0.234 0.211 -0.382</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0037096276724464384 -0.0006250580028270159 -1.159367599369968e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q2M3">
+      <paramVector name="dPosXYZ" type="double">0.045 0.153 -0.282</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0037100150852315775 -0.00047505271344872377 -8.812273939436084e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q2M4">
+      <paramVector name="dPosXYZ" type="double">0.348 0.148 -0.322</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0038130773932341004 -0.00045013715920617383 -8.582049671298883e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q2M5">
+      <paramVector name="dPosXYZ" type="double">0.646 0.077 -0.053</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0036731833038317245 -0.0007000611249637558 -1.285727916065357e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q1M5">
+      <paramVector name="dPosXYZ" type="double">2.033 0.246 0.57</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004855231759073781 0.00027933648814112456 -6.781230308871311e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q1M4">
+      <paramVector name="dPosXYZ" type="double">1.304 0.238 0.416</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.005042727355755151 0.0006570330081795877 -1.6566227321228996e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q1M3">
+      <paramVector name="dPosXYZ" type="double">1.42 0.037 0.254</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.005061794629130731 4.521075205373844e-06 -1.1442401527468762e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q1M2">
+      <paramVector name="dPosXYZ" type="double">1.789 -0.324 -0.138</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004948621720727387 0.0005544020551536322 -1.3717658606259486e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q1M1">
+      <paramVector name="dPosXYZ" type="double">1.522 0.148 -0.338</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0048643273237699396 0.0006544446543042059 -1.5917197022887506e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q1M0">
+      <paramVector name="dPosXYZ" type="double">1.607 0.293 -0.456</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004946266411465039 -9.56044431273663e-05 2.3644300515318738e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q3M5">
+      <paramVector name="dPosXYZ" type="double">-0.343 -0.053 0.095</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005129685218288197 -0.0009792749073322029 -2.511691716765977e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q3M4">
+      <paramVector name="dPosXYZ" type="double">-0.771 -0.162 0.041</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005119343749217734 -0.0006794168779500521 -1.7390881386445507e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q3M3">
+      <paramVector name="dPosXYZ" type="double">-0.405 -0.036 -0.106</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005182520891453668 -0.00010422153515205044 -2.700657463410799e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q3M2">
+      <paramVector name="dPosXYZ" type="double">-0.796 -0.026 -0.395</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005291877672884151 -0.0005043784470326465 -1.3345576639708903e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q3M1">
+      <paramVector name="dPosXYZ" type="double">-0.719 0.072 -0.52</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005464738590131069 -0.0012542947325147843 -3.427205392399313e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X1Q3M0">
+      <paramVector name="dPosXYZ" type="double">-0.102 -0.009 -0.502</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005581357290264659 -0.0007288139761048313 -2.033890969324551e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ0M0">
+      <paramVector name="dPosXYZ" type="double">0.368 -0.223 0.064</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0035455578439093876 0.0009019985140015299 1.5990457368027975e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ0M1">
+      <paramVector name="dPosXYZ" type="double">0.647 -0.068 -0.233</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0037646152223588126 0.0006569945727974393 1.2366673899014026e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ0M2">
+      <paramVector name="dPosXYZ" type="double">0.618 0.09 -0.284</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003839216635065784 0.0007508627894347939 1.441364294070457e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ0M3">
+      <paramVector name="dPosXYZ" type="double">0.674 -0.535 -0.212</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003779613655172794 0.0006055213017511559 1.1443196875257486e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ0M4">
+      <paramVector name="dPosXYZ" type="double">0.584 -0.487 -0.23</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0038469737947102343 0.0006498371427806558 1.2499548150685942e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ0M5">
+      <paramVector name="dPosXYZ" type="double">0.537 -0.51 -0.29</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003873157774250244 0.0010239998365120363 1.983059116138016e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ2M0">
+      <paramVector name="dPosXYZ" type="double">-0.472 0.122 0.197</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0036931295201083148 0.00024027033817635227 -4.436752457787871e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ2M1">
+      <paramVector name="dPosXYZ" type="double">0.022 0.05 0.111</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0033951362014505403 -0.0005135085892103001 8.717166570001016e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ2M2">
+      <paramVector name="dPosXYZ" type="double">-0.429 -0.011 -0.01</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003423949987927099 -0.0012136537061121656 2.0777470810911526e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ2M3">
+      <paramVector name="dPosXYZ" type="double">-0.116 -0.092 -0.04</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003518193301357897 -0.0010549447375389535 1.8557518407218327e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ2M4">
+      <paramVector name="dPosXYZ" type="double">-0.255 -0.096 -0.127</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003487745963026902 -0.0009822724532752307 1.7129602659056677e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ2M5">
+      <paramVector name="dPosXYZ" type="double">-0.271 0.115 -0.274</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0035256092895345234 -0.0006527724931658017 1.1507116157279142e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ1M5">
+      <paramVector name="dPosXYZ" type="double">-1.555 0.45 -1.495</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005264092186240332 0.0004901803491067827 1.2901802779382422e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ1M4">
+      <paramVector name="dPosXYZ" type="double">-1.763 0.393 -1.445</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005630568618329703 0.00030739321239508014 8.654015807558508e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ1M3">
+      <paramVector name="dPosXYZ" type="double">-1.504 -0.191 -0.965</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005402863385891682 0.00017951024474375732 4.849358453061615e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ1M2">
+      <paramVector name="dPosXYZ" type="double">-2.075 0.368 -0.809</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005540235949978804 0.0007168239047834526 1.985691947675743e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ1M1">
+      <paramVector name="dPosXYZ" type="double">-2.041 0.123 -0.518</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005398701055794785 0.0004306775189123241 1.1625524296436923e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ1M0">
+      <paramVector name="dPosXYZ" type="double">-0.284 -0.043 -0.264</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0054367652939661445 0.00022500494902876438 6.116510581260828e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ3M5">
+      <paramVector name="dPosXYZ" type="double">0.44 -0.104 -0.695</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004892719705642088 -0.001024691840510834 2.506770200216525e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ3M4">
+      <paramVector name="dPosXYZ" type="double">0.551 -0.173 -0.965</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004664425427219981 -0.0005678730747119291 1.3244032413901768e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ3M3">
+      <paramVector name="dPosXYZ" type="double">0.685 -0.04 -0.576</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004967873709073915 -0.00041579459434569444 1.03280965581838e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ3M2">
+      <paramVector name="dPosXYZ" type="double">0.666 -0.049 -0.427</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004892157664415254 -0.00019660279708676143 4.809069009931547e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ3M1">
+      <paramVector name="dPosXYZ" type="double">0.582 0.029 -0.143</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.005121459744396968 -0.0011804706129986025 3.0228733203252125e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3UQ3M0">
+      <paramVector name="dPosXYZ" type="double">0.318 -0.031 -0.236</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.005213281733682656 -0.0007706092711112181 2.008706267286628e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ0M0">
+      <paramVector name="dPosXYZ" type="double">-1.515 -0.002 -0.748</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0033151163628250186 0.001157593180286642 -1.9187800182804135e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ0M1">
+      <paramVector name="dPosXYZ" type="double">-1.25 -0.282 -0.694</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0031843241249476504 0.0006443909898001989 -1.0259757898047359e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ0M2">
+      <paramVector name="dPosXYZ" type="double">-1.709 0.07 -0.826</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0028813110828144342 0.0008183553187251266 -1.1789690062036774e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ0M3">
+      <paramVector name="dPosXYZ" type="double">-1.535 0.126 -0.552</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003019237267960813 7.759767871807733e-05 -1.1714299079283934e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ0M4">
+      <paramVector name="dPosXYZ" type="double">-1.5348000000000002 -0.029199999999999993 -0.7852</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.003109359968727028 0.00041176344877290604 -6.470544272703781e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ0M5">
+      <paramVector name="dPosXYZ" type="double">-1.665 -0.058 -1.106</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0031468110050872247 -0.000639119923665515 1.0055956687297758e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ2M0">
+      <paramVector name="dPosXYZ" type="double">0.508 0.03 -0.927</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004876369524021159 -3.905605483970019e-05 -9.522606648481127e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ2M1">
+      <paramVector name="dPosXYZ" type="double">0.554 -0.197 -0.977</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004801538256229915 -0.00028343532873397473 -6.80464098926152e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ2M2">
+      <paramVector name="dPosXYZ" type="double">0.355 -0.009 -1.067</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004954750353202876 -0.0007237349960887251 -1.7929668600549566e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ2M3">
+      <paramVector name="dPosXYZ" type="double">0.438 -0.113 -0.771</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004929103785161514 -0.00039510797383101925 -9.73766088904538e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ2M4">
+      <paramVector name="dPosXYZ" type="double">0.817 -0.007 -0.868</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005065414708371383 0.0003209869900451456 8.129678555557809e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ2M5">
+      <paramVector name="dPosXYZ" type="double">0.672 0.029 -1.188</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005063892958362418 0.00029591487581589364 7.492422344963164e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ1M5">
+      <paramVector name="dPosXYZ" type="double">1.72 -0.478 0.883</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0042077375940022255 -0.0011059313782338079 2.3267381883589863e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ1M4">
+      <paramVector name="dPosXYZ" type="double">0.929 0.071 0.458</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0043694204458565745 -0.0002887163666521873 6.307626056682182e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ1M3">
+      <paramVector name="dPosXYZ" type="double">1.537 0.227 0.097</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004351216997929791 0.0002870393640356471 -6.244862695092803e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ1M2">
+      <paramVector name="dPosXYZ" type="double">1.815 0.171 -0.081</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004377338140941128 4.089474499405885e-05 -8.950520644390072e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ1M1">
+      <paramVector name="dPosXYZ" type="double">1.29 0.116 -0.368</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004483415596726674 0.00040161360770488597 -9.003018765041952e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ1M0">
+      <paramVector name="dPosXYZ" type="double">1.114 0.464 -0.366</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004457389944127003 0.001378216268386312 -3.0716292396527514e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ3M5">
+      <paramVector name="dPosXYZ" type="double">0.297 0.027 -0.044</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004852627508746905 -0.0009834258827907528 -2.3861046204591894e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ3M4">
+      <paramVector name="dPosXYZ" type="double">-0.65 0.112 -0.049</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004998810546423472 -0.0005448386757802465 -1.3617755286652815e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ3M3">
+      <paramVector name="dPosXYZ" type="double">-0.686 0.081 -0.288</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0051369742073272 -0.0003813437381608059 -9.794786393143054e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ3M2">
+      <paramVector name="dPosXYZ" type="double">-0.865 0.098 -0.313</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005165970807034146 -0.00021076383273046118 -5.444011162621264e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ3M1">
+      <paramVector name="dPosXYZ" type="double">-0.636 0.015 -0.3</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005143679428803263 -0.0008612396189207375 -2.214975276015173e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3VQ3M0">
+      <paramVector name="dPosXYZ" type="double">-0.819 -0.052 -0.385</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005096661710886468 -0.000553498803031511 -1.4105011674875394e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q0M0">
+      <paramVector name="dPosXYZ" type="double">0.839 -0.291 0.35</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0037686411235529293 0.0008157758244683529 1.537185064436905e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q0M1">
+      <paramVector name="dPosXYZ" type="double">1.1094 -0.44799999999999995 0.5158</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003441194199048216 -4.925716925315445e-05 -7.97219501999443e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q0M2">
+      <paramVector name="dPosXYZ" type="double">1.045 -0.834 0.58</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0031376357642508078 0.0006158401094987368 9.661417994659156e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q0M3">
+      <paramVector name="dPosXYZ" type="double">1.033 -0.184 0.274</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0034159364441501724 -0.00020921404422408784 -3.573312879136352e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q0M4">
+      <paramVector name="dPosXYZ" type="double">1.418 -0.382 0.517</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003403925797633326 -0.0002843160333298547 -4.838958107559495e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q0M5">
+      <paramVector name="dPosXYZ" type="double">1.212 -0.549 0.858</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.003479831865653845 -0.0011843717026789194 -2.0607095162329576e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q2M0">
+      <paramVector name="dPosXYZ" type="double">-0.549 0.084 0.518</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004461841901797667 0.0006845190488452256 -1.5271104804684866e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q2M1">
+      <paramVector name="dPosXYZ" type="double">-0.425 -0.018 1.053</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004771573067255786 -4.037209278212008e-05 9.631937805635033e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q2M2">
+      <paramVector name="dPosXYZ" type="double">0.492 -0.297 0.936</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004765876267452658 -0.0004160231069032914 9.913592166928622e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q2M3">
+      <paramVector name="dPosXYZ" type="double">-0.727 -0.108 0.548</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004591969558218614 -0.0005153656186785101 1.1832737215799449e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q2M4">
+      <paramVector name="dPosXYZ" type="double">-0.81 -0.129 0.66</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004759108144226986 0.00010972027804668938 -2.610858274616753e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q2M5">
+      <paramVector name="dPosXYZ" type="double">-0.295 -0.017 0.848</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0048078930450981576 0.00023422481022429537 -5.630650052511867e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q1M5">
+      <paramVector name="dPosXYZ" type="double">-0.664 -0.333 -1.014</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004426471096324425 -0.000669728898928526 -1.4822702824016213e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q1M4">
+      <paramVector name="dPosXYZ" type="double">-1.03 -0.495 -0.556</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.0045312215520592015 0.00023044060100259648 5.220896044708354e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q1M3">
+      <paramVector name="dPosXYZ" type="double">-1.218 -0.089 -0.558</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.00469590542667014 3.297804717165648e-05 7.743103763364232e-08</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q1M2">
+      <paramVector name="dPosXYZ" type="double">-1.099 0.168 -0.394</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004901407271605641 -0.00034446738293087 -8.441891661644084e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q1M1">
+      <paramVector name="dPosXYZ" type="double">-1.359 0.248 -0.102</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.004843130737817019 0.00033055770874114063 8.004686718464577e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q1M0">
+      <paramVector name="dPosXYZ" type="double">-1.414 0.386 -0.459</paramVector>
+      <paramVector name="dRotXYZ" type="double">0.005022470675629274 0.001555846148150239 3.907104828710191e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q3M5">
+      <paramVector name="dPosXYZ" type="double">0.323 -0.051 -0.362</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004536295593625085 -0.0008579082264319277 1.945866109829226e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q3M4">
+      <paramVector name="dPosXYZ" type="double">0.951 -0.117 -0.381</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0047467067397285925 -0.0002057202413598334 4.882477465378896e-07</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q3M3">
+      <paramVector name="dPosXYZ" type="double">0.966 -0.217 -0.425</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.0045893176038484884 -0.0004555534580103476 1.0453416049836688e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q3M2">
+      <paramVector name="dPosXYZ" type="double">0.23 0.015 -0.299</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004553548617814479 -0.00048044939864702114 1.0938767587218662e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q3M1">
+      <paramVector name="dPosXYZ" type="double">0.788 0.002 0.004</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004674515385820177 -0.0006306127708983435 1.4739072827483777e-06</paramVector>
+    </condition>
+    <condition classID="6" name="T3X2Q3M0">
+      <paramVector name="dPosXYZ" type="double">0.301 -0.05 -0.492</paramVector>
+      <paramVector name="dRotXYZ" type="double">-0.004462310946994504 -0.0010579530039678327 2.3604617725066095e-06</paramVector>
+    </condition>
+  </DDDB>
