@@ -26,7 +26,8 @@ def meta_constructor(loader, node):
 
 yaml.add_constructor('!alignment', meta_constructor)
 
-path_run_folder = "/mnt/c/Users/Nils/Desktop/Promotion/SciFi/108th_lhcb_week/positions_study_yamls/2023-05-31"
+# path_run_folder = "/mnt/c/Users/Nils/Desktop/Promotion/SciFi/108th_lhcb_week/positions_study_yamls/2023-05-31"
+path_run_folder = "/Users/nibreer/Documents/108th_lhcb_week/positions_study_yamls/2023-05-31"
 # path_yaml_file = "AlignmentResults_Rxunczero_TxRz_constraintaligned/Iter4/yaml/Conditions/FT/Alignment/HalfLayer/Modules.yml"
 path_yaml_file = "/256145/Modules.yml"
 T1_Tx_yml = []
@@ -361,6 +362,9 @@ ypointsT1Rz = [T1U_Rz, T1V_Rz, T1X1_Rz, T1X2_Rz]
 #T1 Tx Rx
 #T2 Tx Rx
 #T3 Tx Rx
+
+print('all T3 ticks', ticksT3)
+print('T3_U', runs_T3_U)
 
 sum = -1
 for i in range(0,2):

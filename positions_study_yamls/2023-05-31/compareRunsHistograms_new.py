@@ -18,6 +18,7 @@ import argparse
 from termcolor import colored
 import mplhep as hep
 from matplotlib.backends.backend_pdf import PdfPages
+from mpl_toolkits.axes_grid1 import AxesGrid
 
 labels = ['Tx', 'Ty', 'Tz', 'Rx', 'Ry', 'Rz']
 positions = ['x_global', 'y_global', 'z_global']
@@ -67,32 +68,32 @@ def diff_to_hist(files, degree_of_freedom, spatial_object):
     runs_T3_X1 = [[] for _ in range(num_files)]
     runs_T3_X2 = [[] for _ in range(num_files)]
 
-    T1U_Tx_yml = [[] for _ in range(num_files)]
-    T1U_Tx = [[] for _ in range(num_files)]
-    T1V_Tx_yml = [[] for _ in range(num_files)]
-    T1X1_Tx_yml = [[] for _ in range(num_files)]
-    T1V_Tx = [[] for _ in range(num_files)]
-    T1X1_Tx = [[] for _ in range(num_files)]
-    T1X2_Tx_yml = [[] for _ in range(num_files)]
-    T1X2_Tx = [[] for _ in range(num_files)]
+    T1U_PosRot_yml = [[] for _ in range(num_files)]
+    T1U_PosRot = [[] for _ in range(num_files)]
+    T1V_PosRot_yml = [[] for _ in range(num_files)]
+    T1X1_PosRot_yml = [[] for _ in range(num_files)]
+    T1V_PosRot = [[] for _ in range(num_files)]
+    T1X1_PosRot = [[] for _ in range(num_files)]
+    T1X2_PosRot_yml = [[] for _ in range(num_files)]
+    T1X2_PosRot = [[] for _ in range(num_files)]
 
-    T2U_Tx_yml = [[] for _ in range(num_files)]
-    T2U_Tx = [[] for _ in range(num_files)]
-    T2V_Tx_yml = [[] for _ in range(num_files)]
-    T2X1_Tx_yml = [[] for _ in range(num_files)]
-    T2V_Tx = [[] for _ in range(num_files)]
-    T2X1_Tx = [[] for _ in range(num_files)]
-    T2X2_Tx_yml = [[] for _ in range(num_files)]
-    T2X2_Tx = [[] for _ in range(num_files)]
+    T2U_PosRot_yml = [[] for _ in range(num_files)]
+    T2U_PosRot = [[] for _ in range(num_files)]
+    T2V_PosRot_yml = [[] for _ in range(num_files)]
+    T2X1_PosRot_yml = [[] for _ in range(num_files)]
+    T2V_PosRot = [[] for _ in range(num_files)]
+    T2X1_PosRot = [[] for _ in range(num_files)]
+    T2X2_PosRot_yml = [[] for _ in range(num_files)]
+    T2X2_PosRot = [[] for _ in range(num_files)]
 
-    T3U_Tx_yml = [[] for _ in range(num_files)]
-    T3U_Tx = [[] for _ in range(num_files)]
-    T3V_Tx_yml = [[] for _ in range(num_files)]
-    T3X1_Tx_yml = [[] for _ in range(num_files)]
-    T3V_Tx = [[] for _ in range(num_files)]
-    T3X1_Tx = [[] for _ in range(num_files)]
-    T3X2_Tx_yml = [[] for _ in range(num_files)]
-    T3X2_Tx = [[] for _ in range(num_files)]
+    T3U_PosRot_yml = [[] for _ in range(num_files)]
+    T3U_PosRot = [[] for _ in range(num_files)]
+    T3V_PosRot_yml = [[] for _ in range(num_files)]
+    T3X1_PosRot_yml = [[] for _ in range(num_files)]
+    T3V_PosRot = [[] for _ in range(num_files)]
+    T3X1_PosRot = [[] for _ in range(num_files)]
+    T3X2_PosRot_yml = [[] for _ in range(num_files)]
+    T3X2_PosRot = [[] for _ in range(num_files)]
 
     runs_T1 = ["T1UHL0Q0M0", "T1UHL0Q0M1", "T1UHL0Q0M2", "T1UHL0Q0M3", "T1UHL0Q0M4", "T1UHL0Q2M0", "T1UHL0Q2M1", "T1UHL0Q2M2", "T1UHL0Q2M3", "T1UHL0Q2M4", "T1UHL1Q1M0", "T1UHL1Q1M1", "T1UHL1Q1M2", "T1UHL1Q1M3", "T1UHL1Q1M4", "T1UHL1Q3M0", "T1UHL1Q3M1", "T1UHL1Q3M2", "T1UHL1Q3M3", "T1UHL1Q3M4"]
 
@@ -139,68 +140,53 @@ def diff_to_hist(files, degree_of_freedom, spatial_object):
             with open(file, 'r') as stream:
                 data_loaded = yaml.load(stream, Loader=yaml.Loader)
 
-                T1U_Tx_yml[iter_num].append(data_loaded[runs_T1_U[iter_num][i]][PosRot][dof_value])
-                T1U_Tx[iter_num].append(float(re.findall(r'\d+',T1U_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1U_Tx_yml[iter_num][i])[1]))
+                T1U_PosRot_yml[iter_num].append(data_loaded[runs_T1_U[iter_num][i]][PosRot][dof_value])
+                T1U_PosRot[iter_num].append(float(re.findall(r'\d+',T1U_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1U_PosRot_yml[iter_num][i])[1]))
 
-                T1V_Tx_yml[iter_num].append(data_loaded[runs_T1_V[iter_num][i]][PosRot][dof_value])
-                T1V_Tx[iter_num].append(float(re.findall(r'\d+',T1V_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1V_Tx_yml[iter_num][i])[1]))
+                T1V_PosRot_yml[iter_num].append(data_loaded[runs_T1_V[iter_num][i]][PosRot][dof_value])
+                T1V_PosRot[iter_num].append(float(re.findall(r'\d+',T1V_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1V_PosRot_yml[iter_num][i])[1]))
 
-                T1X1_Tx_yml[iter_num].append(data_loaded[runs_T1_X1[iter_num][i]][PosRot][dof_value])
-                T1X1_Tx[iter_num].append(float(re.findall(r'\d+',T1X1_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1X1_Tx_yml[iter_num][i])[1]))
+                T1X1_PosRot_yml[iter_num].append(data_loaded[runs_T1_X1[iter_num][i]][PosRot][dof_value])
+                T1X1_PosRot[iter_num].append(float(re.findall(r'\d+',T1X1_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1X1_PosRot_yml[iter_num][i])[1]))
 
-                T1X2_Tx_yml[iter_num].append(data_loaded[runs_T1_X2[iter_num][i]][PosRot][dof_value])
-                T1X2_Tx[iter_num].append(float(re.findall(r'\d+',T1X2_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1X2_Tx_yml[iter_num][i])[1]))
+                T1X2_PosRot_yml[iter_num].append(data_loaded[runs_T1_X2[iter_num][i]][PosRot][dof_value])
+                T1X2_PosRot[iter_num].append(float(re.findall(r'\d+',T1X2_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1X2_PosRot_yml[iter_num][i])[1]))
 
                 # T2
-                T2U_Tx_yml[iter_num].append(data_loaded[runs_T2_U[iter_num][i]][PosRot][dof_value])
-                T2U_Tx[iter_num].append(float(re.findall(r'\d+',T2U_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T2U_Tx_yml[iter_num][i])[1]))
+                T2U_PosRot_yml[iter_num].append(data_loaded[runs_T2_U[iter_num][i]][PosRot][dof_value])
+                T2U_PosRot[iter_num].append(float(re.findall(r'\d+',T2U_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T2U_PosRot_yml[iter_num][i])[1]))
 
-                T2V_Tx_yml[iter_num].append(data_loaded[runs_T2_V[iter_num][i]][PosRot][dof_value])
-                T2V_Tx[iter_num].append(float(re.findall(r'\d+',T2V_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T2V_Tx_yml[iter_num][i])[1]))
+                T2V_PosRot_yml[iter_num].append(data_loaded[runs_T2_V[iter_num][i]][PosRot][dof_value])
+                T2V_PosRot[iter_num].append(float(re.findall(r'\d+',T2V_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T2V_PosRot_yml[iter_num][i])[1]))
 
-                T2X1_Tx_yml[iter_num].append(data_loaded[runs_T2_X1[iter_num][i]][PosRot][dof_value])
-                T2X1_Tx[iter_num].append(float(re.findall(r'\d+',T2X1_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T2X1_Tx_yml[iter_num][i])[1]))
+                T2X1_PosRot_yml[iter_num].append(data_loaded[runs_T2_X1[iter_num][i]][PosRot][dof_value])
+                T2X1_PosRot[iter_num].append(float(re.findall(r'\d+',T2X1_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T2X1_PosRot_yml[iter_num][i])[1]))
 
-                T2X2_Tx_yml[iter_num].append(data_loaded[runs_T2_X2[iter_num][i]][PosRot][dof_value])
-                T2X2_Tx[iter_num].append(float(re.findall(r'\d+',T2X2_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T2X2_Tx_yml[iter_num][i])[1]))
+                T2X2_PosRot_yml[iter_num].append(data_loaded[runs_T2_X2[iter_num][i]][PosRot][dof_value])
+                T2X2_PosRot[iter_num].append(float(re.findall(r'\d+',T2X2_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T2X2_PosRot_yml[iter_num][i])[1]))
 
                 # T3
-                T3U_Tx_yml[iter_num].append(data_loaded[runs_T3_U[iter_num][i]][PosRot][dof_value])
-                T3U_Tx[iter_num].append(float(re.findall(r'\d+',T3U_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T3U_Tx_yml[iter_num][i])[1]))
+                T3U_PosRot_yml[iter_num].append(data_loaded[runs_T3_U[iter_num][i]][PosRot][dof_value])
+                T3U_PosRot[iter_num].append(float(re.findall(r'\d+',T3U_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T3U_PosRot_yml[iter_num][i])[1]))
 
-                T3V_Tx_yml[iter_num].append(data_loaded[runs_T3_V[iter_num][i]][PosRot][dof_value])
-                T3V_Tx[iter_num].append(float(re.findall(r'\d+',T3V_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T3V_Tx_yml[iter_num][i])[1]))
+                T3V_PosRot_yml[iter_num].append(data_loaded[runs_T3_V[iter_num][i]][PosRot][dof_value])
+                T3V_PosRot[iter_num].append(float(re.findall(r'\d+',T3V_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T3V_PosRot_yml[iter_num][i])[1]))
 
-                T3X1_Tx_yml[iter_num].append(data_loaded[runs_T3_X1[iter_num][i]][PosRot][dof_value])
-                T3X1_Tx[iter_num].append(float(re.findall(r'\d+',T3X1_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T3X1_Tx_yml[iter_num][i])[1]))
+                T3X1_PosRot_yml[iter_num].append(data_loaded[runs_T3_X1[iter_num][i]][PosRot][dof_value])
+                T3X1_PosRot[iter_num].append(float(re.findall(r'\d+',T3X1_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T3X1_PosRot_yml[iter_num][i])[1]))
 
-                T3X2_Tx_yml[iter_num].append(data_loaded[runs_T3_X2[iter_num][i]][PosRot][dof_value])
-                T3X2_Tx[iter_num].append(float(re.findall(r'\d+',T3X2_Tx_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T3X2_Tx_yml[iter_num][i])[1]))
+                T3X2_PosRot_yml[iter_num].append(data_loaded[runs_T3_X2[iter_num][i]][PosRot][dof_value])
+                T3X2_PosRot[iter_num].append(float(re.findall(r'\d+',T3X2_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T3X2_PosRot_yml[iter_num][i])[1]))
         iter_num += 1
         # the output:
         # [0, 11]: information about the module positions
         # [12, 13, 14]: x ticks, y ticks, z ticks
-        # [15, 16, 17]: T1Tx, T1Ty, T1Tz data
-        # [18, 19, 20]: T2Tx, T2Ty, T2Tz data
-        # [21, 22, 23]: T3Tx, T3Ty, T3Tz data
 
-        # does not work like that, need to wrte some redundant code as in biljanas script :(
     ticksT3 = [runs_T3_U, runs_T3_V,runs_T3_X1, runs_T3_X2]
-    ypointsT3Tx = [T3U_Tx, T3V_Tx, T3X1_Tx, T3X2_Tx]
-    ypointsT3Tz = [T3U_Tz, T3V_Tz, T3X1_Tz, T3X2_Tz]
-    ypointsT3Rz = [T3U_Rz, T3V_Rz, T3X1_Rz, T3X2_Rz]
-
     ticksT2 = [runs_T2_U, runs_T2_V,runs_T2_X1, runs_T2_X2]
-    ypointsT2Tx = [T2U_Tx, T2V_Tx, T2X1_Tx, T2X2_Tx]
-    ypointsT2Tz = [T2U_Tz, T2V_Tz, T2X1_Tz, T2X2_Tz]
-    ypointsT2Rz = [T2U_Rz, T2V_Rz, T2X1_Rz, T2X2_Rz]
-
     ticksT1 = [runs_T1_U, runs_T1_V,runs_T1_X1, runs_T1_X2]
-    ypointsT1Tz = [T1U_Tz, T1V_Tz, T1X1_Tz, T1X2_Tz]
-    ypointsT1Tx = [T1U_Tx, T1V_Tx, T1X1_Tx, T1X2_Tx]
-    ypointsT1Rz = [T1U_Rz, T1V_Rz, T1X1_Rz, T1X2_Rz]
 
-    return np.array(T1U_Tx), np.array(T1V_Tx), np.array(T1X1_Tx), np.array(T1X2_Tx), np.array(T2U_Tx), np.array(T2V_Tx), np.array(T2X1_Tx), np.array(T2X2_Tx), np.array(T3U_Tx), np.array(T3V_Tx), np.array(T3X1_Tx), np.array(T3X2_Tx), ticksT1, ticksT2, TicksT3, ypointsT1Tx, ypointsT1Ty, ypointsT1Tz, ypointsT2Tx, ypointsT2Ty, ypointsT2Tz, ypointsT3Tx, ypointsT3Ty, ypointsT3Tz
+    return np.array(T1U_PosRot), np.array(T1V_PosRot), np.array(T1X1_PosRot), np.array(T1X2_PosRot), np.array(T2U_PosRot), np.array(T2V_PosRot), np.array(T2X1_PosRot), np.array(T2X2_PosRot), np.array(T3U_PosRot), np.array(T3V_PosRot), np.array(T3X1_PosRot), np.array(T3X2_PosRot), ticksT1, ticksT2, ticksT3
 
 def plot_modules(arr, DoF, labels, MagPol, outdir, spatial_degree, run_nums):
     layer_displacement_abs_Tx = np.empty([12, 4])
@@ -257,6 +243,8 @@ def plot_modules(arr, DoF, labels, MagPol, outdir, spatial_degree, run_nums):
 
             fig.tight_layout()
             fig.savefig(f"{outdir}/{DoF}/{labels[i]}_{DoF}_{MagPol}_hist_diff.pdf",bbox_inches='tight')
+
+            plt.close()
         else:
             base_run = abs(positions_of_modules[i][0])
 
@@ -295,6 +283,8 @@ def plot_modules(arr, DoF, labels, MagPol, outdir, spatial_degree, run_nums):
             ax1.set_title(f'absolute diff to run 256145, {out_labels[i]}')
             fig.tight_layout()
             fig.savefig(f"{outdir}/{DoF}/{out_labels[i]}_{DoF}_{MagPol}_hist_diff.pdf",bbox_inches='tight')
+
+            plt.close()
     if DoF == 'Tx':
         print('###### Tx ######')
         print('      256163 256159 256030 255949')
@@ -307,17 +297,26 @@ def plot_modules(arr, DoF, labels, MagPol, outdir, spatial_degree, run_nums):
         print('###### Tz ######')
         print('      256163 256159 256030 255949')
         for row in range(12):
-            print(f'{out_labels[row]} ', layer_displacement_abs_Tz[row])
+            if "U" in out_labels[row] or "V" in out_labels[row]:
+                print(f'{out_labels[row]}  ', layer_displacement_abs_Tz[row])
+            else:
+                print(f'{out_labels[row]} ', layer_displacement_abs_Tz[row])
     if DoF == 'Rz':
         print('###### Rz ######')
         print('      256163 256159 256030 255949')
         for row in range(12):
-            print(f'{out_labels[row]} ', layer_displacement_abs_Rz[row])
+            if "U" in out_labels[row] or "V" in out_labels[row]:
+                print(f'{out_labels[row]}  ', layer_displacement_abs_Rz[row])
+            else:
+                print(f'{out_labels[row]} ', layer_displacement_abs_Rz[row])
     if DoF == 'Rx':
         print('###### Rx ######')
         print('      256163 256159 256030 255949')
         for row in range(12):
-            print(f'{out_labels[row]} ', layer_displacement_abs_Rx[row])
+            if "U" in out_labels[row] or "V" in out_labels[row]:
+                print(f'{out_labels[row]}  ', layer_displacement_abs_Rx[row])
+            else:
+                print(f'{out_labels[row]} ', layer_displacement_abs_Rx[row])            
 
 def open_alignment(thisfile, convergence=True):
     with open(thisfile) as f:
@@ -532,41 +531,127 @@ if __name__ == '__main__':
     # run_labels = [runs_T1, runs_V_T1, runs_X1_T1, runs_X2_T1, runs_T2, runs_V_T2, runs_X1_T2, runs_X2_T2, runs, runs_V_T3, runs_X1_T3, runs_X2_T3]
     out_labels = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
 
-    # use the run_labels for x ticks
-    # but split between top and bottom half modules
-
     ### output directories depending on what to plot
     hist_outdir = 'hist_out'
     outdir1 = 'MD_outfiles'
     outdir2 = 'MU_vs_MD_outfiles'
 
-    plotted_modules = plot_modules(magDown_yaml_files, 'Tx', out_labels, magnet_polarity, hist_outdir, 'position', md_run_numbers)
-    # plt.figure()
-    # plotted_modules = plot_modules(magDown_yaml_files, 'Tz', out_labels, magnet_polarity, hist_outdir, 'position', md_run_numbers)
-    # plt.figure()
-    # plotted_modules = plot_modules(magDown_yaml_files, 'Rz', out_labels, magnet_polarity, hist_outdir, 'rotation', md_run_numbers)
+    # plot_modules(magDown_yaml_files, 'Tx', out_labels, magnet_polarity, hist_outdir, 'position', md_run_numbers)
+    # plot_modules(magDown_yaml_files, 'Tz', out_labels, magnet_polarity, hist_outdir, 'position', md_run_numbers)
+    # plot_modules(magDown_yaml_files, 'Rz', out_labels, magnet_polarity, hist_outdir, 'rotation', md_run_numbers)
 
-    # module positions inside the plot
-    T1_T2_modules = [int(x) for x in np.linspace(-5, 5, 11) if x != 0]
-    T3_modules = [int(x) for x in np.linspace(-6, -6, 13) if x != 0]
+    Tx_params = diff_to_hist(magDown_yaml_files, 'Tx', 'position')
+    Tz_params = diff_to_hist(magDown_yaml_files, 'Tz', 'position')
+    Rz_params = diff_to_hist(magDown_yaml_files, 'Rz', 'rotation')
+
+    # run_number = md_run_numbers mapped with (0, 1, 2, 3, 4) -> (256145, 256163, 256159, 256030, 255949)
+    # layerID= [0, 1, 2, 3] -> ['U', 'V', 'X1', 'X2']
+    # output_format = Tx_params[run_number][layerID]
+
+    ticksT1 = Tx_params[12]
+    single_ticksT1 = [ticksT1[0][0], ticksT1[0][1], ticksT1[0][2], ticksT1[0][3]]
+    ticksT2 = Tz_params[13]
+    single_ticksT2 = [ticksT2[0][0], ticksT2[0][1], ticksT2[0][2], ticksT2[0][3]]
+    ticksT3 = Rz_params[14]
+    single_ticksT3 = [ticksT3[0][0], ticksT3[0][1], ticksT3[0][2], ticksT3[0][3]]
+
+    # for U, V, X1, X2
+    ypointsT1Tx = [Tx_params[0], Tx_params[1], Tx_params[2], Tx_params[3]]
+    ypointsT2Tx = [Tx_params[4], Tx_params[5], Tx_params[6], Tx_params[7]]
+    ypointsT3Tx = [Tx_params[8], Tx_params[9], Tx_params[10], Tx_params[11]]
+
+    ypointsT1Tz = [Tz_params[0], Tz_params[1], Tz_params[2], Tz_params[3]]
+    ypointsT2Tz = [Tz_params[4], Tz_params[5], Tz_params[6], Tz_params[7]]
+    ypointsT3Tz = [Tz_params[8], Tz_params[9], Tz_params[10], Tz_params[11]]
+
+    ypointsT1Rz = [Rz_params[0], Rz_params[1], Rz_params[2], Rz_params[3]]
+    ypointsT2Rz = [Rz_params[4], Rz_params[5], Rz_params[6], Rz_params[7]]
+    ypointsT3Rz = [Rz_params[8], Rz_params[9], Rz_params[10], Rz_params[11]]
 
     fig, ax = plt.subplots(2,2)
+    colors = ['black', 'red', 'blue', 'green', 'magenta']
 
     sum = -1
     for i in range(0,2):
         for j in range(0,2):
             sum = sum + 1
             plt.sca(ax[i,j])
-            plt.xticks(x, ticksT3[sum]) #here
-            ax[i,j].scatter(x, ypointsT3Rz[sum], color='red', s=20) ##here
+            plt.xticks(x, single_ticksT3[sum]) #here
+            ax[i,j].scatter(x, ypointsT3Tx[sum][0], color=colors[0], s=10) ##here
+            ax[i,j].scatter(x, ypointsT3Tx[sum][1], color=colors[1], s=10) ##here
+            ax[i,j].scatter(x, ypointsT3Tx[sum][2], color=colors[2], s=10) ##here
+            ax[i,j].scatter(x, ypointsT3Tx[sum][3], color=colors[3], s=10) ##here
+            ax[i,j].scatter(x, ypointsT3Tx[sum][4], color=colors[4], s=10) ##here
             ax[i,j].tick_params(axis='x', labelrotation = 90, labelsize=12)
             ax[i,j].set_xlabel(r'Module number')
             ax[i,j].set_ylabel(r'T3 modules Rz[mrad]') ##here
             ax[i,j].text(0.1, 0.7, layers[sum], transform=ax[i,j].transAxes, weight="bold")
 
-    plt.savefig("out_biljana.pdf",bbox_inches='tight') #here
+    plt.savefig("out_2_by_2_all_layers.pdf",bbox_inches='tight') #here
     plt.close()
 
+    # use the run_labels for x ticks
+    # but split between top and bottom half modules
+
+    # module positions inside the plot
+    T1_T2_modules = [int(x) for x in np.linspace(-5, 5, 11) if x != 0]
+    T3_modules = [int(x) for x in np.linspace(-6, 6, 13) if x != 0]
+
+    x_low = np.linspace(-5, 0, 5)
+    x_high = np.linspace(1, 6, 5)
+    # x_high = [int(x) for x in np.linspace(0, 5, 6) if x != 0]
+
+    print('#####################')
+    Q0, Q1, Q2, Q3 = [], [], [], []
+    q0_ticks, q1_ticks, q2_ticks, q3_ticks = [], [], [], []
+    t1 = ypointsT3Tx[0][0]
+    for i, obj in zip(t1, runs):
+        if 'Q0' in obj:
+            Q0.append(i)
+            q0_ticks.append(obj)
+        if 'Q1' in obj:
+            Q1.append(i)
+            q1_ticks.append(obj)
+        if 'Q2' in obj:
+            Q2.append(i)
+            q2_ticks.append(obj)
+        if 'Q3' in obj:
+            Q3.append(i)
+            q3_ticks.append(obj)
+
+    # ax1 = [plt.subplot(2,2,i+1) for i in range(4)]
+    fig1, ax1 = plt.subplots(2,2)
+
+    plt.subplots_adjust(wspace=0, hspace=0)
+
+    for i in range(0,2):
+        for j in range(0,2):
+            plt.sca(ax1[i,j])
+            if i == 1 and j == 0:
+                plt.xticks(x_low, Q0)
+                plt.tick_params(axis='x', labelrotation=90, labelsize=10)
+                ax1[i,j].scatter(x_low, Q0, color='blue', s=10)
+            if i == 1 and j == 1:
+                plt.xticks(x_high, Q1)
+                plt.tick_params(axis='x', labelrotation=90, labelsize=10)
+                ax1[i,j].scatter(x_low, Q1, color='blue', s=10)
+            if i == 0 and j == 0:
+                ax1[i,j].scatter(x_low, Q2, color='red', s=10)
+            if i == 0 and j == 1:
+                ax1[i,j].scatter(x_high, Q3, color='red', s=10)
+    plt.savefig(f'test_plot.pdf', bbox_inches='tight')
+    plt.close()
+
+
+
+
+
+
+    # top_half_modules = Q2 + Q3
+    # bottom_half_modules = Q0 + Q1
+    # plt.scatter(T1_T2_modules, top_half_modules, color='blue', s=10)
+    # plt.scatter(T1_T2_modules, bottom_half_modules, color='red', s=10)
+    # plt.show()
     ######## 1.) new plots, plotting arbitrary x range e.g. np.linspace vs global Module y values -> so that i can see what changed between runs
     ######## 2.) in the same style plot difference to survey or run 256145 (diff as in previous but with positions)
     ######## 3.) plot global z position of stations vs global Tx
