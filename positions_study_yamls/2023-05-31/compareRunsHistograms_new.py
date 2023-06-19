@@ -620,31 +620,39 @@ if __name__ == '__main__':
             q3_ticks.append(obj)
 
     # ax1 = [plt.subplot(2,2,i+1) for i in range(4)]
-    fig1, ax1 = plt.subplots(2,2)
+    fig1 = plt.figure(figsize=(10,10))
+    ax1 = [fig.add_subplot(2, 2, i+1) for i in range(4)]
 
-    plt.subplots_adjust(wspace=0, hspace=0)
+    x_full = [int(x) for x in np.linspace(-5, 5, 11) if x != 0]
+    q_full = q1_ticks + q0_ticks
 
-    for i in range(0,2):
-        for j in range(0,2):
-            plt.sca(ax1[i,j])
-            if i == 1 and j == 0:
-                plt.xticks(x_low, Q0)
-                plt.tick_params(axis='x', labelrotation=90, labelsize=10)
-                ax1[i,j].scatter(x_low, Q0, color='blue', s=10)
-            if i == 1 and j == 1:
-                plt.xticks(x_high, Q1)
-                plt.tick_params(axis='x', labelrotation=90, labelsize=10)
-                ax1[i,j].scatter(x_low, Q1, color='blue', s=10)
-            if i == 0 and j == 0:
-                ax1[i,j].scatter(x_low, Q2, color='red', s=10)
-            if i == 0 and j == 1:
-                ax1[i,j].scatter(x_high, Q3, color='red', s=10)
+    for a in ax1:
+        print(a)
+        plt.sca(a)
+        plt.xticks(x_full, q_full)
+        plt.tick_params(axis='x', labelrotation=90, labelsize=10)
+        a.scatter(x_full, q_full, color='red', s=10)
+        a.set_aspect('equal')
+
+    # for u in range(0,2):
+    #     for v in range(0,2):
+    #         print(u, v)
+    #         plt.sca(ax1[u,v])
+    #         if u == 1 and v == 0:
+    #             plt.xticks(x_low, Q0)
+    #             plt.tick_params(axis='x', labelrotation=90, labelsize=10)
+    #             ax1[u,v].scatter(x_low, Q0, color='blue', s=10)
+    #         if u == 1 and v == 1:
+    #             plt.xticks(x_high, Q1)
+    #             plt.tick_params(axis='x', labelrotation=90, labelsize=10)
+    #             ax1[u,v].scatter(x_low, Q1, color='blue', s=10)
+    #         if u == 0 and v == 0:
+    #             ax1[u,v].scatter(x_low, Q2, color='red', s=10)
+    #         if u == 0 and v == 1:
+    #             ax1[u,v].scatter(x_high, Q3, color='red', s=10)
+    # fig.subplots_adjust(wspace=0, hspace=0)
     plt.savefig(f'test_plot.pdf', bbox_inches='tight')
     plt.close()
-
-
-
-
 
 
     # top_half_modules = Q2 + Q3
