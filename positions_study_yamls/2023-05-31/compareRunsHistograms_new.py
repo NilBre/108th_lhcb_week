@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from math import *
-import ROOT
+# import ROOT
 import matplotlib.patches as mpatches
 import statistics
 from copy import deepcopy
@@ -142,7 +142,8 @@ def diff_to_hist(files, degree_of_freedom, spatial_object):
 
                 T1U_PosRot_yml[iter_num].append(data_loaded[runs_T1_U[iter_num][i]][PosRot][dof_value])
                 T1U_PosRot[iter_num].append(float(re.findall(r'\d+',T1U_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1U_PosRot_yml[iter_num][i])[1]))
-
+                print(re.findall(r'\d+',T1U_PosRot_yml[iter_num][i]))
+                print(T1U_PosRot_yml[iter_num][i])
                 T1V_PosRot_yml[iter_num].append(data_loaded[runs_T1_V[iter_num][i]][PosRot][dof_value])
                 T1V_PosRot[iter_num].append(float(re.findall(r'\d+',T1V_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1V_PosRot_yml[iter_num][i])[1]))
 
@@ -193,7 +194,7 @@ def plot_modules(arr, DoF, labels, MagPol, outdir, spatial_degree, run_nums):
     layer_displacement_abs_Tz = np.empty([12, 4])
     layer_displacement_abs_Rx = np.empty([12, 4])
     layer_displacement_abs_Rz = np.empty([12, 4])
-    
+
     positions_of_modules = diff_to_hist(arr, DoF, spatial_degree)
     for i in range(12):
         # make the limits by eye for now
@@ -316,7 +317,7 @@ def plot_modules(arr, DoF, labels, MagPol, outdir, spatial_degree, run_nums):
             if "U" in out_labels[row] or "V" in out_labels[row]:
                 print(f'{out_labels[row]}  ', layer_displacement_abs_Rx[row])
             else:
-                print(f'{out_labels[row]} ', layer_displacement_abs_Rx[row])            
+                print(f'{out_labels[row]} ', layer_displacement_abs_Rx[row])
 
 def open_alignment(thisfile, convergence=True):
     with open(thisfile) as f:
@@ -347,17 +348,17 @@ def calculateDiff(align_output1,align_output2,plotted_alignables,absolute=False)
             diff_result[alignable][label]=[]
             for iternum in range(0,len(align_output1[alignable][label])):
                 if absolute:
-                    diff_result[alignable][label].append(abs(align_output2[alignable][label][iternum]-align_output1[alignable][label][iternum]))                    
+                    diff_result[alignable][label].append(abs(align_output2[alignable][label][iternum]-align_output1[alignable][label][iternum]))
                 else:
                     diff_result[alignable][label].append(align_output2[alignable][label][iternum]-align_output1[alignable][label][iternum])
-                
+
     return diff_result
 
 def makeModulesAlignLogFormat(filename_in,thistype="output",maxindex=0):
     modules=[]
     linenno=0
     index=0
-    
+
     align_output={}
     with open(filename_in,"r") as inputfile:
         mylabel=""
@@ -409,7 +410,7 @@ def makeModulesAlignLogFormat(filename_in,thistype="output",maxindex=0):
                     align_output[quarterlabel]["Rx"]=[1000*float(valueX)]
                     align_output[quarterlabel]["Ry"]=[1000*float(valueY)]
                     align_output[quarterlabel]["Rz"]=[1000*float(valueZ)]
-            
+
     return align_output
 
 def convertGlobal(align_external,halfmoduleAlignables):
@@ -426,11 +427,11 @@ def convertGlobal(align_external,halfmoduleAlignables):
             for label in ["Tx","Rx","Rz","Tz"]:
                 if label in align_output[alignable].keys():
                     align_output[alignable][label]=[-value for value in align_output[alignable][label]]
-    
+
     return align_output
 
 def plotTxTzMapsGlobal(align_output,stationIn=["T1"],quarters=[0,1],maxmodule=5,index=0,color="C0",txsep=3,tzsep=10):
-    
+
     for jj,station in enumerate(stationIn):
         tzlocal=jj*tzsep*4
         for ii,layer in enumerate(["X1","U","V","X2"]):
@@ -458,31 +459,31 @@ if __name__ == '__main__':
     layers = ["U", "V", "X1", "X2"]
 
     # folder on pc
-    # path_run_folder = "/mnt/c/Users/Nils/Desktop/Promotion/SciFi/108th_lhcb_week/positions_study_yamls/2023-05-31"
-    path_run_folder = "/Users/nibreer/Documents/108th_lhcb_week/positions_study_yamls/2023-05-31"
+    path_run_folder = "/mnt/c/Users/Nils/Desktop/Promotion/SciFi/108th_lhcb_week/positions_study_yamls/2023-05-31"
+    # path_run_folder = "/Users/nibreer/Documents/108th_lhcb_week/positions_study_yamls/2023-05-31"
 
     # input files lists of various sorts
     ## magDown
     md_runs = [
-        "/256145/Modules.yml", 
-        "/256163/Modules.yml", 
-        "/256159/Modules.yml", 
-        "/256030/Modules.yml", 
+        "/256145/Modules.yml",
+        "/256163/Modules.yml",
+        "/256159/Modules.yml",
+        "/256030/Modules.yml",
         "/255949/Modules_run_255949.yml"
     ]
     # magUp
     mu_runs = [
-        '/256267/Modules_run_256267.yml', 
-        '/256272/Modules_run_256272.yml', 
-        '/256273/Modules_run_256273.yml', 
-        "/256278/Modules_run_256278.yml", 
+        '/256267/Modules_run_256267.yml',
+        '/256272/Modules_run_256272.yml',
+        '/256273/Modules_run_256273.yml',
+        "/256278/Modules_run_256278.yml",
         '/256290/Modules.yml'
     ]
     # mixed
     # md_vs_mu = [
-    #     '/256290/Modules.yml', 
-    #     '/256267/Modules_run_256267.yml', 
-    #     "/256163/Modules.yml", 
+    #     '/256290/Modules.yml',
+    #     '/256267/Modules_run_256267.yml',
+    #     "/256163/Modules.yml",
     #     "/256159/Modules.yml"
     # ]
 
@@ -568,6 +569,11 @@ if __name__ == '__main__':
     ypointsT2Rz = [Rz_params[4], Rz_params[5], Rz_params[6], Rz_params[7]]
     ypointsT3Rz = [Rz_params[8], Rz_params[9], Rz_params[10], Rz_params[11]]
 
+    with open('T1.txt', 'w') as f:
+        f.write('ypointsT1Tx:\n')
+        f.write(str(ypointsT1Tx))
+        f.close()
+
     fig, ax = plt.subplots(2,2)
     colors = ['black', 'red', 'blue', 'green', 'magenta']
 
@@ -593,18 +599,11 @@ if __name__ == '__main__':
     # use the run_labels for x ticks
     # but split between top and bottom half modules
 
-    # module positions inside the plot
-    T1_T2_modules = [int(x) for x in np.linspace(-5, 5, 11) if x != 0]
-    T3_modules = [int(x) for x in np.linspace(-6, 6, 13) if x != 0]
-
-    x_low = np.linspace(-5, 0, 5)
-    x_high = np.linspace(1, 6, 5)
-    # x_high = [int(x) for x in np.linspace(0, 5, 6) if x != 0]
 
     print('#####################')
     Q0, Q1, Q2, Q3 = [], [], [], []
     q0_ticks, q1_ticks, q2_ticks, q3_ticks = [], [], [], []
-    t1 = ypointsT3Tx[0][0]
+    t1 = ypointsT3Tx[0][0] # corresponds to datapoints for run[0] = 256145, layer[0] = 'U'-Layer
     for i, obj in zip(t1, runs):
         if 'Q0' in obj:
             Q0.append(i)
@@ -619,39 +618,32 @@ if __name__ == '__main__':
             Q3.append(i)
             q3_ticks.append(obj)
 
-    # ax1 = [plt.subplot(2,2,i+1) for i in range(4)]
-    fig1 = plt.figure(figsize=(10,10))
-    ax1 = [fig.add_subplot(2, 2, i+1) for i in range(4)]
-
-    x_full = [int(x) for x in np.linspace(-5, 5, 11) if x != 0]
-    q_full = q1_ticks + q0_ticks
-
-    for a in ax1:
-        print(a)
+    # fig1 = plt.figure(figsize=(10,10))
+    ax9 = [plt.subplot(2,2,i+1) for i in range(4)]
+    count = 0
+    x = np.linspace(0, 5, 5)
+    for a in ax9:
         plt.sca(a)
-        plt.xticks(x_full, q_full)
-        plt.tick_params(axis='x', labelrotation=90, labelsize=10)
-        a.scatter(x_full, q_full, color='red', s=10)
-        a.set_aspect('equal')
-
-    # for u in range(0,2):
-    #     for v in range(0,2):
-    #         print(u, v)
-    #         plt.sca(ax1[u,v])
-    #         if u == 1 and v == 0:
-    #             plt.xticks(x_low, Q0)
-    #             plt.tick_params(axis='x', labelrotation=90, labelsize=10)
-    #             ax1[u,v].scatter(x_low, Q0, color='blue', s=10)
-    #         if u == 1 and v == 1:
-    #             plt.xticks(x_high, Q1)
-    #             plt.tick_params(axis='x', labelrotation=90, labelsize=10)
-    #             ax1[u,v].scatter(x_low, Q1, color='blue', s=10)
-    #         if u == 0 and v == 0:
-    #             ax1[u,v].scatter(x_low, Q2, color='red', s=10)
-    #         if u == 0 and v == 1:
-    #             ax1[u,v].scatter(x_high, Q3, color='red', s=10)
-    # fig.subplots_adjust(wspace=0, hspace=0)
+        if count == 0:
+            plt.scatter(x, Q2)
+        if count == 1:
+            plt.scatter(x, Q3)
+        if count == 2:
+            plt.scatter(x, Q0)
+            plt.xticks(x, ["T3UHL0Q0M4", "T3UHL0Q0M3", "T3UHL0Q0M2", "T3UHL0Q0M1", "T3UHL0Q0M0"],rotation=90)
+        if count == 3:
+            plt.scatter(x, Q1)
+            plt.xticks(x, ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4"],rotation=90)
+        count += 1
+    plt.subplots_adjust(wspace=0, hspace=0)
     plt.savefig(f'test_plot.pdf', bbox_inches='tight')
+
+    # for a in ax1:
+    #     plt.sca(a)
+    #     plt.xticks(x_full, q_full)
+    #     plt.tick_params(axis='x', labelrotation=90, labelsize=10)
+    #     a.scatter(x_full, q_full, color='red', s=10)
+    #     a.set_aspect('equal')
     plt.close()
 
 
@@ -667,8 +659,8 @@ if __name__ == '__main__':
     # layour for 1:
     #   C-side top      A-side top
     #       Q2              Q3
-    #             .  |  .    .   .   .    
-    #            .   |              .       something like that may come out (or not) 
+    #             .  |  .    .   .   .
+    #            .   |              .       something like that may come out (or not)
     #          .     |            .         y axis: global y in this case
     #        .       |           .          x axis: module positions (-5, -4, -3, -2, -1, 1, 2, 3, 4, 5) 10 modules top and 10 bottom
     #      .         |         .
