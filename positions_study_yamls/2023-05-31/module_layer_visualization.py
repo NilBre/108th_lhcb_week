@@ -19,6 +19,7 @@ from termcolor import colored
 import mplhep as hep
 from matplotlib.backends.backend_pdf import PdfPages
 from mpl_toolkits.axes_grid1 import AxesGrid
+from scipy.stats import sem
 
 regex_typelabel=re.compile("Q")
 regex_amodule=re.compile("dPosXYZ")
@@ -29,56 +30,146 @@ trackInfo=["nTracks","nHits"]
 stations = ["T1", "T2", "T3"]
 layers = ["U", "V", "X1", "X2"]
 
+colors = ['black', 'blue', 'red', 'green', 'yellow', 'magenta']
+
+# change to your own output directories
 outname_prefix = 'SciFiAlignv3/'
 
-def plot(data_arr, outname, run_labels, layer_names):
+def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, glob_data2):
+    # this as well
+    outfiles = 'outfiles_vs_global/'
     total_layer_num = len(layer_names)
     total_num_runs = len(run_labels)
-    print(total_num_runs)
+
+    x_data = data_arr
+    x_glob = glob_data2
+    z_glob = glob_data1
+
+    z_positions = [] # 12 values, 1 for each layer
+    for j in range(total_layer_num):
+        z_positions.append(z_glob[j][0][0])
+
+    x_shifted = np.array(x_glob) + np.array(x_data)
+    x_means = [[] for _ in range(total_num_runs)]
+
+    for run in range(total_num_runs):
+        for layer in range(total_layer_num):
+            x_means[run].append(np.mean(x_shifted[layer][run]))
+
+    # change from json  order (U, V, X1, X2) to physical (X1, U, V, X2)
+    correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
+
+    for runs in range(total_num_runs):
+        correct_x_order = [x_means[runs][iter] for iter in correct_order]
+        plt.errorbar(z_positions, correct_x_order, yerr=sem(x_means[runs]), ls='', marker='x', c=colors[runs], label=f'{run_labels[runs]}')
+        if plt.grid(True):
+            plt.grid()
+        plt.legend(loc='best')
+        plt.ylabel('mean Tx module position')
+        plt.title('mean Tx vs. global z, after V3 alignment, magDown')
+        plt.xticks(z_positions, ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2'], rotation=45, fontsize=10)
+    plt.savefig(f'{outname_prefix}/{outfiles}' + 'all_runs_' + outname + '.pdf')
+    plt.clf()
+
+def compare_alignments(comparison_data, outname, total_z_data, run_labels, title_label, layerID):
+    outfiles = 'outfiles_comparison/'
+    base = comparison_data[0]
+    diff = [[] for _ in range(len(run_labels) - 1)]
+    for n in range(len(comparison_data) - 1):
+        diff[n].append(np.array(base) - np.array(comparison_data[n+1]))
+
     x = np.linspace(0, 5, 5)
-    colors = ['black', 'blue', 'red', 'green', 'yellow', 'magenta']
+
     markers = ['o', 'x', 'd', 'D', '.']
-    for i in range(total_num_runs):
-        print(colors[i])
-        x1 = data_arr[i][0:5] # Q0
-        x2 = data_arr[i][5:10] # Q2
-        x3 = data_arr[i][10:15] # Q1
-        x4 = data_arr[i][15:20] # Q3
-        #
-        # glob1 = glob_data[i][0:5] # Q0
-        # glob2 = glob_data[i][5:10] # Q2
-        # glob3 = glob_data[i][10:15] # Q1
-        # glob4 = glob_data[i][15:20] # Q3
-        #
-        # shifted_positions1 = np.array(glob1) + np.array(x1)
-        # shifted_positions2 = np.array(glob2) + np.array(x2)
-        # shifted_positions3 = np.array(glob3) + np.array(x3)
-        # shifted_positions4 = np.array(glob4) + np.array(x4)
+    L = ['Q2', 'Q3', 'Q0', 'Q1']
+    for i in range(len(comparison_data) - 1):
+        x1 = diff[i][0][0:5] # Q0
+        x2 = diff[i][0][5:10] # Q2
+        x3 = diff[i][0][10:15] # Q1
+        x4 = diff[i][0][15:20] # Q3
 
         ax = [plt.subplot(2,2,i+1) for i in range(4)]
         plt.figure()
         count = 0
         for a in ax:
+            a.text(0.1, 0.7, L[count], transform=a.transAxes, weight="bold")
             plt.sca(a)
             if count == 0: # Q2
                 plt.scatter(x, x2[::-1], color=colors[i], marker=markers[i], s=10)
-                plt.ylabel('local position [mm]')
-                plt.title(f'{outname} local positions')
+                plt.ylabel(f'{title_label} [mm]')
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                plt.title(f'module difference compared to run 256145')
                 a.invert_yaxis()
             if count == 1: # Q3
-                plt.scatter(x, x4, color=colors[i], marker=markers[i], s=10, label = f'{run_labels[i]}')
-                plt.title(f'layer {layer_names[0]}')
-                plt.legend(loc='best')                
+                plt.scatter(x, x4, color=colors[i], marker=markers[i], s=10, label = f'{run_labels[i+1]}')
+                plt.title(f'layer {layerID}')
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                a.yaxis.tick_right()
+                plt.legend(loc='best')
             if count == 2: # Q0
                 plt.scatter(x, x1[::-1], color=colors[i], marker=markers[i], s=10)
                 plt.xticks(x, ["T3UHL0Q0M4", "T3UHL0Q0M3", "T3UHL0Q0M2", "T3UHL0Q0M1", "T3UHL0Q0M0"], rotation=45, fontsize=5)
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
             if count == 3: # Q1
                 plt.scatter(x, x3, color=colors[i], marker=markers[i], s=10)
+                a.yaxis.tick_right()
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
                 a.invert_yaxis()
                 plt.xticks(x, ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4"], rotation=45, fontsize=5)
             count += 1
         plt.subplots_adjust(wspace=0, hspace=0)
-        plt.savefig(f'{outname_prefix}' + run_labels[i] + '_' + outname + '.pdf')
+        plt.savefig(f'{outname_prefix}{outfiles}' + outname + '_diff_plots_' + layerID + '.pdf')
+
+    plt.clf()
+
+
+def plot(data_arr, outname, run_labels, title_label, layerID):
+    # change this for own needs as well
+    outfiles = 'relative_pos/'
+    total_layer_num = 12 # number of layers
+    total_num_runs = len(run_labels)
+    # print(total_num_runs)
+    x = np.linspace(0, 5, 5)
+
+    markers = ['o', 'x', 'd', 'D', '.']
+    L = ['Q2', 'Q3', 'Q0', 'Q1']
+    for i in range(total_num_runs):
+        x1 = data_arr[i][0:5] # Q0
+        x2 = data_arr[i][5:10] # Q2
+        x3 = data_arr[i][10:15] # Q1
+        x4 = data_arr[i][15:20] # Q3
+
+        ax = [plt.subplot(2,2,i+1) for i in range(4)]
+        plt.figure()
+        count = 0
+        for a in ax:
+            a.text(0.1, 0.7, L[count], transform=a.transAxes, weight="bold")
+            plt.sca(a)
+            if count == 0: # Q2
+                plt.scatter(x, x2[::-1], color=colors[i], marker=markers[i], s=10)
+                plt.ylabel(f'{title_label} [mm]')
+                plt.title(f'local {title_label}')
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                a.invert_yaxis()
+            if count == 1: # Q3
+                plt.scatter(x, x4, color=colors[i], marker=markers[i], s=10, label = f'{run_labels[i]}')
+                plt.title(f'layer {layerID}')
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                a.yaxis.tick_right()
+                plt.legend(loc='best')
+            if count == 2: # Q0
+                plt.scatter(x, x1[::-1], color=colors[i], marker=markers[i], s=10)
+                plt.xticks(x, ["T3UHL0Q0M4", "T3UHL0Q0M3", "T3UHL0Q0M2", "T3UHL0Q0M1", "T3UHL0Q0M0"], rotation=45, fontsize=5)
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+            if count == 3: # Q1
+                plt.scatter(x, x3, color=colors[i], marker=markers[i], s=10)
+                a.invert_yaxis()
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                a.yaxis.tick_right()
+                plt.xticks(x, ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4"], rotation=45, fontsize=5)
+            count += 1
+        plt.subplots_adjust(wspace=0, hspace=0)
+        plt.savefig(f'{outname_prefix}{outfiles}' + outname + '_' + layerID + '.pdf')
 
     plt.clf()
 
@@ -108,7 +199,6 @@ def open_alignment(thisfile,convergence=True):
 
     convergences=align_output.pop("converged")
 
-    #fix floats
     for alignable in align_output.keys():
         for label in labels+positions+trackInfo:
             if "FT" in alignable:
@@ -256,9 +346,6 @@ def get_data(files, DoF, align_output):
             "FT/T3UHL1/Q1M0", "FT/T3UHL1/Q1M1", "FT/T3UHL1/Q1M2", "FT/T3UHL1/Q1M3", "FT/T3UHL1/Q1M4",
             "FT/T3UHL1/Q3M0", "FT/T3UHL1/Q3M1", "FT/T3UHL1/Q3M2", "FT/T3UHL1/Q3M3", "FT/T3UHL1/Q3M4"]
 
-    # runs = ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4", "T3UHL0Q2M0", "T3UHL0Q2M1", "T3UHL0Q2M2", "T3UHL0Q2M3", "T3UHL0Q2M4", "T3UHL1Q1M0"#\
-    #         , "T3UHL1Q1M1", "T3UHL1Q1M2", "T3UHL1Q1M3", "T3UHL1Q1M4", "T3UHL1Q3M0", "T3UHL1Q3M1", "T3UHL1Q3M2", "T3UHL1Q3M3", "T3UHL1Q3M4"]
-
     for file in files:
         x = list(range(len(runs)))
         for j in range(0,len(stations)):
@@ -296,7 +383,6 @@ def get_data(files, DoF, align_output):
             # print(i)
             with open(file, 'r') as stream:
                 data_loaded = align_output[iter_num]
-                # print(data_loaded)
 
                 T1U_PosRot_yml[iter_num].append(data_loaded[runs_T1_U[iter_num][i]][deg])
                 T1U_PosRot[iter_num].append(T1U_PosRot_yml[iter_num][i][0])
@@ -338,20 +424,25 @@ def get_data(files, DoF, align_output):
         iter_num += 1
     return np.array(T1U_PosRot), np.array(T1V_PosRot), np.array(T1X1_PosRot), np.array(T1X2_PosRot), np.array(T2U_PosRot), np.array(T2V_PosRot), np.array(T2X1_PosRot), np.array(T2X2_PosRot), np.array(T3U_PosRot), np.array(T3V_PosRot), np.array(T3X1_PosRot), np.array(T3X2_PosRot)
 
-def plotTxTzMapsGlobal(align_output, files, run_labels, layer_names):
-    tx = get_data(files, 'Tx', align_output)
-    ty = get_data(files, 'Ty', align_output)
-    x_glob = get_data(files, 'x_global', align_output)
-    y_glob = get_data(files, 'y_global', align_output)
-    print(x_glob)
-    # for U layer here
-    tx_data = tx[0]
-    ty_data = ty[0]
-    x_g = x_glob[0]
-    y_g = y_glob[0]
-    plot(tx_data, 'tx_all_runs', run_labels, layer_names)
-    plot(ty_data, 'ty_all_runs', run_labels, layer_names)
-    plot(x_g, 'x_global', run_labels, layer_names)
+# def plotTxTzMapsGlobal(align_output, files, run_labels, layer_names):
+#     tx = get_data(files, 'Tx', align_output)
+#     ty = get_data(files, 'Ty', align_output)
+#     tz = get_data(files, 'Tz', align_output)
+#     x_glob = get_data(files, 'x_global', align_output)
+#     y_glob = get_data(files, 'y_global', align_output)
+#     z_glob = get_data(files, 'z_global', align_output)
+#
+#     # local and global data
+#     tx_data = tx[0]
+#     ty_data = ty[0]
+#     tz_data = tz[0]
+#     x_g = x_glob[0]
+#     y_g = y_glob[0]
+#     z_g = z_glob[0]
+#     plot(tx_data, 'tx_all_runs', run_labels, layer_names, 'Tx')
+#     plot(ty_data, 'ty_all_runs', run_labels, layer_names, 'Tz')
+#     plot(x_g, 'x_global', run_labels, layer_names, 'x_global')
+#     plot_with_globals(tx, 'global_z_vs_Tx', run_labels, layer_names, z_glob, x_glob)
 
 files = [\
          "align_logfiles_stability/json_files/parsedlog_256145.json",
@@ -381,42 +472,31 @@ for align_block in align_outputs:
             thislist.append(key)
     plotted_alignables.append(thislist)
 align_outputs=[convertGlobal(align_block,plotted_alignables[0]) for align_block in align_outputs]
-title="2022 data, magDown v3 alignment stability tests"
-fileprefix="SciFiAlignv3/stability_comparison"
 
-align_empty=calculateDiff(align_outputs[0],align_outputs[0],plotted_alignables[0])
-align_survey=makeModulesAlignLogFormat("surveyxml/Modules_surveyInput_20221115.xml",thistype="input")
-align_survey_fixed={}
-for alignable in align_survey.keys():
-    newalignable=alignable.replace("T","FT/T")
-    newalignable=newalignable.replace("Q0","HL0/Q0")
-    newalignable=newalignable.replace("Q1","HL1/Q1")
-    newalignable=newalignable.replace("Q2","HL0/Q2")
-    newalignable=newalignable.replace("Q3","HL1/Q3")
-    align_survey_fixed[newalignable]=align_survey[alignable]
-align_survey=convertGlobal(align_survey_fixed,align_survey_fixed.keys())
+# use data from json files for each run and layer
+# tx -> tx[layerID][run_number][module_number]
+tx = get_data(files, 'Tx', align_outputs)
+ty = get_data(files, 'Ty', align_outputs)
+tz = get_data(files, 'Tz', align_outputs)
+x_glob = get_data(files, 'x_global', align_outputs)
+y_glob = get_data(files, 'y_global', align_outputs)
+z_glob = get_data(files, 'z_global', align_outputs)
 
-plotTxTzMapsGlobal(align_outputs ,files, legendlabels, layers)
+# local and global data
+# tx[0] = T1U
+for n in range(12):
+    tx_data = tx[n]
+    ty_data = ty[n]
+    tz_data = tz[n]
+    x_g = x_glob[n]
+    y_g = y_glob[n]
+    z_g = z_glob[n]
 
-# x_data = [-0.1171, -0.1162, -0.268, -0.04142, 0.1621, # Q0
-#         0.03502, 0.1165, 0.1497, 0.5838, 0.06308,     # Q2
-#         0.2572, 0.3647, -0.1901, -0.18, -0.7523,      # Q1
-#         0.5728,0.5549, 0.6089, 0.7914, 0.1837         # Q3
-#         ]
-# y_data = [2.621e-05, 5.103e-05, 2.416e-04, 1.303e-04, -8.583e-05,
-#         -7.568e-05, 3.402e-05, -3.952e-05, -3.085e-05, 4.518e-05,
-#         -2.174e-04, -2.855e-04, 1.111e-04, 7.304e-05, 4.857e-04,
-#         0.0003424, 0.0004345, 0.0004714, 0.0008559, 0.0006808
-#         ]
-# x_g = [ -371.71,  -903.7,  -1436.,   -1968.,   -2500.,
-#         -160.3,   -692.3,  -1224., -1756.,   -2288.,
-#         160.3,    692.3,   1224.,    1756.,    2288.,
-#         371.7, 903.7,   1436.,    1968.,    2500.
-#         ]
-# y_g = [-1208.25, -1208.,   -1208.,   -1208.,   -1208.,    1208.,    1208.,    1208.,
-#         1208.,    1208.,   -1208.,   -1208.,   -1208.,   -1208.,   -1208.,    1208.,
-#         1208.,    1208.,    1208.,    1208.  ]
-#
-# plot(x_data, 'tx')
-# plot(y_data, 'ty')
-# plot(x_g, 'x_global')
+    # plots the frontview quarter plots
+    plot(tx_data, 'tx_all_runs', legendlabels, 'Tx', layers[n])
+    plot(ty_data, 'ty_all_runs', legendlabels, 'Tz', layers[n])
+
+    # top view plots
+    plot_with_globals(tx, 'global_z_vs_Tx', legendlabels, layers, z_glob, x_glob)
+    compare_alignments(tx_data, 'diff_runs', z_g, legendlabels, 'Tx', layers[n])
+    # plotTxTzMapsGlobal(align_outputs, files, legendlabels, layers)
