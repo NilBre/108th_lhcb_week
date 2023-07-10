@@ -23,7 +23,7 @@ def diff_to_hist(files, degree_of_freedom, spatial_object):
         output: return array of per module difference for each layer
         -> 12 outputs or 2D array?
     '''
-    
+
     # specs
     num_files = len(files)
     iter_num = 0
@@ -32,9 +32,9 @@ def diff_to_hist(files, degree_of_freedom, spatial_object):
         dof_value = iter_num
     if degree_of_freedom == 'Tz' or degree_of_freedom == 'Rz':
         dof_value = 2
-    
+
     PosRot = spatial_object
-    
+
     runs_T1_U = [[] for _ in range(num_files)]
     runs_T1_V = [[] for _ in range(num_files)]
     runs_T1_X1 = [[] for _ in range(num_files)]
@@ -76,7 +76,7 @@ def diff_to_hist(files, degree_of_freedom, spatial_object):
     T3X1_Tx = [[] for _ in range(num_files)]
     T3X2_Tx_yml = [[] for _ in range(num_files)]
     T3X2_Tx = [[] for _ in range(num_files)]
-    
+
     runs_T1 = ["T1UHL0Q0M0", "T1UHL0Q0M1", "T1UHL0Q0M2", "T1UHL0Q0M3", "T1UHL0Q0M4", "T1UHL0Q2M0", "T1UHL0Q2M1", "T1UHL0Q2M2", "T1UHL0Q2M3", "T1UHL0Q2M4", "T1UHL1Q1M0", "T1UHL1Q1M1", "T1UHL1Q1M2", "T1UHL1Q1M3", "T1UHL1Q1M4", "T1UHL1Q3M0", "T1UHL1Q3M1", "T1UHL1Q3M2", "T1UHL1Q3M3", "T1UHL1Q3M4"]
 
     runs_T2 = ["T2UHL0Q0M0", "T2UHL0Q0M1", "T2UHL0Q0M2", "T2UHL0Q0M3", "T2UHL0Q0M4", "T2UHL0Q2M0", "T2UHL0Q2M1", "T2UHL0Q2M2", "T2UHL0Q2M3", "T2UHL0Q2M4", "T2UHL1Q1M0",
@@ -170,7 +170,7 @@ def diff_to_hist(files, degree_of_freedom, spatial_object):
     #     out_base_to_1.append(obj[1])
     #     out_base_to_2.append(obj[2])
     #     out_base_to_3.append(obj[3])
-        
+
     # return np.array(out_base_to_1), np.array(out_base_to_2), np.array(out_base_to_3)
 
 
@@ -191,11 +191,11 @@ if __name__ == '__main__':
     layers = ["U", "V", "X1", "X2"]
 
     # folder on pc
-#    path_run_folder = "/mnt/c/Users/Nils/Desktop/Promotion/SciFi/positions_study_yamls/2023-05-31"
-    path_run_folder = "/Users/nibreer/Documents/108th_lhcb_week/positions_study_yamls/2023-05-31"
+    path_run_folder = "/mnt/c/Users/Nils/Desktop/Promotion/SciFi/positions_study_yamls/2023-05-31"
+    # path_run_folder = "/Users/nibreer/Documents/108th_lhcb_week/positions_study_yamls/2023-05-31"
     magUp_yaml_files = [
-                        path_run_folder + '/256267/Modules_run_256267.yml', 
-                        path_run_folder + '/256272/Modules_run_256272.yml', 
+                        path_run_folder + '/256267/Modules_run_256267.yml',
+                        path_run_folder + '/256272/Modules_run_256272.yml',
                         path_run_folder + '/256273/Modules_run_256273.yml',
                         path_run_folder + '/256278/Modules_run_256278.yml',
                         path_run_folder + '/256290/Modules.yml'
