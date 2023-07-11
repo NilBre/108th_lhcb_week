@@ -30,13 +30,18 @@ trackInfo=["nTracks","nHits"]
 stations = ["T1", "T2", "T3"]
 layers = ["U", "V", "X1", "X2"]
 
-colors = ['black', 'blue', 'red', 'green', 'yellow', 'magenta']
+colors = ['black', 'blue', 'red', 'green', 'yellow', 'magenta', 'brown', 'cyan']
+markers = ['o', 'x', 'd', 'D', '.', 'v', 's', 'p']
 
 # change to your own output directories
 outname_prefix = 'SciFiAlignv3/'
 
+def get_cmap(n, name='hsv'):
+    return plt.cm.get_cmap(name, n)
+
 def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, glob_data2):
     # this as well
+
     outfiles = 'outfiles_vs_global/'
     total_layer_num = len(layer_names)
     total_num_runs = len(run_labels)
@@ -80,9 +85,9 @@ def compare_alignments(comparison_data, outname, total_z_data, run_labels, title
 
     x = np.linspace(0, 5, 5)
 
-    markers = ['o', 'x', 'd', 'D', '.']
     L = ['Q2', 'Q3', 'Q0', 'Q1']
     for i in range(len(comparison_data) - 1):
+        # x1 and x2 need to be reversed since Q0 is on the inside!
         x1 = diff[i][0][0:5] # Q0
         x2 = diff[i][0][5:10] # Q2
         x3 = diff[i][0][10:15] # Q1
@@ -99,7 +104,7 @@ def compare_alignments(comparison_data, outname, total_z_data, run_labels, title
                 plt.ylabel(f'{title_label} [mm]')
                 plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
                 plt.title(f'module difference compared to run 256145')
-                a.invert_yaxis()
+                # a.invert_yaxis()
             if count == 1: # Q3
                 plt.scatter(x, x4, color=colors[i], marker=markers[i], s=10, label = f'{run_labels[i+1]}')
                 plt.title(f'layer {layerID}')
@@ -110,11 +115,12 @@ def compare_alignments(comparison_data, outname, total_z_data, run_labels, title
                 plt.scatter(x, x1[::-1], color=colors[i], marker=markers[i], s=10)
                 plt.xticks(x, ["T3UHL0Q0M4", "T3UHL0Q0M3", "T3UHL0Q0M2", "T3UHL0Q0M1", "T3UHL0Q0M0"], rotation=45, fontsize=5)
                 plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                # a.invert_yaxis()
             if count == 3: # Q1
                 plt.scatter(x, x3, color=colors[i], marker=markers[i], s=10)
                 a.yaxis.tick_right()
                 plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
-                a.invert_yaxis()
+                # a.invert_yaxis()
                 plt.xticks(x, ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4"], rotation=45, fontsize=5)
             count += 1
         plt.subplots_adjust(wspace=0, hspace=0)
@@ -131,7 +137,6 @@ def plot(data_arr, outname, run_labels, title_label, layerID):
     # print(total_num_runs)
     x = np.linspace(0, 5, 5)
 
-    markers = ['o', 'x', 'd', 'D', '.']
     L = ['Q2', 'Q3', 'Q0', 'Q1']
     for i in range(total_num_runs):
         x1 = data_arr[i][0:5] # Q0
@@ -307,8 +312,8 @@ def get_data(files, DoF, align_output):
     T1U_PosRot_yml = [[] for _ in range(num_files)]
     T1U_PosRot = [[] for _ in range(num_files)]
     T1V_PosRot_yml = [[] for _ in range(num_files)]
-    T1X1_PosRot_yml = [[] for _ in range(num_files)]
     T1V_PosRot = [[] for _ in range(num_files)]
+    T1X1_PosRot_yml = [[] for _ in range(num_files)]
     T1X1_PosRot = [[] for _ in range(num_files)]
     T1X2_PosRot_yml = [[] for _ in range(num_files)]
     T1X2_PosRot = [[] for _ in range(num_files)]
@@ -316,8 +321,8 @@ def get_data(files, DoF, align_output):
     T2U_PosRot_yml = [[] for _ in range(num_files)]
     T2U_PosRot = [[] for _ in range(num_files)]
     T2V_PosRot_yml = [[] for _ in range(num_files)]
-    T2X1_PosRot_yml = [[] for _ in range(num_files)]
     T2V_PosRot = [[] for _ in range(num_files)]
+    T2X1_PosRot_yml = [[] for _ in range(num_files)]
     T2X1_PosRot = [[] for _ in range(num_files)]
     T2X2_PosRot_yml = [[] for _ in range(num_files)]
     T2X2_PosRot = [[] for _ in range(num_files)]
@@ -325,8 +330,8 @@ def get_data(files, DoF, align_output):
     T3U_PosRot_yml = [[] for _ in range(num_files)]
     T3U_PosRot = [[] for _ in range(num_files)]
     T3V_PosRot_yml = [[] for _ in range(num_files)]
-    T3X1_PosRot_yml = [[] for _ in range(num_files)]
     T3V_PosRot = [[] for _ in range(num_files)]
+    T3X1_PosRot_yml = [[] for _ in range(num_files)]
     T3X1_PosRot = [[] for _ in range(num_files)]
     T3X2_PosRot_yml = [[] for _ in range(num_files)]
     T3X2_PosRot = [[] for _ in range(num_files)]
@@ -380,9 +385,11 @@ def get_data(files, DoF, align_output):
                         runs_T3_X2[iter_num].append(string3.replace("T3U", "T3X2"))
 
         for i in range(0,len(runs)):
-            # print(i)
-            with open(file, 'r') as stream:
+            # what is the json file used for
+            with open(file, 'r') as stream:  # why do i do this???
                 data_loaded = align_output[iter_num]
+                # print(data_loaded[runs_T1_U[iter_num][i]].keys())
+                # print(deg, data_loaded[runs_T1_U[iter_num][i]].values())
 
                 T1U_PosRot_yml[iter_num].append(data_loaded[runs_T1_U[iter_num][i]][deg])
                 T1U_PosRot[iter_num].append(T1U_PosRot_yml[iter_num][i][0])
@@ -446,16 +453,24 @@ def get_data(files, DoF, align_output):
 
 files = [\
          "align_logfiles_stability/json_files/parsedlog_256145.json",
-         "align_logfiles_stability/json_files/parsedlog_256163.json",
-         "align_logfiles_stability/json_files/parsedlog_256159.json",
+         "align_logfiles_stability/json_files/parsedlog_255949.json",
          "align_logfiles_stability/json_files/parsedlog_256030.json",
+         "align_logfiles_stability/json_files/parsedlog_256159.json",
+         "align_logfiles_stability/json_files/parsedlog_256163.json",
+         "align_logfiles_stability/json_files/parsedlog_256272.json",
+         "align_logfiles_stability/json_files/parsedlog_256278.json",
+         "align_logfiles_stability/json_files/parsedlog_256290.json",
 ]
 
 legendlabels=[\
               "256145",
-              "256163",
-              "256159",
+              "255949",
               "256030",
+              "256159",
+              "256163",
+              "256272",
+              "256278",
+              "256290",
 ]
 
 layers = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
@@ -478,6 +493,8 @@ align_outputs=[convertGlobal(align_block,plotted_alignables[0]) for align_block 
 tx = get_data(files, 'Tx', align_outputs)
 ty = get_data(files, 'Ty', align_outputs)
 tz = get_data(files, 'Tz', align_outputs)
+nHits = get_data(files, 'nHits', align_outputs)
+# local_chi2 = get_data(files, 'localDeltaChi2', align_outputs)
 x_glob = get_data(files, 'x_global', align_outputs)
 y_glob = get_data(files, 'y_global', align_outputs)
 z_glob = get_data(files, 'z_global', align_outputs)
@@ -491,12 +508,25 @@ for n in range(12):
     x_g = x_glob[n]
     y_g = y_glob[n]
     z_g = z_glob[n]
+    nHits_data = nHits[n]
+    # chi2 = local_chi2[n]
 
     # plots the frontview quarter plots
     plot(tx_data, 'tx_all_runs', legendlabels, 'Tx', layers[n])
     plot(ty_data, 'ty_all_runs', legendlabels, 'Tz', layers[n])
+    plot(nHits_data, 'n_Hits', legendlabels, 'nHits', layers[n])
+    plot(nHits_data, 'chi2', legendlabels, 'localDeltaChi2', layers[n])
 
     # top view plots
     plot_with_globals(tx, 'global_z_vs_Tx', legendlabels, layers, z_glob, x_glob)
     compare_alignments(tx_data, 'diff_runs', z_g, legendlabels, 'Tx', layers[n])
+    compare_alignments(nHits_data, 'nHits_diff', z_g, legendlabels, 'nHits', layers[n])
+    # compare_alignments(chi2, 'chi2', z_g, legendlabels, 'localDeltaChi2', layers[n])
     # plotTxTzMapsGlobal(align_outputs, files, legendlabels, layers)
+
+
+'''
+    notes:
+
+    chi2 data seems to be weird -> investigate
+'''
