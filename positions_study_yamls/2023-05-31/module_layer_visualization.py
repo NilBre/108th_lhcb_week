@@ -36,8 +36,20 @@ markers = ['o', 'x', 'd', 'D', '.', 'v', 's', 'p']
 # change to your own output directories
 outname_prefix = 'SciFiAlignv3/'
 
-def get_cmap(n, name='hsv'):
-    return plt.cm.get_cmap(name, n)
+def hits_vs_tracks(arr1, arr2, labels, layerID):
+    keys = list(align_outputs[0]['FT/T1UHL0/Q0M0'].keys())
+    outfiles = 'hits_and_tracks/'
+    # arr has 8 arrays, 1 for each datafile
+    for i in range(len(arr1)):
+        plt.plot(arr1, arr2, label = f'{labels[i]}')
+        if plt.grid(True):
+            plt.grid()
+        plt.legend(loc='best')
+        plt.xlabel(f'{keys[10]}')
+        plt.ylabel(f'{keys[9]}')
+        plt.title('nHits vs nTracks')
+    plt.savefig(f'{outname_prefix}{outfiles}' + 'nHitsVsnTracks_' + layerID + '.pdf')
+    plt.clf()
 
 def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, glob_data2):
     # this as well
@@ -76,7 +88,7 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
     plt.savefig(f'{outname_prefix}/{outfiles}' + 'all_runs_' + outname + '.pdf')
     plt.clf()
 
-def compare_alignments(comparison_data, outname, total_z_data, run_labels, title_label, layerID):
+def compare_alignments(comparison_data, outname, run_labels, title_label, layerID):
     outfiles = 'outfiles_comparison/'
     base = comparison_data[0]
     diff = [[] for _ in range(len(run_labels) - 1)]
@@ -488,12 +500,15 @@ for align_block in align_outputs:
     plotted_alignables.append(thislist)
 align_outputs=[convertGlobal(align_block,plotted_alignables[0]) for align_block in align_outputs]
 
+print(align_outputs[0]['FT/T1UHL0/Q0M0'].keys())
+print(align_outputs[0]['FT/T1UHL0/Q0M0'].values())
 # use data from json files for each run and layer
 # tx -> tx[layerID][run_number][module_number]
 tx = get_data(files, 'Tx', align_outputs)
 ty = get_data(files, 'Ty', align_outputs)
 tz = get_data(files, 'Tz', align_outputs)
 nHits = get_data(files, 'nHits', align_outputs)
+nTracks = get_data(files, 'nTracks', align_outputs)
 # local_chi2 = get_data(files, 'localDeltaChi2', align_outputs)
 x_glob = get_data(files, 'x_global', align_outputs)
 y_glob = get_data(files, 'y_global', align_outputs)
@@ -509,18 +524,21 @@ for n in range(12):
     y_g = y_glob[n]
     z_g = z_glob[n]
     nHits_data = nHits[n]
+    nTracks_data = nTracks[n]
     # chi2 = local_chi2[n]
-
+    hits_vs_tracks(nHits_data, nTracks_data, legendlabels, layers[n])
     # plots the frontview quarter plots
     plot(tx_data, 'tx_all_runs', legendlabels, 'Tx', layers[n])
     plot(ty_data, 'ty_all_runs', legendlabels, 'Tz', layers[n])
     plot(nHits_data, 'n_Hits', legendlabels, 'nHits', layers[n])
-    plot(nHits_data, 'chi2', legendlabels, 'localDeltaChi2', layers[n])
+    plot(nTracks_data, 'n_Tracks', legendlabels, 'nTracks', layers[n])
+    # plot(chi2, 'chi2', legendlabels, 'localDeltaChi2', layers[n])
 
     # top view plots
     plot_with_globals(tx, 'global_z_vs_Tx', legendlabels, layers, z_glob, x_glob)
-    compare_alignments(tx_data, 'diff_runs', z_g, legendlabels, 'Tx', layers[n])
-    compare_alignments(nHits_data, 'nHits_diff', z_g, legendlabels, 'nHits', layers[n])
+    compare_alignments(tx_data, 'diff_runs', legendlabels, 'Tx', layers[n])
+    compare_alignments(nHits_data, 'nHits_diff', legendlabels, 'nHits', layers[n])
+    compare_alignments(nTracks_data, 'nTracks_diff', legendlabels, 'nTracks', layers[n])
     # compare_alignments(chi2, 'chi2', z_g, legendlabels, 'localDeltaChi2', layers[n])
     # plotTxTzMapsGlobal(align_outputs, files, legendlabels, layers)
 
