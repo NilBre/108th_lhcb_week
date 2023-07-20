@@ -25,6 +25,13 @@ regex_convergence=re.compile("Convergence*")
 regex_alignchi2=re.compile("Normalised alignment change chisquare*")
 regex_error2=re.compile("Error2*")
 regex_total_local_delta=re.compile("total local delta chi2*")
+# chi2 for all coordinates and rotations
+regex_chi2_Tx = re.compile("Tx_chi2")
+regex_chi2_Ty = re.compile("Ty_chi2")
+regex_chi2_Tz = re.compile("Tz_chi2")
+regex_chi2_Rx = re.compile("Rx_chi2")
+regex_chi2_Ry = re.compile("Ry_chi2")
+regex_chi2_Rz = re.compile("Rz_chi2")
 
 # regex per alignable
 regex_alignable=re.compile("Alignable*")
@@ -38,6 +45,12 @@ alignments["converged"]=[]
 alignments["align_changechi2"]=[]
 alignments["align_totaldeltachi2"]=[]
 alignments["align_error2"]=[]
+alignments["Tx_chi2"]=[]
+alignments["Ty_chi2"]=[]
+alignments["Tz_chi2"]=[]
+alignments["Rx_chi2"]=[]
+alignments["Ry_chi2"]=[]
+alignments["Rz_chi2"]=[]
 labels=["Tx","Ty","Tz","Rx","Ry","Rz"]
 with open(filename_in,"r") as inputfile:
     with open(filename_out_extra, "w") as globalparsfile:
@@ -49,6 +62,38 @@ with open(filename_in,"r") as inputfile:
             if regex_iteration.search(line):
                 thisIter+=1
                 continue
+            # chi2 values for each DoF
+            if regex_chi2_Tx.search(line):
+                text,value=line.split(":")
+                value=value.strip()
+                alignments["Tx_chi2"].append(float(value))
+                continue
+            if regex_chi2_Ty.search(line):
+                text,value=line.split(":")
+                value=value.strip()
+                alignments["Ty_chi2"].append(float(value))
+                continue
+            if regex_chi2_Tz.search(line):
+                text,value=line.split(":")
+                value=value.strip()
+                alignments["Tz_chi2"].append(float(value))
+                continue
+            if regex_chi2_Rx.search(line):
+                text,value=line.split(":")
+                value=value.strip()
+                alignments["Rx_chi2"].append(float(value))
+                continue
+            if regex_chi2_Ry.search(line):
+                text,value=line.split(":")
+                value=value.strip()
+                alignments["Ry_chi2"].append(float(value))
+                continue
+            if regex_chi2_Rz.search(line):
+                text,value=line.split(":")
+                value=value.strip()
+                alignments["Rz_chi2"].append(float(value))
+                continue
+
             if regex_leadingline.search(line):
                 writeGlobal=1
                 globalparsfile.write(f"Iteration: {thisIter}\n")
