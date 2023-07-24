@@ -176,14 +176,14 @@ def plot(data_arr, outname, run_labels, title_label, layerID):
                 plt.legend(loc='best')
             if count == 2: # Q0
                 plt.scatter(x, x1[::-1], color=colors[i], marker=markers[i], s=10)
-                plt.xticks(x, ["T3UHL0Q0M4", "T3UHL0Q0M3", "T3UHL0Q0M2", "T3UHL0Q0M1", "T3UHL0Q0M0"], rotation=45, fontsize=5)
+                plt.xticks(x, ["Q0M4", "Q0M3", "Q0M2", "Q0M1", "Q0M0"], rotation=45, fontsize=5)
                 plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
             if count == 3: # Q1
                 plt.scatter(x, x3, color=colors[i], marker=markers[i], s=10)
                 a.invert_yaxis()
                 plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
                 a.yaxis.tick_right()
-                plt.xticks(x, ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4"], rotation=45, fontsize=5)
+                plt.xticks(x, ["Q0M0", "Q0M1", "Q0M2", "Q0M3", "Q0M4"], rotation=45, fontsize=5)
             count += 1
         plt.subplots_adjust(wspace=0, hspace=0)
         plt.savefig(f'{outname_prefix}{outfiles}' + outname + '_' + layerID + '.pdf')
