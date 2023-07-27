@@ -66,32 +66,38 @@ with open(filename_in,"r") as inputfile:
             if regex_chi2_Tx.search(line):
                 text,value=line.split(":")
                 value=value.strip()
-                alignments["Tx_chi2"].append(float(value))
+                value = value.split("/")
+                alignments["Tx_chi2"].append(float(value[0]))
                 continue
             if regex_chi2_Ty.search(line):
                 text,value=line.split(":")
                 value=value.strip()
-                alignments["Ty_chi2"].append(float(value))
+                value = value.split("/")
+                alignments["Ty_chi2"].append(float(value[0]))
                 continue
             if regex_chi2_Tz.search(line):
                 text,value=line.split(":")
                 value=value.strip()
-                alignments["Tz_chi2"].append(float(value))
+                value = value.split("/")
+                alignments["Tz_chi2"].append(float(value[0]))
                 continue
             if regex_chi2_Rx.search(line):
                 text,value=line.split(":")
                 value=value.strip()
-                alignments["Rx_chi2"].append(float(value))
+                value = value.split("/")
+                alignments["Rx_chi2"].append(float(value[0]))
                 continue
             if regex_chi2_Ry.search(line):
                 text,value=line.split(":")
                 value=value.strip()
-                alignments["Ry_chi2"].append(float(value))
+                value = value.split("/")
+                alignments["Ry_chi2"].append(float(value[0]))
                 continue
             if regex_chi2_Rz.search(line):
                 text,value=line.split(":")
                 value=value.strip()
-                alignments["Rz_chi2"].append(float(value))
+                value = value.split("/")
+                alignments["Rz_chi2"].append(float(value[0]))
                 continue
 
             if regex_leadingline.search(line):

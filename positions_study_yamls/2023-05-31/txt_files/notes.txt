@@ -1,0 +1,4 @@
+date: 25.07.2023
+
+these are the output txt files from the joint constraint study
+this uses the updated output from json parser file
