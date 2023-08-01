@@ -141,20 +141,39 @@ def compare_alignments(comparison_data, outname, run_labels, title_label, layerI
     plt.clf()
 
 
-def plot(data_arr, outname, run_labels, title_label, layerID):
+def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
     # change this for own needs as well
     outfiles = 'relative_pos/'
     total_layer_num = 12 # number of layers
     total_num_runs = len(run_labels)
     # print(total_num_runs)
     x = np.linspace(0, 5, 5)
-
+    '''
+        instead of plotting the difference between survey and alignment runs
+        also plot diff:
+        abs(run 1 - run 2), abs(run 2 - run 3), abs(run 3 - run 4), etc
+        run not beeing the LHCb run but the alignment runs
+    '''
     L = ['Q2', 'Q3', 'Q0', 'Q1']
     for i in range(total_num_runs):
-        x1 = data_arr[i][0:5] # Q0
-        x2 = data_arr[i][5:10] # Q2
-        x3 = data_arr[i][10:15] # Q1
-        x4 = data_arr[i][15:20] # Q3
+        # if len(survey_pos) == 0:
+        # if len(survey_pos) == 0:
+        #     x1 = abs(data_arr[i][0:5] - data_arr[i+1][0:5])  # Q0
+        #     x2 = abs(data_arr[i][5:10] - data_arr[i+1][5:10])  # Q2
+        #     x3 = abs(data_arr[i][10:15] - data_arr[i+1][10:15])  # Q1
+        #     x4 = abs(data_arr[i][15:20] - data_arr[i+1][15:20])  # Q3
+        if len(survey_pos) == 0:
+            x1 = data_arr[i][0:5]  # Q0
+            x2 = data_arr[i][5:10]  # Q2
+            x3 = data_arr[i][10:15]  # Q1
+            x4 = data_arr[i][15:20]  # Q3
+        else:
+            # if title_label == 'Tx':
+            #     print(data_arr[i][0:5], survey_pos[i][0:5])
+            x1 = abs(data_arr[i][0:5] - survey_pos[i][0:5]) # Q0
+            x2 = abs(data_arr[i][5:10] - survey_pos[i][5:10]) # Q2
+            x3 = abs(data_arr[i][10:15] - survey_pos[i][10:15]) # Q1
+            x4 = abs(data_arr[i][15:20] - survey_pos[i][15:20]) # Q3
 
         ax = [plt.subplot(2,2,i+1) for i in range(4)]
         plt.figure()
@@ -173,7 +192,7 @@ def plot(data_arr, outname, run_labels, title_label, layerID):
                 plt.title(f'layer {layerID}')
                 plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
                 a.yaxis.tick_right()
-                plt.legend(loc='best')
+                plt.legend(loc='best', fontsize='8')
             if count == 2: # Q0
                 plt.scatter(x, x1[::-1], color=colors[i], marker=markers[i], s=10)
                 plt.xticks(x, ["Q0M4", "Q0M3", "Q0M2", "Q0M1", "Q0M0"], rotation=45, fontsize=5)
@@ -443,53 +462,231 @@ def get_data(files, DoF, align_output):
         iter_num += 1
     return np.array(T1U_PosRot), np.array(T1V_PosRot), np.array(T1X1_PosRot), np.array(T1X2_PosRot), np.array(T2U_PosRot), np.array(T2V_PosRot), np.array(T2X1_PosRot), np.array(T2X2_PosRot), np.array(T3U_PosRot), np.array(T3V_PosRot), np.array(T3X1_PosRot), np.array(T3X2_PosRot)
 
-# def plotTxTzMapsGlobal(align_output, files, run_labels, layer_names):
-#     tx = get_data(files, 'Tx', align_output)
-#     ty = get_data(files, 'Ty', align_output)
-#     tz = get_data(files, 'Tz', align_output)
-#     x_glob = get_data(files, 'x_global', align_output)
-#     y_glob = get_data(files, 'y_global', align_output)
-#     z_glob = get_data(files, 'z_global', align_output)
-#
-#     # local and global data
-#     tx_data = tx[0]
-#     ty_data = ty[0]
-#     tz_data = tz[0]
-#     x_g = x_glob[0]
-#     y_g = y_glob[0]
-#     z_g = z_glob[0]
-#     plot(tx_data, 'tx_all_runs', run_labels, layer_names, 'Tx')
-#     plot(ty_data, 'ty_all_runs', run_labels, layer_names, 'Tz')
-#     plot(x_g, 'x_global', run_labels, layer_names, 'x_global')
-#     plot_with_globals(tx, 'global_z_vs_Tx', run_labels, layer_names, z_glob, x_glob)
+def get_survey_data(file, dof, spatial_object):
+    iter_num = 0
+    dof_value = 0
+    PosRot = spatial_object # position or rotation
+    if dof == 'Tx' or dof == 'Rx':
+        dof_value = 0
+    if dof == 'Ty' or dof == 'Ry':
+        dof_value = 1
+    if dof == 'Tz' or dof == 'Rz':
+        dof_value = 2
+
+    runs_T1_U = []
+    runs_T1_V = []
+    runs_T1_X1 = []
+    runs_T1_X2 = []
+
+    runs_T2_U = []
+    runs_T2_V = []
+    runs_T2_X1 = []
+    runs_T2_X2 = []
+
+    runs_T3_U = []
+    runs_T3_V = []
+    runs_T3_X1 = []
+    runs_T3_X2 = []
+
+    T1U_PosRot_yml = []
+    T1U_PosRot = []
+    T1V_PosRot_yml = []
+    T1V_PosRot = []
+    T1X1_PosRot_yml = []
+    T1X1_PosRot = []
+    T1X2_PosRot_yml = []
+    T1X2_PosRot = []
+
+    T2U_PosRot_yml = []
+    T2U_PosRot = []
+    T2V_PosRot_yml = []
+    T2V_PosRot = []
+    T2X1_PosRot_yml = []
+    T2X1_PosRot = []
+    T2X2_PosRot_yml = []
+    T2X2_PosRot = []
+
+    T3U_PosRot_yml = []
+    T3U_PosRot = []
+    T3V_PosRot_yml = []
+    T3V_PosRot = []
+    T3X1_PosRot_yml = []
+    T3X1_PosRot = []
+    T3X2_PosRot_yml = []
+    T3X2_PosRot = []
+
+    runs_T1 = ["T1UHL0Q0M0", "T1UHL0Q0M1", "T1UHL0Q0M2", "T1UHL0Q0M3", "T1UHL0Q0M4",
+               "T1UHL0Q2M0", "T1UHL0Q2M1", "T1UHL0Q2M2", "T1UHL0Q2M3", "T1UHL0Q2M4",
+               "T1UHL1Q1M0", "T1UHL1Q1M1", "T1UHL1Q1M2", "T1UHL1Q1M3", "T1UHL1Q1M4",
+               "T1UHL1Q3M0", "T1UHL1Q3M1", "T1UHL1Q3M2", "T1UHL1Q3M3", "T1UHL1Q3M4"]
+
+    runs_T2 = ["T2UHL0Q0M0", "T2UHL0Q0M1", "T2UHL0Q0M2", "T2UHL0Q0M3", "T2UHL0Q0M4",
+               "T2UHL0Q2M0", "T2UHL0Q2M1", "T2UHL0Q2M2", "T2UHL0Q2M3", "T2UHL0Q2M4",
+               "T2UHL1Q1M0", "T2UHL1Q1M1", "T2UHL1Q1M2", "T2UHL1Q1M3", "T2UHL1Q1M4",
+               "T2UHL1Q3M0", "T2UHL1Q3M1", "T2UHL1Q3M2", "T2UHL1Q3M3", "T2UHL1Q3M4"]
+
+    runs = ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4",
+            "T3UHL0Q2M0", "T3UHL0Q2M1", "T3UHL0Q2M2", "T3UHL0Q2M3", "T3UHL0Q2M4",
+            "T3UHL1Q1M0", "T3UHL1Q1M1", "T3UHL1Q1M2", "T3UHL1Q1M3", "T3UHL1Q1M4",
+            "T3UHL1Q3M0", "T3UHL1Q3M1", "T3UHL1Q3M2", "T3UHL1Q3M3", "T3UHL1Q3M4"]
+
+    x = list(range(len(runs)))
+    for j in range(0,len(stations)):
+        for k in range(0,len(layers)):
+            if j==0 and k==0:
+                runs_T1_U=runs_T1
+                runs_T2_U=runs_T2
+                runs_T3_U=runs
+            elif j==0 and k==1:
+                for i in range(0,len(runs)):
+                    string1 = runs_T1[i]
+                    string2 = runs_T2[i]
+                    string3 = runs[i]
+                    runs_T1_V.append(string1.replace("T1U", "T1V"))
+                    runs_T2_V.append(string2.replace("T2U", "T2V"))
+                    runs_T3_V.append(string3.replace("T3U", "T3V"))
+            elif j==0 and k==2:
+                for i in range(0,len(runs)):
+                    string1 = runs_T1[i]
+                    string2 = runs_T2[i]
+                    string3 = runs[i]
+                    runs_T1_X1.append(string1.replace("T1U", "T1X1"))
+                    runs_T2_X1.append(string2.replace("T2U", "T2X1"))
+                    runs_T3_X1.append(string3.replace("T3U", "T3X1"))
+            elif j==0 and k==3:
+                for i in range(0,len(runs)):
+                    string1 = runs_T1[i]
+                    string2 = runs_T2[i]
+                    string3 = runs[i]
+                    runs_T1_X2.append(string1.replace("T1U", "T1X2"))
+                    runs_T2_X2.append(string2.replace("T2U", "T2X2"))
+                    runs_T3_X2.append(string3.replace("T3U", "T3X2"))
+    # print(runs_T1_U, runs_T1_X2)
+    for i in range(0,len(runs)):
+        with open(file, 'r') as stream:
+            data_loaded = yaml.load(stream, Loader=yaml.Loader)
+            T1U_PosRot_yml.append(data_loaded[runs_T1_U[i]][PosRot][dof_value])
+            T1U_PosRot.append(float(re.findall(r'\d+',T1U_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T1U_PosRot_yml[i])[1]))
+
+            T1V_PosRot_yml.append(data_loaded[runs_T1_V[i]][PosRot][dof_value])
+            T1V_PosRot.append(float(re.findall(r'\d+',T1V_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T1V_PosRot_yml[i])[1]))
+
+            T1X1_PosRot_yml.append(data_loaded[runs_T1_X1[i]][PosRot][dof_value])
+            T1X1_PosRot.append(float(re.findall(r'\d+',T1X1_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T1X1_PosRot_yml[i])[1]))
+
+            T1X2_PosRot_yml.append(data_loaded[runs_T1_X2[i]][PosRot][dof_value])
+            T1X2_PosRot.append(float(re.findall(r'\d+',T1X2_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T1X2_PosRot_yml[i])[1]))
+
+            # T2
+            T2U_PosRot_yml.append(data_loaded[runs_T2_U[i]][PosRot][dof_value])
+            T2U_PosRot.append(float(re.findall(r'\d+',T2U_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T2U_PosRot_yml[i])[1]))
+
+            T2V_PosRot_yml.append(data_loaded[runs_T2_V[i]][PosRot][dof_value])
+            T2V_PosRot.append(float(re.findall(r'\d+',T2V_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T2V_PosRot_yml[i])[1]))
+
+            T2X1_PosRot_yml.append(data_loaded[runs_T2_X1[i]][PosRot][dof_value])
+            T2X1_PosRot.append(float(re.findall(r'\d+',T2X1_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T2X1_PosRot_yml[i])[1]))
+
+            T2X2_PosRot_yml.append(data_loaded[runs_T2_X2[i]][PosRot][dof_value])
+            T2X2_PosRot.append(float(re.findall(r'\d+',T2X2_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T2X2_PosRot_yml[i])[1]))
+
+            # T3
+            T3U_PosRot_yml.append(data_loaded[runs_T3_U[i]][PosRot][dof_value])
+            T3U_PosRot.append(float(re.findall(r'\d+',T3U_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T3U_PosRot_yml[i])[1]))
+
+            T3V_PosRot_yml.append(data_loaded[runs_T3_V[i]][PosRot][dof_value])
+            T3V_PosRot.append(float(re.findall(r'\d+',T3V_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T3V_PosRot_yml[i])[1]))
+
+            T3X1_PosRot_yml.append(data_loaded[runs_T3_X1[i]][PosRot][dof_value])
+            T3X1_PosRot.append(float(re.findall(r'\d+',T3X1_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T3X1_PosRot_yml[i])[1]))
+
+            T3X2_PosRot_yml.append(data_loaded[runs_T3_X2[i]][PosRot][dof_value])
+            T3X2_PosRot.append(float(re.findall(r'\d+',T3X2_PosRot_yml[i])[0] + "." + re.findall(r'\d+',T3X2_PosRot_yml[i])[1]))
+
+        # data is filled into the correct lists
+    return np.array(T1U_PosRot), np.array(T1V_PosRot), np.array(T1X1_PosRot), np.array(T1X2_PosRot), np.array(T2U_PosRot), np.array(T2V_PosRot), np.array(T2X1_PosRot), np.array(T2X2_PosRot), np.array(T3U_PosRot), np.array(T3V_PosRot), np.array(T3X1_PosRot), np.array(T3X2_PosRot)
+
+# hep.style.use(hep.style.LHCb2)
+
+# import matplotlib.patches as mpl_patches
+
+def meta_constructor(loader, node):
+   return loader.construct_mapping(node)
+
+yaml.add_constructor('!alignment', meta_constructor)
 
 files = [\
-         "align_logfiles_stability/json_files/parsedlog_256145.json",
          "align_logfiles_stability/json_files/parsedlog_255949.json",
          "align_logfiles_stability/json_files/parsedlog_256030.json",
+         "align_logfiles_stability/json_files/parsedlog_256145.json",
          "align_logfiles_stability/json_files/parsedlog_256159.json",
          "align_logfiles_stability/json_files/parsedlog_256163.json",
          "align_logfiles_stability/json_files/parsedlog_256272.json",
          "align_logfiles_stability/json_files/parsedlog_256278.json",
          "align_logfiles_stability/json_files/parsedlog_256290.json",
 ]
-
 legendlabels=[\
-              "256145",
               "255949",
               "256030",
+              "256145",
               "256159",
               "256163",
               "256272",
               "256278",
               "256290",
 ]
+diff_labels = [\
+            "255949-256030",
+            "..030-..145",
+            "..145-..159",
+            "..159-..163",
+            "..163-..272",
+            "..272-..278",
+            "..278-..290",
+]
+
+files_md = [\
+         "align_logfiles_stability/json_files/parsedlog_255949.json",
+         "align_logfiles_stability/json_files/parsedlog_256030.json",
+         "align_logfiles_stability/json_files/parsedlog_256145.json",
+         "align_logfiles_stability/json_files/parsedlog_256159.json",
+         "align_logfiles_stability/json_files/parsedlog_256163.json",
+         # "align_logfiles_stability/json_files/parsedlog_256272.json",
+         # "align_logfiles_stability/json_files/parsedlog_256278.json",
+         # "align_logfiles_stability/json_files/parsedlog_256290.json",
+]
+legendlabels_md = [\
+              "255949",
+              "256030",
+              "256145",
+              "256159",
+              "256163",
+]
+
+files_mu = [\
+         # "align_logfiles_stability/json_files/parsedlog_256145.json",
+         # "align_logfiles_stability/json_files/parsedlog_255949.json",
+         # "align_logfiles_stability/json_files/parsedlog_256030.json",
+         # "align_logfiles_stability/json_files/parsedlog_256159.json",
+         # "align_logfiles_stability/json_files/parsedlog_256163.json",
+         "align_logfiles_stability/json_files/parsedlog_256272.json",
+         "align_logfiles_stability/json_files/parsedlog_256278.json",
+         "align_logfiles_stability/json_files/parsedlog_256290.json",
+]
+legendlabels_mu = [\
+              "256272",
+              "256278",
+              "256290",
+]
+
+survey_module_positions = 'survey/survey_Modules.yml'
 
 layers = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
 
 runs = ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4", "T3UHL0Q2M0", "T3UHL0Q2M1", "T3UHL0Q2M2", "T3UHL0Q2M3", "T3UHL0Q2M4", "T3UHL1Q1M0"#\
         , "T3UHL1Q1M1", "T3UHL1Q1M2", "T3UHL1Q1M3", "T3UHL1Q1M4", "T3UHL1Q3M0", "T3UHL1Q3M1", "T3UHL1Q3M2", "T3UHL1Q3M3", "T3UHL1Q3M4"]
 
+# all files
 align_outputs=[open_alignment(thisfile) for thisfile in files]
 plotted_alignables=[]
 for align_block in align_outputs:
@@ -500,10 +697,29 @@ for align_block in align_outputs:
     plotted_alignables.append(thislist)
 align_outputs=[convertGlobal(align_block,plotted_alignables[0]) for align_block in align_outputs]
 
-print(align_outputs[0]['FT/T1UHL0/Q0M0'].keys())
-print(align_outputs[0]['FT/T1UHL0/Q0M0'].values())
-# use data from json files for each run and layer
-# tx -> tx[layerID][run_number][module_number]
+# magnet down
+align_outputs_md=[open_alignment(thisfile) for thisfile in files_md]
+plotted_alignables_md=[]
+for align_block in align_outputs_md:
+    thislist_md=[]
+    for key in align_block.keys():
+        if "FT" in key:
+            thislist.append(key)
+    plotted_alignables_md.append(thislist)
+align_outputs_md=[convertGlobal(align_block,plotted_alignables_md[0]) for align_block in align_outputs_md]
+
+# magnet up
+align_outputs_mu=[open_alignment(thisfile) for thisfile in files_mu]
+plotted_alignables_mu=[]
+for align_block in align_outputs_mu:
+    thislist_mu=[]
+    for key in align_block.keys():
+        if "FT" in key:
+            thislist.append(key)
+    plotted_alignables_mu.append(thislist)
+align_outputs_mu=[convertGlobal(align_block,plotted_alignables_mu[0]) for align_block in align_outputs_mu]
+
+# for all files
 tx = get_data(files, 'Tx', align_outputs)
 ty = get_data(files, 'Ty', align_outputs)
 tz = get_data(files, 'Tz', align_outputs)
@@ -514,8 +730,33 @@ x_glob = get_data(files, 'x_global', align_outputs)
 y_glob = get_data(files, 'y_global', align_outputs)
 z_glob = get_data(files, 'z_global', align_outputs)
 
-# local and global data
-# tx[0] = T1U
+survey_Tx = get_survey_data(survey_module_positions, 'Tx', 'position')
+survey_Ty = get_survey_data(survey_module_positions, 'Ty', 'position')
+survey_Tz = get_survey_data(survey_module_positions, 'Tz', 'position')
+survey_Rz = get_survey_data(survey_module_positions, 'Rz', 'rotation')
+
+# for magnet down
+tx_md = get_data(files_md, 'Tx', align_outputs_md)
+ty_md = get_data(files_md, 'Ty', align_outputs_md)
+tz_md = get_data(files_md, 'Tz', align_outputs_md)
+nHits_md = get_data(files_md, 'nHits', align_outputs_md)
+nTracks_md = get_data(files_md, 'nTracks', align_outputs_md)
+# local_chi2 = get_data(files, 'localDeltaChi2', align_outputs)
+x_glob_md = get_data(files_md, 'x_global', align_outputs_md)
+y_glob_md = get_data(files_md, 'y_global', align_outputs_md)
+z_glob_md = get_data(files_md, 'z_global', align_outputs_md)
+
+# for magnet up
+tx_mu = get_data(files_mu, 'Tx', align_outputs_mu)
+ty_mu = get_data(files_mu, 'Ty', align_outputs_mu)
+tz_mu = get_data(files_mu, 'Tz', align_outputs_mu)
+nHits_mu = get_data(files_mu, 'nHits', align_outputs_mu)
+nTracks_mu = get_data(files_mu, 'nTracks', align_outputs_mu)
+# local_chi2 = get_data(files, 'localDeltaChi2', align_outputs)
+x_glob_mu = get_data(files_mu, 'x_global', align_outputs_mu)
+y_glob_mu = get_data(files_mu, 'y_global', align_outputs_mu)
+z_glob_mu = get_data(files_mu, 'z_global', align_outputs_mu)
+
 for n in range(12):
     tx_data = tx[n]
     ty_data = ty[n]
@@ -528,10 +769,13 @@ for n in range(12):
     # chi2 = local_chi2[n]
     hits_vs_tracks(nHits_data, nTracks_data, legendlabels, layers[n])
     # plots the frontview quarter plots
-    plot(tx_data, 'tx_all_runs', legendlabels, 'Tx', layers[n])
-    plot(ty_data, 'ty_all_runs', legendlabels, 'Tz', layers[n])
-    plot(nHits_data, 'n_Hits', legendlabels, 'nHits', layers[n])
-    plot(nTracks_data, 'n_Tracks', legendlabels, 'nTracks', layers[n])
+    plot(tx_data, survey_Tx, 'survey_diff_data', legendlabels, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    plot(tz_data, survey_Tz, 'survey_diff_data', legendlabels, 'Tz', layers[n])
+    # plot(tx_data, [], 'data_diff', legendlabels, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    # plot(tz_data, [], 'data_diff', legendlabels, 'Tz', layers[n])
+
+    plot(nHits_data, [], 'n_Hits', legendlabels, 'nHits', layers[n])
+    plot(nTracks_data, [], 'n_Tracks', legendlabels, 'nTracks', layers[n])
     # plot(chi2, 'chi2', legendlabels, 'localDeltaChi2', layers[n])
 
     # top view plots
@@ -541,6 +785,26 @@ for n in range(12):
     compare_alignments(nTracks_data, 'nTracks_diff', legendlabels, 'nTracks', layers[n])
     # compare_alignments(chi2, 'chi2', z_g, legendlabels, 'localDeltaChi2', layers[n])
     # plotTxTzMapsGlobal(align_outputs, files, legendlabels, layers)
+
+    # now for md only
+    tx_data_md = tx_md[n]
+    ty_data_md = ty_md[n]
+    tz_data_md = tz_md[n]
+    x_g_md = x_glob_md[n]
+    y_g_md = y_glob_md[n]
+    z_g_md = z_glob_md[n]
+    plot(tx_data_md, survey_Tx, 'survey_diff_magDown', legendlabels_md, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    plot(tz_data_md, survey_Tz, 'survey_diff_magDown', legendlabels_md, 'Tz', layers[n])
+
+    # now for mu only
+    tx_data_mu = tx_mu[n]
+    ty_data_mu = ty_mu[n]
+    tz_data_mu = tz_mu[n]
+    x_g_mu = x_glob_mu[n]
+    y_g_mu = y_glob_mu[n]
+    z_g_mu = z_glob_mu[n]
+    plot(tx_data_md, survey_Tx, 'survey_diff_magUp', legendlabels_mu, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    plot(tz_data_md, survey_Tz, 'survey_diff_magUp', legendlabels_mu, 'Tz', layers[n])
 
 
 '''

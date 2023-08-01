@@ -142,8 +142,7 @@ def diff_to_hist(files, degree_of_freedom, spatial_object):
 
                 T1U_PosRot_yml[iter_num].append(data_loaded[runs_T1_U[iter_num][i]][PosRot][dof_value])
                 T1U_PosRot[iter_num].append(float(re.findall(r'\d+',T1U_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1U_PosRot_yml[iter_num][i])[1]))
-                print(re.findall(r'\d+',T1U_PosRot_yml[iter_num][i]))
-                print(T1U_PosRot_yml[iter_num][i])
+
                 T1V_PosRot_yml[iter_num].append(data_loaded[runs_T1_V[iter_num][i]][PosRot][dof_value])
                 T1V_PosRot[iter_num].append(float(re.findall(r'\d+',T1V_PosRot_yml[iter_num][i])[0] + "." + re.findall(r'\d+',T1V_PosRot_yml[iter_num][i])[1]))
 

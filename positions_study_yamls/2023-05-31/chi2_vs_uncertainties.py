@@ -101,6 +101,10 @@ def get_unc(input):
     return np.array(Tx_chi2), np.array(Ty_chi2), np.array(Tz_chi2), np.array(Rx_chi2), np.array(Ry_chi2), np.array(Rz_chi2)
 
 files_Tx = [\
+         "txt_files/parsed_out/parsedlog_269045_Tx_0_2mm.json",
+         "txt_files/parsed_out/parsedlog_269045_Tx_0_4mm.json",
+         "txt_files/parsed_out/parsedlog_269045_Tx_0_6mm.json",
+         "txt_files/parsed_out/parsedlog_269045_Tx_0_8mm.json",
          "txt_files/parsed_out/parsedlog_269045_base_noSurvey.json",
          "txt_files/parsed_out/Tx/parsedlog_269045_Tx_2mm_noS.json",
          "txt_files/parsed_out/Tx/parsedlog_269045_Tx_3mm_noS.json",
@@ -126,6 +130,10 @@ files_Ty = [\
 ]
 
 legendlabels=[\
+              "269045",
+              "269045",
+              "269045",
+              "269045",
               "269045",
               "269045",
               "269045",
@@ -171,12 +179,12 @@ Ry_chi2_ty = get_unc(align_outputs_Ty)[4]
 Rz_chi2_ty = get_unc(align_outputs_Ty)[5]
 
 print('########## from Tx error changes ###########')
-print('Tx_chi2:', Tx_chi2_tx)
-print('Ty_chi2:', Ty_chi2_tx)
-print('Tz_chi2:', Tz_chi2_tx)
-print('Rx_chi2:', Rx_chi2_tx)
-print('Ry_chi2:', Ry_chi2_tx)
-print('Rz_chi2:', Rz_chi2_tx)
+# print('Tx_chi2:', Tx_chi2_tx)
+# print('Ty_chi2:', Ty_chi2_tx)
+# print('Tz_chi2:', Tz_chi2_tx)
+# print('Rx_chi2:', Rx_chi2_tx)
+# print('Ry_chi2:', Ry_chi2_tx)
+# print('Rz_chi2:', Rz_chi2_tx)
 # print('########## from Ty error changes ###########')
 # print('Tx_chi2:', Tx_chi2_ty)
 # print('Ty_chi2:', Ty_chi2_ty)
@@ -196,16 +204,17 @@ Ry_chi2_tz = [0.00366032/768, 0.0036605/768, 0.00369746/768, 0.00370069/768, 0.0
 Rz_chi2_tz = [708.737/768, 679.203/768, 658.385/768, 658.059/768, 697.696/768, 678.97/768,  687.408/768]
 
 correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
-T_err = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # in [mm], 1 mm is base
+Tx_err = [0.2, 0.4, 0.6, 0.8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # in [mm], 1 mm is base
+T_err = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 R_err = [0.2]  # in [mrad]
 total_n_dofs = 768
 
-plt.plot(T_err, Tx_chi2_tx / total_n_dofs, label='Tx_chi')
-plt.plot(T_err, Ty_chi2_tx / total_n_dofs, label='Ty_chi')
-plt.plot(T_err, Tz_chi2_tx / total_n_dofs, label='Tz_chi')
-plt.plot(T_err, Rx_chi2_tx / total_n_dofs, label='Rx_chi')
-plt.plot(T_err, Ry_chi2_tx / total_n_dofs, label='Ry_chi')
-plt.plot(T_err, Rz_chi2_tx / total_n_dofs, label='Rz_chi')
+plt.plot(Tx_err, Tx_chi2_tx / total_n_dofs, label='Tx_chi')
+plt.plot(Tx_err, Ty_chi2_tx / total_n_dofs, label='Ty_chi')
+plt.plot(Tx_err, Tz_chi2_tx / total_n_dofs, label='Tz_chi')
+plt.plot(Tx_err, Rx_chi2_tx / total_n_dofs, label='Rx_chi')
+plt.plot(Tx_err, Ry_chi2_tx / total_n_dofs, label='Ry_chi')
+plt.plot(Tx_err, Rz_chi2_tx / total_n_dofs, label='Rz_chi')
 plt.hlines(1, 1, 10, 'black', 'dotted')
 plt.legend()
 plt.grid()
@@ -245,4 +254,6 @@ plt.xlabel('[mm]')
 plt.show()
 plt.clf()
 
-errors = [0.001, 0.0015, 0.004, 0.0002, 0.0002, 0.0002]
+errors_v1 = [0.001, 0.0015, 0.004, 0.0002, 0.0002, 0.0002]
+errors_v2 = [0.0005, 0.002, 0.002, 0.0002, 0.0002, 0.0002]
+errors_v3 = [0.0002, 0.002, 0.002, 0.0002, 0.0002, 0.0002]
