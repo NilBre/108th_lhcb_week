@@ -90,6 +90,9 @@ def get_unc(input):
     Ry_chi2 = [[] for _ in range(n_files)]
     Rz_chi2 = [[] for _ in range(n_files)]
     for i in range(n_files):
+        # print('#################################################')
+        # print(f'input[{i}]["Tx_chi2"]', input[i]['Tx_chi2'])
+        # print(f'input[{i}]["Tx_chi2"][0]', input[i]['Tx_chi2'][0])
         Tx_chi2[i].append(input[i]['Tx_chi2'][0])
         Ty_chi2[i].append(input[i]['Ty_chi2'][0])
         Tz_chi2[i].append(input[i]['Tz_chi2'][0])
@@ -128,24 +131,82 @@ files_Ty = [\
          "txt_files/parsed_out/Ty/parsedlog_269045_Ty_9mm_noS.json",
          "txt_files/parsed_out/Ty/parsedlog_269045_Ty_10mm_noS.json",
 ]
-
-legendlabels=[\
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
-              "269045",
+files_Rx = [\
+        "txt_files/parsed_out/parsedlog_269045_base_noSurvey.json",
+        "txt_files/parsed_out/Rx/parsedlog_Rx_03mrad.json",
+        "txt_files/parsed_out/Rx/parsedlog_Rx_04mrad.json",
+        "txt_files/parsed_out/Rx/parsedlog_Rx_05mrad.json"
+]
+files_Ry = [\
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_4mrad.json", # 0.0004
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_3mrad.json", # 0.0003
+        "txt_files/parsed_out/parsedlog_269045_base_noSurvey.json", # 0.0002 base
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_1mrad.json", # 0.0001
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_02mrad.json", # 0.00002
+        "txt_files/parsed_out/Ry/parsedlog_Ry_3microrad.json",
+        "txt_files/parsed_out/Ry/parsedlog_Ry_2microrad.json",
+        "txt_files/parsed_out/Ry/parsedlog_Ry_1microrad.json",
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_8microrad.json",
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_6microrad.json",
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_5microrad.json",
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_4microrad.json",
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_44microrad.json",
+        "txt_files/parsed_out/Ry/parsedlog_Ry_0_2microrad.json",
 ]
 
+legendlabels_Tx=[\
+        "0_2mm",
+        "0_4mm",
+        "0_6mm",
+        "0_8mm",
+        "base",
+        "2mm",
+        "3mm",
+        "4mm",
+        "5mm",
+        "6mm",
+        "7mm",
+        "8mm",
+        "9mm",
+        "0mm"
+]
+legendlabels_Ty = [\
+        "base",
+        "2mm",
+        "3mm",
+        "4mm",
+        "5mm",
+        "6mm",
+        "7mm",
+        "8mm",
+        "9mm",
+        "10mm",
+]
+legendlabels_Rx = [\
+        "base",
+        "03mrad",
+        "04mrad",
+        "05mrad",
+]
+
+legendlabels_Ry = [\
+        "04mrad",
+        "03mrad",
+        "base",
+        "01mrad",
+        "0_02mrad",
+        "3microRad",
+        "2microRad",
+        "1microRad",
+        "08microRad",
+        "06microRad",
+        "05microRad",
+        "0_44microRad",
+        "04microRad",
+        "02microRad",
+]
+
+# for Tx
 align_outputs_Tx=[open_alignment(thisfile) for thisfile in files_Tx]
 plotted_alignables_Tx=[]
 for align_block in align_outputs_Tx:
@@ -155,6 +216,7 @@ for align_block in align_outputs_Tx:
     plotted_alignables_Tx.append(thislist_Tx)
 align_outputs_Tx=[convertGlobal(align_block,plotted_alignables_Tx[0]) for align_block in align_outputs_Tx]
 
+# for Ty
 align_outputs_Ty=[open_alignment(thisfile) for thisfile in files_Ty]
 plotted_alignables_Ty=[]
 for align_block in align_outputs_Ty:
@@ -164,6 +226,27 @@ for align_block in align_outputs_Ty:
     plotted_alignables_Ty.append(thislist_Ty)
 align_outputs_Ty=[convertGlobal(align_block,plotted_alignables_Ty[0]) for align_block in align_outputs_Ty]
 
+# for Rx
+align_outputs_Rx=[open_alignment(thisfile) for thisfile in files_Rx]
+plotted_alignables_Rx=[]
+for align_block in align_outputs_Rx:
+    thislist_Rx=[]
+    for key in align_block.keys():
+        thislist_Rx.append(key)
+    plotted_alignables_Rx.append(thislist_Rx)
+align_outputs_Rx=[convertGlobal(align_block,plotted_alignables_Rx[0]) for align_block in align_outputs_Rx]
+
+# for Ry
+align_outputs_Ry=[open_alignment(thisfile) for thisfile in files_Ry]
+plotted_alignables_Ry=[]
+for align_block in align_outputs_Ry:
+    thislist_Ry=[]
+    for key in align_block.keys():
+        thislist_Ry.append(key)
+    plotted_alignables_Ry.append(thislist_Ry)
+align_outputs_Ry=[convertGlobal(align_block,plotted_alignables_Ry[0]) for align_block in align_outputs_Ry]
+
+# Tx
 Tx_chi2_tx = get_unc(align_outputs_Tx)[0]
 Ty_chi2_tx = get_unc(align_outputs_Tx)[1]
 Tz_chi2_tx = get_unc(align_outputs_Tx)[2]
@@ -171,6 +254,7 @@ Rx_chi2_tx = get_unc(align_outputs_Tx)[3]
 Ry_chi2_tx = get_unc(align_outputs_Tx)[4]
 Rz_chi2_tx = get_unc(align_outputs_Tx)[5]
 
+# Ty
 Tx_chi2_ty = get_unc(align_outputs_Ty)[0]
 Ty_chi2_ty = get_unc(align_outputs_Ty)[1]
 Tz_chi2_ty = get_unc(align_outputs_Ty)[2]
@@ -178,20 +262,23 @@ Rx_chi2_ty = get_unc(align_outputs_Ty)[3]
 Ry_chi2_ty = get_unc(align_outputs_Ty)[4]
 Rz_chi2_ty = get_unc(align_outputs_Ty)[5]
 
-print('########## from Tx error changes ###########')
-# print('Tx_chi2:', Tx_chi2_tx)
-# print('Ty_chi2:', Ty_chi2_tx)
-# print('Tz_chi2:', Tz_chi2_tx)
-# print('Rx_chi2:', Rx_chi2_tx)
-# print('Ry_chi2:', Ry_chi2_tx)
-# print('Rz_chi2:', Rz_chi2_tx)
-# print('########## from Ty error changes ###########')
-# print('Tx_chi2:', Tx_chi2_ty)
-# print('Ty_chi2:', Ty_chi2_ty)
-# print('Tz_chi2:', Tz_chi2_ty)
-# print('Rx_chi2:', Rx_chi2_ty)
-# print('Ry_chi2:', Ry_chi2_ty)
-# print('Rz_chi2:', Rz_chi2_ty)
+# Rx
+Tx_chi2_rx = get_unc(align_outputs_Rx)[0]
+Ty_chi2_rx = get_unc(align_outputs_Rx)[1]
+Tz_chi2_rx = get_unc(align_outputs_Rx)[2]
+Rx_chi2_rx = get_unc(align_outputs_Rx)[3]
+Ry_chi2_rx = get_unc(align_outputs_Rx)[4]
+Rz_chi2_rx = get_unc(align_outputs_Rx)[5]
+
+# Ry
+Tx_chi2_ry = get_unc(align_outputs_Ry)[0]
+Ty_chi2_ry = get_unc(align_outputs_Ry)[1]
+Tz_chi2_ry = get_unc(align_outputs_Ry)[2]
+Rx_chi2_ry = get_unc(align_outputs_Ry)[3]
+Ry_chi2_ry = get_unc(align_outputs_Ry)[4]
+Rz_chi2_ry = get_unc(align_outputs_Ry)[5]
+
+# print('########## from Tx error changes ###########')
 
 Tz_chi2_vals = [2586.76]
 
@@ -205,55 +292,95 @@ Rz_chi2_tz = [708.737/768, 679.203/768, 658.385/768, 658.059/768, 697.696/768, 6
 
 correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
 Tx_err = [0.2, 0.4, 0.6, 0.8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # in [mm], 1 mm is base
-T_err = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-R_err = [0.2]  # in [mrad]
+Ty_err = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Tz_err = [2,3,4,5,6,7,10]
+
+Rx_err = [0.2, 0.3, 0.4, 0.5] # mrad
+Ry_err = [0.4, 0.3, 0.2, 0.1, 0.02, 0.003, 0.002, 0.001, 0.0008, 0.0006, 0.0005, 0.00044, 0.0004, 0.0002]
+
 total_n_dofs = 768
 
-plt.plot(Tx_err, Tx_chi2_tx / total_n_dofs, label='Tx_chi')
-plt.plot(Tx_err, Ty_chi2_tx / total_n_dofs, label='Ty_chi')
-plt.plot(Tx_err, Tz_chi2_tx / total_n_dofs, label='Tz_chi')
-plt.plot(Tx_err, Rx_chi2_tx / total_n_dofs, label='Rx_chi')
-plt.plot(Tx_err, Ry_chi2_tx / total_n_dofs, label='Ry_chi')
-plt.plot(Tx_err, Rz_chi2_tx / total_n_dofs, label='Rz_chi')
-plt.hlines(1, 1, 10, 'black', 'dotted')
+plt.plot(Tx_err, Tx_chi2_tx / total_n_dofs, marker='x', linestyle='-', label='Tx_chi')
+plt.plot(Tx_err, Ty_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Ty_chi')
+plt.plot(Tx_err, Tz_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Tz_chi')
+plt.plot(Tx_err, Rx_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Rx_chi')
+plt.plot(Tx_err, Ry_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Ry_chi')
+plt.plot(Tx_err, Rz_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Rz_chi')
+plt.hlines(1, 0.2, 10, 'black', 'dotted')
 plt.legend()
 plt.grid()
 plt.title('chi2 after alignment and changed Tx error')
 plt.xlabel('[mm]')
-plt.show()
+# plt.show()
+plt.savefig('chi2_plots/Tx_out.pdf')
 plt.clf()
 
-plt.plot(T_err, Tx_chi2_ty / total_n_dofs, label='Tx_chi')
-plt.plot(T_err, Ty_chi2_ty / total_n_dofs, label='Ty_chi')
-plt.plot(T_err, Tz_chi2_ty / total_n_dofs, label='Tz_chi')
-plt.plot(T_err, Rx_chi2_ty / total_n_dofs, label='Rx_chi')
-plt.plot(T_err, Ry_chi2_ty / total_n_dofs, label='Ry_chi')
-plt.plot(T_err, Rz_chi2_ty / total_n_dofs, label='Rz_chi')
+plt.plot(Ty_err, Tx_chi2_ty / total_n_dofs, marker='x', linestyle='-', label='Tx_chi')
+plt.plot(Ty_err, Ty_chi2_ty / total_n_dofs, marker='x', linestyle='-', label='Ty_chi')
+plt.plot(Ty_err, Tz_chi2_ty / total_n_dofs, marker='x', linestyle='', label='Tz_chi')
+plt.plot(Ty_err, Rx_chi2_ty / total_n_dofs, marker='x', linestyle='', label='Rx_chi')
+plt.plot(Ty_err, Ry_chi2_ty / total_n_dofs, marker='x', linestyle='', label='Ry_chi')
+plt.plot(Ty_err, Rz_chi2_ty / total_n_dofs, marker='x', linestyle='', label='Rz_chi')
 plt.hlines(1, 1, 10, 'black', 'dotted')
 plt.legend()
 plt.grid()
 plt.title('chi2 after alignment and changed Ty error')
 plt.xlabel('[mm]')
-plt.show()
+# plt.show()
+plt.savefig('chi2_plots/Ty_out.pdf')
 plt.clf()
 
-T_err = [2,3,4,5,6,7,10]
-
-plt.plot(T_err, Tx_chi2_tz, label='Tx_chi')
-plt.plot(T_err, Ty_chi2_tz, label='Ty_chi')
-plt.plot(T_err, Tz_chi2_tz, label='Tz_chi')
-plt.plot(T_err, Rx_chi2_tz, label='Rx_chi')
-plt.plot(T_err, Ry_chi2_tz, label='Ry_chi')
-plt.plot(T_err, Rz_chi2_tz, label='Rz_chi')
+plt.plot(Tz_err, Tx_chi2_tz, marker='x', linestyle='-', label='Tx_chi')
+plt.plot(Tz_err, Ty_chi2_tz, marker='x', linestyle='', label='Ty_chi')
+plt.plot(Tz_err, Tz_chi2_tz, marker='x', linestyle='-', label='Tz_chi')
+plt.plot(Tz_err, Rx_chi2_tz, marker='x', linestyle='', label='Rx_chi')
+plt.plot(Tz_err, Ry_chi2_tz, marker='x', linestyle='', label='Ry_chi')
+plt.plot(Tz_err, Rz_chi2_tz, marker='x', linestyle='', label='Rz_chi')
 plt.hlines(1, 2, 10, 'black', 'dotted')
 # plt.vlines(x, ymin, ymax, 'red', 'dashed')
 plt.legend()
 plt.grid()
 plt.title('chi2 after alignment and changed Tz error')
 plt.xlabel('[mm]')
-plt.show()
+# plt.show()
+plt.savefig('chi2_plots/Tz_out.pdf')
+plt.clf()
+
+# Rx
+plt.plot(Rx_err, Tx_chi2_rx / total_n_dofs, marker='x', linestyle='-', label='Tx_chi')
+plt.plot(Rx_err, Ty_chi2_rx / total_n_dofs, marker='x', linestyle='', label='Ty_chi')
+plt.plot(Rx_err, Tz_chi2_rx / total_n_dofs, marker='x', linestyle='', label='Tz_chi')
+plt.plot(Rx_err, Rx_chi2_rx / total_n_dofs, marker='x', linestyle='-', label='Rx_chi')
+plt.plot(Rx_err, Ry_chi2_rx / total_n_dofs, marker='x', linestyle='', label='Ry_chi')
+plt.plot(Rx_err, Rz_chi2_rx / total_n_dofs, marker='x', linestyle='', label='Rz_chi')
+plt.hlines(1, 0.2, 0.5, 'black', 'dotted')
+plt.legend()
+plt.grid()
+plt.title('chi2 after alignment and changed Rx error')
+plt.xlabel('[mrad]')
+# plt.show()
+plt.savefig('chi2_plots/Rx_out.pdf')
+plt.clf()
+
+# Ry
+ry_e = np.linspace(0, 14, 14)
+plt.plot(ry_e, Tx_chi2_ry / total_n_dofs, marker='x', linestyle='-', label='Tx_chi')
+plt.plot(ry_e, Ty_chi2_ry / total_n_dofs, marker='x', linestyle='', label='Ty_chi')
+plt.plot(ry_e, Tz_chi2_ry / total_n_dofs, marker='x', linestyle='', label='Tz_chi')
+plt.plot(ry_e, Rx_chi2_ry / total_n_dofs, marker='x', linestyle='', label='Rx_chi')
+plt.plot(ry_e, Ry_chi2_ry / total_n_dofs, marker='x', linestyle='-', label='Ry_chi')
+plt.plot(ry_e, Rz_chi2_ry / total_n_dofs, marker='x', linestyle='', label='Rz_chi')
+plt.hlines(1, -0.2, 14.2, 'black', 'dotted')
+plt.legend()
+plt.grid()
+plt.xticks(ry_e, Ry_err, rotation=45)
+plt.title('chi2 after alignment and changed Ry error')
+plt.xlabel('[mrad]')
+# plt.show()
+plt.savefig('chi2_plots/Ry_out.pdf')
 plt.clf()
 
 errors_v1 = [0.001, 0.0015, 0.004, 0.0002, 0.0002, 0.0002]
 errors_v2 = [0.0005, 0.002, 0.002, 0.0002, 0.0002, 0.0002]
 errors_v3 = [0.0002, 0.002, 0.002, 0.0002, 0.0002, 0.0002]
+errors_v4 = [0.00018, 0.0015, 0.0018, 0.0004, 0.00000044, 0.00019]
