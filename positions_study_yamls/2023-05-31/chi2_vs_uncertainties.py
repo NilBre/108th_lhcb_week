@@ -65,21 +65,6 @@ def convertGlobal(align_external,halfmoduleAlignables):
 
     return align_output
 
-    # runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
-    #            "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
-    #            "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
-    #            "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
-    #
-    # runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
-    #            "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
-    #            "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
-    #            "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
-    #
-    # runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
-    #         "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
-    #         "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
-    #         "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
-
 def get_unc(input):
     n_files = len(input)
     Tx_chi2 = [[] for _ in range(n_files)]
@@ -90,9 +75,6 @@ def get_unc(input):
     Ry_chi2 = [[] for _ in range(n_files)]
     Rz_chi2 = [[] for _ in range(n_files)]
     for i in range(n_files):
-        # print('#################################################')
-        # print(f'input[{i}]["Tx_chi2"]', input[i]['Tx_chi2'])
-        # print(f'input[{i}]["Tx_chi2"][0]', input[i]['Tx_chi2'][0])
         Tx_chi2[i].append(input[i]['Tx_chi2'][0])
         Ty_chi2[i].append(input[i]['Ty_chi2'][0])
         Tz_chi2[i].append(input[i]['Tz_chi2'][0])
@@ -206,79 +188,29 @@ legendlabels_Ry = [\
         "02microRad",
 ]
 
-# for Tx
-align_outputs_Tx=[open_alignment(thisfile) for thisfile in files_Tx]
-plotted_alignables_Tx=[]
-for align_block in align_outputs_Tx:
-    thislist_Tx=[]
-    for key in align_block.keys():
-        thislist_Tx.append(key)
-    plotted_alignables_Tx.append(thislist_Tx)
-align_outputs_Tx=[convertGlobal(align_block,plotted_alignables_Tx[0]) for align_block in align_outputs_Tx]
+def get_chi2_values(input_files):
+    outputs=[open_alignment(thisfile) for thisfile in input_files]
+    plotted_alignables=[]
+    for align_block in outputs:
+        thislist=[]
+        for key in align_block.keys():
+            thislist.append(key)
+        plotted_alignables.append(thislist)
+    outputs=[convertGlobal(align_block,plotted_alignables[0]) for align_block in outputs]
 
-# for Ty
-align_outputs_Ty=[open_alignment(thisfile) for thisfile in files_Ty]
-plotted_alignables_Ty=[]
-for align_block in align_outputs_Ty:
-    thislist_Ty=[]
-    for key in align_block.keys():
-        thislist_Ty.append(key)
-    plotted_alignables_Ty.append(thislist_Ty)
-align_outputs_Ty=[convertGlobal(align_block,plotted_alignables_Ty[0]) for align_block in align_outputs_Ty]
+    Tx_chi2_tx = get_unc(outputs)[0]
+    Ty_chi2_tx = get_unc(outputs)[1]
+    Tz_chi2_tx = get_unc(outputs)[2]
+    Rx_chi2_tx = get_unc(outputs)[3]
+    Ry_chi2_tx = get_unc(outputs)[4]
+    Rz_chi2_tx = get_unc(outputs)[5]
 
-# for Rx
-align_outputs_Rx=[open_alignment(thisfile) for thisfile in files_Rx]
-plotted_alignables_Rx=[]
-for align_block in align_outputs_Rx:
-    thislist_Rx=[]
-    for key in align_block.keys():
-        thislist_Rx.append(key)
-    plotted_alignables_Rx.append(thislist_Rx)
-align_outputs_Rx=[convertGlobal(align_block,plotted_alignables_Rx[0]) for align_block in align_outputs_Rx]
+    return Tx_chi2_tx, Ty_chi2_tx, Tz_chi2_tx, Rx_chi2_tx, Ry_chi2_tx, Rz_chi2_tx
 
-# for Ry
-align_outputs_Ry=[open_alignment(thisfile) for thisfile in files_Ry]
-plotted_alignables_Ry=[]
-for align_block in align_outputs_Ry:
-    thislist_Ry=[]
-    for key in align_block.keys():
-        thislist_Ry.append(key)
-    plotted_alignables_Ry.append(thislist_Ry)
-align_outputs_Ry=[convertGlobal(align_block,plotted_alignables_Ry[0]) for align_block in align_outputs_Ry]
-
-# Tx
-Tx_chi2_tx = get_unc(align_outputs_Tx)[0]
-Ty_chi2_tx = get_unc(align_outputs_Tx)[1]
-Tz_chi2_tx = get_unc(align_outputs_Tx)[2]
-Rx_chi2_tx = get_unc(align_outputs_Tx)[3]
-Ry_chi2_tx = get_unc(align_outputs_Tx)[4]
-Rz_chi2_tx = get_unc(align_outputs_Tx)[5]
-
-# Ty
-Tx_chi2_ty = get_unc(align_outputs_Ty)[0]
-Ty_chi2_ty = get_unc(align_outputs_Ty)[1]
-Tz_chi2_ty = get_unc(align_outputs_Ty)[2]
-Rx_chi2_ty = get_unc(align_outputs_Ty)[3]
-Ry_chi2_ty = get_unc(align_outputs_Ty)[4]
-Rz_chi2_ty = get_unc(align_outputs_Ty)[5]
-
-# Rx
-Tx_chi2_rx = get_unc(align_outputs_Rx)[0]
-Ty_chi2_rx = get_unc(align_outputs_Rx)[1]
-Tz_chi2_rx = get_unc(align_outputs_Rx)[2]
-Rx_chi2_rx = get_unc(align_outputs_Rx)[3]
-Ry_chi2_rx = get_unc(align_outputs_Rx)[4]
-Rz_chi2_rx = get_unc(align_outputs_Rx)[5]
-
-# Ry
-Tx_chi2_ry = get_unc(align_outputs_Ry)[0]
-Ty_chi2_ry = get_unc(align_outputs_Ry)[1]
-Tz_chi2_ry = get_unc(align_outputs_Ry)[2]
-Rx_chi2_ry = get_unc(align_outputs_Ry)[3]
-Ry_chi2_ry = get_unc(align_outputs_Ry)[4]
-Rz_chi2_ry = get_unc(align_outputs_Ry)[5]
-
-# print('########## from Tx error changes ###########')
+chi2_values_from_Tx_changes = get_chi2_values(files_Tx)
+chi2_values_from_Ty_changes = get_chi2_values(files_Ty)
+chi2_values_from_Rx_changes = get_chi2_values(files_Rx)
+chi2_values_from_Ry_changes = get_chi2_values(files_Ry)
 
 Tz_chi2_vals = [2586.76]
 
@@ -290,97 +222,85 @@ Rx_chi2_tz = [3086.38/768, 3086.38/768, 3086.38/768, 3086.38/768, 3086.38/768, 3
 Ry_chi2_tz = [0.00366032/768, 0.0036605/768, 0.00369746/768, 0.00370069/768, 0.0036554/768, 0.00368278/768, 0.0036503/768]
 Rz_chi2_tz = [708.737/768, 679.203/768, 658.385/768, 658.059/768, 697.696/768, 678.97/768,  687.408/768]
 
+Tz_data = np.array([Tx_chi2_tz, Ty_chi2_tz, Tz_chi2_tz, Rx_chi2_tz, Ry_chi2_tz, Rz_chi2_tz])
+print(Tz_data)
 correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
-Tx_err = [0.2, 0.4, 0.6, 0.8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # in [mm], 1 mm is base
-Ty_err = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-Tz_err = [2,3,4,5,6,7,10]
+Tx_err = [0.2, 0.4, 0.6, 0.8, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # microns
+Ty_err = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] # microns
+Tz_err = [2,3,4,5,6,7,10] # microns
 
-Rx_err = [0.2, 0.3, 0.4, 0.5] # mrad
-Ry_err = [0.4, 0.3, 0.2, 0.1, 0.02, 0.003, 0.002, 0.001, 0.0008, 0.0006, 0.0005, 0.00044, 0.0004, 0.0002]
+Rx_err = [0.2, 0.3, 0.4, 0.5] # microrad
+Ry_err = [0.4, 0.3, 0.2, 0.1, 0.02, 0.003, 0.002, 0.001, 0.0008, 0.0006, 0.0005, 0.00044, 0.0004, 0.0002] # microrad
 
 total_n_dofs = 768
 
-plt.plot(Tx_err, Tx_chi2_tx / total_n_dofs, marker='x', linestyle='-', label='Tx_chi')
-plt.plot(Tx_err, Ty_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Ty_chi')
-plt.plot(Tx_err, Tz_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Tz_chi')
-plt.plot(Tx_err, Rx_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Rx_chi')
-plt.plot(Tx_err, Ry_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Ry_chi')
-plt.plot(Tx_err, Rz_chi2_tx / total_n_dofs, marker='x', linestyle='', label='Rz_chi')
-plt.hlines(1, 0.2, 10, 'black', 'dotted')
-plt.legend()
-plt.grid()
-plt.title('chi2 after alignment and changed Tx error')
-plt.xlabel('[mm]')
-# plt.show()
-plt.savefig('chi2_plots/Tx_out.pdf')
-plt.clf()
+def plotting(x_range, data, dofs, label):
+    if label == 'Ry':
+        x_vals = np.linspace(0, 14, 14)
+        print(f"label: {label}")
+        print(data[0])
+        plt.plot(x_vals, data[0] / dofs, marker='.', linestyle='--', label='Tx_chi')
+        plt.plot(x_vals, data[1] / dofs, marker='.', linestyle='--', label='Ty_chi')
+        plt.plot(x_vals, data[2] / dofs, marker='.', linestyle='--', label='Tz_chi')
+        plt.plot(x_vals, data[3] / dofs, marker='.', linestyle='--', label='Rx_chi')
+        plt.plot(x_vals, data[4] / dofs, marker='.', linestyle='--', label='Ry_chi')
+        plt.plot(x_vals, data[5] / dofs, marker='.', linestyle='--', label='Rz_chi')
+        plt.xticks(x_vals, x_range, rotation=45)
+        plt.xlabel('[mu rad]')
+    if label == 'Tz':
+        print(f"label: {label}")
+        print(data[0])
+        plt.plot(x_range, data[0], marker='.', linestyle='--', label='Tx_chi')
+        plt.plot(x_range, data[1], marker='.', linestyle='--', label='Ty_chi')
+        plt.plot(x_range, data[2], marker='.', linestyle='--', label='Tz_chi')
+        plt.plot(x_range, data[3], marker='.', linestyle='--', label='Rx_chi')
+        plt.plot(x_range, data[4], marker='.', linestyle='--', label='Ry_chi')
+        plt.plot(x_range, data[5], marker='.', linestyle='--', label='Rz_chi')
+    if label in ['Tx', 'Ty']:
+        print(f'else: {label}')
+        print(data)
+        plt.plot(x_range, data[0] / dofs, marker='.', linestyle='--', label='Tx_chi')
+        plt.plot(x_range, data[1] / dofs, marker='.', linestyle='--', label='Ty_chi')
+        plt.plot(x_range, data[2] / dofs, marker='.', linestyle='--', label='Tz_chi')
+        plt.plot(x_range, data[3] / dofs, marker='.', linestyle='--', label='Rx_chi')
+        plt.plot(x_range, data[4] / dofs, marker='.', linestyle='--', label='Ry_chi')
+        plt.plot(x_range, data[5] / dofs, marker='.', linestyle='--', label='Rz_chi')
+        plt.xlabel('[mu m]')
+    if label == 'Rx':
+        print(f'else: {label}')
+        print(data)
+        plt.plot(x_range, data[0] / dofs, marker='.', linestyle='--', label='Tx_chi')
+        plt.plot(x_range, data[1] / dofs, marker='.', linestyle='--', label='Ty_chi')
+        plt.plot(x_range, data[2] / dofs, marker='.', linestyle='--', label='Tz_chi')
+        plt.plot(x_range, data[3] / dofs, marker='.', linestyle='--', label='Rx_chi')
+        plt.plot(x_range, data[4] / dofs, marker='.', linestyle='--', label='Ry_chi')
+        plt.plot(x_range, data[5] / dofs, marker='.', linestyle='--', label='Rz_chi')
+        plt.xlabel('[mu rad]')
+    plt.hlines(1, min(x_range), max(x_range), 'black')
+    plt.legend()
+    plt.grid()
+    plt.title(f'chi2 / dof changing only {label} error')
+    plt.ylabel('chi2 per dof')
+    plt.show()
+    plt.savefig(f'chi2_plots/{label}_out.pdf')
+    plt.clf()
 
-plt.plot(Ty_err, Tx_chi2_ty / total_n_dofs, marker='x', linestyle='-', label='Tx_chi')
-plt.plot(Ty_err, Ty_chi2_ty / total_n_dofs, marker='x', linestyle='-', label='Ty_chi')
-plt.plot(Ty_err, Tz_chi2_ty / total_n_dofs, marker='x', linestyle='', label='Tz_chi')
-plt.plot(Ty_err, Rx_chi2_ty / total_n_dofs, marker='x', linestyle='', label='Rx_chi')
-plt.plot(Ty_err, Ry_chi2_ty / total_n_dofs, marker='x', linestyle='', label='Ry_chi')
-plt.plot(Ty_err, Rz_chi2_ty / total_n_dofs, marker='x', linestyle='', label='Rz_chi')
-plt.hlines(1, 1, 10, 'black', 'dotted')
-plt.legend()
-plt.grid()
-plt.title('chi2 after alignment and changed Ty error')
-plt.xlabel('[mm]')
-# plt.show()
-plt.savefig('chi2_plots/Ty_out.pdf')
-plt.clf()
-
-plt.plot(Tz_err, Tx_chi2_tz, marker='x', linestyle='-', label='Tx_chi')
-plt.plot(Tz_err, Ty_chi2_tz, marker='x', linestyle='', label='Ty_chi')
-plt.plot(Tz_err, Tz_chi2_tz, marker='x', linestyle='-', label='Tz_chi')
-plt.plot(Tz_err, Rx_chi2_tz, marker='x', linestyle='', label='Rx_chi')
-plt.plot(Tz_err, Ry_chi2_tz, marker='x', linestyle='', label='Ry_chi')
-plt.plot(Tz_err, Rz_chi2_tz, marker='x', linestyle='', label='Rz_chi')
-plt.hlines(1, 2, 10, 'black', 'dotted')
-# plt.vlines(x, ymin, ymax, 'red', 'dashed')
-plt.legend()
-plt.grid()
-plt.title('chi2 after alignment and changed Tz error')
-plt.xlabel('[mm]')
-# plt.show()
-plt.savefig('chi2_plots/Tz_out.pdf')
-plt.clf()
-
-# Rx
-plt.plot(Rx_err, Tx_chi2_rx / total_n_dofs, marker='x', linestyle='-', label='Tx_chi')
-plt.plot(Rx_err, Ty_chi2_rx / total_n_dofs, marker='x', linestyle='', label='Ty_chi')
-plt.plot(Rx_err, Tz_chi2_rx / total_n_dofs, marker='x', linestyle='', label='Tz_chi')
-plt.plot(Rx_err, Rx_chi2_rx / total_n_dofs, marker='x', linestyle='-', label='Rx_chi')
-plt.plot(Rx_err, Ry_chi2_rx / total_n_dofs, marker='x', linestyle='', label='Ry_chi')
-plt.plot(Rx_err, Rz_chi2_rx / total_n_dofs, marker='x', linestyle='', label='Rz_chi')
-plt.hlines(1, 0.2, 0.5, 'black', 'dotted')
-plt.legend()
-plt.grid()
-plt.title('chi2 after alignment and changed Rx error')
-plt.xlabel('[mrad]')
-# plt.show()
-plt.savefig('chi2_plots/Rx_out.pdf')
-plt.clf()
-
-# Ry
-ry_e = np.linspace(0, 14, 14)
-plt.plot(ry_e, Tx_chi2_ry / total_n_dofs, marker='x', linestyle='-', label='Tx_chi')
-plt.plot(ry_e, Ty_chi2_ry / total_n_dofs, marker='x', linestyle='', label='Ty_chi')
-plt.plot(ry_e, Tz_chi2_ry / total_n_dofs, marker='x', linestyle='', label='Tz_chi')
-plt.plot(ry_e, Rx_chi2_ry / total_n_dofs, marker='x', linestyle='', label='Rx_chi')
-plt.plot(ry_e, Ry_chi2_ry / total_n_dofs, marker='x', linestyle='-', label='Ry_chi')
-plt.plot(ry_e, Rz_chi2_ry / total_n_dofs, marker='x', linestyle='', label='Rz_chi')
-plt.hlines(1, -0.2, 14.2, 'black', 'dotted')
-plt.legend()
-plt.grid()
-plt.xticks(ry_e, Ry_err, rotation=45)
-plt.title('chi2 after alignment and changed Ry error')
-plt.xlabel('[mrad]')
-# plt.show()
-plt.savefig('chi2_plots/Ry_out.pdf')
-plt.clf()
+plotting(Tx_err, chi2_values_from_Tx_changes, total_n_dofs, 'Tx')
+plotting(Ty_err, chi2_values_from_Ty_changes, total_n_dofs, 'Ty')
+plotting(Tz_err, Tz_data, total_n_dofs, 'Tz')
+plotting(Rx_err, chi2_values_from_Rx_changes, total_n_dofs, 'Rx')
+plotting(Ry_err, chi2_values_from_Ry_changes, total_n_dofs, 'Ry')
 
 errors_v1 = [0.001, 0.0015, 0.004, 0.0002, 0.0002, 0.0002]
 errors_v2 = [0.0005, 0.002, 0.002, 0.0002, 0.0002, 0.0002]
 errors_v3 = [0.0002, 0.002, 0.002, 0.0002, 0.0002, 0.0002]
 errors_v4 = [0.00018, 0.0015, 0.0018, 0.0004, 0.00000044, 0.00019]
+
+# FIXME: 
+# 1. correct the x label to be LaTeX formated
+# 2. Tx: more alignments between 0 and 1 microns, also fit a function (linear, polynomial 2nd order and find chi2 / dof = 1)
+# 3. Ty: more alignments between 1.2 and 1.7 microns
+# 4. Tz: more alignments between 1 and 2 microns
+# 5. Rx: more alignments around 0.4 micro rad (0.0004 milli rad)
+# 6. Ry: more alignments roughly at 0.00044 microns
+# 7: Rz: please also do a plot for Rz around 0.0002 milli rad
