@@ -281,7 +281,7 @@ def plotting(x_range, data, dofs, label):
     plt.grid()
     plt.title(f'chi2 / dof changing only {label} error')
     plt.ylabel('chi2 per dof')
-    plt.show()
+    # plt.show()
     plt.savefig(f'chi2_plots/{label}_out.pdf')
     plt.clf()
 
@@ -296,7 +296,49 @@ errors_v2 = [0.0005, 0.002, 0.002, 0.0002, 0.0002, 0.0002]
 errors_v3 = [0.0002, 0.002, 0.002, 0.0002, 0.0002, 0.0002]
 errors_v4 = [0.00018, 0.0015, 0.0018, 0.0004, 0.00000044, 0.00019]
 
-# FIXME: 
+from scipy.stats import linregress
+x1 = Tx_err[0:7]
+y1 = (chi2_values_from_Tx_changes[0][0:7] / total_n_dofs).T[0]
+print(x1, y1)
+erg = linregress(x1, y1)
+print(erg)
+
+# try curve fit
+from scipy.optimize import curve_fit
+def func(x, a, b, c):
+    return a * np.exp(-b * x) + c
+def Gauss(x, A, B):
+    y = A*np.exp(-1*B*x**2)
+    return y
+x2 = Tx_err[6:]
+y2 = (chi2_values_from_Tx_changes[0][6:] / total_n_dofs).T[0]
+
+xfull = np.array(Tx_err)
+yfull = np.array((chi2_values_from_Tx_changes[0] / total_n_dofs).T[0])
+
+xdata1 = np.array(x1)
+ydata1 = np.array(y1)
+
+xdata2 = np.array(x2)
+ydata2 = np.array(y2)
+
+plt.plot(xfull, yfull, 'k-', label='data')
+popt1, pcov1 = curve_fit(func, xdata1, ydata1)
+popt2, pcov2 = curve_fit(func, xdata2, ydata2)
+plt.plot(xdata1, func(xdata1, *popt1), 'r-',label='fit: a=%5.3f, b=%5.3f, c=%5.3f' % tuple(popt1))
+# plt.plot(xdata2, func(xdata2, *popt2), 'b-',label='fit: A=%5.3f, B=%5.3f, c=%5.3f' % tuple(popt2))
+plt.axvline(x = 0.29, color = 'g', linestyle='dashed', label='Tx unc. = 0.29 micron')
+plt.axhline(y = 1, color = 'y', linestyle='dashed', label='chi2 / dof = 1')
+plt.grid()
+plt.legend()
+plt.xlabel('Tx unc [micron]')
+plt.ylabel('chi2 / dof')
+plt.title('Tx uncertainty tuning')
+plt.savefig('fit_Tx.pdf')
+plt.show()
+# print(func(xdata, *popt))
+
+# FIXME:
 # 1. correct the x label to be LaTeX formated
 # 2. Tx: more alignments between 0 and 1 microns, also fit a function (linear, polynomial 2nd order and find chi2 / dof = 1)
 # 3. Ty: more alignments between 1.2 and 1.7 microns

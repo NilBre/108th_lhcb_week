@@ -137,11 +137,12 @@ def compare_alignments(comparison_data, outname, run_labels, title_label, layerI
             count += 1
         plt.subplots_adjust(wspace=0, hspace=0)
         plt.savefig(f'{outname_prefix}{outfiles}' + outname + '_diff_plots_' + layerID + '.pdf')
-
     plt.clf()
 
 
 def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
+    max_Q0, max_Q1, max_Q2, max_Q3 = [], [], [], [] # should store 2 values: value and where per layer
+    print('len data:', len(data_arr))
     # change this for own needs as well
     outfiles = 'relative_pos/'
     total_layer_num = 12 # number of layers
@@ -155,25 +156,22 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
         run not beeing the LHCb run but the alignment runs
     '''
     L = ['Q2', 'Q3', 'Q0', 'Q1']
-    for i in range(total_num_runs):
-        # if len(survey_pos) == 0:
-        # if len(survey_pos) == 0:
-        #     x1 = abs(data_arr[i][0:5] - data_arr[i+1][0:5])  # Q0
-        #     x2 = abs(data_arr[i][5:10] - data_arr[i+1][5:10])  # Q2
-        #     x3 = abs(data_arr[i][10:15] - data_arr[i+1][10:15])  # Q1
-        #     x4 = abs(data_arr[i][15:20] - data_arr[i+1][15:20])  # Q3
+    for i in range(total_num_runs-1):
         if len(survey_pos) == 0:
-            x1 = data_arr[i][0:5]  # Q0
-            x2 = data_arr[i][5:10]  # Q2
-            x3 = data_arr[i][10:15]  # Q1
-            x4 = data_arr[i][15:20]  # Q3
+            x1 = data_arr[i][0:5] - data_arr[i+1][0:5]  # Q0
+            x2 = data_arr[i][5:10] - data_arr[i+1][5:10]  # Q2
+            x3 = data_arr[i][10:15] - data_arr[i+1][10:15]  # Q1
+            x4 = data_arr[i][15:20] - data_arr[i+1][15:20]  # Q3
+        # if len(survey_pos) == 0:
+        #     x1 = data_arr[i][0:5]  # Q0
+        #     x2 = data_arr[i][5:10]  # Q2
+        #     x3 = data_arr[i][10:15]  # Q1
+        #     x4 = data_arr[i][15:20]  # Q3
         else:
-            # if title_label == 'Tx':
-            #     print(data_arr[i][0:5], survey_pos[i][0:5])
-            x1 = abs(data_arr[i][0:5] - survey_pos[i][0:5]) # Q0
-            x2 = abs(data_arr[i][5:10] - survey_pos[i][5:10]) # Q2
-            x3 = abs(data_arr[i][10:15] - survey_pos[i][10:15]) # Q1
-            x4 = abs(data_arr[i][15:20] - survey_pos[i][15:20]) # Q3
+            x1 = data_arr[i][0:5] - survey_pos[i][0:5] # Q0
+            x2 = data_arr[i][5:10] - survey_pos[i][5:10] # Q2
+            x3 = data_arr[i][10:15] - survey_pos[i][10:15] # Q1
+            x4 = data_arr[i][15:20] - survey_pos[i][15:20] # Q3
 
         ax = [plt.subplot(2,2,i+1) for i in range(4)]
         plt.figure()
@@ -205,7 +203,7 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
                 plt.xticks(x, ["Q0M0", "Q0M1", "Q0M2", "Q0M3", "Q0M4"], rotation=45, fontsize=5)
             count += 1
         plt.subplots_adjust(wspace=0, hspace=0)
-        plt.savefig(f'{outname_prefix}{outfiles}' + outname + '_' + layerID + '.pdf')
+        plt.savefig(f'{outname_prefix}{outfiles}' + outname + '_' + layerID + '_' + title_label + '.pdf')
 
     plt.clf()
 
@@ -606,6 +604,27 @@ def get_survey_data(file, dof, spatial_object):
         # data is filled into the correct lists
     return np.array(T1U_PosRot), np.array(T1V_PosRot), np.array(T1X1_PosRot), np.array(T1X2_PosRot), np.array(T2U_PosRot), np.array(T2V_PosRot), np.array(T2X1_PosRot), np.array(T2X2_PosRot), np.array(T3U_PosRot), np.array(T3V_PosRot), np.array(T3X1_PosRot), np.array(T3X2_PosRot)
 
+def max_module_deviation(data_arr, identifier, run_labels, layerID):
+    max_deviation = [{} for _ in range(total_num_runs-1)] # for 12 layers
+    max_Q0, max_Q1, max_Q2, max_Q3 = [], [], [], [] # should store 2 values: value and where per layer
+    # change this for own needs as well
+    outfiles = 'relative_pos/'
+    total_layer_num = 12 # number of layers
+    total_num_runs = len(run_labels)
+
+    L = ['Q2', 'Q3', 'Q0', 'Q1']
+    for i in range(total_num_runs-1):
+        x1 = data_arr[i][0:5] - data_arr[i+1][0:5]  # Q0
+        x2 = data_arr[i][5:10] - data_arr[i+1][5:10]  # Q2
+        x3 = data_arr[i][10:15] - data_arr[i+1][10:15]  # Q1
+        x4 = data_arr[i][15:20] - data_arr[i+1][15:20]  # Q3
+        max_deviation[i][f'diff_{i}'] = {
+        'Q0': max(x1), 'Module': np.argmax(x1),
+        'Q1': max(x3), 'Module': np.argmax(x3),
+        'Q2': max(x2), 'Module': np.argmax(x2),
+        'Q3': max(x4), 'Module': np.argmax(x4)
+        }
+    return max_deviation
 # hep.style.use(hep.style.LHCb2)
 
 # import matplotlib.patches as mpl_patches
@@ -645,15 +664,24 @@ diff_labels = [\
             "..278-..290",
 ]
 
+diff_md = [\
+            "255949-256030",
+            "..030-..145",
+            "..145-..159",
+            "..159-..163",
+]
+
+diff_mu = [\
+            "..272-..278",
+            "..278-..290",
+]
+
 files_md = [\
          "align_logfiles_stability/json_files/parsedlog_255949.json",
          "align_logfiles_stability/json_files/parsedlog_256030.json",
          "align_logfiles_stability/json_files/parsedlog_256145.json",
          "align_logfiles_stability/json_files/parsedlog_256159.json",
          "align_logfiles_stability/json_files/parsedlog_256163.json",
-         # "align_logfiles_stability/json_files/parsedlog_256272.json",
-         # "align_logfiles_stability/json_files/parsedlog_256278.json",
-         # "align_logfiles_stability/json_files/parsedlog_256290.json",
 ]
 legendlabels_md = [\
               "255949",
@@ -664,11 +692,6 @@ legendlabels_md = [\
 ]
 
 files_mu = [\
-         # "align_logfiles_stability/json_files/parsedlog_256145.json",
-         # "align_logfiles_stability/json_files/parsedlog_255949.json",
-         # "align_logfiles_stability/json_files/parsedlog_256030.json",
-         # "align_logfiles_stability/json_files/parsedlog_256159.json",
-         # "align_logfiles_stability/json_files/parsedlog_256163.json",
          "align_logfiles_stability/json_files/parsedlog_256272.json",
          "align_logfiles_stability/json_files/parsedlog_256278.json",
          "align_logfiles_stability/json_files/parsedlog_256290.json",
@@ -769,13 +792,13 @@ for n in range(12):
     # chi2 = local_chi2[n]
     hits_vs_tracks(nHits_data, nTracks_data, legendlabels, layers[n])
     # plots the frontview quarter plots
-    plot(tx_data, survey_Tx, 'survey_diff_data', legendlabels, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
-    plot(tz_data, survey_Tz, 'survey_diff_data', legendlabels, 'Tz', layers[n])
-    # plot(tx_data, [], 'data_diff', legendlabels, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
-    # plot(tz_data, [], 'data_diff', legendlabels, 'Tz', layers[n])
+    # plot(tx_data, survey_Tx, 'diff_data', legendlabels, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    # plot(tz_data, [], 'diff_data', legendlabels, 'Tz', layers[n])
+    plot(tx_data, [], 'diff_data', diff_labels, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    # plot(tz_data, [], 'data_diff', diff_labels, 'Tz', layers[n])
 
-    plot(nHits_data, [], 'n_Hits', legendlabels, 'nHits', layers[n])
-    plot(nTracks_data, [], 'n_Tracks', legendlabels, 'nTracks', layers[n])
+    # plot(nHits_data, [], 'n_Hits', legendlabels, 'nHits', layers[n])
+    # plot(nTracks_data, [], 'n_Tracks', legendlabels, 'nTracks', layers[n])
     # plot(chi2, 'chi2', legendlabels, 'localDeltaChi2', layers[n])
 
     # top view plots
@@ -793,8 +816,8 @@ for n in range(12):
     x_g_md = x_glob_md[n]
     y_g_md = y_glob_md[n]
     z_g_md = z_glob_md[n]
-    plot(tx_data_md, survey_Tx, 'survey_diff_magDown', legendlabels_md, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
-    plot(tz_data_md, survey_Tz, 'survey_diff_magDown', legendlabels_md, 'Tz', layers[n])
+    plot(tx_data_md, [], 'diff_MD', diff_md, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    plot(tz_data_md, survey_Tx, 'diff_MD', legendlabels_md, 'Tz', layers[n])
 
     # now for mu only
     tx_data_mu = tx_mu[n]
@@ -803,8 +826,11 @@ for n in range(12):
     x_g_mu = x_glob_mu[n]
     y_g_mu = y_glob_mu[n]
     z_g_mu = z_glob_mu[n]
-    plot(tx_data_md, survey_Tx, 'survey_diff_magUp', legendlabels_mu, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
-    plot(tz_data_md, survey_Tz, 'survey_diff_magUp', legendlabels_mu, 'Tz', layers[n])
+    diffs = max_module_deviation(tx_data, 'max_deviation', diff_labels, layers[n])
+    for i in range(len(diff_labels)):
+        print(f'diff_{i}: ', diffs[i])
+    plot(tx_data_mu, [], 'diff_MU', diff_mu, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    plot(tz_data_mu, survey_Tz, 'diff_MU', legendlabels_mu, 'Tz', layers[n])
 
 
 '''
