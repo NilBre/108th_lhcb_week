@@ -654,6 +654,21 @@ legendlabels=[\
               "256278",
               "256290",
 ]
+reduced_files = [\
+         "align_logfiles_stability/json_files/parsedlog_256145.json",
+         "align_logfiles_stability/json_files/parsedlog_256159.json",
+         "align_logfiles_stability/json_files/parsedlog_256163.json",
+         "align_logfiles_stability/json_files/parsedlog_256272.json",
+         "align_logfiles_stability/json_files/parsedlog_256278.json",
+         "align_logfiles_stability/json_files/parsedlog_256290.json",
+]
+reduced_labels = [\
+        "..145-..159",
+        "..159-..163",
+        "..163-..272",
+        "..272-..278",
+        "..278-..290",
+]
 diff_labels = [\
             "255949-256030",
             "..030-..145",
@@ -742,6 +757,17 @@ for align_block in align_outputs_mu:
     plotted_alignables_mu.append(thislist)
 align_outputs_mu=[convertGlobal(align_block,plotted_alignables_mu[0]) for align_block in align_outputs_mu]
 
+# reduceed data, without old ones
+align_outputs_red=[open_alignment(thisfile) for thisfile in reduced_files]
+plotted_alignables_red=[]
+for align_block in align_outputs_red:
+    thislist_red=[]
+    for key in align_block.keys():
+        if "FT" in key:
+            thislist_red.append(key)
+    plotted_alignables_red.append(thislist_red)
+align_outputs_red=[convertGlobal(align_block,plotted_alignables_red[0]) for align_block in align_outputs_red]
+
 # for all files
 tx = get_data(files, 'Tx', align_outputs)
 ty = get_data(files, 'Ty', align_outputs)
@@ -779,6 +805,17 @@ nTracks_mu = get_data(files_mu, 'nTracks', align_outputs_mu)
 x_glob_mu = get_data(files_mu, 'x_global', align_outputs_mu)
 y_glob_mu = get_data(files_mu, 'y_global', align_outputs_mu)
 z_glob_mu = get_data(files_mu, 'z_global', align_outputs_mu)
+
+# reduced data
+tx_red = get_data(reduced_files, 'Tx', align_outputs_red)
+ty_red = get_data(reduced_files, 'Ty', align_outputs_red)
+tz_red = get_data(reduced_files, 'Tz', align_outputs_red)
+nHits_red = get_data(reduced_files, 'nHits', align_outputs_red)
+nTracks_red = get_data(reduced_files, 'nTracks', align_outputs_red)
+# local_chi2 = get_data(files, 'localDeltaChi2', align_outputs)
+x_glob_red = get_data(reduced_files, 'x_global', align_outputs_red)
+y_glob_red = get_data(reduced_files, 'y_global', align_outputs_red)
+z_glob_red = get_data(reduced_files, 'z_global', align_outputs_red)
 
 for n in range(12):
     tx_data = tx[n]
@@ -826,12 +863,21 @@ for n in range(12):
     x_g_mu = x_glob_mu[n]
     y_g_mu = y_glob_mu[n]
     z_g_mu = z_glob_mu[n]
-    diffs = max_module_deviation(tx_data, 'max_deviation', diff_labels, layers[n])
-    for i in range(len(diff_labels)):
-        print(f'diff_{i}: ', diffs[i])
+    # diffs = max_module_deviation(tx_data, 'max_deviation', diff_labels, layers[n])
+    # for i in range(len(diff_labels)):
+    #     print(f'diff_{i}: ', diffs[i])
     plot(tx_data_mu, [], 'diff_MU', diff_mu, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
     plot(tz_data_mu, survey_Tz, 'diff_MU', legendlabels_mu, 'Tz', layers[n])
 
+    tx_data_red = tx_red[n]
+    ty_data_red = ty_red[n]
+    tz_data_red = tz_red[n]
+    x_g_data_red = x_glob_red[n]
+    y_g_data_red = y_glob_red[n]
+    z_g_data_red = z_glob_red[n]
+
+    plot(tx_data_red, [], 'diff_reduced_Tx', reduced_labels, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    plot(tz_data_red, [], 'diff_reduced_Tz', reduced_labels, 'Tz', layers[n])
 
 '''
     notes:

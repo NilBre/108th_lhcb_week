@@ -129,10 +129,10 @@ def plotting(x_range, data, dofs, label, name):
             index = 1
         if label == 'Tz':
             index = 2
-        x = x_range[0:range-1] # excldue last value
-        y = (data[index][0:range-1] / dofs).T[0]
-        # x = x_range
-        # y = (data[index] / dofs).T[0]
+        # x = x_range[0:range-1] # excldue last value
+        # y = (data[index][0:range-1] / dofs).T[0]
+        x = x_range
+        y = (data[index] / dofs).T[0]
         xdata = np.array(x)
         ydata = np.array(y)
         popt, pcov = curve_fit(func, xdata, ydata)
@@ -144,7 +144,7 @@ def plotting(x_range, data, dofs, label, name):
         plt.plot(x_range, data[4] / dofs, marker='.', linestyle='--', label='Ry_chi')
         plt.plot(x_range, data[5] / dofs, marker='.', linestyle='--', label='Rz_chi')
         # plt.xticks(x_vals, x_range, rotation=45)
-        plt.xlabel('[micron]')
+        plt.xlabel(r'$[\mu m]$')
     if label in ['Rx', 'Ry', 'Rz']:
         if label == 'Rx':
             index = 3
@@ -152,10 +152,10 @@ def plotting(x_range, data, dofs, label, name):
             index = 4
         if label == 'Rz':
             index = 5
-        x = x_range[0:range-1] # excldue last value
-        y = (data[index][0:range-1] / dofs).T[0]
-        # x = x_range
-        # y = (data[index] / dofs).T[0]
+        # x = x_range[0:range-1] # excldue last value
+        # y = (data[index][0:range-1] / dofs).T[0]
+        x = x_range
+        y = (data[index] / dofs).T[0]
         xdata = np.array(x)
         ydata = np.array(y)
         popt, pcov = curve_fit(func, xdata, ydata)
@@ -166,10 +166,7 @@ def plotting(x_range, data, dofs, label, name):
         plt.plot(x_range, data[3] / dofs, marker='.', linestyle='--', label='Rx_chi')
         plt.plot(x_range, data[4] / dofs, marker='.', linestyle='--', label='Ry_chi')
         plt.plot(x_range, data[5] / dofs, marker='.', linestyle='--', label='Rz_chi')
-        if label == 'Ry':
-            plt.xlabel(r'$[\mu rad]$')
-        else:
-            plt.xlabel('[mrad]')
+        plt.xlabel('[mrad]')
     plt.hlines(1, min(x_range), max(x_range), 'black')
     # plt.hlines(1, min(x_range), max(x_range), 'black')
     plt.legend()
@@ -177,8 +174,8 @@ def plotting(x_range, data, dofs, label, name):
     plt.title(f'chi2 per dof changing only {label} uncertainty')
     plt.ylabel('chi2 / dof')
     # plt.show()
-    plt.savefig(f'chi2_plots/retest/{name}_exclude_last_val.pdf')
-    # plt.savefig(f'chi2_plots/retest/{name}_full_fit.pdf')
+    # plt.savefig(f'chi2_plots/retest/{name}_exclude_last_val.pdf')
+    plt.savefig(f'chi2_plots/retest/{name}_full_fit.pdf')
     plt.clf()
     a = popt[0]
     b = popt[1]
@@ -345,7 +342,7 @@ Tz_err = [1, 1.5, 1.7, 1.8, 1.9, 2] # mm
 # that means 0.1 micron fuer Tx first value
 Rx_err = [0.2, 0.3, 0.37, 0.4, 0.5] # mrad
 Rx_OT_err = [0.2, 0.3, 0.4, 0.5] # mrad
-Ry_err = [0.3, 0.35, 0.4, 0.44, 0.5, 0.6] # micro rad
+Ry_err = [0.0003, 0.00035, 0.0004, 0.00044, 0.0005, 0.0006] # micro rad
 Rz_err = [0.1, 0.15, 0.2, 0.25, 0.3, 0.4] # mrad
 
 # Tx_unc = np.linspace(0.1, 1, 10) # micron, 1 micron is base config
@@ -363,11 +360,11 @@ plotting(Tz_err, chi2_values_from_Tz_changes, total_n_dofs, 'Tz', 'Tz_set_TxTzRx
 plotting(Rx_err, chi2_values_from_Rx_changes, total_n_dofs, 'Rx', 'Rx_with_set_TxTy')
 plotting(Rx_OT_err, chi2_values_from_Rx_changes_OT, total_n_dofs, 'Rx', 'Rx_only_set_Tx')
 plotting(Ry_err, chi2_values_from_Ry_changes, total_n_dofs, 'Ry', 'everything_set_but_Ry')
-plotting(Tz_err, chi2_values_from_Rz_changes, total_n_dofs, 'Rz', 'only_Rz_variable')
+plotting(Rz_err, chi2_values_from_Rz_changes, total_n_dofs, 'Rz', 'only_Rz_variable')
 
-best_Tx = 0.3 # 0.22 fit not working so well
-best_Ty = 1.2
-best_Tz = 1.9 # 1.83
-best_Rx = 0.0004
-best_Ry = 0.00000044
-best_Rz = 0.0002
+best_Tx = 0.3 # micron,  0.22 fit not working so well
+best_Ty = 1.2 # micron
+best_Tz = 1.9 # micron, # 1.83
+best_Rx = 0.0004 # 0.4 mrad
+best_Ry = 0.00000044 # 0.44 micro rad
+best_Rz = 0.0002 # mrad
