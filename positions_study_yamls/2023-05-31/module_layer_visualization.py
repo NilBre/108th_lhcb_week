@@ -156,8 +156,10 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
         run not beeing the LHCb run but the alignment runs
     '''
     L = ['Q2', 'Q3', 'Q0', 'Q1']
+    print(layerID, total_num_runs)
     for i in range(total_num_runs-1):
         if len(survey_pos) == 0:
+            print('range index i =', i)
             x1 = data_arr[i][0:5] - data_arr[i+1][0:5]  # Q0
             x2 = data_arr[i][5:10] - data_arr[i+1][5:10]  # Q2
             x3 = data_arr[i][10:15] - data_arr[i+1][10:15]  # Q1

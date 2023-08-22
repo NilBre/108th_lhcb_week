@@ -1,0 +1,9 @@
+for Rz i can basically take Ry since for Ry, Rz unc = 0.2 was already in and that was the best unc for Rz.
+
+so we have 
+base (base json), 
+Tx (Tx json), 
+TxTy (Ty json),
+TxTyRx (Rx json),
+TxTyTzRx (Tz json),
+all, TxTyTzRxRy (Ry json)

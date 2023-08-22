@@ -36,6 +36,8 @@ layers = ["U", "V", "X1", "X2"]
 colors = ['black', 'blue', 'red', 'green', 'yellow', 'magenta', 'brown', 'cyan']
 markers = ['o', 'x', 'd', 'D', '.', 'v', 's', 'p']
 
+outname_prefix = 'retest_uncertainty/'
+
 def func(x, a, b, c):
     return a * np.exp(-b * x) + c
 
@@ -185,6 +187,225 @@ def plotting(x_range, data, dofs, label, name):
         print(f'for {label}: intersection for chi2 / dof = 1:', x_intersect, 'micron')
     else:
         print(f'for {label}: intersection for chi2 / dof = 1:', x_intersect, 'mrad')
+
+def get_data(files, DoF, align_output):
+    num_files = len(files)
+    iter_num = 0
+    deg = DoF
+
+    runs_T1_U = [[] for _ in range(num_files)]
+    runs_T1_V = [[] for _ in range(num_files)]
+    runs_T1_X1 = [[] for _ in range(num_files)]
+    runs_T1_X2 = [[] for _ in range(num_files)]
+
+    runs_T2_U = [[] for _ in range(num_files)]
+    runs_T2_V = [[] for _ in range(num_files)]
+    runs_T2_X1 = [[] for _ in range(num_files)]
+    runs_T2_X2 = [[] for _ in range(num_files)]
+
+    runs_T3_U = [[] for _ in range(num_files)]
+    runs_T3_V = [[] for _ in range(num_files)]
+    runs_T3_X1 = [[] for _ in range(num_files)]
+    runs_T3_X2 = [[] for _ in range(num_files)]
+
+    T1U_PosRot_yml = [[] for _ in range(num_files)]
+    T1U_PosRot = [[] for _ in range(num_files)]
+    T1V_PosRot_yml = [[] for _ in range(num_files)]
+    T1V_PosRot = [[] for _ in range(num_files)]
+    T1X1_PosRot_yml = [[] for _ in range(num_files)]
+    T1X1_PosRot = [[] for _ in range(num_files)]
+    T1X2_PosRot_yml = [[] for _ in range(num_files)]
+    T1X2_PosRot = [[] for _ in range(num_files)]
+
+    T2U_PosRot_yml = [[] for _ in range(num_files)]
+    T2U_PosRot = [[] for _ in range(num_files)]
+    T2V_PosRot_yml = [[] for _ in range(num_files)]
+    T2V_PosRot = [[] for _ in range(num_files)]
+    T2X1_PosRot_yml = [[] for _ in range(num_files)]
+    T2X1_PosRot = [[] for _ in range(num_files)]
+    T2X2_PosRot_yml = [[] for _ in range(num_files)]
+    T2X2_PosRot = [[] for _ in range(num_files)]
+
+    T3U_PosRot_yml = [[] for _ in range(num_files)]
+    T3U_PosRot = [[] for _ in range(num_files)]
+    T3V_PosRot_yml = [[] for _ in range(num_files)]
+    T3V_PosRot = [[] for _ in range(num_files)]
+    T3X1_PosRot_yml = [[] for _ in range(num_files)]
+    T3X1_PosRot = [[] for _ in range(num_files)]
+    T3X2_PosRot_yml = [[] for _ in range(num_files)]
+    T3X2_PosRot = [[] for _ in range(num_files)]
+
+    runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
+               "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+               "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+               "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
+
+    runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
+               "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+               "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+               "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
+
+    runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
+            "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+            "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+            "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
+
+    for file in files:
+        x = list(range(len(runs)))
+        for j in range(0,len(stations)):
+            for k in range(0,len(layers)):
+                if j==0 and k==0:
+                    runs_T1_U[iter_num]=runs_T1
+                    runs_T2_U[iter_num]=runs_T2
+                    runs_T3_U[iter_num]=runs
+                elif j==0 and k==1:
+                    for i in range(0,len(runs)):
+                        string1 = runs_T1[i]
+                        string2 = runs_T2[i]
+                        string3 = runs[i]
+                        runs_T1_V[iter_num].append(string1.replace("T1/U", "T1/V"))
+                        runs_T2_V[iter_num].append(string2.replace("T2/U", "T2/V"))
+                        runs_T3_V[iter_num].append(string3.replace("T3/U", "T3/V"))
+                elif j==0 and k==2:
+                    for i in range(0,len(runs)):
+                        string1 = runs_T1[i]
+                        string2 = runs_T2[i]
+                        string3 = runs[i]
+                        runs_T1_X1[iter_num].append(string1.replace("T1/U", "T1/X1"))
+                        runs_T2_X1[iter_num].append(string2.replace("T2/U", "T2/X1"))
+                        runs_T3_X1[iter_num].append(string3.replace("T3/U", "T3/X1"))
+                elif j==0 and k==3:
+                    for i in range(0,len(runs)):
+                        string1 = runs_T1[i]
+                        string2 = runs_T2[i]
+                        string3 = runs[i]
+                        runs_T1_X2[iter_num].append(string1.replace("T1/U", "T1/X2"))
+                        runs_T2_X2[iter_num].append(string2.replace("T2/U", "T2/X2"))
+                        runs_T3_X2[iter_num].append(string3.replace("T3/U", "T3/X2"))
+
+        for i in range(0,len(runs)):
+            # what is the json file used for
+            with open(file, 'r') as stream:  # why do i do this???
+                data_loaded = align_output[iter_num]
+                # print(data_loaded[runs_T1_U[iter_num][i]].keys())
+                # print(deg, data_loaded[runs_T1_U[iter_num][i]].values())
+
+                T1U_PosRot_yml[iter_num].append(data_loaded[runs_T1_U[iter_num][i]][deg])
+                T1U_PosRot[iter_num].append(T1U_PosRot_yml[iter_num][i][0])
+
+                T1V_PosRot_yml[iter_num].append(data_loaded[runs_T1_V[iter_num][i]][deg])
+                T1V_PosRot[iter_num].append(T1V_PosRot_yml[iter_num][i][0])
+
+                T1X1_PosRot_yml[iter_num].append(data_loaded[runs_T1_X1[iter_num][i]][deg])
+                T1X1_PosRot[iter_num].append(T1X1_PosRot_yml[iter_num][i][0])
+
+                T1X2_PosRot_yml[iter_num].append(data_loaded[runs_T1_X2[iter_num][i]][deg])
+                T1X2_PosRot[iter_num].append(T1X2_PosRot_yml[iter_num][i][0])
+
+                # T2
+                T2U_PosRot_yml[iter_num].append(data_loaded[runs_T2_U[iter_num][i]][deg])
+                T2U_PosRot[iter_num].append(T2U_PosRot_yml[iter_num][i][0])
+
+                T2V_PosRot_yml[iter_num].append(data_loaded[runs_T2_V[iter_num][i]][deg])
+                T2V_PosRot[iter_num].append(T2V_PosRot_yml[iter_num][i][0])
+
+                T2X1_PosRot_yml[iter_num].append(data_loaded[runs_T2_X1[iter_num][i]][deg])
+                T2X1_PosRot[iter_num].append(T2X1_PosRot_yml[iter_num][i][0])
+
+                T2X2_PosRot_yml[iter_num].append(data_loaded[runs_T2_X2[iter_num][i]][deg])
+                T2X2_PosRot[iter_num].append(T2X2_PosRot_yml[iter_num][i][0])
+
+                # T3
+                T3U_PosRot_yml[iter_num].append(data_loaded[runs_T3_U[iter_num][i]][deg])
+                T3U_PosRot[iter_num].append(T3U_PosRot_yml[iter_num][i][0])
+
+                T3V_PosRot_yml[iter_num].append(data_loaded[runs_T3_V[iter_num][i]][deg])
+                T3V_PosRot[iter_num].append(T3V_PosRot_yml[iter_num][i][0])
+
+                T3X1_PosRot_yml[iter_num].append(data_loaded[runs_T3_X1[iter_num][i]][deg])
+                T3X1_PosRot[iter_num].append(T3X1_PosRot_yml[iter_num][i][0])
+
+                T3X2_PosRot_yml[iter_num].append(data_loaded[runs_T3_X2[iter_num][i]][deg])
+                T3X2_PosRot[iter_num].append(T3X2_PosRot_yml[iter_num][i][0])
+        iter_num += 1
+    return np.array(T1U_PosRot), np.array(T1V_PosRot), np.array(T1X1_PosRot), np.array(T1X2_PosRot), np.array(T2U_PosRot), np.array(T2V_PosRot), np.array(T2X1_PosRot), np.array(T2X2_PosRot), np.array(T3U_PosRot), np.array(T3V_PosRot), np.array(T3X1_PosRot), np.array(T3X2_PosRot)
+
+def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
+    max_Q0, max_Q1, max_Q2, max_Q3 = [], [], [], [] # should store 2 values: value and where per layer
+    # print('len data:', len(data_arr))
+    # change this for own needs as well
+    outfiles = 'constants_check_up/'
+    total_layer_num = 12
+    total_num_runs = len(run_labels) # number of runs
+    # print(total_num_runs)
+    x = np.linspace(0, 4, 5) # 5 modules per quarter
+    '''
+        instead of plotting the difference between survey and alignment runs
+        also plot diff:
+        abs(run 1 - run 2), abs(run 2 - run 3), abs(run 3 - run 4), etc
+        run not beeing the LHCb run but the alignment runs
+    '''
+    L = ['Q2', 'Q3', 'Q0', 'Q1']
+    # print(layerID, total_num_runs)
+    # print(data_arr)
+    # for i in range(total_num_runs):  # when using 'constants'
+    for i in range(total_num_runs):  # when using 'compare'
+        if survey_pos == 'constants':
+            # print('range index i =', i)
+            x1 = data_arr[i][0:5]    # Q0
+            # print(x1)
+            x2 = data_arr[i][5:10]   # Q2
+            x3 = data_arr[i][10:15]  # Q1
+            x4 = data_arr[i][15:20]  # Q3
+        if survey_pos == 'compare':
+            x1 = data_arr[i][0:5] - data_arr[i+1][0:5]      # Q0
+            x2 = data_arr[i][5:10] - data_arr[i+1][5:10]    # Q2
+            x3 = data_arr[i][10:15] - data_arr[i+1][10:15]  # Q1
+            x4 = data_arr[i][15:20] - data_arr[i+1][15:20]  # Q3
+        if survey_pos == 'survey':
+            x1 = data_arr[i][0:5] - survey_pos[i][0:5]     # Q0
+            x2 = data_arr[i][5:10] - survey_pos[i][5:10]   # Q2
+            x3 = data_arr[i][10:15] - survey_pos[i][10:15] # Q1
+            x4 = data_arr[i][15:20] - survey_pos[i][15:20] # Q3
+
+        ax = [plt.subplot(2,2,i+1) for i in range(4)]
+        plt.figure()
+        count = 0
+        for a in ax:
+            a.text(0.1, 0.7, L[count], transform=a.transAxes, weight="bold")
+            plt.sca(a)
+            if count == 0: # Q2
+                plt.scatter(x, x2[::-1], color=colors[i], marker=markers[i], s=10)
+                plt.ylabel(f'{title_label} [mm]')
+                plt.title(f'local {title_label}')
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                a.invert_yaxis()
+            if count == 1: # Q3
+                plt.scatter(x, x4, color=colors[i], marker=markers[i], s=10, label = f'{run_labels[i]}')
+                plt.title(f'layer {layerID}')
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                a.yaxis.tick_right()
+                plt.legend(loc='best', fontsize='8')
+            if count == 2: # Q0
+                plt.scatter(x, x1[::-1], color=colors[i], marker=markers[i], s=10)
+                plt.xticks(x, ["Q0M4", "Q0M3", "Q0M2", "Q0M1", "Q0M0"], rotation=45, fontsize=5)
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+            if count == 3: # Q1
+                plt.scatter(x, x3, color=colors[i], marker=markers[i], s=10)
+                a.invert_yaxis()
+                plt.hlines(0, 0, 5, colors='black', linestyles='dashed')
+                a.yaxis.tick_right()
+                plt.xticks(x, ["Q0M0", "Q0M1", "Q0M2", "Q0M3", "Q0M4"], rotation=45, fontsize=5)
+            count += 1
+        plt.subplots_adjust(wspace=0, hspace=0)
+        # l = ['base','Tx','Ty','Rx','Tz','Ry']
+        plt.savefig(f'{outname_prefix}{outfiles}' + run_labels[i] + outname + '_' + layerID + '_' + title_label + '.pdf')
+        # plt.savefig(f'{outname_prefix}{outfiles}{run_labels[i]}/' + outname + '_' + layerID + '_' + title_label + '.pdf')
+
+    plt.clf()
+
+layers = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
+
 # Tx
 files_Tx = [\
         "retest_uncertainty/json/Tx/parsedlog_Tx_0_1_micron.json",
@@ -330,7 +551,7 @@ chi2_values_from_Tx_changes = get_chi2_values(files_Tx)
 chi2_values_from_Ty_changes = get_chi2_values(files_Ty)
 chi2_values_from_Tz_changes = get_chi2_values(files_Tz)
 chi2_values_from_Rx_changes = get_chi2_values(files_Rx)
-chi2_values_from_Rx_changes_OT = get_chi2_values(files_Rx_onlyTx)
+# chi2_values_from_Rx_changes_OT = get_chi2_values(files_Rx_onlyTx)
 chi2_values_from_Ry_changes = get_chi2_values(files_Ry)
 chi2_values_from_Rz_changes = get_chi2_values(files_Rz)
 
@@ -368,3 +589,64 @@ best_Tz = 1.9 # micron, # 1.83
 best_Rx = 0.0004 # 0.4 mrad
 best_Ry = 0.00000044 # 0.44 micro rad
 best_Rz = 0.0002 # mrad
+
+'''
+    plot the constants (positions and rotations) for the different
+    stages for the tuning
+'''
+
+path = 'retest_uncertainty/constants_check_up/input_files'
+input_constants = [\
+    f'{path}/parsedlog_base.json',
+    f'{path}/parsedlog_Tx_0_3_micron.json',
+    f'{path}/parsedlog_Ty_1_2_micron.json',
+    f'{path}/parsedlog_Rx_0_4_mrad.json',
+    f'{path}/parsedlog_Tz_1_9_micron.json',
+    f'{path}/parsedlog_Ry_0_44_micro_rad.json',
+]
+
+labels_constants = [\
+    'base',
+    'Tx',
+    'TxTy',
+    'TxTyRx',
+    'TxTyTzRx',
+    'all',
+]
+constant_diff = [\
+    'base-Tx',
+    'Tx-Ty',
+    'Ty-Rx',
+    'Rx-Tz',
+    'Tz-all'
+]
+
+align_outputs=[open_alignment(thisfile) for thisfile in input_constants]
+plotted_alignables=[]
+for align_block in align_outputs:
+    thislist=[]
+    for key in align_block.keys():
+        if "FT" in key:
+            thislist.append(key)
+    plotted_alignables.append(thislist)
+align_outputs=[convertGlobal(align_block,plotted_alignables[0]) for align_block in align_outputs]
+
+tx = get_data(input_constants, 'Tx', align_outputs)
+ty = get_data(input_constants, 'Ty', align_outputs)
+tz = get_data(input_constants, 'Tz', align_outputs)
+x_glob = get_data(input_constants, 'x_global', align_outputs)
+y_glob = get_data(input_constants, 'y_global', align_outputs)
+z_glob = get_data(input_constants, 'z_global', align_outputs)
+nHits = get_data(input_constants, 'nHits', align_outputs)
+nTracks = get_data(input_constants, 'nTracks', align_outputs)
+
+for n in range(12):
+    tx_data = tx[n]
+    ty_data = ty[n]
+    tz_data = tz[n]
+    x_g = x_glob[n]
+    y_g = y_glob[n]
+    z_g = z_glob[n]
+    # print(tx_data)
+    # plot(tx_data, 'constants', 'plain_constants', labels_constants, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+    plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
