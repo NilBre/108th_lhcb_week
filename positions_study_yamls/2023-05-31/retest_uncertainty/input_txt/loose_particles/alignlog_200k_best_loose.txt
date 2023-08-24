@@ -1,0 +1,3183 @@
+********************* ALIGNMENT LOG ************************
+Iteration: 5
+Total number of events: 199990
+Time of first event [ns]: 1688572540943828000 --> 2023-07-05 05:55:40 PM
+Time of last event [ns] : 1688572676028984000 --> 2023-07-05 05:57:56 PM
+Time at initialize [ns] : 0 --> 1970-01-01 01:00:00 AM
+First/last run number: 269045/269045
+Min/max IOV: 269045/269045
+Used 216850 vertices for alignment
+Used 35429 particles for alignment
+Used 1703284 tracks for alignment
+Total chisquare/dofs:    3.34906e+07 / 27687414
+Average track chisquare: 17.9029
+Track chisquare/dof:     1.17415
+Vertex chisquare/dof:    1.74601
+Used 18799130 hits for alignment
+Total number of hits in external detectors: 15688254
+Average number of tracks per vertex: 5.45769
+Total chisquare of survey constraints: 5858.08 / 1536
+Total chi2 of joint constraints: 4693.62/768
+chi2 values for each degree of freedom:
+Tx_chi2: 743.456/768
+Ty_chi2: 749.952/768
+Tz_chi2: 716.554/768
+Rx_chi2: 771.595/768
+Ry_chi2: 856.632/768
+Rz_chi2: 855.437/768
+Number of alignables with insufficient statistics: 0
+Number of lagrange constraints: 2
+Number of chisq constraints:    1536
+Number of active parameters:    512
+Time to compute solution [ms]: 294.27
+Error2: 0.0114664
+Alignment delta chisquare/dof: 386.593 / 510
+Normalised alignment change chisquare: 0.758025
+Alignment delta chisquare/track dof: 1.48856e-05
+Alternative total chisq: 386.593
+Maximum chisq contribution of eigenmode: 27.9722
+Number of negative eigenvalues: 2
+Number of eigenvalues < 1: 135
+Smallest eigenvalues: 3.83979e-07 0.000285372 0.000421272 0.000528994 0.000581935 0.000678045 0.00130777 0.00160255 0.0024484 0.00346336 
+Parameter contributing most to weakest mode: FT/T1/X2/HL0/Q0/M0 0 -0.714938
+Alignment parameter with largest contribution to chi2: FT/T2/X2/HL0/Q0/M0 0 198.177
+Convergence status: Converged
+Most important dofs, including survey: 
+  0 FT/T2/X1/HL1/Q3/M1 dof=2 active=0  chi2= 7199.17 delta= -0.098074 +/- 0.00115588
+  1 FT/T2/X2/HL0/Q2/M2 dof=2 active=0  chi2= 6004.91 delta= 0.111769 +/- 0.00144235
+  2 FT/T3/X1/HL0/Q0/M1 dof=2 active=0  chi2= 5819.25 delta= -0.0952302 +/- 0.00124836
+  3 FT/T2/X2/HL0/Q2/M2 dof=3 active=0  chi2= 5792.77 delta= -9.58809e-05 +/- 1.25976e-06
+  4 FT/T2/X2/HL1/Q1/M2 dof=2 active=0  chi2= 5754.52 delta= 0.109339 +/- 0.00144136
+  5 FT/T2/X1/HL1/Q1/M2 dof=2 active=0  chi2= 5619.91 delta= 0.10842 +/- 0.00144626
+  6 FT/T1/X2/HL1/Q3/M2 dof=3 active=0  chi2= 5594.64 delta= 8.67147e-05 +/- 1.15933e-06
+  7 FT/T2/X2/HL1/Q1/M2 dof=3 active=0  chi2= 5505 delta= -9.34486e-05 +/- 1.25949e-06
+  8 FT/T2/X2/HL1/Q3/M1 dof=2 active=0  chi2= 5442.83 delta= -0.0877629 +/- 0.00118959
+  9 FT/T2/X1/HL1/Q1/M2 dof=3 active=0  chi2= 5409.69 delta= -9.29074e-05 +/- 1.26318e-06
+  10 FT/T1/X2/HL1/Q1/M2 dof=3 active=0  chi2= 5325.12 delta= -9.46915e-05 +/- 1.29762e-06
+  11 FT/T1/X2/HL1/Q1/M2 dof=2 active=0  chi2= 5206.73 delta= 0.107324 +/- 0.00148735
+  12 FT/T1/X2/HL0/Q0/M1 dof=2 active=0  chi2= 5132.82 delta= -0.0740939 +/- 0.0010342
+  13 FT/T3/X2/HL1/Q3/M1 dof=2 active=0  chi2= 5122.35 delta= -0.103225 +/- 0.00144228
+  14 FT/T2/X1/HL1/Q3/M1 dof=3 active=0  chi2= 5114.93 delta= 8.25575e-05 +/- 1.15435e-06
+  15 FT/T2/X1/HL1/Q1/M1 dof=2 active=0  chi2= 4832.44 delta= 0.107919 +/- 0.00155244
+  16 FT/T1/X2/HL0/Q0/M1 dof=3 active=0  chi2= 4654.43 delta= 7.22273e-05 +/- 1.05869e-06
+  17 FT/T2/X1/HL1/Q1/M1 dof=3 active=0  chi2= 4539.04 delta= -8.99483e-05 +/- 1.33509e-06
+  18 FT/T2/X2/HL0/Q0/M2 dof=3 active=0  chi2= 4532.17 delta= 7.52757e-05 +/- 1.11815e-06
+  19 FT/T1/X1/HL0/Q0/M1 dof=2 active=0  chi2= 4226.58 delta= -0.0703986 +/- 0.00108285
+  20 FT/T3/X2/HL1/Q3/M1 dof=3 active=0  chi2= 4154.45 delta= 8.66919e-05 +/- 1.345e-06
+  21 FT/T3/X1/HL1/Q3/M1 dof=3 active=0  chi2= 4067.76 delta= 8.0332e-05 +/- 1.25954e-06
+  22 FT/T1/X2/HL1/Q3/M2 dof=2 active=0  chi2= 3928.62 delta= -0.0689151 +/- 0.0010995
+  23 FT/T3/X1/HL1/Q3/M1 dof=2 active=0  chi2= 3922.58 delta= -0.0815296 +/- 0.00130176
+  24 FT/T2/X2/HL1/Q1/M1 dof=2 active=0  chi2= 3686.62 delta= 0.0945456 +/- 0.00155714
+Canonical constraint values: 
+BackFramesFixed Tx chi2: 2.1467       residual: 0.298791     +/- 0.20393      gcc^2: 0.000221245 
+BackFramesFixed Rz chi2: 3945.7       residual: -0.00752311  +/- 0.000119767  gcc^2: 0.000221245 
+Canonical constraint chisquare: 3945.98
+Values of constraint equations after solution (X=active,O=inactive): 
+Tx   O  0.0988924    +/- 0.371475
+Ty   O  0.00614353   +/- 0.0157077
+Tz   O  2.21229e-05  +/- 5.65636e-05
+Rx   O  -2.59117e-24 +/- 6.67082e-24
+Ry   O  1.80944e-07  +/- 1.07351e-06
+Rz   O  -5.0248e-05  +/- 0.000298112
+Szx  O  -0.0431946   +/- 0.0972972
+Szy  O  -1.79857e-06 +/- 0.00337267
+Szz  O  -6.47669e-09 +/- 1.21451e-05
+Sxx  O  -0.197429    +/- 0.137195
+SzRz O  -1.6914e-05  +/- 7.76978e-05
+Trx  O  1.14848e-06  +/- 4.85331e-06
+Try  O  7.65619e-07  +/- 4.57902e-06
+Trtx O  -2.56987e-09 +/- 8.4405e-09
+Trty O  -6.85084e-10 +/- 7.80376e-09
+Trcur O  1.33502e-10  +/- 6.57988e-10
+PVx  O  4.58796e-06  +/- 1.76034e-05
+PVy  O  3.85625e-06  +/- 1.55512e-05
+PVz  O  -4.75444e-05 +/- 6.28671e-05
+Sz2x O  0.0134744    +/- 0.0484002
+Sz2y O  0.000532638  +/- 0.00222008
+Sz2z O  1.91804e-06  +/- 7.99453e-06
+Sz2Rz O  -3.04093e-06 +/- 3.85989e-05
+total local delta chi2 / dof: 1.70066e+06 / 512
+Survey constraints with largest chisquare contribution: 
+  0 FT/T2/V/HL0/Q2/M3              dof=3 active=0  chi2=205  survey=0 delta=0.00286  surveyerr=0.0002 deltaerr=0
+  1 FT/T3/X2/HL1/Q3/M0             dof=3 active=0  chi2=82.4  survey=0 delta=-0.00182  surveyerr=0.0002 deltaerr=0
+  2 FT/T1/X1/HL0/Q2/M1             dof=5 active=1  chi2=69.6  survey=0 delta=0.00167  surveyerr=0.0002 deltaerr=7.23e-06
+  3 FT/T1/X1/HL1/Q1/M4             dof=3 active=0  chi2=69.2  survey=0 delta=0.00166  surveyerr=0.0002 deltaerr=0
+  4 FT/T1/X1/HL1/Q3/M4             dof=3 active=0  chi2=68  survey=0 delta=-0.00165  surveyerr=0.0002 deltaerr=0
+  5 FT/T2/V/HL1/Q1/M4              dof=5 active=1  chi2=63.6  survey=9.63e-35 delta=0.00159  surveyerr=0.0002 deltaerr=1.01e-05
+  6 FT/T3/X2/HL1/Q3/M1             dof=3 active=0  chi2=61.8  survey=0 delta=-0.00157  surveyerr=0.0002 deltaerr=0
+  7 FT/T2/V/HL0/Q2/M3              dof=2 active=0  chi2=59.3  survey=0 delta=3.85  surveyerr=0.5 deltaerr=0
+  8 FT/T1/X1/HL1/Q3/M3             dof=3 active=0  chi2=58.1  survey=0 delta=-0.00153  surveyerr=0.0002 deltaerr=0
+  9 FT/T3/X1/HL0/Q2/M1             dof=5 active=1  chi2=55.3  survey=0 delta=0.00149  surveyerr=0.0002 deltaerr=5.06e-06
+Alignable: FT/T1/U/HL0/Q0/M0
+Global position: (-371.71,-1208.25,7891.55) Average position of hits: (-303.225,-354.464,7896.31)
+Number of tracks/hits/outliers seen: 211676 211676 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.06977     cur= -0.06977     delta= -0.002976    +/- 0.003043     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 3.542e-05    cur= 3.542e-05    delta= 3.194e-06    +/- 3.664e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03924 0.4658
+local delta chi2 / dof: 2494 / 2
+survey chi2 / dof (before/after): 0.05084 0.05084 / 2
+align pars: -0.06977, 0.0002826, 0.1353, -0.0008697, -9.368e-08, 3.542e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q0/M1
+Global position: (-903.7,-1208,7892) Average position of hits: (-802.4,-426.2,7895)
+Number of tracks/hits/outliers seen: 222126 222126 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.08935     cur= -0.08935     delta= -0.003902    +/- 0.003151     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= -1.696e-06   cur= -1.696e-06   delta= 4.303e-06    +/- 3.747e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03923 0.465
+local delta chi2 / dof: 5393 / 2
+survey chi2 / dof (before/after): 0.03201 0.03201 / 2
+align pars: -0.08935, 8.332e-05, 0.1862, 0.0003016, 2.227e-07, -1.696e-06
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q0/M2
+Global position: (-1436,-1208,7892) Average position of hits: (-1312,-547.6,7896)
+Number of tracks/hits/outliers seen: 68997 68997 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.1134       cur= 0.1134       delta= -0.004072    +/- 0.003464     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0001258   cur= -0.0001258   delta= 4.39e-06     +/- 4.079e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07515 0.8882
+local delta chi2 / dof: 4854 / 2
+survey chi2 / dof (before/after): 0.4473 0.4473 / 2
+align pars: 0.1134, 0.0002861, 0.8269, -8.79e-05, 2.526e-07, -0.0001258
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q0/M3
+Global position: (-1968,-1208,7892) Average position of hits: (-1895,-646.4,7896)
+Number of tracks/hits/outliers seen: 22410 22410 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.1065      cur= -0.1065      delta= -0.004064    +/- 0.004242     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -2.96e-05    cur= -2.96e-05    delta= 3.9e-06      +/- 5.073e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1693 2
+local delta chi2 / dof: 1378 / 2
+survey chi2 / dof (before/after): 0.06723 0.06723 / 2
+align pars: -0.1065, -5.35e-05, 0.01791, 9.143e-05, 1.349e-07, -2.96e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q0/M4
+Global position: (-2500,-1208,7892) Average position of hits: (-2237,-416.9,7896)
+Number of tracks/hits/outliers seen: 2702 2702 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.1722      cur= -0.1722      delta= -0.004157    +/- 0.008547     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0001558    cur= 0.0001558    delta= 3.981e-06    +/- 9.704e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.7232 8.517
+local delta chi2 / dof: 1391 / 2
+survey chi2 / dof (before/after): 0.7257 0.7257 / 2
+align pars: -0.1722, 0.0004375, 0.228, -0.0002653, 2.052e-08, 0.0001558
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q2/M0
+Global position: (-160.3,1208,7900) Average position of hits: (-143.2,366.7,7896)
+Number of tracks/hits/outliers seen: 95827 95827 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.4203       cur= 0.4203       delta= 0.0002637    +/- 0.003349     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -0.0003245   cur= -0.0003245   delta= -9.567e-07   +/- 3.767e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06038 0.7168
+local delta chi2 / dof: 2484 / 2
+survey chi2 / dof (before/after): 3.338 3.338 / 2
+align pars: 0.4203, 3.718e-05, 0.8225, -0.0003031, 6.991e-07, -0.0003245
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q2/M1
+Global position: (-692.3,1208,7900) Average position of hits: (-771.6,149.4,7896)
+Number of tracks/hits/outliers seen: 68061 68061 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.9189       cur= 0.9189       delta= 0.004727     +/- 0.008054     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -0.0006824   cur= -0.0006824   delta= -4.984e-06   +/- 7.136e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06991 0.828
+local delta chi2 / dof: 5355 / 2
+survey chi2 / dof (before/after): 15.02 15.02 / 2
+align pars: 0.9189, 0.0001049, 0.2363, 0.0003448, 3.13e-07, -0.0006824
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q2/M2
+Global position: (-1224,1208,7900) Average position of hits: (-1258,217.9,7897)
+Number of tracks/hits/outliers seen: 34065 34065 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.6912       cur= 0.6912       delta= 0.003986     +/- 0.009526     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0005377   cur= -0.0005377   delta= -4.318e-06   +/- 8.44e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1071 1.267
+local delta chi2 / dof: 4833 / 2
+survey chi2 / dof (before/after): 9.139 9.139 / 2
+align pars: 0.6912, 0.0003905, 1.122, 0.0001513, 3.656e-07, -0.0005377
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q2/M3
+Global position: (-1756,1208,7900) Average position of hits: (-1782,350.3,7896)
+Number of tracks/hits/outliers seen: 10605 10605 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.9168       cur= 0.9168       delta= -0.0001163   +/- 0.0114       [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0006386   cur= -0.0006386   delta= -4.532e-07   +/- 1.055e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2431 2.882
+local delta chi2 / dof: 1369 / 2
+survey chi2 / dof (before/after): 13.56 13.56 / 2
+align pars: 0.9168, 0.0004514, 0.3585, 0.0003706, 4.355e-07, -0.0006386
+survey pars:   0, 0, 0, 0, 0, -3.081e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL0/Q2/M4
+Global position: (-2288,1208,7900) Average position of hits: (-2187,435.3,7897)
+Number of tracks/hits/outliers seen: 2232 2232 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.1852      cur= -0.1852      delta= 0.001415     +/- 0.01467      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0001389    cur= 0.0001389    delta= -1.72e-06    +/- 1.439e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.7946 9.305
+local delta chi2 / dof: 1390 / 2
+survey chi2 / dof (before/after): 0.6194 0.6194 / 2
+align pars: -0.1852, 0.0005722, 0.8204, 0.0002229, 8.809e-08, 0.0001389
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q1/M0
+Global position: (160.3,-1208,7892) Average position of hits: (189.6,-348.6,7896)
+Number of tracks/hits/outliers seen: 179447 179447 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.07653     cur= -0.07653     delta= -0.002558    +/- 0.003158     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= -3.843e-05   cur= -3.843e-05   delta= 2.663e-06    +/- 3.581e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04349 0.5161
+local delta chi2 / dof: 1400 / 2
+survey chi2 / dof (before/after): 0.06034 0.06034 / 2
+align pars: -0.07653, -0.0003689, 0.6399, 0.0001248, -1.644e-07, -3.843e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q1/M1
+Global position: (692.3,-1208,7892) Average position of hits: (766.8,-158.1,7897)
+Number of tracks/hits/outliers seen: 74677 74677 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.2207      cur= -0.2207      delta= 0.007378     +/- 0.006199     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -0.0001031   cur= -0.0001031   delta= -6.462e-06   +/- 5.717e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06665 0.7912
+local delta chi2 / dof: 655.9 / 2
+survey chi2 / dof (before/after): 0.4604 0.4604 / 2
+align pars: -0.2207, 5.408e-05, 1.385, -3.541e-05, 5.916e-08, -0.0001031
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q1/M2
+Global position: (1224,-1208,7892) Average position of hits: (1255,-217.2,7898)
+Number of tracks/hits/outliers seen: 33593 33593 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.768        cur= 0.768        delta= 0.004749     +/- 0.00857      [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0009761   cur= -0.0009761   delta= -4.419e-06   +/- 7.742e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1083 1.283
+local delta chi2 / dof: 1150 / 2
+survey chi2 / dof (before/after): 26.18 26.18 / 2
+align pars: 0.768, 0.0003961, 0.6405, -0.0005275, 7.827e-08, -0.0009761
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q1/M3
+Global position: (1756,-1208,7892) Average position of hits: (1801,-344.9,7897)
+Number of tracks/hits/outliers seen: 14023 14023 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.3701       cur= 0.3701       delta= 0.003196     +/- 0.01059      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0007618   cur= -0.0007618   delta= -3.209e-06   +/- 9.776e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1984 2.334
+local delta chi2 / dof: 1497 / 2
+survey chi2 / dof (before/after): 15.05 15.05 / 2
+align pars: 0.3701, 0.0002635, 0.4616, -0.0004097, 1.587e-09, -0.0007618
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q1/M4
+Global position: (2288,-1208,7892) Average position of hits: (2202,-408.8,7897)
+Number of tracks/hits/outliers seen: 3257 3257 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.8329       cur= 0.8329       delta= 0.003401     +/- 0.01365      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0009592   cur= -0.0009592   delta= -3.69e-06    +/- 1.35e-05     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.6279 7.424
+local delta chi2 / dof: 3566 / 2
+survey chi2 / dof (before/after): 25.78 25.78 / 2
+align pars: 0.8329, -0.002095, -0.497, -0.001394, 7.094e-07, -0.0009592
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q3/M0
+Global position: (371.7,1208,7900) Average position of hits: (293.5,358.8,7896)
+Number of tracks/hits/outliers seen: 283181 283181 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.4911       cur= 0.4911       delta= 9.63e-05     +/- 0.003151     [ 1.793e-05    ]  gcc= 1
+Rz  : curtot= -0.0003035   cur= -0.0003035   delta= -6.33e-07    +/- 3.709e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03359 0.3983
+local delta chi2 / dof: 1396 / 2
+survey chi2 / dof (before/after): 3.267 3.267 / 2
+align pars: 0.4911, -0.0003843, 0.8875, 0.0003285, -7.409e-08, -0.0003035
+survey pars:   0, 0, 0, 0, 0, -3.081e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q3/M1
+Global position: (903.7,1208,7900) Average position of hits: (797.5,411.3,7896)
+Number of tracks/hits/outliers seen: 188711 188711 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.4998       cur= 0.4998       delta= -0.001102    +/- 0.003336     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= -0.0001271   cur= -0.0001271   delta= 1.287e-06    +/- 3.875e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04306 0.51
+local delta chi2 / dof: 652.9 / 2
+survey chi2 / dof (before/after): 1.403 1.403 / 2
+align pars: 0.4998, -0.0031, 2.343, 0.0007505, -2.248e-07, -0.0001271
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q3/M2
+Global position: (1436,1208,7900) Average position of hits: (1327,547.8,7897)
+Number of tracks/hits/outliers seen: 74111 74111 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.7003       cur= 0.7003       delta= -0.001414    +/- 0.003656     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -0.0002346   cur= -0.0002346   delta= 1.668e-06    +/- 4.228e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07293 0.8629
+local delta chi2 / dof: 1151 / 2
+survey chi2 / dof (before/after): 3.337 3.337 / 2
+align pars: 0.7003, -0.003729, 2.324, 0.0008659, -4.378e-07, -0.0002346
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q3/M3
+Global position: (1968,1208,7900) Average position of hits: (1871,622.1,7896)
+Number of tracks/hits/outliers seen: 25713 25713 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 1.016        cur= 1.016        delta= -0.001205    +/- 0.004257     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0003815   cur= -0.0003815   delta= 1.568e-06    +/- 4.99e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1477 1.743
+local delta chi2 / dof: 1497 / 2
+survey chi2 / dof (before/after): 7.772 7.772 / 2
+align pars: 1.016, -0.00725, 2.644, 0.001388, 6.693e-09, -0.0003815
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/U/HL1/Q3/M4
+Global position: (2500,1208,7900) Average position of hits: (2237,437.6,7897)
+Number of tracks/hits/outliers seen: 2683 2683 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.6059       cur= 0.6059       delta= -0.001313    +/- 0.007901     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0002272   cur= -0.0002272   delta= 1.969e-06    +/- 8.864e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.6901 8.16
+local delta chi2 / dof: 3566 / 2
+survey chi2 / dof (before/after): 2.759 2.759 / 2
+align pars: 0.6059, -0.004868, 2.482, 0.001063, -2.634e-09, -0.0002272
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q0/M0
+Global position: (-160.3,-1208,7962) Average position of hits: (-227.3,-364.6,7965)
+Number of tracks/hits/outliers seen: 209987 209987 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.4274      cur= -0.4274      delta= 0.002321     +/- 0.003181     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= -0.0002084   cur= -0.0002084   delta= -2.472e-06   +/- 3.83e-06     [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04003 0.4752
+local delta chi2 / dof: 1421 / 2
+survey chi2 / dof (before/after): 1.816 1.816 / 2
+align pars: -0.4274, -0.002496, 1.138, 0.0009143, -5.247e-08, -0.0002084
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q0/M1
+Global position: (-692.3,-1208,7962) Average position of hits: (-742.7,-404,7964)
+Number of tracks/hits/outliers seen: 227515 227515 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.2467      cur= -0.2467      delta= 0.0033       +/- 0.003082     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 9.631e-05    cur= 9.631e-05    delta= -3.721e-06   +/- 3.806e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04036 0.4781
+local delta chi2 / dof: 4568 / 2
+survey chi2 / dof (before/after): 0.4753 0.4753 / 2
+align pars: -0.2467, -0.001262, 0.9229, -5.293e-06, -1.571e-08, 9.631e-05
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q0/M2
+Global position: (-1224,-1208,7962) Average position of hits: (-1224,-582,7964)
+Number of tracks/hits/outliers seen: 88957 88957 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= 0.1739       cur= 0.1739       delta= 0.002943     +/- 0.003117     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -7.781e-05   cur= -7.781e-05   delta= -3.402e-06   +/- 3.903e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06952 0.8229
+local delta chi2 / dof: 4338 / 2
+survey chi2 / dof (before/after): 0.2723 0.2723 / 2
+align pars: 0.1739, 0.0004655, 1.345, -0.000431, 1.712e-07, -7.781e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q0/M3
+Global position: (-1756,-1208,7962) Average position of hits: (-1785,-694.6,7965)
+Number of tracks/hits/outliers seen: 25852 25852 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.04068     cur= -0.04068     delta= 0.002779     +/- 0.003534     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 4.038e-05    cur= 4.038e-05    delta= -3.57e-06    +/- 4.523e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1581 1.868
+local delta chi2 / dof: 7421 / 2
+survey chi2 / dof (before/after): 0.04739 0.04739 / 2
+align pars: -0.04068, 1.102e-05, 1.171, -0.0003601, 2.78e-07, 4.038e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q0/M4
+Global position: (-2288,-1208,7962) Average position of hits: (-2183,-696.7,7965)
+Number of tracks/hits/outliers seen: 7219 7219 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.6395      cur= -0.6395      delta= 0.002604     +/- 0.00442      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0005134    cur= 0.0005134    delta= -3.608e-06   +/- 6.111e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.4072 4.794
+local delta chi2 / dof: 9687 / 2
+survey chi2 / dof (before/after): 8.225 8.225 / 2
+align pars: -0.6395, -0.0008528, 0.6336, -0.0007696, -1.723e-07, 0.0005134
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q2/M0
+Global position: (-371.7,1208,7970) Average position of hits: (-159.1,318.9,7965)
+Number of tracks/hits/outliers seen: 69639 69639 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.6432       cur= 0.6432       delta= 0.000762     +/- 0.004051     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 3.045e-05    cur= 3.045e-05    delta= -7.051e-08   +/- 4.479e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07165 0.8529
+local delta chi2 / dof: 1415 / 2
+survey chi2 / dof (before/after): 1.678 1.678 / 2
+align pars: 0.6432, -0.003059, 0.8382, 0.0006652, 1.747e-06, 3.045e-05
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q2/M1
+Global position: (-903.7,1208,7970) Average position of hits: (-802.7,155.7,7964)
+Number of tracks/hits/outliers seen: 68927 68927 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.2754      cur= -0.2754      delta= -0.002047    +/- 0.007961     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0003342    cur= 0.0003342    delta= 2.688e-06    +/- 7.292e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07297 0.8637
+local delta chi2 / dof: 4545 / 2
+survey chi2 / dof (before/after): 3.096 3.096 / 2
+align pars: -0.2754, -0.001687, 0.5346, -0.0003234, -6.424e-07, 0.0003342
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q2/M2
+Global position: (-1436,1208,7970) Average position of hits: (-1304,226.7,7964)
+Number of tracks/hits/outliers seen: 33177 33177 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.2837      cur= -0.2837      delta= -0.002401    +/- 0.009746     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0001684    cur= 0.0001684    delta= 2.955e-06    +/- 8.905e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1141 1.348
+local delta chi2 / dof: 4321 / 2
+survey chi2 / dof (before/after): 1.031 1.031 / 2
+align pars: -0.2837, -0.0001316, 0.9938, -0.0007238, -8.127e-07, 0.0001684
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q2/M3
+Global position: (-1968,1208,7970) Average position of hits: (-1844,343.9,7964)
+Number of tracks/hits/outliers seen: 11205 11205 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.5573       cur= 0.5573       delta= -0.004992    +/- 0.01246      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0004663   cur= -0.0004663   delta= 5.394e-06    +/- 1.154e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2382 2.798
+local delta chi2 / dof: 7416 / 2
+survey chi2 / dof (before/after): 6.679 6.679 / 2
+align pars: 0.5573, 0.001068, 0.8636, -0.0006146, -6.732e-07, -0.0004663
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL0/Q2/M4
+Global position: (-2500,1208,7970) Average position of hits: (-2419,262.7,7965)
+Number of tracks/hits/outliers seen: 19 19 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.1863      cur= -0.1863      delta= -0.002327    +/- 0.08942      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0001675    cur= 0.0001675    delta= 3.379e-06    +/- 7.399e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 7.598 111.5
+local delta chi2 / dof: 9686 / 2
+survey chi2 / dof (before/after): 0.8404 0.8404 / 2
+align pars: -0.1863, -0.0005794, 2.039, 0.000389, 3.248e-07, 0.0001675
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q1/M0
+Global position: (371.7,-1208,7962) Average position of hits: (241.4,-293.4,7965)
+Number of tracks/hits/outliers seen: 153086 153086 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.06564     cur= -0.06564     delta= 0.002143     +/- 0.003586     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= -9.765e-05   cur= -9.765e-05   delta= -2.046e-06   +/- 4.112e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04788 0.5687
+local delta chi2 / dof: 357.1 / 2
+survey chi2 / dof (before/after): 0.2556 0.2556 / 2
+align pars: -0.06564, -0.0006546, 1.079, 0.0003037, 4.812e-07, -9.765e-05
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q1/M1
+Global position: (903.7,-1208,7962) Average position of hits: (797.6,-162.1,7964)
+Number of tracks/hits/outliers seen: 72746 72746 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= 0.1138       cur= 0.1138       delta= -0.000945    +/- 0.006395     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -2.21e-06    cur= -2.21e-06    delta= 4.441e-07    +/- 6.144e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07007 0.8298
+local delta chi2 / dof: 511 / 2
+survey chi2 / dof (before/after): 0.05194 0.05194 / 2
+align pars: 0.1138, 0.001591, 1.409, -0.0005643, -7.348e-07, -2.21e-06
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q1/M2
+Global position: (1436,-1208,7962) Average position of hits: (1300,-227.6,7963)
+Number of tracks/hits/outliers seen: 31918 31918 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= 0.3387       cur= 0.3387       delta= 0.002372     +/- 0.008856     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002066    cur= 0.0002066    delta= -2.393e-06   +/- 8.259e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1147 1.357
+local delta chi2 / dof: 866.2 / 2
+survey chi2 / dof (before/after): 1.526 1.526 / 2
+align pars: 0.3387, 0.003061, 1.08, -0.001151, -1.525e-06, 0.0002066
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q1/M3
+Global position: (1968,-1208,7962) Average position of hits: (1861,-349.6,7964)
+Number of tracks/hits/outliers seen: 13510 13510 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.3778      cur= -0.3778      delta= 0.0006705    +/- 0.01124      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0007661    cur= 0.0007661    delta= -6.858e-07   +/- 1.05e-05     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2039 2.411
+local delta chi2 / dof: 80.25 / 2
+survey chi2 / dof (before/after): 15.24 15.24 / 2
+align pars: -0.3778, 0.001659, 0.9348, -0.0005474, -6.19e-07, 0.0007661
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q1/M4
+Global position: (2500,-1208,7962) Average position of hits: (2254,-365.1,7965)
+Number of tracks/hits/outliers seen: 2464 2464 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -1.746       cur= -1.746       delta= 0.0008662    +/- 0.01595      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.001453     cur= 0.001453     delta= -1.507e-06   +/- 1.509e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.659 7.748
+local delta chi2 / dof: 2850 / 2
+survey chi2 / dof (before/after): 65.01 65.01 / 2
+align pars: -1.746, -0.004585, 2.324, 0.0006008, 6.022e-07, 0.001453
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q3/M0
+Global position: (160.3,1208,7970) Average position of hits: (245.2,356.3,7965)
+Number of tracks/hits/outliers seen: 268743 268743 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.1739      cur= -0.1739      delta= 0.0005792    +/- 0.003289     [ 1.793e-05    ]  gcc= 1
+Rz  : curtot= 0.0002952    cur= 0.0002952    delta= -1.982e-07   +/- 3.9e-06      [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03512 0.417
+local delta chi2 / dof: 358.3 / 2
+survey chi2 / dof (before/after): 2.299 2.299 / 2
+align pars: -0.1739, 0.0004302, 0.3749, -0.0002777, -1.599e-07, 0.0002952
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q3/M1
+Global position: (692.3,1208,7970) Average position of hits: (730.8,399.1,7964)
+Number of tracks/hits/outliers seen: 198770 198770 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.4105      cur= -0.4105      delta= 0.0002834    +/- 0.003203     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 0.0002469    cur= 0.0002469    delta= 1.013e-07    +/- 3.847e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04307 0.509
+local delta chi2 / dof: 511.5 / 2
+survey chi2 / dof (before/after): 2.198 2.198 / 2
+align pars: -0.4105, 0.001814, 0.798, -0.001062, -4.227e-07, 0.0002469
+survey pars:   0, 0, 0, 0, 0, -3.081e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q3/M2
+Global position: (1224,1208,7970) Average position of hits: (1236,548.4,7963)
+Number of tracks/hits/outliers seen: 86493 86493 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -1.064       cur= -1.064       delta= 0.0003383    +/- 0.003293     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0003912    cur= 0.0003912    delta= 1.578e-07    +/- 3.992e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06989 0.826
+local delta chi2 / dof: 867.2 / 2
+survey chi2 / dof (before/after): 8.353 8.353 / 2
+align pars: -1.064, 0.001964, 0.7452, -0.00143, -5.038e-07, 0.0003912
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q3/M3
+Global position: (1756,1208,7970) Average position of hits: (1761,687.1,7964)
+Number of tracks/hits/outliers seen: 32103 32103 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.9612      cur= -0.9612      delta= 0.0003702    +/- 0.003543     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0003381    cur= 0.0003381    delta= -1.723e-07   +/- 4.431e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1325 1.564
+local delta chi2 / dof: 80.43 / 2
+survey chi2 / dof (before/after): 6.553 6.553 / 2
+align pars: -0.9612, 0.0007175, 0.3552, -0.001025, -1.404e-07, 0.0003381
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/V/HL1/Q3/M4
+Global position: (2288,1208,7970) Average position of hits: (2184,722.3,7965)
+Number of tracks/hits/outliers seen: 7173 7173 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.7755      cur= -0.7755      delta= -0.0001801   +/- 0.004369     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.000626     cur= 0.000626     delta= 9.408e-07    +/- 5.823e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.386 4.571
+local delta chi2 / dof: 2850 / 2
+survey chi2 / dof (before/after): 12.2 12.2 / 2
+align pars: -0.7755, -0.0004239, -0.1388, -0.00143, 1.945e-07, 0.000626
+survey pars:   0, 0, 0, 0, 0, -3.081e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q0/M0
+Global position: (-265,-1213,7822) Average position of hits: (-265.7,-348,7825)
+Number of tracks/hits/outliers seen: 211085 211085 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= 0.1027       cur= 0.1027       delta= 0.002546     +/- 0.003043     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= -1.955e-05   cur= -1.955e-05   delta= -2.691e-06   +/- 3.649e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03587 0.4238
+local delta chi2 / dof: 1598 / 2
+survey chi2 / dof (before/after): 0.05171 0.05171 / 2
+align pars: 0.1027, -0.0005505, 0.5216, 0.0006654, 4.949e-08, -1.955e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q0/M1
+Global position: (-795,-1213,7822) Average position of hits: (-765.9,-417.4,7825)
+Number of tracks/hits/outliers seen: 226544 226544 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.2365      cur= -0.2365      delta= 0.003521     +/- 0.003041     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= 0.0001356    cur= 0.0001356    delta= -3.967e-06   +/- 3.668e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03587 0.4244
+local delta chi2 / dof: 5171 / 2
+survey chi2 / dof (before/after): 0.6836 0.6836 / 2
+align pars: -0.2365, 8.78e-05, 0.6035, -0.0002601, 2.216e-07, 0.0001356
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q0/M2
+Global position: (-1325,-1213,7822) Average position of hits: (-1263,-563.7,7825)
+Number of tracks/hits/outliers seen: 74379 74379 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.5727      cur= -0.5727      delta= 0.003423     +/- 0.003201     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0002629    cur= 0.0002629    delta= -3.83e-06    +/- 3.874e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06702 0.7911
+local delta chi2 / dof: 4626 / 2
+survey chi2 / dof (before/after): 3.04 3.04 / 2
+align pars: -0.5727, -0.0003043, 0.1067, -0.0002934, 2.652e-07, 0.0002629
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q0/M3
+Global position: (-1855,-1213,7822) Average position of hits: (-1844,-697.8,7825)
+Number of tracks/hits/outliers seen: 21569 21569 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.197       cur= -0.197       delta= 0.003255     +/- 0.003701     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.000231     cur= 0.000231     delta= -3.692e-06   +/- 4.602e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1534 1.808
+local delta chi2 / dof: 4620 / 2
+survey chi2 / dof (before/after): 1.489 1.489 / 2
+align pars: -0.197, 0.0004233, 0.6172, -0.0002306, 1.763e-07, 0.000231
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q0/M4
+Global position: (-2385,-1213,7822) Average position of hits: (-2197,-543,7826)
+Number of tracks/hits/outliers seen: 3604 3604 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.6121      cur= -0.6121      delta= 0.002812     +/- 0.005719     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002662    cur= 0.0002662    delta= -3.139e-06   +/- 7.34e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.5603 6.612
+local delta chi2 / dof: 3051 / 2
+survey chi2 / dof (before/after): 3.27 3.27 / 2
+align pars: -0.6121, 0.0003219, 0.4933, -0.0001679, 6.873e-08, 0.0002662
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q2/M0
+Global position: (-265,1213,7830) Average position of hits: (-164.5,333.5,7826)
+Number of tracks/hits/outliers seen: 80323 80323 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.4817      cur= -0.4817      delta= 0.0002173    +/- 0.003551     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.000332     cur= 0.000332     delta= 4.125e-07    +/- 3.969e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06015 0.7133
+local delta chi2 / dof: 1592 / 2
+survey chi2 / dof (before/after): 3.684 3.684 / 2
+align pars: -0.4817, -0.001187, 0.3562, 0.0005255, 1.084e-06, 0.000332
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q2/M1
+Global position: (-795,1213,7830) Average position of hits: (-781,147.6,7825)
+Number of tracks/hits/outliers seen: 67846 67846 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -1.95        cur= -1.95        delta= -0.006054    +/- 0.008084     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.001668     cur= 0.001668     delta= 6.056e-06    +/- 7.226e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06481 0.7676
+local delta chi2 / dof: 5139 / 2
+survey chi2 / dof (before/after): 84.73 84.73 / 2
+align pars: -1.95, -0.001444, 0.4776, -0.0003611, -1.167e-07, 0.001668
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q2/M2
+Global position: (-1325,1213,7830) Average position of hits: (-1277,225.8,7825)
+Number of tracks/hits/outliers seen: 32432 32432 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.2437      cur= -0.2437      delta= -0.003337    +/- 0.009456     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0004102    cur= 0.0004102    delta= 3.759e-06    +/- 8.466e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1012 1.197
+local delta chi2 / dof: 4606 / 2
+survey chi2 / dof (before/after): 4.444 4.444 / 2
+align pars: -0.2437, -0.0001139, 0.02137, -0.0003632, -2.227e-07, 0.0004102
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q2/M3
+Global position: (-1855,1213,7830) Average position of hits: (-1805,343.9,7825)
+Number of tracks/hits/outliers seen: 11149 11149 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= 0.4769       cur= 0.4769       delta= -0.003944    +/- 0.01164      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0004618   cur= -0.0004618   delta= 4.26e-06     +/- 1.073e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2148 2.534
+local delta chi2 / dof: 4614 / 2
+survey chi2 / dof (before/after): 6.241 6.241 / 2
+align pars: 0.4769, 0.0008286, 0.2053, -0.0005704, -1.521e-07, -0.0004618
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL0/Q2/M4
+Global position: (-2385,1213,7830) Average position of hits: (-2196,401.3,7826)
+Number of tracks/hits/outliers seen: 1443 1443 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= 0.8262       cur= 0.8262       delta= -0.002496    +/- 0.01624      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0004427   cur= -0.0004427   delta= 2.878e-06    +/- 1.541e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.9499 11.14
+local delta chi2 / dof: 3051 / 2
+survey chi2 / dof (before/after): 7.629 7.629 / 2
+align pars: 0.8262, 0.001118, 0.6139, -6.835e-05, -1.103e-07, -0.0004427
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q1/M0
+Global position: (265,-1213,7822) Average position of hits: (213.7,-313.8,7826)
+Number of tracks/hits/outliers seen: 162724 162724 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.3933      cur= -0.3933      delta= 0.002608     +/- 0.003244     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= 0.0002986    cur= 0.0002986    delta= -2.561e-06   +/- 3.709e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04168 0.4926
+local delta chi2 / dof: 769.8 / 2
+survey chi2 / dof (before/after): 2.847 2.847 / 2
+align pars: -0.3933, -0.0003325, -0.02994, 0.0001658, 1.066e-07, 0.0002986
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q1/M1
+Global position: (795,-1213,7822) Average position of hits: (775.8,-155.8,7826)
+Number of tracks/hits/outliers seen: 74814 74814 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.3249      cur= -0.3249      delta= -0.003607    +/- 0.006377     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0005406    cur= 0.0005406    delta= 2.942e-06    +/- 5.945e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06145 0.7255
+local delta chi2 / dof: 7.406 / 2
+survey chi2 / dof (before/after): 7.727 7.727 / 2
+align pars: -0.3249, -0.0007171, -0.8387, -0.0003658, -5.993e-07, 0.0005406
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q1/M2
+Global position: (1325,-1213,7822) Average position of hits: (1271,-222.2,7826)
+Number of tracks/hits/outliers seen: 31733 31733 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.3378      cur= -0.3378      delta= 0.00137      +/- 0.008521     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0004919    cur= 0.0004919    delta= -1.244e-06   +/- 7.779e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1018 1.201
+local delta chi2 / dof: 58.71 / 2
+survey chi2 / dof (before/after): 6.505 6.505 / 2
+align pars: -0.3378, -7.896e-05, -0.1513, -4.195e-05, -1.259e-07, 0.0004919
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q1/M3
+Global position: (1855,-1213,7822) Average position of hits: (1820,-347.9,7826)
+Number of tracks/hits/outliers seen: 13752 13752 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.7484      cur= -0.7484      delta= -0.0004492   +/- 0.0106       [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0008567    cur= 0.0008567    delta= 6.434e-07    +/- 9.805e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1827 2.156
+local delta chi2 / dof: 338.4 / 2
+survey chi2 / dof (before/after): 20.59 20.59 / 2
+align pars: -0.7484, -0.001059, 0.3646, 0.000477, 5.011e-07, 0.0008567
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q1/M4
+Global position: (2385,-1213,7822) Average position of hits: (2207,-366.3,7827)
+Number of tracks/hits/outliers seen: 2183 2183 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -1.128       cur= -1.128       delta= -0.0005671   +/- 0.01514      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.001278     cur= 0.001278     delta= 5.66e-07     +/- 1.458e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.6912 8.145
+local delta chi2 / dof: 43.91 / 2
+survey chi2 / dof (before/after): 45.92 45.92 / 2
+align pars: -1.128, -0.006719, 1.593, 0.001664, 2.232e-06, 0.001278
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q3/M0
+Global position: (265,1213,7830) Average position of hits: (271.1,355.3,7826)
+Number of tracks/hits/outliers seen: 279534 279534 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.2238      cur= -0.2238      delta= 0.0002064    +/- 0.003145     [ 1.792e-05    ]  gcc= 1
+Rz  : curtot= 0.0002102    cur= 0.0002102    delta= 2.398e-07    +/- 3.704e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03093 0.3654
+local delta chi2 / dof: 767.7 / 2
+survey chi2 / dof (before/after): 1.305 1.305 / 2
+align pars: -0.2238, -0.0001462, -0.5926, -0.0002985, -1.987e-07, 0.0002102
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q3/M1
+Global position: (795,1213,7830) Average position of hits: (759.1,403.2,7826)
+Number of tracks/hits/outliers seen: 189319 189319 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.68        cur= -0.68        delta= 0.0005314    +/- 0.003195     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 0.000288     cur= 0.000288     delta= -4.055e-07   +/- 3.758e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03885 0.4595
+local delta chi2 / dof: 5.827 / 2
+survey chi2 / dof (before/after): 3.923 3.923 / 2
+align pars: -0.68, -0.002288, -1.441, -0.0008689, -1.722e-07, 0.000288
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q3/M2
+Global position: (1325,1213,7830) Average position of hits: (1275,554,7826)
+Number of tracks/hits/outliers seen: 78671 78671 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.7224      cur= -0.7224      delta= 0.000616     +/- 0.00337      [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0003823    cur= 0.0003823    delta= -3.944e-07   +/- 3.981e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06492 0.7674
+local delta chi2 / dof: 59.53 / 2
+survey chi2 / dof (before/after): 5.741 5.741 / 2
+align pars: -0.7224, -0.004033, -1.63, -0.001259, -2.763e-07, 0.0003823
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q3/M3
+Global position: (1855,1213,7830) Average position of hits: (1810,651.4,7826)
+Number of tracks/hits/outliers seen: 27986 27986 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.9182      cur= -0.9182      delta= 0.0007033    +/- 0.003729     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0005176    cur= 0.0005176    delta= -8.529e-07   +/- 4.53e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1287 1.519
+local delta chi2 / dof: 338.8 / 2
+survey chi2 / dof (before/after): 10.07 10.07 / 2
+align pars: -0.9182, -0.006318, -2.064, -0.001525, 1.397e-07, 0.0005176
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X1/HL1/Q3/M4
+Global position: (2385,1213,7830) Average position of hits: (2194,592.9,7826)
+Number of tracks/hits/outliers seen: 3707 3707 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -1.061       cur= -1.061       delta= 0.0003549    +/- 0.005353     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0005271    cur= 0.0005271    delta= -3.91e-07    +/- 6.803e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.5327 6.278
+local delta chi2 / dof: 43.91 / 2
+survey chi2 / dof (before/after): 11.45 11.45 / 2
+align pars: -1.061, -0.008005, -2.425, -0.001649, 2.286e-07, 0.0005271
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q0/M0
+Global position: (-265,-1213,8032) Average position of hits: (-263.5,-349.6,8037)
+Number of tracks/hits/outliers seen: 198171 198171 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.3347      cur= -0.3347      delta= -0.002265    +/- 0.002917     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= 0.0004332    cur= 0.0004332    delta= 2.44e-06     +/- 3.622e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03688 0.4362
+local delta chi2 / dof: 1492 / 2
+survey chi2 / dof (before/after): 5.139 5.139 / 2
+align pars: -0.3347, -0.002867, -1.06, -0.001416, 3.59e-07, 0.0004332
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q0/M1
+Global position: (-795,-1213,8032) Average position of hits: (-771.4,-420.7,8035)
+Number of tracks/hits/outliers seen: 226049 226049 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.01163      cur= 0.01163      delta= -0.003646    +/- 0.002908     [ 1.793e-05    ]  gcc= 1
+Rz  : curtot= 7.94e-05     cur= 7.94e-05     delta= 4.1e-06      +/- 3.632e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03496 0.4137
+local delta chi2 / dof: 5478 / 2
+survey chi2 / dof (before/after): 0.1582 0.1582 / 2
+align pars: 0.01163, -0.0004563, -0.6536, -8.971e-05, 5.486e-08, 7.94e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q0/M2
+Global position: (-1325,-1213,8032) Average position of hits: (-1268,-570.4,8036)
+Number of tracks/hits/outliers seen: 84339 84339 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.199       cur= -0.199       delta= -0.003573    +/- 0.003003     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 7.502e-05    cur= 7.502e-05    delta= 3.935e-06    +/- 3.751e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05926 0.6993
+local delta chi2 / dof: 4472 / 2
+survey chi2 / dof (before/after): 0.2991 0.2991 / 2
+align pars: -0.199, -0.000405, -0.5511, -0.000169, 1.053e-07, 7.502e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q0/M3
+Global position: (-1855,-1213,8032) Average position of hits: (-1843,-672.6,8035)
+Number of tracks/hits/outliers seen: 24465 24465 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.1338       cur= 0.1338       delta= -0.003653    +/- 0.003343     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 2.29e-05     cur= 2.29e-05     delta= 4.078e-06    +/- 4.221e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1247 1.469
+local delta chi2 / dof: 5172 / 2
+survey chi2 / dof (before/after): 0.08477 0.08477 / 2
+align pars: 0.1338, -0.0003655, -0.3181, 0.0001881, 1.031e-07, 2.29e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q0/M4
+Global position: (-2385,-1213,8032) Average position of hits: (-2229,-606.5,8036)
+Number of tracks/hits/outliers seen: 6368 6368 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.2411       cur= 0.2411       delta= -0.003809    +/- 0.004219     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 1.238e-05    cur= 1.238e-05    delta= 4.079e-06    +/- 5.466e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.306 3.62
+local delta chi2 / dof: 3998 / 2
+survey chi2 / dof (before/after): 0.2364 0.2364 / 2
+align pars: 0.2411, -0.0003666, -0.124, 0.0001234, -5.122e-08, 1.238e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q2/M0
+Global position: (-265,1213,8040) Average position of hits: (-170.8,348.2,8036)
+Number of tracks/hits/outliers seen: 87276 87276 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.1312      cur= -0.1312      delta= -0.0006875   +/- 0.003317     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= -4.912e-05   cur= -4.912e-05   delta= -4.783e-09   +/- 3.879e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05637 0.6667
+local delta chi2 / dof: 1488 / 2
+survey chi2 / dof (before/after): 0.1292 0.1292 / 2
+align pars: -0.1312, -0.001216, 0.5299, -0.0001125, 5.032e-07, -4.912e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q2/M1
+Global position: (-795,1213,8040) Average position of hits: (-789.3,154.5,8035)
+Number of tracks/hits/outliers seen: 66563 66563 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.3723      cur= -0.3723      delta= 0.002813     +/- 0.006889     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0002179    cur= 0.0002179    delta= -3.413e-06   +/- 6.321e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06422 0.7581
+local delta chi2 / dof: 5434 / 2
+survey chi2 / dof (before/after): 1.741 1.741 / 2
+align pars: -0.3723, -0.001518, -0.01984, 0.0004342, -3.559e-07, 0.0002179
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q2/M2
+Global position: (-1325,1213,8040) Average position of hits: (-1282,220.2,8035)
+Number of tracks/hits/outliers seen: 34691 34691 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.1652      cur= -0.1652      delta= 0.002383     +/- 0.008021     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002252    cur= 0.0002252    delta= -2.953e-06   +/- 7.32e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09234 1.089
+local delta chi2 / dof: 4440 / 2
+survey chi2 / dof (before/after): 1.377 1.377 / 2
+align pars: -0.1652, -0.0008832, 0.2702, 0.0005105, -9.867e-08, 0.0002252
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q2/M3
+Global position: (-1855,1213,8040) Average position of hits: (-1805,336.9,8035)
+Number of tracks/hits/outliers seen: 11757 11757 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.5193      cur= -0.5193      delta= 0.003327     +/- 0.009653     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002949    cur= 0.0002949    delta= -3.81e-06    +/- 8.983e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1798 2.117
+local delta chi2 / dof: 5160 / 2
+survey chi2 / dof (before/after): 3.253 3.253 / 2
+align pars: -0.5193, 0.0006331, -0.1038, 0.0003654, 5.644e-08, 0.0002949
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL0/Q2/M4
+Global position: (-2385,1213,8040) Average position of hits: (-2228,413.5,8036)
+Number of tracks/hits/outliers seen: 2616 2616 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.1553      cur= -0.1553      delta= 0.002912     +/- 0.01208      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -8.314e-05   cur= -8.314e-05   delta= -3.339e-06   +/- 1.149e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.4915 5.793
+local delta chi2 / dof: 3996 / 2
+survey chi2 / dof (before/after): 0.2693 0.2693 / 2
+align pars: -0.1553, 0.001379, -0.398, -0.0001025, -3.465e-08, -8.314e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q1/M0
+Global position: (265,-1213,8032) Average position of hits: (217.7,-332.2,8036)
+Number of tracks/hits/outliers seen: 169394 169394 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.145       cur= -0.145       delta= -0.002455    +/- 0.003023     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= -5.69e-05    cur= -5.69e-05    delta= 2.513e-06    +/- 3.631e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03995 0.4728
+local delta chi2 / dof: 1095 / 2
+survey chi2 / dof (before/after): 0.165 0.165 / 2
+align pars: -0.145, -0.0001904, 0.3414, 8.707e-05, -1.216e-07, -5.69e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q1/M1
+Global position: (795,-1213,8032) Average position of hits: (776.9,-163,8035)
+Number of tracks/hits/outliers seen: 71380 71380 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.7409      cur= -0.7409      delta= 0.004559     +/- 0.005453     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0002165    cur= 0.0002165    delta= -3.822e-06   +/- 5.282e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06157 0.7269
+local delta chi2 / dof: 21.93 / 2
+survey chi2 / dof (before/after): 3.367 3.367 / 2
+align pars: -0.7409, 5.102e-06, -0.2369, 0.0005372, -3.044e-07, 0.0002165
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q1/M2
+Global position: (1325,-1213,8032) Average position of hits: (1276,-221.4,8034)
+Number of tracks/hits/outliers seen: 30604 30604 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.7913      cur= -0.7913      delta= -0.005948    +/- 0.007267     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0004251    cur= 0.0004251    delta= 5.962e-06    +/- 6.797e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09799 1.153
+local delta chi2 / dof: 5079 / 2
+survey chi2 / dof (before/after): 7.023 7.023 / 2
+align pars: -0.7913, 0.0006168, -0.7196, 0.0006774, 8.643e-10, 0.0004251
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q1/M3
+Global position: (1855,-1213,8032) Average position of hits: (1828,-340.8,8035)
+Number of tracks/hits/outliers seen: 14546 14546 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.3506       cur= 0.3506       delta= 0.001912     +/- 0.008798     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0008204   cur= -0.0008204   delta= -1.781e-06   +/- 8.272e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1563 1.844
+local delta chi2 / dof: 190.6 / 2
+survey chi2 / dof (before/after): 17.32 17.32 / 2
+align pars: 0.3506, 0.0008114, -0.6882, 0.0003021, -8.193e-08, -0.0008204
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q1/M4
+Global position: (2385,-1213,8032) Average position of hits: (2247,-416.3,8035)
+Number of tracks/hits/outliers seen: 3380 3380 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.5008       cur= 0.5008       delta= 0.001779     +/- 0.01123      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0006917   cur= -0.0006917   delta= -1.293e-06   +/- 1.09e-05     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.4186 4.928
+local delta chi2 / dof: 137.1 / 2
+survey chi2 / dof (before/after): 12.96 12.96 / 2
+align pars: 0.5008, -0.002102, -1.701, -0.0006699, 2e-07, -0.0006917
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q3/M0
+Global position: (265,1213,8040) Average position of hits: (266.9,362.9,8036)
+Number of tracks/hits/outliers seen: 271733 271733 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.3454       cur= 0.3454       delta= -3.269e-05   +/- 0.00304      [ 1.791e-05    ]  gcc= 1
+Rz  : curtot= -0.0001084   cur= -0.0001084   delta= -4.622e-07   +/- 3.687e-06    [ 1.48e-08     ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03123 0.3695
+local delta chi2 / dof: 1092 / 2
+survey chi2 / dof (before/after): 0.7709 0.7709 / 2
+align pars: 0.3454, 0.000199, 0.235, 3.304e-06, -4.863e-09, -0.0001084
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q3/M1
+Global position: (795,1213,8040) Average position of hits: (762.6,405,8035)
+Number of tracks/hits/outliers seen: 192667 192667 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.5254       cur= 0.5254       delta= -0.0007451   +/- 0.003077     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= -3.877e-05   cur= -3.877e-05   delta= 6.77e-07     +/- 3.728e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03752 0.4438
+local delta chi2 / dof: 19.59 / 2
+survey chi2 / dof (before/after): 1.142 1.142 / 2
+align pars: 0.5254, 0.0003773, -0.04324, 0.0006991, -4.118e-07, -3.877e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q3/M2
+Global position: (1325,1213,8040) Average position of hits: (1277,540.8,8034)
+Number of tracks/hits/outliers seen: 83373 83373 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.3915       cur= 0.3915       delta= 0.0002554    +/- 0.003191     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -9.552e-05   cur= -9.552e-05   delta= -1.267e-06   +/- 3.87e-06     [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05932 0.7003
+local delta chi2 / dof: 5075 / 2
+survey chi2 / dof (before/after): 0.8412 0.8412 / 2
+align pars: 0.3915, 0.0007198, -0.185, 0.001107, -8.301e-07, -9.552e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q3/M3
+Global position: (1855,1213,8040) Average position of hits: (1813,673.9,8035)
+Number of tracks/hits/outliers seen: 30189 30189 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.7068       cur= 0.7068       delta= -0.001074    +/- 0.003413     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -5.147e-05   cur= -5.147e-05   delta= 1.09e-06     +/- 4.209e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1088 1.283
+local delta chi2 / dof: 191.5 / 2
+survey chi2 / dof (before/after): 2.065 2.065 / 2
+align pars: 0.7068, 0.0007133, -0.281, 0.0006418, -3.09e-07, -5.147e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T1/X2/HL1/Q3/M4
+Global position: (2385,1213,8040) Average position of hits: (2229,624.5,8035)
+Number of tracks/hits/outliers seen: 6169 6169 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.4511       cur= 0.4511       delta= -0.0009813   +/- 0.004247     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -9.323e-05   cur= -9.323e-05   delta= 6.355e-07    +/- 5.435e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.3089 3.64
+local delta chi2 / dof: 137.2 / 2
+survey chi2 / dof (before/after): 1.031 1.031 / 2
+align pars: 0.4511, -0.0009556, 0.5372, 0.001175, -6.165e-07, -9.323e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q0/M0
+Global position: (-371.7,-1208,8574) Average position of hits: (-293,-380.1,8580)
+Number of tracks/hits/outliers seen: 172188 172188 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.379        cur= 0.379        delta= -0.003228    +/- 0.002886     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= -2.898e-05   cur= -2.898e-05   delta= 3.565e-06    +/- 3.776e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05095 0.6022
+local delta chi2 / dof: 3720 / 2
+survey chi2 / dof (before/after): 0.5954 0.5954 / 2
+align pars: 0.379, 0.001353, 1.379, -0.0003769, -1.632e-07, -2.898e-05
+survey pars:   0, 0, 0, 0, 0, -3.081e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q0/M1
+Global position: (-903.7,-1208,8574) Average position of hits: (-821.1,-440.6,8578)
+Number of tracks/hits/outliers seen: 209655 209655 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.3146       cur= 0.3146       delta= -0.004614    +/- 0.00294      [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= -5.816e-05   cur= -5.816e-05   delta= 5.48e-06     +/- 3.82e-06     [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04695 0.5545
+local delta chi2 / dof: 1.282e+04 / 2
+survey chi2 / dof (before/after): 0.4804 0.4804 / 2
+align pars: 0.3146, -0.0007142, 1.356, 0.0003661, 2.438e-08, -5.816e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q0/M2
+Global position: (-1436,-1208,8574) Average position of hits: (-1327,-553,8579)
+Number of tracks/hits/outliers seen: 95773 95773 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.3129       cur= 0.3129       delta= -0.004582    +/- 0.003111     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -9.038e-05   cur= -9.038e-05   delta= 5.169e-06    +/- 3.995e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07209 0.8503
+local delta chi2 / dof: 8832 / 2
+survey chi2 / dof (before/after): 0.5959 0.5959 / 2
+align pars: 0.3129, 0.0003178, 1.055, -3.968e-05, 6.223e-08, -9.038e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q0/M3
+Global position: (-1968,-1208,8574) Average position of hits: (-1892,-678.1,8579)
+Number of tracks/hits/outliers seen: 25841 25841 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.3174      cur= -0.3174      delta= -0.004711    +/- 0.003501     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002488    cur= 0.0002488    delta= 5.033e-06    +/- 4.445e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1487 1.752
+local delta chi2 / dof: 6011 / 2
+survey chi2 / dof (before/after): 1.95 1.95 / 2
+align pars: -0.3174, -0.0002819, -0.1078, -0.0007149, 1.62e-07, 0.0002488
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q0/M4
+Global position: (-2500,-1208,8574) Average position of hits: (-2359,-611,8579)
+Number of tracks/hits/outliers seen: 11212 11212 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.1771       cur= 0.1771       delta= -0.004883    +/- 0.004339     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002194    cur= 0.0002194    delta= 4.916e-06    +/- 5.496e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2669 3.149
+local delta chi2 / dof: 3604 / 2
+survey chi2 / dof (before/after): 1.329 1.329 / 2
+align pars: 0.1771, 0.0007761, 0.5062, -0.0008064, -6.973e-08, 0.0002194
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q2/M0
+Global position: (-160.3,1208,8582) Average position of hits: (-156.9,428.8,8580)
+Number of tracks/hits/outliers seen: 103878 103878 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.05057     cur= -0.05057     delta= 0.0004287    +/- 0.00307      [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= -0.0002418   cur= -0.0002418   delta= -1.257e-06   +/- 3.819e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0688 0.813
+local delta chi2 / dof: 3707 / 2
+survey chi2 / dof (before/after): 1.472 1.472 / 2
+align pars: -0.05057, -2.785e-05, 1.904, 5.505e-05, -7.969e-08, -0.0002418
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q2/M1
+Global position: (-692.3,1208,8582) Average position of hits: (-783.1,177.7,8579)
+Number of tracks/hits/outliers seen: 58289 58289 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.09879     cur= -0.09879     delta= 0.007534     +/- 0.005248     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0001197   cur= -0.0001197   delta= -7.888e-06   +/- 5.167e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.08828 1.04
+local delta chi2 / dof: 1.276e+04 / 2
+survey chi2 / dof (before/after): 0.3973 0.3973 / 2
+align pars: -0.09879, 0.000596, 0.7435, -0.0001397, 8.7e-08, -0.0001197
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q2/M2
+Global position: (-1224,1208,8582) Average position of hits: (-1270,202,8580)
+Number of tracks/hits/outliers seen: 37587 37587 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.5018       cur= 0.5018       delta= 0.003362     +/- 0.006666     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0005814   cur= -0.0005814   delta= -4.163e-06   +/- 6.278e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1145 1.348
+local delta chi2 / dof: 8786 / 2
+survey chi2 / dof (before/after): 9.457 9.457 / 2
+align pars: 0.5018, 0.0001328, 0.4507, -0.0005409, 1.66e-08, -0.0005814
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q2/M3
+Global position: (-1756,1208,8582) Average position of hits: (-1798,319.7,8579)
+Number of tracks/hits/outliers seen: 15666 15666 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.5859      cur= -0.5859      delta= 0.001983     +/- 0.007649     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0004961    cur= 0.0004961    delta= -2.784e-06   +/- 7.376e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1915 2.257
+local delta chi2 / dof: 5993 / 2
+survey chi2 / dof (before/after): 7.526 7.526 / 2
+align pars: -0.5859, 0.0002397, 0.9755, 0.0001817, 1.489e-08, 0.0004961
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL0/Q2/M4
+Global position: (-2288,1208,8582) Average position of hits: (-2327,417.1,8580)
+Number of tracks/hits/outliers seen: 5306 5306 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.427       cur= -0.427       delta= -0.0005195   +/- 0.009654     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -1.34e-05    cur= -1.34e-05    delta= -4.619e-07   +/- 9.462e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.3948 4.657
+local delta chi2 / dof: 3598 / 2
+survey chi2 / dof (before/after): 0.7337 0.7337 / 2
+align pars: -0.427, 0.0006964, 1.142, -0.0002813, -3.164e-07, -1.34e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q1/M0
+Global position: (160.3,-1208,8574) Average position of hits: (208.4,-382.8,8579)
+Number of tracks/hits/outliers seen: 182459 182459 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.08921      cur= 0.08921      delta= -0.002958    +/- 0.00291      [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= -0.0001284   cur= -0.0001284   delta= 3.338e-06    +/- 3.659e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0505 0.5974
+local delta chi2 / dof: 3685 / 2
+survey chi2 / dof (before/after): 0.444 0.444 / 2
+align pars: 0.08921, -0.0007881, 1.295, 0.000285, -2.033e-07, -0.0001284
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q1/M1
+Global position: (692.3,-1208,8574) Average position of hits: (761.6,-196,8579)
+Number of tracks/hits/outliers seen: 69699 69699 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -1.134       cur= -1.134       delta= 0.01077      +/- 0.004042     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0004756    cur= 0.0004756    delta= -9.691e-06   +/- 4.282e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.08019 0.9474
+local delta chi2 / dof: 2987 / 2
+survey chi2 / dof (before/after): 10.8 10.8 / 2
+align pars: -1.134, -0.001514, 1.585, 0.0001526, 2.519e-07, 0.0004756
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q1/M2
+Global position: (1224,-1208,8574) Average position of hits: (1275,-207.9,8580)
+Number of tracks/hits/outliers seen: 39730 39730 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.1184       cur= 0.1184       delta= 0.008944     +/- 0.006067     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0005926   cur= -0.0005926   delta= -8.23e-06    +/- 5.912e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1123 1.326
+local delta chi2 / dof: 3325 / 2
+survey chi2 / dof (before/after): 8.834 8.834 / 2
+align pars: 0.1184, 0.0003047, 0.02242, -0.0006788, 9.582e-10, -0.0005926
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q1/M3
+Global position: (1756,-1208,8574) Average position of hits: (1811,-319.2,8579)
+Number of tracks/hits/outliers seen: 15221 15221 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.393        cur= 0.393        delta= 0.007154     +/- 0.007292     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.000591    cur= -0.000591    delta= -6.568e-06   +/- 7.11e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1925 2.271
+local delta chi2 / dof: 2039 / 2
+survey chi2 / dof (before/after): 9.349 9.349 / 2
+align pars: 0.393, -9.396e-05, -0.004978, -0.0003136, 3.629e-08, -0.000591
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q1/M4
+Global position: (2288,-1208,8574) Average position of hits: (2322,-419.2,8579)
+Number of tracks/hits/outliers seen: 7877 7877 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.8785       cur= 0.8785       delta= 0.006866     +/- 0.008673     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.001279    cur= -0.001279    delta= -6.682e-06   +/- 8.695e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.3135 3.704
+local delta chi2 / dof: 4729 / 2
+survey chi2 / dof (before/after): 43.98 43.98 / 2
+align pars: 0.8785, -0.00154, -0.5716, -0.001024, 9.619e-08, -0.001279
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q3/M0
+Global position: (371.7,1208,8582) Average position of hits: (287.9,379.4,8579)
+Number of tracks/hits/outliers seen: 245248 245248 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.5721       cur= 0.5721       delta= 0.0006888    +/- 0.003056     [ 1.793e-05    ]  gcc= 1
+Rz  : curtot= -0.0004169   cur= -0.0004169   delta= -1.467e-06   +/- 3.857e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04208 0.4976
+local delta chi2 / dof: 3679 / 2
+survey chi2 / dof (before/after): 5.654 5.654 / 2
+align pars: 0.5721, 0.0002519, 1.005, 5.216e-05, -3.178e-08, -0.0004169
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q3/M1
+Global position: (903.7,1208,8582) Average position of hits: (811.9,423.6,8579)
+Number of tracks/hits/outliers seen: 181198 181198 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.2886       cur= 0.2886       delta= -0.002013    +/- 0.00317      [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= 0.0002216    cur= 0.0002216    delta= 2.468e-06    +/- 3.962e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05105 0.6036
+local delta chi2 / dof: 2977 / 2
+survey chi2 / dof (before/after): 1.561 1.561 / 2
+align pars: 0.2886, 0.001039, 1.209, -0.000163, 6.663e-08, 0.0002216
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q3/M2
+Global position: (1436,1208,8582) Average position of hits: (1341,539.2,8579)
+Number of tracks/hits/outliers seen: 91883 91883 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.5148       cur= 0.5148       delta= -0.002156    +/- 0.003344     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 7.049e-05    cur= 7.049e-05    delta= 2.633e-06    +/- 4.163e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0751 0.887
+local delta chi2 / dof: 3329 / 2
+survey chi2 / dof (before/after): 1.184 1.184 / 2
+align pars: 0.5148, 0.0006148, 0.8354, -4.498e-06, -5.47e-08, 7.049e-05
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q3/M3
+Global position: (1968,1208,8582) Average position of hits: (1881,674.4,8579)
+Number of tracks/hits/outliers seen: 34066 34066 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.06145      cur= 0.06145      delta= -0.002175    +/- 0.003648     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002162    cur= 0.0002162    delta= 2.463e-06    +/- 4.524e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1295 1.525
+local delta chi2 / dof: 2039 / 2
+survey chi2 / dof (before/after): 1.184 1.184 / 2
+align pars: 0.06145, 0.0004311, -0.07379, -0.0003698, 1.651e-07, 0.0002162
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/U/HL1/Q3/M4
+Global position: (2500,1208,8582) Average position of hits: (2361,632.8,8579)
+Number of tracks/hits/outliers seen: 11231 11231 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.5996       cur= 0.5996       delta= -0.002105    +/- 0.004412     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 6.014e-05    cur= 6.014e-05    delta= 2.756e-06    +/- 5.451e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2609 3.079
+local delta chi2 / dof: 4728 / 2
+survey chi2 / dof (before/after): 1.529 1.529 / 2
+align pars: 0.5996, 0.0008333, 0.681, 1.114e-05, -2.234e-08, 6.014e-05
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q0/M0
+Global position: (-160.3,-1208,8644) Average position of hits: (-219.3,-389.5,8649)
+Number of tracks/hits/outliers seen: 171160 171160 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.6512      cur= -0.6512      delta= 0.00277      +/- 0.003015     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= -9.372e-05   cur= -9.372e-05   delta= -2.99e-06    +/- 3.936e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05214 0.6177
+local delta chi2 / dof: 2275 / 2
+survey chi2 / dof (before/after): 1.916 1.916 / 2
+align pars: -0.6512, 0.002128, -0.767, 0.0005313, -6.319e-06, -9.372e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q0/M1
+Global position: (-692.3,-1208,8644) Average position of hits: (-760.1,-417.5,8648)
+Number of tracks/hits/outliers seen: 203229 203229 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -1.17        cur= -1.17        delta= 0.004161     +/- 0.002961     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 0.0001799    cur= 0.0001799    delta= -5.003e-06   +/- 3.954e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04987 0.5886
+local delta chi2 / dof: 1.126e+04 / 2
+survey chi2 / dof (before/after): 6.283 6.283 / 2
+align pars: -1.17, -0.001682, -2.098, -0.00065, -2.032e-06, 0.0001799
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q0/M2
+Global position: (-1224,-1208,8644) Average position of hits: (-1240,-554.1,8648)
+Number of tracks/hits/outliers seen: 112752 112752 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.9237      cur= -0.9237      delta= 0.003625     +/- 0.002932     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= -9.861e-06   cur= -9.861e-06   delta= -4.288e-06   +/- 3.973e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07099 0.8375
+local delta chi2 / dof: 7688 / 2
+survey chi2 / dof (before/after): 3.416 3.416 / 2
+align pars: -0.9237, 0.0001792, -0.5538, -0.0003221, 1.086e-07, -9.861e-06
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q0/M3
+Global position: (-1756,-1208,8644) Average position of hits: (-1657,-721.8,8648)
+Number of tracks/hits/outliers seen: 22002 22002 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.7662      cur= -0.7662      delta= 0.003369     +/- 0.003063     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002393    cur= 0.0002393    delta= -4.187e-06   +/- 4.237e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1759 2.072
+local delta chi2 / dof: 9022 / 2
+survey chi2 / dof (before/after): 3.779 3.779 / 2
+align pars: -0.7662, 0.0004118, -0.7893, -0.0009585, -3.467e-07, 0.0002393
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q0/M4
+Global position: (-2288,-1208,8644) Average position of hits: (-2286,-752,8649)
+Number of tracks/hits/outliers seen: 17019 17019 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -1.419       cur= -1.419       delta= 0.003421     +/- 0.003494     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0003713    cur= 0.0003713    delta= -4.536e-06   +/- 4.849e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2295 2.704
+local delta chi2 / dof: 1.337e+04 / 2
+survey chi2 / dof (before/after): 11.5 11.5 / 2
+align pars: -1.419, 0.0005012, -0.5454, -2.538e-05, -1.844e-07, 0.0003713
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q2/M0
+Global position: (-371.7,1208,8652) Average position of hits: (-215,368.9,8649)
+Number of tracks/hits/outliers seen: 83506 83506 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.4989       cur= 0.4989       delta= 0.0002487    +/- 0.003625     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0002193    cur= 0.0002193    delta= 5.01e-07     +/- 4.417e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07847 0.9348
+local delta chi2 / dof: 2266 / 2
+survey chi2 / dof (before/after): 2.198 2.198 / 2
+align pars: 0.4989, 0.001119, -1.52, -8.607e-05, 8.242e-06, 0.0002193
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q2/M1
+Global position: (-903.7,1208,8652) Average position of hits: (-815.2,176.7,8649)
+Number of tracks/hits/outliers seen: 58616 58616 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.3327      cur= -0.3327      delta= -0.00499     +/- 0.00573      [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.001059     cur= 0.001059     delta= 5.686e-06    +/- 5.867e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09258 1.092
+local delta chi2 / dof: 1.122e+04 / 2
+survey chi2 / dof (before/after): 28.48 28.48 / 2
+align pars: -0.3327, 0.002121, -1.093, 0.0001776, 1.095e-05, 0.001059
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q2/M2
+Global position: (-1436,1208,8652) Average position of hits: (-1311,210.2,8648)
+Number of tracks/hits/outliers seen: 38850 38850 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.969        cur= 0.969        delta= -0.001068    +/- 0.006946     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -2.743e-05   cur= -2.743e-05   delta= 2.179e-06    +/- 7.062e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1207 1.427
+local delta chi2 / dof: 7656 / 2
+survey chi2 / dof (before/after): 3.774 3.774 / 2
+align pars: 0.969, -0.003058, -1.64, -0.001217, -1.604e-06, -2.743e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q2/M3
+Global position: (-1968,1208,8652) Average position of hits: (-1849,336.3,8651)
+Number of tracks/hits/outliers seen: 7941 7941 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 1.585        cur= 1.585        delta= -0.01526     +/- 0.009299     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0009144   cur= -0.0009144   delta= 1.399e-05    +/- 9.26e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2937 3.456
+local delta chi2 / dof: 9015 / 2
+survey chi2 / dof (before/after): 30.95 30.95 / 2
+align pars: 1.585, -0.02078, 3.85, 0.002863, 1.686e-06, -0.0009144
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL0/Q2/M4
+Global position: (-2500,1208,8652) Average position of hits: (-2381,412.2,8649)
+Number of tracks/hits/outliers seen: 4469 4469 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.5833       cur= 0.5833       delta= -0.003073    +/- 0.01128      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0003175    cur= 0.0003175    delta= 4.25e-06     +/- 1.121e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.4591 5.428
+local delta chi2 / dof: 1.336e+04 / 2
+survey chi2 / dof (before/after): 3.881 3.881 / 2
+align pars: 0.5833, -0.002448, 1.098, 0.001329, 5.467e-06, 0.0003175
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q1/M0
+Global position: (371.7,-1208,8644) Average position of hits: (256.7,-347.6,8648)
+Number of tracks/hits/outliers seen: 165551 165551 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.6065      cur= -0.6065      delta= 0.002295     +/- 0.003223     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= -1.142e-05   cur= -1.142e-05   delta= -2.481e-06   +/- 4.107e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05451 0.6451
+local delta chi2 / dof: 1576 / 2
+survey chi2 / dof (before/after): 1.474 1.474 / 2
+align pars: -0.6065, -0.002949, 0.9557, 0.001304, 1.457e-06, -1.142e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q1/M1
+Global position: (903.7,-1208,8644) Average position of hits: (800.6,-184.6,8647)
+Number of tracks/hits/outliers seen: 67503 67503 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.5713      cur= -0.5713      delta= -0.002682    +/- 0.004606     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0003162    cur= 0.0003162    delta= 2.133e-06    +/- 5.119e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.08489 1.003
+local delta chi2 / dof: 30.11 / 2
+survey chi2 / dof (before/after): 3.806 3.806 / 2
+align pars: -0.5713, -0.0005593, 0.05869, 0.0001004, 1.502e-07, 0.0003162
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q1/M2
+Global position: (1436,-1208,8644) Average position of hits: (1314,-209.8,8647)
+Number of tracks/hits/outliers seen: 39782 39782 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= 0.03244      cur= 0.03244      delta= -0.001834    +/- 0.006309     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 4.071e-05    cur= 4.071e-05    delta= 1.395e-06    +/- 6.618e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1179 1.392
+local delta chi2 / dof: 63.41 / 2
+survey chi2 / dof (before/after): 0.04564 0.04564 / 2
+align pars: 0.03244, 0.0002246, 0.12, -0.000346, -2.546e-07, 4.071e-05
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q1/M3
+Global position: (1968,-1208,8644) Average position of hits: (1867,-325.9,8648)
+Number of tracks/hits/outliers seen: 14629 14629 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.3796      cur= -0.3796      delta= -0.002909    +/- 0.007845     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0004663    cur= 0.0004663    delta= 2.541e-06    +/- 8.081e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2077 2.455
+local delta chi2 / dof: 93.7 / 2
+survey chi2 / dof (before/after): 6.013 6.013 / 2
+align pars: -0.3796, -0.0001997, 0.9343, 0.0001566, 1.571e-07, 0.0004663
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q1/M4
+Global position: (2500,-1208,8644) Average position of hits: (2374,-406.2,8648)
+Number of tracks/hits/outliers seen: 7170 7170 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -2.11        cur= -2.11        delta= -0.00356     +/- 0.009873     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.001593     cur= 0.001593     delta= 3.284e-06    +/- 1.009e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.343 4.044
+local delta chi2 / dof: 551 / 2
+survey chi2 / dof (before/after): 81.22 81.22 / 2
+align pars: -2.11, -0.01272, 3.375, 0.001316, 9.633e-07, 0.001593
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q3/M0
+Global position: (160.3,1208,8652) Average position of hits: (231.8,384.7,8648)
+Number of tracks/hits/outliers seen: 239407 239407 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.2526       cur= 0.2526       delta= 1.02e-05     +/- 0.003197     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= 0.0003032    cur= 0.0003032    delta= 5.798e-07    +/- 4.05e-06     [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0437 0.5171
+local delta chi2 / dof: 1577 / 2
+survey chi2 / dof (before/after): 2.554 2.554 / 2
+align pars: 0.2526, -0.0002325, 0.2474, 0.0007245, 1.511e-07, 0.0003032
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q3/M1
+Global position: (692.3,1208,8652) Average position of hits: (746.6,413.2,8648)
+Number of tracks/hits/outliers seen: 187633 187633 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.08989     cur= -0.08989     delta= 0.000827     +/- 0.003134     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 0.0002289    cur= 0.0002289    delta= -6.032e-07   +/- 4.016e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05233 0.6184
+local delta chi2 / dof: 30.56 / 2
+survey chi2 / dof (before/after): 1.343 1.343 / 2
+align pars: -0.08989, -0.0002209, 0.4276, 0.0004035, -3.588e-09, 0.0002289
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q3/M2
+Global position: (1224,1208,8652) Average position of hits: (1256,530.2,8648)
+Number of tracks/hits/outliers seen: 99887 99887 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.1966      cur= -0.1966      delta= 0.001226     +/- 0.003131     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 9.469e-05    cur= 9.469e-05    delta= -8.941e-07   +/- 4.056e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07499 0.8858
+local delta chi2 / dof: 66.38 / 2
+survey chi2 / dof (before/after): 0.3788 0.3788 / 2
+align pars: -0.1966, 0.0001494, 0.5945, 4.735e-05, -9.738e-09, 9.469e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q3/M3
+Global position: (1756,1208,8652) Average position of hits: (1764,722,8647)
+Number of tracks/hits/outliers seen: 40979 40979 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.2755      cur= -0.2755      delta= 0.001424     +/- 0.0032       [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 7.389e-05    cur= 7.389e-05    delta= -1.317e-06   +/- 4.229e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1244 1.469
+local delta chi2 / dof: 95.99 / 2
+survey chi2 / dof (before/after): 0.4402 0.4402 / 2
+align pars: -0.2755, 0.0002666, 0.7562, 8.381e-06, -1.352e-08, 7.389e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/V/HL1/Q3/M4
+Global position: (2288,1208,8652) Average position of hits: (2288,761.5,8646)
+Number of tracks/hits/outliers seen: 17783 17783 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.531       cur= -0.531       delta= 0.001476     +/- 0.00351      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0005848    cur= 0.0005848    delta= -1.565e-06   +/- 4.74e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2156 2.539
+local delta chi2 / dof: 552 / 2
+survey chi2 / dof (before/after): 9.679 9.679 / 2
+align pars: -0.531, 0.0005883, 0.1815, -0.001319, -3.345e-07, 0.0005848
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q0/M0
+Global position: (-265,-1213,8504) Average position of hits: (-256.3,-369.7,8509)
+Number of tracks/hits/outliers seen: 171684 171684 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.2834      cur= -0.2834      delta= 0.002663     +/- 0.002788     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= 0.0001717    cur= 0.0001717    delta= -2.932e-06   +/- 3.688e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04468 0.5269
+local delta chi2 / dof: 2468 / 2
+survey chi2 / dof (before/after): 1.059 1.059 / 2
+align pars: -0.2834, 0.0003641, -0.1274, 0.0003238, -4.856e-08, 0.0001717
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q0/M1
+Global position: (-795,-1213,8504) Average position of hits: (-782.6,-431.5,8508)
+Number of tracks/hits/outliers seen: 212991 212991 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.475       cur= -0.475       delta= 0.004277     +/- 0.002789     [ 1.793e-05    ]  gcc= 1
+Rz  : curtot= -2.312e-05   cur= -2.312e-05   delta= -5.04e-06    +/- 3.712e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04068 0.4801
+local delta chi2 / dof: 1.046e+04 / 2
+survey chi2 / dof (before/after): 0.9157 0.9157 / 2
+align pars: -0.475, 0.0001252, 0.3294, -0.0001078, 7.113e-08, -2.312e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q0/M2
+Global position: (-1325,-1213,8504) Average position of hits: (-1276,-557.7,8508)
+Number of tracks/hits/outliers seen: 102291 102291 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.6487      cur= -0.6487      delta= 0.004044     +/- 0.00283      [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 0.0001101    cur= 0.0001101    delta= -4.671e-06   +/- 3.774e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06057 0.7136
+local delta chi2 / dof: 8167 / 2
+survey chi2 / dof (before/after): 1.986 1.986 / 2
+align pars: -0.6487, 1.927e-05, -0.168, 9.01e-05, 1.023e-07, 0.0001101
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q0/M3
+Global position: (-1855,-1213,8504) Average position of hits: (-1818,-703.6,8508)
+Number of tracks/hits/outliers seen: 28376 28376 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.533       cur= -0.533       delta= 0.003943     +/- 0.002984     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -1.417e-05   cur= -1.417e-05   delta= -4.566e-06   +/- 3.996e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1226 1.444
+local delta chi2 / dof: 7868 / 2
+survey chi2 / dof (before/after): 1.141 1.141 / 2
+align pars: -0.533, -2.017e-05, -0.07434, 0.0002096, 1.335e-07, -1.417e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q0/M4
+Global position: (-2385,-1213,8504) Average position of hits: (-2308,-673.8,8509)
+Number of tracks/hits/outliers seen: 13247 13247 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.6416      cur= -0.6416      delta= 0.00399      +/- 0.003342     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0002194   cur= -0.0002194   delta= -4.602e-06   +/- 4.544e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1993 2.35
+local delta chi2 / dof: 7818 / 2
+survey chi2 / dof (before/after): 2.849 2.849 / 2
+align pars: -0.6416, 0.000107, -0.1839, 0.0008081, 3.773e-07, -0.0002194
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q2/M0
+Global position: (-265,1213,8512) Average position of hits: (-187.7,384.6,8509)
+Number of tracks/hits/outliers seen: 90729 90729 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.2337      cur= -0.2337      delta= -0.0001442   +/- 0.003111     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 0.0002546    cur= 0.0002546    delta= 8.544e-07    +/- 3.91e-06     [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06348 0.7495
+local delta chi2 / dof: 2459 / 2
+survey chi2 / dof (before/after): 1.84 1.84 / 2
+align pars: -0.2337, 0.0004083, -0.1878, 0.0002707, 3.321e-07, 0.0002546
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q2/M1
+Global position: (-795,1213,8512) Average position of hits: (-793,171.2,8508)
+Number of tracks/hits/outliers seen: 59628 59628 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.4196      cur= -0.4196      delta= -0.006388    +/- 0.004891     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0007608    cur= 0.0007608    delta= 6.781e-06    +/- 5.01e-06     [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0766 0.9016
+local delta chi2 / dof: 1.04e+04 / 2
+survey chi2 / dof (before/after): 15.17 15.17 / 2
+align pars: -0.4196, -0.0002806, -0.2466, -0.0005795, -8.711e-07, 0.0007608
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q2/M2
+Global position: (-1325,1213,8512) Average position of hits: (-1284,209.7,8508)
+Number of tracks/hits/outliers seen: 38049 38049 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= 0.2462       cur= 0.2462       delta= -0.002447    +/- 0.00575      [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002217    cur= 0.0002217    delta= 3.354e-06    +/- 5.77e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09914 1.166
+local delta chi2 / dof: 8118 / 2
+survey chi2 / dof (before/after): 1.472 1.472 / 2
+align pars: 0.2462, -0.0003726, -0.6766, -0.0003246, -2.5e-07, 0.0002217
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q2/M3
+Global position: (-1855,1213,8512) Average position of hits: (-1808,320.1,8508)
+Number of tracks/hits/outliers seen: 15073 15073 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= 0.5584       cur= 0.5584       delta= -0.00214     +/- 0.006703     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -6.779e-06   cur= -6.779e-06   delta= 3.079e-06    +/- 6.749e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1695 1.998
+local delta chi2 / dof: 7849 / 2
+survey chi2 / dof (before/after): 1.248 1.248 / 2
+align pars: 0.5584, -9.99e-05, -0.5215, -0.0001571, -2.596e-07, -6.779e-06
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL0/Q2/M4
+Global position: (-2385,1213,8512) Average position of hits: (-2322,421.1,8509)
+Number of tracks/hits/outliers seen: 4620 4620 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= 1.522        cur= 1.522        delta= -0.001898    +/- 0.008486     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0005066   cur= -0.0005066   delta= 2.877e-06    +/- 8.473e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.3415 4.009
+local delta chi2 / dof: 7810 / 2
+survey chi2 / dof (before/after): 15.68 15.68 / 2
+align pars: 1.522, -0.001255, -1.653, -0.0004017, -1.771e-07, -0.0005066
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q1/M0
+Global position: (265,-1213,8504) Average position of hits: (226.8,-364.5,8509)
+Number of tracks/hits/outliers seen: 175029 175029 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.4053      cur= -0.4053      delta= 0.002626     +/- 0.002811     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= 0.0002917    cur= 0.0002917    delta= -2.876e-06   +/- 3.668e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04461 0.5259
+local delta chi2 / dof: 2307 / 2
+survey chi2 / dof (before/after): 2.785 2.785 / 2
+align pars: -0.4053, 0.0001157, -0.5623, 0.0004461, 3.209e-07, 0.0002917
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q1/M1
+Global position: (795,-1213,8504) Average position of hits: (778.7,-182.1,8508)
+Number of tracks/hits/outliers seen: 68692 68692 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.3008      cur= -0.3008      delta= -0.006311    +/- 0.003947     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0004657    cur= 0.0004657    delta= 5.486e-06    +/- 4.375e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07064 0.8327
+local delta chi2 / dof: 369.3 / 2
+survey chi2 / dof (before/after): 5.783 5.783 / 2
+align pars: -0.3008, -0.0006907, -0.5525, -0.0004806, -6.261e-07, 0.0004657
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q1/M2
+Global position: (1325,-1213,8504) Average position of hits: (1291,-192,8508)
+Number of tracks/hits/outliers seen: 35850 35850 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -1.076       cur= -1.076       delta= -0.03269     +/- 0.005455     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.001204     cur= 0.001204     delta= 2.882e-05    +/- 5.617e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1014 1.195
+local delta chi2 / dof: 1.585e+04 / 2
+survey chi2 / dof (before/after): 40.87 40.87 / 2
+align pars: -1.076, -0.0008355, -0.7235, -0.0002615, -3.7e-07, 0.001204
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q1/M3
+Global position: (1855,-1213,8504) Average position of hits: (1828,-324.8,8508)
+Number of tracks/hits/outliers seen: 15202 15202 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.3098      cur= -0.3098      delta= -0.004264    +/- 0.006168     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0006075    cur= 0.0006075    delta= 3.909e-06    +/- 6.38e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1633 1.923
+local delta chi2 / dof: 705.8 / 2
+survey chi2 / dof (before/after): 9.61 9.61 / 2
+align pars: -0.3098, -4.743e-08, 0.02907, -1.87e-05, 2.026e-08, 0.0006075
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q1/M4
+Global position: (2385,-1213,8504) Average position of hits: (2317,-403.4,8508)
+Number of tracks/hits/outliers seen: 7270 7270 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.2276      cur= -0.2276      delta= -0.003339    +/- 0.00744      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0006732    cur= 0.0006732    delta= 3.218e-06    +/- 7.717e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2644 3.116
+local delta chi2 / dof: 981.1 / 2
+survey chi2 / dof (before/after): 11.54 11.54 / 2
+align pars: -0.2276, 0.0001492, -0.3293, 7.372e-05, 8.704e-08, 0.0006732
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q3/M0
+Global position: (265,1213,8512) Average position of hits: (257.2,382.3,8508)
+Number of tracks/hits/outliers seen: 249814 249814 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.2782      cur= -0.2782      delta= -0.0002738   +/- 0.002972     [ 1.792e-05    ]  gcc= 1
+Rz  : curtot= 0.0002717    cur= 0.0002717    delta= 9.365e-07    +/- 3.792e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03656 0.4311
+local delta chi2 / dof: 2303 / 2
+survey chi2 / dof (before/after): 2.156 2.156 / 2
+align pars: -0.2782, -0.00158, -1.73, -0.0005096, -3.535e-07, 0.0002717
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q3/M1
+Global position: (795,1213,8512) Average position of hits: (774,417.1,8508)
+Number of tracks/hits/outliers seen: 186863 186863 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.3807      cur= -0.3807      delta= 0.001179     +/- 0.002997     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= 9.619e-05    cur= 9.619e-05    delta= -1.254e-06   +/- 3.824e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04301 0.5072
+local delta chi2 / dof: 365.1 / 2
+survey chi2 / dof (before/after): 0.8111 0.8111 / 2
+align pars: -0.3807, 0.000241, -0.04945, -7.496e-05, -7.157e-08, 9.619e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q3/M2
+Global position: (1325,1213,8512) Average position of hits: (1293,533,8508)
+Number of tracks/hits/outliers seen: 92685 92685 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.7327      cur= -0.7327      delta= 0.002439     +/- 0.003042     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 0.0002873    cur= 0.0002873    delta= -3.873e-06   +/- 3.9e-06      [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06334 0.7462
+local delta chi2 / dof: 1.576e+04 / 2
+survey chi2 / dof (before/after): 4.211 4.211 / 2
+align pars: -0.7327, 1.852e-05, -0.6137, -0.0001826, -5.165e-08, 0.0002873
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q3/M3
+Global position: (1855,1213,8512) Average position of hits: (1814,699.4,8509)
+Number of tracks/hits/outliers seen: 35448 35448 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.3569      cur= -0.3569      delta= 0.001458     +/- 0.003141     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -5.779e-05   cur= -5.779e-05   delta= -1.596e-06   +/- 4.066e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1075 1.266
+local delta chi2 / dof: 706.9 / 2
+survey chi2 / dof (before/after): 0.5929 0.5929 / 2
+align pars: -0.3569, -0.0003798, 0.6628, 0.000505, 7.051e-08, -5.779e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X1/HL1/Q3/M4
+Global position: (2385,1213,8512) Average position of hits: (2309,695.3,8508)
+Number of tracks/hits/outliers seen: 13121 13121 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.5086      cur= -0.5086      delta= 0.001672     +/- 0.003459     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -6.613e-05   cur= -6.613e-05   delta= -1.843e-06   +/- 4.531e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.196 2.314
+local delta chi2 / dof: 981.8 / 2
+survey chi2 / dof (before/after): 1.144 1.144 / 2
+align pars: -0.5086, 0.0006982, -0.2029, 0.0001783, 5.166e-08, -6.613e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q0/M0
+Global position: (-265,-1213,8714) Average position of hits: (-244.8,-394.4,8719)
+Number of tracks/hits/outliers seen: 7360 7360 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.5128      cur= -0.5128      delta= -0.0207      +/- 0.003968     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -1.138e-05   cur= -1.138e-05   delta= 1.107e-05    +/- 4.763e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2357 3.034
+local delta chi2 / dof: 1.635e+05 / 2
+survey chi2 / dof (before/after): 1.055 1.055 / 2
+align pars: -0.5128, 0.000495, 0.8922, 1.145e-05, 1.089e-07, -1.138e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q0/M1
+Global position: (-795,-1213,8714) Average position of hits: (-786.7,-434.2,8719)
+Number of tracks/hits/outliers seen: 204066 204066 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.4774       cur= 0.4774       delta= -0.004171    +/- 0.002809     [ 1.793e-05    ]  gcc= 1
+Rz  : curtot= -3.909e-05   cur= -3.909e-05   delta= 4.907e-06    +/- 3.808e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04412 0.5204
+local delta chi2 / dof: 9854 / 2
+survey chi2 / dof (before/after): 0.9499 0.9499 / 2
+align pars: 0.4774, -0.000264, 1.293, 0.0003767, 2.425e-07, -3.909e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q0/M2
+Global position: (-1325,-1213,8714) Average position of hits: (-1281,-541.3,8719)
+Number of tracks/hits/outliers seen: 107383 107383 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.5336       cur= 0.5336       delta= -0.004214    +/- 0.002846     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 4.507e-05    cur= 4.507e-05    delta= 4.859e-06    +/- 3.872e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0629 0.7418
+local delta chi2 / dof: 8744 / 2
+survey chi2 / dof (before/after): 1.19 1.19 / 2
+align pars: 0.5336, -0.0002467, 1.49, 0.0003584, 2.424e-07, 4.507e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q0/M3
+Global position: (-1855,-1213,8714) Average position of hits: (-1805,-713.8,8719)
+Number of tracks/hits/outliers seen: 30522 30522 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 1.034        cur= 1.034        delta= -0.004215    +/- 0.002957     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0001021   cur= -0.0001021   delta= 4.772e-06    +/- 4.053e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1246 1.469
+local delta chi2 / dof: 7650 / 2
+survey chi2 / dof (before/after): 4.536 4.536 / 2
+align pars: 1.034, 0.000194, 1.446, 7.641e-05, 7.058e-08, -0.0001021
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q0/M4
+Global position: (-2385,-1213,8714) Average position of hits: (-2343,-700.5,8720)
+Number of tracks/hits/outliers seen: 16435 16435 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.8926       cur= 0.8926       delta= -0.004138    +/- 0.003239     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -8.237e-06   cur= -8.237e-06   delta= 4.639e-06    +/- 4.541e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1875 2.213
+local delta chi2 / dof: 6841 / 2
+survey chi2 / dof (before/after): 3.189 3.189 / 2
+align pars: 0.8926, 0.001182, 0.8159, -0.000408, -9.722e-08, -8.237e-06
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q2/M0
+Global position: (-265,1213,8722) Average position of hits: (-217.2,387.9,8719)
+Number of tracks/hits/outliers seen: 5737 5737 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.783        cur= 0.783        delta= 0.006937     +/- 0.004521     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0002114   cur= -0.0002114   delta= 2.791e-07    +/- 5.147e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2749 3.49
+local delta chi2 / dof: 1.634e+05 / 2
+survey chi2 / dof (before/after): 3.57 3.57 / 2
+align pars: 0.783, -0.0008308, 1.287, 0.0003373, -3.804e-07, -0.0002114
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q2/M1
+Global position: (-795,1213,8722) Average position of hits: (-789.7,183.7,8719)
+Number of tracks/hits/outliers seen: 48035 48035 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -1.178       cur= -1.178       delta= -0.00273     +/- 0.004459     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0006164    cur= 0.0006164    delta= 7.832e-07    +/- 4.834e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09042 1.065
+local delta chi2 / dof: 9801 / 2
+survey chi2 / dof (before/after): 15.05 15.05 / 2
+align pars: -1.178, -0.001182, 1.71, 0.0007245, 8.366e-07, 0.0006164
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q2/M2
+Global position: (-1325,1213,8722) Average position of hits: (-1293,207.5,8719)
+Number of tracks/hits/outliers seen: 39052 39052 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.6089      cur= -0.6089      delta= 0.001945     +/- 0.005229     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 1.69e-05     cur= 1.69e-05     delta= -2.987e-06   +/- 5.543e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.104 1.225
+local delta chi2 / dof: 8695 / 2
+survey chi2 / dof (before/after): 1.49 1.49 / 2
+align pars: -0.6089, -0.001347, 1.567, 0.0004313, 2.771e-07, 1.69e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q2/M3
+Global position: (-1855,1213,8722) Average position of hits: (-1819,320,8719)
+Number of tracks/hits/outliers seen: 15164 15164 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.8244      cur= -0.8244      delta= 0.000778     +/- 0.006098     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -7.051e-05   cur= -7.051e-05   delta= -1.937e-06   +/- 6.449e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1776 2.091
+local delta chi2 / dof: 7625 / 2
+survey chi2 / dof (before/after): 2.843 2.843 / 2
+align pars: -0.8244, -0.0006411, 1.627, 0.0002266, -3.355e-08, -7.051e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL0/Q2/M4
+Global position: (-2385,1213,8722) Average position of hits: (-2500,442.9,8719)
+Number of tracks/hits/outliers seen: 2638 2638 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.9572      cur= -0.9572      delta= 0.00107      +/- 0.008633     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 6.15e-05     cur= 6.15e-05     delta= -2.109e-06   +/- 8.657e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.4669 5.51
+local delta chi2 / dof: 6829 / 2
+survey chi2 / dof (before/after): 3.759 3.759 / 2
+align pars: -0.9572, -0.0007235, 1.718, 0.0003359, -1.13e-07, 6.15e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q1/M0
+Global position: (265,-1213,8714) Average position of hits: (233,-380.5,8719)
+Number of tracks/hits/outliers seen: 177265 177265 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.4263       cur= 0.4263       delta= -0.002695    +/- 0.002808     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= -9.525e-05   cur= -9.525e-05   delta= 3.025e-06    +/- 3.749e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04706 0.5564
+local delta chi2 / dof: 2938 / 2
+survey chi2 / dof (before/after): 0.9537 0.9537 / 2
+align pars: 0.4263, 0.0002104, 0.2997, -0.0009017, 3.797e-07, -9.525e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q1/M1
+Global position: (795,-1213,8714) Average position of hits: (777.4,-200.6,8719)
+Number of tracks/hits/outliers seen: 68695 68695 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.3478      cur= -0.3478      delta= 0.006313     +/- 0.003539     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 3.308e-05    cur= 3.308e-05    delta= -5.627e-06   +/- 4.218e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07514 0.8859
+local delta chi2 / dof: 815.8 / 2
+survey chi2 / dof (before/after): 0.5112 0.5112 / 2
+align pars: -0.3478, -0.0003161, -0.1365, -0.0005142, 4.179e-07, 3.308e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q1/M2
+Global position: (1325,-1213,8714) Average position of hits: (1294,-209.5,8718)
+Number of tracks/hits/outliers seen: 39421 39421 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.04094     cur= -0.04094     delta= 0.002737     +/- 0.004754     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -5.402e-05   cur= -5.402e-05   delta= -2.402e-06   +/- 5.256e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1029 1.212
+local delta chi2 / dof: 96.6 / 2
+survey chi2 / dof (before/after): 0.07967 0.07967 / 2
+align pars: -0.04094, 3.732e-05, 0.04228, -0.0003227, 1.262e-07, -5.402e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q1/M3
+Global position: (1855,-1213,8714) Average position of hits: (1831,-317.9,8718)
+Number of tracks/hits/outliers seen: 15671 15671 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.02456      cur= 0.02456      delta= 0.005369     +/- 0.005677     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0002604   cur= -0.0002604   delta= -4.801e-06   +/- 6.178e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1699 1.999
+local delta chi2 / dof: 639.3 / 2
+survey chi2 / dof (before/after): 1.697 1.697 / 2
+align pars: 0.02456, 2.893e-05, 0.08288, 5.861e-05, 7.992e-08, -0.0002604
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q1/M4
+Global position: (2385,-1213,8714) Average position of hits: (2347,-453.7,8718)
+Number of tracks/hits/outliers seen: 6618 6618 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.5177      cur= -0.5177      delta= 0.00555      +/- 0.006941     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0001906    cur= 0.0001906    delta= -3.217e-06   +/- 7.5e-06      [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2893 3.412
+local delta chi2 / dof: 8403 / 2
+survey chi2 / dof (before/after): 1.981 1.981 / 2
+align pars: -0.5177, -0.0002399, -0.2994, 0.0001083, -4.242e-08, 0.0001906
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q3/M0
+Global position: (265,1213,8722) Average position of hits: (253.8,386.2,8719)
+Number of tracks/hits/outliers seen: 239771 239771 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.01438      cur= 0.01438      delta= 0.0004202    +/- 0.003005     [ 1.792e-05    ]  gcc= 1
+Rz  : curtot= -0.0002682   cur= -0.0002682   delta= -1.149e-06   +/- 3.887e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.03957 0.4672
+local delta chi2 / dof: 2932 / 2
+survey chi2 / dof (before/after): 1.799 1.799 / 2
+align pars: 0.01438, 0.0002032, 0.01395, -0.001139, 3.409e-07, -0.0002682
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q3/M1
+Global position: (795,1213,8722) Average position of hits: (779.8,417.9,8718)
+Number of tracks/hits/outliers seen: 180924 180924 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.3278       cur= 0.3278       delta= -0.001715    +/- 0.00303      [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= -1.67e-05    cur= -1.67e-05    delta= 1.836e-06    +/- 3.923e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04641 0.5471
+local delta chi2 / dof: 815.3 / 2
+survey chi2 / dof (before/after): 0.4369 0.4369 / 2
+align pars: 0.3278, 0.0002991, -0.1724, -0.0005545, -2.864e-08, -1.67e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q3/M2
+Global position: (1325,1213,8722) Average position of hits: (1300,530.5,8718)
+Number of tracks/hits/outliers seen: 96571 96571 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.07847      cur= 0.07847      delta= -0.001479    +/- 0.003059     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 2.302e-05    cur= 2.302e-05    delta= 1.365e-06    +/- 3.99e-06     [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06592 0.777
+local delta chi2 / dof: 102.3 / 2
+survey chi2 / dof (before/after): 0.03788 0.03788 / 2
+align pars: 0.07847, 0.0004978, 0.1557, -0.0002388, 5.901e-08, 2.302e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q3/M3
+Global position: (1855,1213,8722) Average position of hits: (1819,695.1,8718)
+Number of tracks/hits/outliers seen: 39299 39299 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.1751       cur= 0.1751       delta= -0.00185     +/- 0.003137     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 9.577e-05    cur= 9.577e-05    delta= 1.9e-06      +/- 4.136e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1077 1.269
+local delta chi2 / dof: 641.9 / 2
+survey chi2 / dof (before/after): 0.3519 0.3519 / 2
+align pars: 0.1751, 0.0002893, -0.3018, -0.0002601, 4.61e-08, 9.577e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T2/X2/HL1/Q3/M4
+Global position: (2385,1213,8722) Average position of hits: (2341,721.9,8718)
+Number of tracks/hits/outliers seen: 16259 16259 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.2277       cur= 0.2277       delta= -0.001685    +/- 0.003377     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 4.855e-05    cur= 4.855e-05    delta= 2.919e-08    +/- 4.549e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1843 2.171
+local delta chi2 / dof: 8399 / 2
+survey chi2 / dof (before/after): 0.2662 0.2662 / 2
+align pars: 0.2277, 0.0005695, 0.01243, 0.0003608, -2.796e-07, 4.855e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q0/M0
+Global position: (-371.7,-1208,9259) Average position of hits: (-282.6,-405.5,9264)
+Number of tracks/hits/outliers seen: 151102 151102 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.3595      cur= -0.3595      delta= -0.002872    +/- 0.003115     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 2.945e-05    cur= 2.945e-05    delta= 3.367e-06    +/- 4.171e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07165 0.849
+local delta chi2 / dof: 4539 / 2
+survey chi2 / dof (before/after): 0.5386 0.5386 / 2
+align pars: -0.3595, 0.0001142, 0.01328, -0.0001082, 6.29e-07, 2.945e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q0/M1
+Global position: (-903.7,-1208,9259) Average position of hits: (-835.7,-457.1,9263)
+Number of tracks/hits/outliers seen: 184369 184369 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.2355      cur= -0.2355      delta= -0.005174    +/- 0.003155     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= 0.0001433    cur= 0.0001433    delta= 6.544e-06    +/- 4.225e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06603 0.7822
+local delta chi2 / dof: 2.362e+04 / 2
+survey chi2 / dof (before/after): 0.7353 0.7353 / 2
+align pars: -0.2355, -0.0004449, 0.5464, 0.0005998, -1.11e-07, 0.0001433
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q0/M2
+Global position: (-1436,-1208,9259) Average position of hits: (-1342,-557.3,9263)
+Number of tracks/hits/outliers seen: 112144 112144 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.006359     cur= 0.006359     delta= -0.004974    +/- 0.003283     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -9.191e-05   cur= -9.191e-05   delta= 5.906e-06    +/- 4.402e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.08876 1.048
+local delta chi2 / dof: 1.483e+04 / 2
+survey chi2 / dof (before/after): 0.2114 0.2114 / 2
+align pars: 0.006359, -0.000265, 0.4585, 0.0002853, 1.579e-07, -9.191e-05
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q0/M3
+Global position: (-1968,-1208,9259) Average position of hits: (-1863,-678.8,9264)
+Number of tracks/hits/outliers seen: 34949 34949 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.1694       cur= 0.1694       delta= -0.005236    +/- 0.003552     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0001405    cur= 0.0001405    delta= 5.94e-06     +/- 4.757e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1708 2.019
+local delta chi2 / dof: 1.198e+04 / 2
+survey chi2 / dof (before/after): 0.6082 0.6082 / 2
+align pars: 0.1694, 5.824e-05, 0.2932, -2.547e-05, 1.347e-07, 0.0001405
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q0/M4
+Global position: (-2500,-1208,9259) Average position of hits: (-2437,-757.4,9264)
+Number of tracks/hits/outliers seen: 17214 17214 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.02222     cur= -0.02222     delta= -0.005422    +/- 0.0041       [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0001803    cur= 0.0001803    delta= 5.615e-06    +/- 5.601e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2828 3.333
+local delta chi2 / dof: 5955 / 2
+survey chi2 / dof (before/after): 0.8148 0.8148 / 2
+align pars: -0.02222, 0.000298, 0.6372, -0.0003183, 1.789e-07, 0.0001803
+survey pars:   0, 0, 0, 0, 0, 1.494e-55
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q0/M5
+Global position: (-3032,-1208,9259) Average position of hits: (-2795,-519.1,9264)
+Number of tracks/hits/outliers seen: 2928 2928 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.6497      cur= -0.6497      delta= -0.005835    +/- 0.007224     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002611    cur= 0.0002611    delta= 5.37e-06     +/- 9.042e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.8983 10.59
+local delta chi2 / dof: 1416 / 2
+survey chi2 / dof (before/after): 3.393 3.393 / 2
+align pars: -0.6497, 0.001757, 0.06654, -9.758e-05, -6.647e-09, 0.0002611
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q2/M0
+Global position: (-160.3,1208,9267) Average position of hits: (-174.9,470.4,9263)
+Number of tracks/hits/outliers seen: 115797 115797 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.2962       cur= 0.2962       delta= 0.0006543    +/- 0.0033       [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 2.273e-05    cur= 2.273e-05    delta= -1.538e-06   +/- 4.223e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.08468 1.004
+local delta chi2 / dof: 4532 / 2
+survey chi2 / dof (before/after): 0.364 0.364 / 2
+align pars: 0.2962, -0.001905, 1.14, 0.0008174, -7.658e-07, 2.273e-05
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q2/M1
+Global position: (-692.3,1208,9267) Average position of hits: (-790.1,221.2,9263)
+Number of tracks/hits/outliers seen: 50277 50277 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.432       cur= -0.432       delta= 0.008587     +/- 0.004357     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.000407     cur= 0.000407     delta= -9.358e-06   +/- 4.898e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1274 1.509
+local delta chi2 / dof: 2.356e+04 / 2
+survey chi2 / dof (before/after): 4.888 4.888 / 2
+align pars: -0.432, -0.001625, 0.9039, 0.0008986, 4.789e-07, 0.000407
+survey pars:   0, 0, 0, 0, 0, -1.541e-33
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q2/M2
+Global position: (-1224,1208,9267) Average position of hits: (-1292,204.1,9263)
+Number of tracks/hits/outliers seen: 40974 40974 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.2289      cur= -0.2289      delta= 0.002518     +/- 0.006686     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002754    cur= 0.0002754    delta= -3.881e-06   +/- 6.714e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1459 1.721
+local delta chi2 / dof: 1.478e+04 / 2
+survey chi2 / dof (before/after): 2.106 2.106 / 2
+align pars: -0.2289, -0.001872, 1.256, 0.000945, 6.869e-07, 0.0002754
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q2/M3
+Global position: (-1756,1208,9267) Average position of hits: (-1798,282.1,9264)
+Number of tracks/hits/outliers seen: 19244 19244 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.2182      cur= -0.2182      delta= 0.0002422    +/- 0.007948     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0001002   cur= -0.0001002   delta= -1.822e-06   +/- 7.988e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2288 2.698
+local delta chi2 / dof: 1.195e+04 / 2
+survey chi2 / dof (before/after): 0.4415 0.4415 / 2
+align pars: -0.2182, -0.002971, 1.662, 0.001104, 1.195e-06, -0.0001002
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q2/M4
+Global position: (-2288,1208,9267) Average position of hits: (-2307,390.7,9264)
+Number of tracks/hits/outliers seen: 7710 7710 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= -0.2768      cur= -0.2768      delta= -0.001041    +/- 0.009748     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 6.625e-05    cur= 6.625e-05    delta= -2.855e-07   +/- 1.008e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.4192 4.949
+local delta chi2 / dof: 5940 / 2
+survey chi2 / dof (before/after): 0.4162 0.4162 / 2
+align pars: -0.2768, -0.004841, 2.351, 0.001096, 8.59e-07, 6.625e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL0/Q2/M5
+Global position: (-2820,1208,9267) Average position of hits: (-2736,499.1,9264)
+Number of tracks/hits/outliers seen: 2344 2344 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 1.429        cur= 1.429        delta= -0.001672    +/- 0.01268      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.000904    cur= -0.000904    delta= 8.202e-07    +/- 1.34e-05     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 1.012 11.95
+local delta chi2 / dof: 1415 / 2
+survey chi2 / dof (before/after): 28.6 28.6 / 2
+align pars: 1.429, -0.002793, 0.1357, -4.083e-05, -5.023e-07, -0.000904
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q1/M0
+Global position: (160.3,-1208,9259) Average position of hits: (219.9,-416.5,9263)
+Number of tracks/hits/outliers seen: 172990 172990 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.1079      cur= -0.1079      delta= -0.003257    +/- 0.003156     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= -0.0002298   cur= -0.0002298   delta= 3.928e-06    +/- 4.074e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0682 0.8096
+local delta chi2 / dof: 7026 / 2
+survey chi2 / dof (before/after): 1.367 1.367 / 2
+align pars: -0.1079, 0.0001771, -0.002541, 0.0004781, 2.115e-09, -0.0002298
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q1/M1
+Global position: (692.3,-1208,9259) Average position of hits: (744.1,-276.9,9264)
+Number of tracks/hits/outliers seen: 73293 73293 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.8583      cur= -0.8583      delta= 0.0128       +/- 0.003591     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0001616    cur= 0.0001616    delta= -1.182e-05   +/- 4.295e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1052 1.243
+local delta chi2 / dof: 7259 / 2
+survey chi2 / dof (before/after): 3.6 3.6 / 2
+align pars: -0.8583, -0.001767, 1.404, 0.0004526, 4.451e-08, 0.0001616
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q1/M2
+Global position: (1224,-1208,9259) Average position of hits: (1290,-206.1,9264)
+Number of tracks/hits/outliers seen: 39624 39624 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.1806      cur= -0.1806      delta= 0.009348     +/- 0.006386     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0001946   cur= -0.0001946   delta= -8.846e-06   +/- 6.641e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1502 1.774
+local delta chi2 / dof: 5885 / 2
+survey chi2 / dof (before/after): 1.078 1.078 / 2
+align pars: -0.1806, 0.0001172, 0.1019, -7.969e-05, 5.239e-08, -0.0001946
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q1/M3
+Global position: (1756,-1208,9259) Average position of hits: (1791,-282.6,9264)
+Number of tracks/hits/outliers seen: 17720 17720 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.4092      cur= -0.4092      delta= 0.01056      +/- 0.007762     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0001922   cur= -0.0001922   delta= -9.802e-06   +/- 7.911e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2448 2.888
+local delta chi2 / dof: 5416 / 2
+survey chi2 / dof (before/after): 1.593 1.593 / 2
+align pars: -0.4092, -0.001411, 1.221, 0.0004529, 2.701e-08, -0.0001922
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q1/M4
+Global position: (2288,-1208,9259) Average position of hits: (2338,-408,9264)
+Number of tracks/hits/outliers seen: 9252 9252 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= -0.1226      cur= -0.1226      delta= 0.008594     +/- 0.009349     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0003167   cur= -0.0003167   delta= -7.851e-06   +/- 9.641e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.3984 4.713
+local delta chi2 / dof: 2658 / 2
+survey chi2 / dof (before/after): 2.568 2.568 / 2
+align pars: -0.1226, -0.000317, 0.6093, -9.262e-06, -5.311e-08, -0.0003167
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q1/M5
+Global position: (2820,-1208,9259) Average position of hits: (2753,-481.2,9264)
+Number of tracks/hits/outliers seen: 3200 3200 0
+Local-to-global diagonal: -0.996 -0.996 1 -0.996 -0.996 1 
+Tx  : curtot= 0.1341       cur= 0.1341       delta= 0.008049     +/- 0.0119       [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0007654   cur= -0.0007654   delta= -7.595e-06   +/- 1.279e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.8219 9.701
+local delta chi2 / dof: 4162 / 2
+survey chi2 / dof (before/after): 14.72 14.72 / 2
+align pars: 0.1341, -0.001709, -0.9676, -0.0008106, -6.251e-08, -0.0007654
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q3/M0
+Global position: (371.7,1208,9267) Average position of hits: (287.5,400.3,9264)
+Number of tracks/hits/outliers seen: 211737 211737 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.7837       cur= 0.7837       delta= 0.001044     +/- 0.003317     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= -0.0003274   cur= -0.0003274   delta= -2.103e-06   +/- 4.27e-06     [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05992 0.7099
+local delta chi2 / dof: 7021 / 2
+survey chi2 / dof (before/after): 5.137 5.137 / 2
+align pars: 0.7837, -0.0005266, -1.145, -0.000466, 1.421e-07, -0.0003274
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q3/M1
+Global position: (903.7,1208,9267) Average position of hits: (828.5,441,9264)
+Number of tracks/hits/outliers seen: 167689 167689 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.3096       cur= 0.3096       delta= -0.002773    +/- 0.003399     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= 0.0002909    cur= 0.0002909    delta= 3.546e-06    +/- 4.366e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06848 0.8093
+local delta chi2 / dof: 7223 / 2
+survey chi2 / dof (before/after): 2.499 2.499 / 2
+align pars: 0.3096, 0.00102, 0.3874, -0.0003864, 2.44e-07, 0.0002909
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q3/M2
+Global position: (1436,1208,9267) Average position of hits: (1500,577,9264)
+Number of tracks/hits/outliers seen: 45790 45790 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.424        cur= 0.424        delta= -0.002682    +/- 0.003604     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -6.024e-06   cur= -6.024e-06   delta= 3.35e-06     +/- 4.641e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.142 1.677
+local delta chi2 / dof: 5888 / 2
+survey chi2 / dof (before/after): 0.72 0.72 / 2
+align pars: 0.424, 0.0006404, 0.1402, -4.683e-05, -2.395e-08, -6.024e-06
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q3/M3
+Global position: (1968,1208,9267) Average position of hits: (1885,694.1,9264)
+Number of tracks/hits/outliers seen: 42182 42182 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.6358       cur= 0.6358       delta= -0.003209    +/- 0.003782     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 5.333e-06    cur= 5.333e-06    delta= 3.738e-06    +/- 4.91e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1543 1.821
+local delta chi2 / dof: 5423 / 2
+survey chi2 / dof (before/after): 1.618 1.618 / 2
+align pars: 0.6358, 0.0005744, 0.8203, 0.0001231, -6.878e-09, 5.333e-06
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q3/M4
+Global position: (2500,1208,9267) Average position of hits: (2424,739.3,9264)
+Number of tracks/hits/outliers seen: 18454 18454 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.6119       cur= 0.6119       delta= -0.002892    +/- 0.004255     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -8.675e-05   cur= -8.675e-05   delta= 3.149e-06    +/- 5.61e-06     [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2631 3.109
+local delta chi2 / dof: 2659 / 2
+survey chi2 / dof (before/after): 1.686 1.686 / 2
+align pars: 0.6119, 0.000175, 1.045, 0.0003483, -3.151e-07, -8.675e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/U/HL1/Q3/M5
+Global position: (3032,1208,9267) Average position of hits: (2796,542.1,9263)
+Number of tracks/hits/outliers seen: 2901 2901 0
+Local-to-global diagonal: 0.996 0.996 1 0.996 0.996 1 
+Tx  : curtot= 0.6289       cur= 0.6289       delta= -0.003929    +/- 0.006916     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0001363    cur= 0.0001363    delta= 4.197e-06    +/- 8.535e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.8715 10.29
+local delta chi2 / dof: 4161 / 2
+survey chi2 / dof (before/after): 2.046 2.046 / 2
+align pars: 0.6289, -0.001158, 1.111, 0.0009031, -1.166e-06, 0.0001363
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q0/M0
+Global position: (-160.3,-1208,9329) Average position of hits: (-217.1,-405.2,9331)
+Number of tracks/hits/outliers seen: 153028 153028 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.612       cur= -0.612       delta= 0.002486     +/- 0.003251     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 9.51e-05     cur= 9.51e-05     delta= -2.862e-06   +/- 4.34e-06     [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0729 0.864
+local delta chi2 / dof: 2996 / 2
+survey chi2 / dof (before/after): 1.724 1.724 / 2
+align pars: -0.612, -0.003901, 2.599, 0.0004983, 3.568e-07, 9.51e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q0/M1
+Global position: (-692.3,-1208,9329) Average position of hits: (-771.6,-439.4,9331)
+Number of tracks/hits/outliers seen: 168263 168263 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.4921      cur= -0.4921      delta= 0.00447      +/- 0.003216     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= 2.551e-05    cur= 2.551e-05    delta= -5.753e-06   +/- 4.387e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07238 0.8547
+local delta chi2 / dof: 1.944e+04 / 2
+survey chi2 / dof (before/after): 0.9851 0.9851 / 2
+align pars: -0.4921, -0.005343, 3.45, 0.0006132, -5.553e-07, 2.551e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q0/M2
+Global position: (-1224,-1208,9329) Average position of hits: (-1256,-539.6,9331)
+Number of tracks/hits/outliers seen: 124500 124500 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= 0.1265       cur= 0.1265       delta= 0.003832     +/- 0.003212     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -0.0005442   cur= -0.0005442   delta= -4.773e-06   +/- 4.452e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09016 1.065
+local delta chi2 / dof: 1.185e+04 / 2
+survey chi2 / dof (before/after): 7.469 7.469 / 2
+align pars: 0.1265, -0.003814, 3.154, 0.0005321, -2.431e-07, -0.0005442
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q0/M3
+Global position: (-1756,-1208,9329) Average position of hits: (-1742,-741.8,9331)
+Number of tracks/hits/outliers seen: 45839 45839 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.2954      cur= -0.2954      delta= 0.004073     +/- 0.003278     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0004164   cur= -0.0004164   delta= -4.982e-06   +/- 4.618e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1609 1.899
+local delta chi2 / dof: 1.2e+04 / 2
+survey chi2 / dof (before/after): 4.683 4.683 / 2
+align pars: -0.2954, -0.0002276, 1.826, -0.0001852, 1.587e-09, -0.0004164
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q0/M4
+Global position: (-2288,-1208,9329) Average position of hits: (-2321,-808.7,9331)
+Number of tracks/hits/outliers seen: 18449 18449 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.2637      cur= -0.2637      delta= 0.003682     +/- 0.003817     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0004628   cur= -0.0004628   delta= -4.996e-06   +/- 5.403e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.3048 3.602
+local delta chi2 / dof: 1.745e+04 / 2
+survey chi2 / dof (before/after): 5.634 5.634 / 2
+align pars: -0.2637, -0.0009687, 2.253, 0.0001077, -1.566e-07, -0.0004628
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q0/M5
+Global position: (-2820,-1208,9329) Average position of hits: (-2735,-838.5,9331)
+Number of tracks/hits/outliers seen: 6620 6620 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.7348      cur= -0.7348      delta= 0.003858     +/- 0.004539     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -7.279e-05   cur= -7.279e-05   delta= -5.065e-06   +/- 6.578e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.6159 7.284
+local delta chi2 / dof: 1.61e+04 / 2
+survey chi2 / dof (before/after): 2.292 2.292 / 2
+align pars: -0.7348, 0.0007784, 1.921, -0.0005146, 1.947e-07, -7.279e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q2/M0
+Global position: (-371.7,1208,9337) Average position of hits: (-250.7,413.4,9332)
+Number of tracks/hits/outliers seen: 91363 91363 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.2917       cur= 0.2917       delta= -3.634e-05   +/- 0.00378      [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.000169     cur= 0.000169     delta= 8.413e-07    +/- 4.765e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0982 1.163
+local delta chi2 / dof: 2991 / 2
+survey chi2 / dof (before/after): 1.054 1.054 / 2
+align pars: 0.2917, -0.006925, 3.155, 0.0009557, 1.222e-07, 0.000169
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q2/M1
+Global position: (-903.7,1208,9337) Average position of hits: (-831.2,201.8,9331)
+Number of tracks/hits/outliers seen: 50405 50405 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.3816      cur= -0.3816      delta= -0.006633    +/- 0.005664     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.000695     cur= 0.000695     delta= 7.536e-06    +/- 6.169e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1335 1.579
+local delta chi2 / dof: 1.941e+04 / 2
+survey chi2 / dof (before/after): 12.66 12.66 / 2
+align pars: -0.3816, -0.002204, 3.023, 0.0002617, 3.833e-07, 0.000695
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q2/M2
+Global position: (-1436,1208,9337) Average position of hits: (-1329,209.1,9330)
+Number of tracks/hits/outliers seen: 40023 40023 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.4235       cur= 0.4235       delta= -0.0006996   +/- 0.007099     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 9.074e-05    cur= 9.074e-05    delta= 2.19e-06     +/- 7.645e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1593 1.881
+local delta chi2 / dof: 1.182e+04 / 2
+survey chi2 / dof (before/after): 0.9234 0.9234 / 2
+align pars: 0.4235, 0.0007934, 1.415, -0.0009013, -6.816e-07, 9.074e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q2/M3
+Global position: (-1968,1208,9337) Average position of hits: (-1856,289.7,9331)
+Number of tracks/hits/outliers seen: 18367 18367 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.2935       cur= 0.2935       delta= 0.000667     +/- 0.008559     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0004179    cur= 0.0004179    delta= 1.074e-06    +/- 9.128e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2555 3.018
+local delta chi2 / dof: 1.197e+04 / 2
+survey chi2 / dof (before/after): 4.711 4.711 / 2
+align pars: 0.2935, 0.0004192, 1.647, -0.0003299, -2.953e-07, 0.0004179
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q2/M4
+Global position: (-2500,1208,9337) Average position of hits: (-2388,400.6,9331)
+Number of tracks/hits/outliers seen: 7303 7303 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.7311       cur= 0.7311       delta= -0.002058    +/- 0.01093      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 7.741e-05    cur= 7.741e-05    delta= 3.657e-06    +/- 1.173e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.4776 5.663
+local delta chi2 / dof: 1.744e+04 / 2
+survey chi2 / dof (before/after): 2.288 2.288 / 2
+align pars: 0.7311, 0.002086, 1.292, -0.0006838, -3.576e-07, 7.741e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL0/Q2/M5
+Global position: (-3032,1208,9337) Average position of hits: (-2799,431.8,9331)
+Number of tracks/hits/outliers seen: 1676 1676 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.3857      cur= -0.3857      delta= -0.003352    +/- 0.01562      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0009967    cur= 0.0009967    delta= 4.647e-06    +/- 1.597e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 1.224 14.45
+local delta chi2 / dof: 1.61e+04 / 2
+survey chi2 / dof (before/after): 25.43 25.43 / 2
+align pars: -0.3857, 0.004031, 2.174, -0.0003051, 1.72e-08, 0.0009967
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q1/M0
+Global position: (371.7,-1208,9329) Average position of hits: (273.3,-397.1,9334)
+Number of tracks/hits/outliers seen: 164766 164766 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.1229      cur= -0.1229      delta= 0.00255      +/- 0.00342      [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= -3.27e-05    cur= -3.27e-05    delta= -3.063e-06   +/- 4.477e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07261 0.8611
+local delta chi2 / dof: 4203 / 2
+survey chi2 / dof (before/after): 0.0871 0.0871 / 2
+align pars: -0.1229, -0.0004649, 0.2689, 0.00067, 2.938e-07, -3.27e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q1/M1
+Global position: (903.7,-1208,9329) Average position of hits: (795.5,-235,9333)
+Number of tracks/hits/outliers seen: 67217 67217 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -0.1083      cur= -0.1083      delta= -0.004797    +/- 0.004425     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002785    cur= 0.0002785    delta= 4.112e-06    +/- 5.381e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1147 1.355
+local delta chi2 / dof: 115.7 / 2
+survey chi2 / dof (before/after): 1.986 1.986 / 2
+align pars: -0.1083, 2.289e-07, 0.008252, 0.0005767, 7.852e-07, 0.0002785
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q1/M2
+Global position: (1436,-1208,9329) Average position of hits: (1331,-205.7,9333)
+Number of tracks/hits/outliers seen: 40810 40810 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= 0.03495      cur= 0.03495      delta= -0.009324    +/- 0.006566     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002713    cur= 0.0002713    delta= 8.211e-06    +/- 7.233e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.155 1.831
+local delta chi2 / dof: 1248 / 2
+survey chi2 / dof (before/after): 1.845 1.845 / 2
+align pars: 0.03495, 0.0006879, -0.2044, 0.0001202, 8.582e-08, 0.0002713
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q1/M3
+Global position: (1968,-1208,9329) Average position of hits: (1853,-290.5,9334)
+Number of tracks/hits/outliers seen: 17805 17805 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= 0.4285       cur= 0.4285       delta= -0.006796    +/- 0.008251     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002401    cur= 0.0002401    delta= 5.861e-06    +/- 8.898e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2659 3.142
+local delta chi2 / dof: 304.9 / 2
+survey chi2 / dof (before/after): 2.175 2.175 / 2
+align pars: 0.4285, 0.0009478, -0.1143, 0.0006317, 6.757e-07, 0.0002401
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q1/M4
+Global position: (2500,-1208,9329) Average position of hits: (2412,-405,9333)
+Number of tracks/hits/outliers seen: 9456 9456 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= 0.5816       cur= 0.5816       delta= -0.00505     +/- 0.01025      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0002723   cur= -0.0002723   delta= 4.468e-06    +/- 1.092e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.4259 5.032
+local delta chi2 / dof: 420.8 / 2
+survey chi2 / dof (before/after): 3.206 3.206 / 2
+align pars: 0.5816, -0.001262, -1.072, -0.0009357, -7.961e-07, -0.0002723
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q1/M5
+Global position: (3032,-1208,9329) Average position of hits: (2814,-430.8,9332)
+Number of tracks/hits/outliers seen: 2441 2441 0
+Local-to-global diagonal: 0.996 -0.996 -1 0.996 -0.996 -1 
+Tx  : curtot= -1.17        cur= -1.17        delta= -0.004816    +/- 0.01415      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.001132     cur= 0.001132     delta= 3.53e-06     +/- 1.473e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.9488 11.16
+local delta chi2 / dof: 883.1 / 2
+survey chi2 / dof (before/after): 37.53 37.53 / 2
+align pars: -1.17, -0.003595, 2.275, 0.0008045, 4.188e-07, 0.001132
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q3/M0
+Global position: (160.3,1208,9337) Average position of hits: (219.8,417.4,9334)
+Number of tracks/hits/outliers seen: 215290 215290 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= 0.08577      cur= 0.08577      delta= -0.0004718   +/- 0.003454     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 6.326e-05    cur= 6.326e-05    delta= 1.35e-06     +/- 4.456e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06137 0.7284
+local delta chi2 / dof: 4202 / 2
+survey chi2 / dof (before/after): 0.1295 0.1295 / 2
+align pars: 0.08577, -0.003063, 1.07, 0.001328, 8.377e-07, 6.326e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q3/M1
+Global position: (692.3,1208,9337) Average position of hits: (635.3,412.9,9334)
+Number of tracks/hits/outliers seen: 91424 91424 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.3976      cur= -0.3976      delta= 0.000947     +/- 0.003451     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0001386    cur= 0.0001386    delta= -9.369e-07   +/- 4.486e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09661 1.146
+local delta chi2 / dof: 111.2 / 2
+survey chi2 / dof (before/after): 1.113 1.113 / 2
+align pars: -0.3976, -0.00158, 0.7046, 0.001147, 3.116e-07, 0.0001386
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q3/M2
+Global position: (1224,1208,9337) Average position of hits: (1256,523.7,9334)
+Number of tracks/hits/outliers seen: 109894 109894 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.127       cur= -0.127       delta= 0.002036     +/- 0.003429     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= -0.0001954   cur= -0.0001954   delta= -2.201e-06   +/- 4.538e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09459 1.12
+local delta chi2 / dof: 1247 / 2
+survey chi2 / dof (before/after): 1.019 1.019 / 2
+align pars: -0.127, -0.002107, 0.9758, 0.001088, 5.559e-07, -0.0001954
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q3/M3
+Global position: (1756,1208,9337) Average position of hits: (1758,707,9334)
+Number of tracks/hits/outliers seen: 52545 52545 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.4556      cur= -0.4556      delta= 0.00215      +/- 0.00349      [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0002177   cur= -0.0002177   delta= -2.03e-06    +/- 4.717e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1475 1.741
+local delta chi2 / dof: 308.7 / 2
+survey chi2 / dof (before/after): 2.015 2.015 / 2
+align pars: -0.4556, 0.0002451, 0.1698, 0.0008663, 6.978e-08, -0.0002177
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q3/M4
+Global position: (2288,1208,9337) Average position of hits: (2287,815.3,9334)
+Number of tracks/hits/outliers seen: 23736 23736 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -0.1529      cur= -0.1529      delta= 0.002455     +/- 0.003719     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -8.118e-05   cur= -8.118e-05   delta= -2.329e-06   +/- 5.177e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.247 2.926
+local delta chi2 / dof: 424.5 / 2
+survey chi2 / dof (before/after): 0.2583 0.2583 / 2
+align pars: -0.1529, -0.001539, 1.112, 0.0008661, 3.562e-07, -8.118e-05
+survey pars:   0, 0, 0, 0, 0, 9.63e-35
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/V/HL1/Q3/M5
+Global position: (2820,1208,9337) Average position of hits: (2733,866.2,9332)
+Number of tracks/hits/outliers seen: 7266 7266 0
+Local-to-global diagonal: -0.996 0.996 -1 -0.996 0.996 -1 
+Tx  : curtot= -1.031       cur= -1.031       delta= 0.002303     +/- 0.004406     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0006818    cur= 0.0006818    delta= -1.458e-06   +/- 6.283e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.5562 6.596
+local delta chi2 / dof: 883.8 / 2
+survey chi2 / dof (before/after): 15.87 15.87 / 2
+align pars: -1.031, -0.001137, -0.1933, -0.001231, -9.936e-07, 0.0006818
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q0/M0
+Global position: (-265,-1213,9189) Average position of hits: (-248.6,-393.9,9191)
+Number of tracks/hits/outliers seen: 151976 151976 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.1125      cur= -0.1125      delta= 0.002823     +/- 0.002973     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 3.672e-05    cur= 3.672e-05    delta= -3.306e-06   +/- 4.057e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0585 0.6891
+local delta chi2 / dof: 4361 / 2
+survey chi2 / dof (before/after): 0.08436 0.08436 / 2
+align pars: -0.1125, 3.63e-05, 0.1403, -0.00135, 1.455e-06, 3.672e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q0/M1
+Global position: (-795,-1213,9189) Average position of hits: (-799,-443.1,9192)
+Number of tracks/hits/outliers seen: 182804 182804 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.3185      cur= -0.3185      delta= 0.005083     +/- 0.002987     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= 8.214e-05    cur= 8.214e-05    delta= -6.542e-06   +/- 4.113e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05418 0.6395
+local delta chi2 / dof: 2.518e+04 / 2
+survey chi2 / dof (before/after): 0.5744 0.5744 / 2
+align pars: -0.3185, 0.0008905, 0.7594, -0.000797, 4.06e-07, 8.214e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q0/M2
+Global position: (-1325,-1213,9189) Average position of hits: (-1285,-555.1,9192)
+Number of tracks/hits/outliers seen: 116847 116847 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.7511      cur= -0.7511      delta= 0.004553     +/- 0.003019     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 0.0001474    cur= 0.0001474    delta= -5.728e-06   +/- 4.195e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06979 0.8236
+local delta chi2 / dof: 1.777e+04 / 2
+survey chi2 / dof (before/after): 2.8 2.8 / 2
+align pars: -0.7511, -0.003553, -1.273, -0.001159, 1.115e-07, 0.0001474
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q0/M3
+Global position: (-1855,-1213,9189) Average position of hits: (-1802,-707,9193)
+Number of tracks/hits/outliers seen: 34811 34811 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.424       cur= -0.424       delta= 0.004491     +/- 0.003117     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 2.557e-05    cur= 2.557e-05    delta= -5.296e-06   +/- 4.377e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1345 1.587
+local delta chi2 / dof: 1.156e+04 / 2
+survey chi2 / dof (before/after): 0.7354 0.7354 / 2
+align pars: -0.424, -0.0003378, 0.000453, -0.0006094, 2.694e-07, 2.557e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q0/M4
+Global position: (-2385,-1213,9189) Average position of hits: (-2367,-775,9193)
+Number of tracks/hits/outliers seen: 18571 18571 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.9114      cur= -0.9114      delta= 0.004594     +/- 0.003395     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0001253    cur= 0.0001253    delta= -5.407e-06   +/- 4.886e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2054 2.42
+local delta chi2 / dof: 1.192e+04 / 2
+survey chi2 / dof (before/after): 3.715 3.715 / 2
+align pars: -0.9114, -0.00121, -0.3267, -0.000392, 5.685e-07, 0.0001253
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q0/M5
+Global position: (-2915,-1213,9189) Average position of hits: (-2746,-621.9,9194)
+Number of tracks/hits/outliers seen: 3899 3899 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -1.002       cur= -1.002       delta= 0.005052     +/- 0.004673     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002368    cur= 0.0002368    delta= -5.567e-06   +/- 6.587e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.5522 6.495
+local delta chi2 / dof: 8920 / 2
+survey chi2 / dof (before/after): 5.422 5.422 / 2
+align pars: -1.002, -0.001549, -0.69, -0.0001575, 3.277e-07, 0.0002368
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q2/M0
+Global position: (-265,1213,9197) Average position of hits: (-215.3,439.9,9194)
+Number of tracks/hits/outliers seen: 99014 99014 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.218       cur= -0.218       delta= -0.0003768   +/- 0.003246     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 0.0002357    cur= 0.0002357    delta= 1.289e-06    +/- 4.254e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07327 0.8641
+local delta chi2 / dof: 4352 / 2
+survey chi2 / dof (before/after): 1.579 1.579 / 2
+align pars: -0.218, -0.001642, 2.196, 0.0003361, 1.61e-07, 0.0002357
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q2/M1
+Global position: (-795,1213,9197) Average position of hits: (-797.7,192.1,9192)
+Number of tracks/hits/outliers seen: 43540 43540 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -1.584       cur= -1.584       delta= -0.01722     +/- 0.004397     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.001487     cur= 0.001487     delta= 1.655e-05    +/- 5.063e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1109 1.307
+local delta chi2 / dof: 2.512e+04 / 2
+survey chi2 / dof (before/after): 65.3 65.3 / 2
+align pars: -1.584, -0.0001972, 0.5041, -0.001001, -7.676e-07, 0.001487
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q2/M2
+Global position: (-1325,1213,9197) Average position of hits: (-1299,197.7,9193)
+Number of tracks/hits/outliers seen: 38853 38853 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.6108      cur= -0.6108      delta= -0.006078    +/- 0.005469     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0009755    cur= 0.0009755    delta= 6.986e-06    +/- 6.075e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1208 1.424
+local delta chi2 / dof: 1.77e+04 / 2
+survey chi2 / dof (before/after): 25.28 25.28 / 2
+align pars: -0.6108, -0.001079, -0.7948, -0.0007561, 4.847e-08, 0.0009755
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q2/M3
+Global position: (-1855,1213,9197) Average position of hits: (-1815,288.3,9193)
+Number of tracks/hits/outliers seen: 19097 19097 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= 0.3189       cur= 0.3189       delta= -0.0001877   +/- 0.006351     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 6.105e-05    cur= 6.105e-05    delta= 1.748e-06    +/- 7.047e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1804 2.125
+local delta chi2 / dof: 1.152e+04 / 2
+survey chi2 / dof (before/after): 0.5001 0.5001 / 2
+align pars: 0.3189, -0.001569, -0.6597, -0.001151, -3.517e-08, 6.105e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q2/M4
+Global position: (-2385,1213,9197) Average position of hits: (-2340,395,9193)
+Number of tracks/hits/outliers seen: 7450 7450 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= 1.004        cur= 1.004        delta= -0.0005156   +/- 0.00795      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0002016   cur= -0.0002016   delta= 2.044e-06    +/- 8.797e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.3234 3.812
+local delta chi2 / dof: 1.19e+04 / 2
+survey chi2 / dof (before/after): 5.048 5.048 / 2
+align pars: 1.004, -0.00398, -1.424, -0.001297, -3.558e-07, -0.0002016
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL0/Q2/M5
+Global position: (-2915,1213,9197) Average position of hits: (-2745,455.9,9194)
+Number of tracks/hits/outliers seen: 1684 1684 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= 0.6703       cur= 0.6703       delta= -0.0006553   +/- 0.01128      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 3.709e-05    cur= 3.709e-05    delta= 1.942e-06    +/- 1.201e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.8331 9.799
+local delta chi2 / dof: 8918 / 2
+survey chi2 / dof (before/after): 1.831 1.831 / 2
+align pars: 0.6703, -0.0005763, -1.194, -0.0005738, -2.635e-07, 3.709e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q1/M0
+Global position: (265,-1213,9189) Average position of hits: (242.9,-399,9193)
+Number of tracks/hits/outliers seen: 167676 167676 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.2614      cur= -0.2614      delta= 0.002977     +/- 0.002991     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 0.0001388    cur= 0.0001388    delta= -3.525e-06   +/- 4.039e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05573 0.6576
+local delta chi2 / dof: 5227 / 2
+survey chi2 / dof (before/after): 0.7547 0.7547 / 2
+align pars: -0.2614, -0.0001742, 0.7081, -3.402e-05, -1.569e-07, 0.0001388
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q1/M1
+Global position: (795,-1213,9189) Average position of hits: (771,-242,9192)
+Number of tracks/hits/outliers seen: 69274 69274 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.1278      cur= -0.1278      delta= -0.007925    +/- 0.003414     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0001826    cur= 0.0001826    delta= 7.009e-06    +/- 4.381e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.08733 1.03
+local delta chi2 / dof: 1046 / 2
+survey chi2 / dof (before/after): 0.8988 0.8988 / 2
+align pars: -0.1278, -0.0004258, -0.1723, -0.0006153, -6.204e-07, 0.0001826
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q1/M2
+Global position: (1325,-1213,9189) Average position of hits: (1305,-203.2,9192)
+Number of tracks/hits/outliers seen: 41653 41653 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.5159      cur= -0.5159      delta= -0.00878     +/- 0.004992     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0006586    cur= 0.0006586    delta= 7.991e-06    +/- 5.747e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1159 1.367
+local delta chi2 / dof: 2574 / 2
+survey chi2 / dof (before/after): 11.91 11.91 / 2
+align pars: -0.5159, -0.0006872, -0.327, -0.0008773, -2.274e-07, 0.0006586
+survey pars:   0, 0, 0, 0, 0, 3.102e-74
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q1/M3
+Global position: (1855,-1213,9189) Average position of hits: (1819,-289.9,9193)
+Number of tracks/hits/outliers seen: 18351 18351 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= -0.008419    cur= -0.008419    delta= -0.008249    +/- 0.006175     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0003884    cur= 0.0003884    delta= 7.444e-06    +/- 6.939e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1873 2.208
+local delta chi2 / dof: 1879 / 2
+survey chi2 / dof (before/after): 3.772 3.772 / 2
+align pars: -0.008419, -0.0003829, -0.4086, -0.0006369, -5.315e-07, 0.0003884
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q1/M4
+Global position: (2385,-1213,9189) Average position of hits: (2364,-405.5,9193)
+Number of tracks/hits/outliers seen: 9589 9589 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= 0.2194       cur= 0.2194       delta= -0.00642     +/- 0.007546     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0003913    cur= 0.0003913    delta= 5.971e-06    +/- 8.364e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2848 3.358
+local delta chi2 / dof: 2085 / 2
+survey chi2 / dof (before/after): 4.021 4.021 / 2
+align pars: 0.2194, -0.001417, -0.9037, -0.0008402, -3.212e-07, 0.0003913
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q1/M5
+Global position: (2915,-1213,9189) Average position of hits: (2758,-448.6,9192)
+Number of tracks/hits/outliers seen: 2313 2313 0
+Local-to-global diagonal: 1 -1 -1 1 -1 -1 
+Tx  : curtot= 0.2195       cur= 0.2195       delta= -0.0058      +/- 0.01047      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0006592    cur= 0.0006592    delta= 5.713e-06    +/- 1.137e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.685 8.083
+local delta chi2 / dof: 3934 / 2
+survey chi2 / dof (before/after): 11.06 11.06 / 2
+align pars: 0.2195, 0.001337, 0.3898, -0.0003259, -8.905e-08, 0.0006592
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q3/M0
+Global position: (265,1213,9197) Average position of hits: (249.4,410.1,9193)
+Number of tracks/hits/outliers seen: 217616 217616 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.1764      cur= -0.1764      delta= -0.0007143   +/- 0.003195     [ 1.793e-05    ]  gcc= 1
+Rz  : curtot= 0.0002221    cur= 0.0002221    delta= 1.66e-06     +/- 4.178e-06    [ 1.481e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.04856 0.5729
+local delta chi2 / dof: 5221 / 2
+survey chi2 / dof (before/after): 1.357 1.357 / 2
+align pars: -0.1764, -3.187e-05, 0.8351, 7.633e-05, 3.387e-08, 0.0002221
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q3/M1
+Global position: (795,1213,9197) Average position of hits: (783.8,421.2,9193)
+Number of tracks/hits/outliers seen: 168286 168286 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.4346      cur= -0.4346      delta= 0.001294     +/- 0.003228     [ 1.795e-05    ]  gcc= 1
+Rz  : curtot= 0.000281     cur= 0.000281     delta= -1.541e-06   +/- 4.234e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05686 0.6714
+local delta chi2 / dof: 1026 / 2
+survey chi2 / dof (before/after): 2.73 2.73 / 2
+align pars: -0.4346, 0.0003395, 0.4294, -0.000121, -6.522e-08, 0.000281
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q3/M2
+Global position: (1325,1213,9197) Average position of hits: (1296,541.9,9192)
+Number of tracks/hits/outliers seen: 97761 97761 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.3062      cur= -0.3062      delta= 0.002176     +/- 0.003253     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 1.924e-05    cur= 1.924e-05    delta= -2.546e-06   +/- 4.32e-06     [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.07763 0.9178
+local delta chi2 / dof: 2577 / 2
+survey chi2 / dof (before/after): 0.3843 0.3843 / 2
+align pars: -0.3062, 0.0004623, 0.1411, -0.000493, -3.801e-07, 1.924e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q3/M3
+Global position: (1855,1213,9197) Average position of hits: (1814,694.4,9193)
+Number of tracks/hits/outliers seen: 47031 47031 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.8498      cur= -0.8498      delta= 0.002486     +/- 0.003327     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0003193    cur= 0.0003193    delta= -2.692e-06   +/- 4.487e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1145 1.35
+local delta chi2 / dof: 1885 / 2
+survey chi2 / dof (before/after): 5.437 5.437 / 2
+align pars: -0.8498, 9.47e-05, -0.3135, -0.0005609, -4.722e-08, 0.0003193
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q3/M4
+Global position: (2385,1213,9197) Average position of hits: (2348,777.6,9193)
+Number of tracks/hits/outliers seen: 19997 19997 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -0.9197      cur= -0.9197      delta= 0.002545     +/- 0.003519     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0001861    cur= 0.0001861    delta= -2.775e-06   +/- 4.871e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1914 2.258
+local delta chi2 / dof: 2089 / 2
+survey chi2 / dof (before/after): 4.249 4.249 / 2
+align pars: -0.9197, -0.0001638, -0.5277, -0.0005312, -3.11e-07, 0.0001861
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X1/HL1/Q3/M5
+Global position: (2915,1213,9197) Average position of hits: (2747,713,9193)
+Number of tracks/hits/outliers seen: 4032 4032 0
+Local-to-global diagonal: -1 1 -1 -1 1 -1 
+Tx  : curtot= -1.186       cur= -1.186       delta= 0.003562     +/- 0.004407     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0001377    cur= 0.0001377    delta= -3.868e-06   +/- 6.135e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.5238 6.155
+local delta chi2 / dof: 3935 / 2
+survey chi2 / dof (before/after): 6.099 6.099 / 2
+align pars: -1.186, 0.0005716, 0.67, -9.568e-05, -5.233e-08, 0.0001377
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q0/M0
+Global position: (-265,-1213,9399) Average position of hits: (-246.9,-394.9,9403)
+Number of tracks/hits/outliers seen: 143123 143123 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.1143      cur= -0.1143      delta= -0.002999    +/- 0.003107     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= -2.742e-05   cur= -2.742e-05   delta= 3.383e-06    +/- 4.23e-06     [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06847 0.8109
+local delta chi2 / dof: 3773 / 2
+survey chi2 / dof (before/after): 0.07111 0.07111 / 2
+align pars: -0.1143, -0.00668, -2.538, -0.001218, -3.173e-07, -2.742e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q0/M1
+Global position: (-795,-1213,9399) Average position of hits: (-806.2,-440.1,9402)
+Number of tracks/hits/outliers seen: 166135 166135 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.1719       cur= 0.1719       delta= -0.006883    +/- 0.003121     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= 0.0002764    cur= 0.0002764    delta= 8.461e-06    +/- 4.29e-06     [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06543 0.7737
+local delta chi2 / dof: 3.535e+04 / 2
+survey chi2 / dof (before/after): 2.028 2.028 / 2
+align pars: 0.1719, -0.002716, -2.271, -0.0005216, -2.685e-07, 0.0002764
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q0/M2
+Global position: (-1325,-1213,9399) Average position of hits: (-1299,-548.5,9401)
+Number of tracks/hits/outliers seen: 118207 118207 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.09749     cur= -0.09749     delta= -0.004534    +/- 0.003155     [ 1.797e-05    ]  gcc= 1
+Rz  : curtot= 0.0004244    cur= 0.0004244    delta= 5.554e-06    +/- 4.385e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.08192 0.9664
+local delta chi2 / dof: 1.502e+04 / 2
+survey chi2 / dof (before/after): 4.54 4.54 / 2
+align pars: -0.09749, -0.0003338, -2.01, -3.14e-05, -1.755e-07, 0.0004244
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q0/M3
+Global position: (-1855,-1213,9399) Average position of hits: (-1786,-716.8,9402)
+Number of tracks/hits/outliers seen: 40062 40062 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.1172       cur= 0.1172       delta= -0.004795    +/- 0.003257     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0005381    cur= 0.0005381    delta= 5.665e-06    +/- 4.594e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1499 1.77
+local delta chi2 / dof: 1.332e+04 / 2
+survey chi2 / dof (before/after): 7.294 7.294 / 2
+align pars: 0.1172, -0.001929, -1.574, -0.0005404, -3.725e-07, 0.0005381
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q0/M4
+Global position: (-2385,-1213,9399) Average position of hits: (-2382,-793.8,9402)
+Number of tracks/hits/outliers seen: 17295 17295 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.2929       cur= 0.2929       delta= -0.004792    +/- 0.00362      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0005577    cur= 0.0005577    delta= 5.642e-06    +/- 5.228e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2606 3.077
+local delta chi2 / dof: 1.299e+04 / 2
+survey chi2 / dof (before/after): 8.119 8.119 / 2
+align pars: 0.2929, -0.001257, -1.542, -0.0003117, -2.102e-07, 0.0005577
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q0/M5
+Global position: (-2915,-1213,9399) Average position of hits: (-2786,-731.8,9401)
+Number of tracks/hits/outliers seen: 5814 5814 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= 0.2787       cur= 0.2787       delta= -0.004702    +/- 0.004373     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0004828    cur= 0.0004828    delta= 5.359e-06    +/- 6.418e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.548 6.461
+local delta chi2 / dof: 9972 / 2
+survey chi2 / dof (before/after): 6.138 6.138 / 2
+align pars: 0.2787, -0.0008803, -1.911, -7.691e-05, -3.513e-08, 0.0004828
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q2/M0
+Global position: (-265,1213,9407) Average position of hits: (-223.6,460.7,9402)
+Number of tracks/hits/outliers seen: 96090 96090 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.01923     cur= -0.01923     delta= 0.0004621    +/- 0.003393     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0001375    cur= 0.0001375    delta= -1.291e-06   +/- 4.432e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.08614 1.022
+local delta chi2 / dof: 3762 / 2
+survey chi2 / dof (before/after): 0.4739 0.4739 / 2
+align pars: -0.01923, -0.0009458, -1.187, -0.0001091, -2.492e-07, 0.0001375
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q2/M1
+Global position: (-795,1213,9407) Average position of hits: (-811.8,213.7,9401)
+Number of tracks/hits/outliers seen: 47409 47409 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.07934      cur= 0.07934      delta= 0.009755     +/- 0.004295     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0004835   cur= -0.0004835   delta= -1.083e-05   +/- 5.142e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1229 1.45
+local delta chi2 / dof: 3.525e+04 / 2
+survey chi2 / dof (before/after): 5.87 5.87 / 2
+align pars: 0.07934, 0.0007184, -1.406, 0.0001922, 7.135e-08, -0.0004835
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q2/M2
+Global position: (-1325,1213,9407) Average position of hits: (-1304,210.9,9402)
+Number of tracks/hits/outliers seen: 37883 37883 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.07749      cur= 0.07749      delta= 0.001473     +/- 0.005942     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= -0.0004079   cur= -0.0004079   delta= -3.029e-06   +/- 6.581e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1437 1.696
+local delta chi2 / dof: 1.496e+04 / 2
+survey chi2 / dof (before/after): 4.184 4.184 / 2
+align pars: 0.07749, -0.001267, -2.336, -0.0002957, -1.079e-07, -0.0004079
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q2/M3
+Global position: (-1855,1213,9407) Average position of hits: (-1836,284.1,9402)
+Number of tracks/hits/outliers seen: 17569 17569 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -1.019       cur= -1.019       delta= 0.000493     +/- 0.007169     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002058    cur= 0.0002058    delta= -2.117e-06   +/- 7.835e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2239 2.641
+local delta chi2 / dof: 1.328e+04 / 2
+survey chi2 / dof (before/after): 5.216 5.216 / 2
+align pars: -1.019, -0.0008727, -0.4323, 0.0004034, 1.508e-07, 0.0002058
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q2/M4
+Global position: (-2385,1213,9407) Average position of hits: (-2337,388.7,9402)
+Number of tracks/hits/outliers seen: 7818 7818 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.5222      cur= -0.5222      delta= 0.0002583    +/- 0.008861     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0003686   cur= -0.0003686   delta= -1.904e-06   +/- 9.815e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.3859 4.571
+local delta chi2 / dof: 1.298e+04 / 2
+survey chi2 / dof (before/after): 4.487 4.487 / 2
+align pars: -0.5222, 0.001446, -0.864, 0.0002469, 4.646e-08, -0.0003686
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL0/Q2/M5
+Global position: (-2915,1213,9407) Average position of hits: (-2779,471.8,9401)
+Number of tracks/hits/outliers seen: 2465 2465 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.3788      cur= -0.3788      delta= -5.299e-05   +/- 0.01154      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0004002   cur= -0.0004002   delta= -1.438e-06   +/- 1.252e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.8348 9.802
+local delta chi2 / dof: 9968 / 2
+survey chi2 / dof (before/after): 4.578 4.578 / 2
+align pars: -0.3788, 0.002673, -1.222, 0.0004909, -2.076e-08, -0.0004002
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q1/M0
+Global position: (265,-1213,9399) Average position of hits: (252.7,-417.2,9404)
+Number of tracks/hits/outliers seen: 164446 164446 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.3195      cur= -0.3195      delta= -0.003044    +/- 0.003143     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= 2.932e-05    cur= 2.932e-05    delta= 3.671e-06    +/- 4.215e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.06553 0.7756
+local delta chi2 / dof: 6137 / 2
+survey chi2 / dof (before/after): 0.4298 0.4298 / 2
+align pars: -0.3195, 0.0003386, 1.27, -0.0001077, -1.496e-07, 2.932e-05
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q1/M1
+Global position: (795,-1213,9399) Average position of hits: (767,-269.9,9404)
+Number of tracks/hits/outliers seen: 67976 67976 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.6153      cur= -0.6153      delta= 0.00786      +/- 0.00359      [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0002825    cur= 0.0002825    delta= -7.342e-06   +/- 4.606e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1025 1.213
+local delta chi2 / dof: 3380 / 2
+survey chi2 / dof (before/after): 3.51 3.51 / 2
+align pars: -0.6153, 0.0004283, 0.9403, -0.00036, 4.639e-07, 0.0002825
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q1/M2
+Global position: (1325,-1213,9399) Average position of hits: (1306,-210.1,9405)
+Number of tracks/hits/outliers seen: 36967 36967 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.9647      cur= -0.9647      delta= 0.004533     +/- 0.005631     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0002503    cur= 0.0002503    delta= -4.308e-06   +/- 6.352e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1443 1.703
+local delta chi2 / dof: 1479 / 2
+survey chi2 / dof (before/after): 5.289 5.289 / 2
+align pars: -0.9647, 0.001614, 1.268, -0.0006207, 2.338e-07, 0.0002503
+survey pars:   0, 0, 0, 0, 0, -1.028e-69
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q1/M3
+Global position: (1855,-1213,9399) Average position of hits: (1716,-255.8,9404)
+Number of tracks/hits/outliers seen: 10528 10528 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.8897      cur= -0.8897      delta= 0.006029     +/- 0.00738      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.000525     cur= 0.000525     delta= -5.404e-06   +/- 8.019e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2894 3.417
+local delta chi2 / dof: 852.7 / 2
+survey chi2 / dof (before/after): 10.06 10.06 / 2
+align pars: -0.8897, -0.0001358, 0.933, -0.0001722, 5.126e-07, 0.000525
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q1/M4
+Global position: (2385,-1213,9399) Average position of hits: (2580,-437.8,9404)
+Number of tracks/hits/outliers seen: 2214 2214 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.2137      cur= -0.2137      delta= 0.00681      +/- 0.009984     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0007376   cur= -0.0007376   delta= -6.445e-06   +/- 1.037e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.7125 8.374
+local delta chi2 / dof: 3127 / 2
+survey chi2 / dof (before/after): 13.78 13.78 / 2
+align pars: -0.2137, 0.002263, 1.079, -0.0004262, 3.079e-08, -0.0007376
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q1/M5
+Global position: (2915,-1213,9399) Average position of hits: (2799,-461,9404)
+Number of tracks/hits/outliers seen: 3452 3452 0
+Local-to-global diagonal: -1 -1 1 -1 -1 1 
+Tx  : curtot= -0.3868      cur= -0.3868      delta= 0.006518     +/- 0.01105      [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0005145   cur= -0.0005145   delta= -5.542e-06   +/- 1.209e-05    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.6839 8.071
+local delta chi2 / dof: 128.7 / 2
+survey chi2 / dof (before/after): 7.215 7.215 / 2
+align pars: -0.3868, 0.002003, 0.3279, -0.0005982, 7.858e-08, -0.0005145
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q3/M0
+Global position: (265,1213,9407) Average position of hits: (250.5,414.3,9406)
+Number of tracks/hits/outliers seen: 206294 206294 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.2926       cur= 0.2926       delta= 0.0007341    +/- 0.003326     [ 1.794e-05    ]  gcc= 1
+Rz  : curtot= -7.235e-06   cur= -7.235e-06   delta= -1.766e-06   +/- 4.342e-06    [ 1.482e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.05699 0.6751
+local delta chi2 / dof: 6131 / 2
+survey chi2 / dof (before/after): 0.3438 0.3438 / 2
+align pars: 0.2926, -0.002812, -0.8109, -0.001815, 7.386e-07, -7.235e-06
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q3/M1
+Global position: (795,1213,9407) Average position of hits: (783.9,422.5,9405)
+Number of tracks/hits/outliers seen: 153237 153237 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.1209      cur= -0.1209      delta= -0.00253     +/- 0.003372     [ 1.796e-05    ]  gcc= 1
+Rz  : curtot= 0.0003244    cur= 0.0003244    delta= 2.947e-06    +/- 4.418e-06    [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.0701 0.8292
+local delta chi2 / dof: 3372 / 2
+survey chi2 / dof (before/after): 2.69 2.69 / 2
+align pars: -0.1209, -0.001586, -0.5252, -0.001573, 3.561e-07, 0.0003244
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q3/M2
+Global position: (1325,1213,9407) Average position of hits: (1303,534.7,9405)
+Number of tracks/hits/outliers seen: 100037 100037 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.2506       cur= 0.2506       delta= -0.002342    +/- 0.003397     [ 1.798e-05    ]  gcc= 1
+Rz  : curtot= 0.0003385    cur= 0.0003385    delta= 2.502e-06    +/- 4.52e-06     [ 1.483e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.09208 1.088
+local delta chi2 / dof: 1490 / 2
+survey chi2 / dof (before/after): 3.116 3.116 / 2
+align pars: 0.2506, 0.001484, 0.3547, -0.001378, 6.112e-07, 0.0003385
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q3/M3
+Global position: (1855,1213,9407) Average position of hits: (1811,689,9405)
+Number of tracks/hits/outliers seen: 46320 46320 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -0.1523      cur= -0.1523      delta= -0.002505    +/- 0.003493     [ 1.799e-05    ]  gcc= 1
+Rz  : curtot= 0.0003342    cur= 0.0003342    delta= 2.499e-06    +/- 4.732e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.1385 1.634
+local delta chi2 / dof: 862.2 / 2
+survey chi2 / dof (before/after): 2.885 2.885 / 2
+align pars: -0.1523, -0.001227, -0.5483, -0.001395, 6.586e-07, 0.0003342
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q3/M4
+Global position: (2385,1213,9407) Average position of hits: (2352,785.9,9404)
+Number of tracks/hits/outliers seen: 21741 21741 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 0.8363       cur= 0.8363       delta= -0.002871    +/- 0.003707     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= 0.0002242    cur= 0.0002242    delta= 3.197e-06    +/- 5.193e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.2255 2.661
+local delta chi2 / dof: 3134 / 2
+survey chi2 / dof (before/after): 4.054 4.054 / 2
+align pars: 0.8363, 0.00227, 0.7081, -0.0007313, 4.341e-07, 0.0002242
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+Alignable: FT/T3/X2/HL1/Q3/M5
+Global position: (2915,1213,9407) Average position of hits: (2787,770.6,9404)
+Number of tracks/hits/outliers seen: 6003 6003 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 1.306        cur= 1.306        delta= -0.002873    +/- 0.004396     [ 1.8e-05      ]  gcc= 1
+Rz  : curtot= -0.0002438   cur= -0.0002438   delta= 2.536e-06    +/- 6.274e-06    [ 1.484e-08    ]  gcc= 1
+contribution to hit uncertainty (absolute/relative): 0.522 6.191
+local delta chi2 / dof: 128.8 / 2
+survey chi2 / dof (before/after): 8.312 8.312 / 2
+align pars: 1.306, 0.0001972, 1.216, 0.0001346, -1.511e-07, -0.0002438
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0002, 0.0008, 0.0002
+********************* END OF ALIGNMENT LOG ************************

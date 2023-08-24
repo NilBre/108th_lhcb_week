@@ -583,12 +583,15 @@ plotting(Rx_OT_err, chi2_values_from_Rx_changes_OT, total_n_dofs, 'Rx', 'Rx_only
 plotting(Ry_err, chi2_values_from_Ry_changes, total_n_dofs, 'Ry', 'everything_set_but_Ry')
 plotting(Rz_err, chi2_values_from_Rz_changes, total_n_dofs, 'Rz', 'only_Rz_variable')
 
+# for strict particle selection
 best_Tx = 0.3 # micron,  0.22 fit not working so well
 best_Ty = 1.2 # micron
 best_Tz = 1.9 # micron, # 1.83
 best_Rx = 0.0004 # 0.4 mrad
 best_Ry = 0.00000044 # 0.44 micro rad
 best_Rz = 0.0002 # mrad
+
+# for loose: 0.000018 0.0012 0.0019 0.0004 0.00000044 0.0002
 
 '''
     plot the constants (positions and rotations) for the different
@@ -621,6 +624,17 @@ constant_diff = [\
     'Tz-all'
 ]
 
+l_vs_s_files = [\
+    f'{path}/parsedlog_Ry_0_44_micro_rad.json',
+    'retest_uncertainty/json/parsedlog_200k_best_loose.json'
+]
+
+l_vs_s_labels = [\
+    'strict',
+    'loose'
+]
+
+# compare strict only
 align_outputs=[open_alignment(thisfile) for thisfile in input_constants]
 plotted_alignables=[]
 for align_block in align_outputs:
@@ -631,6 +645,18 @@ for align_block in align_outputs:
     plotted_alignables.append(thislist)
 align_outputs=[convertGlobal(align_block,plotted_alignables[0]) for align_block in align_outputs]
 
+# compare strict vs loose
+align_outputs_lvs=[open_alignment(thisfile) for thisfile in l_vs_s_files]
+plotted_alignables_lvs=[]
+for align_block in align_outputs_lvs:
+    thislist=[]
+    for key in align_block.keys():
+        if "FT" in key:
+            thislist.append(key)
+    plotted_alignables_lvs.append(thislist)
+align_outputs_lvs=[convertGlobal(align_block,plotted_alignables_lvs[0]) for align_block in align_outputs_lvs]
+
+# strict for every tuned parameter
 tx = get_data(input_constants, 'Tx', align_outputs)
 ty = get_data(input_constants, 'Ty', align_outputs)
 tz = get_data(input_constants, 'Tz', align_outputs)
@@ -640,6 +666,14 @@ z_glob = get_data(input_constants, 'z_global', align_outputs)
 nHits = get_data(input_constants, 'nHits', align_outputs)
 nTracks = get_data(input_constants, 'nTracks', align_outputs)
 
+# strict vs loose
+tx_lvs = get_data(l_vs_s_files, 'Tx', align_outputs_lvs)
+ty_lvs = get_data(l_vs_s_files, 'Ty', align_outputs_lvs)
+tz_lvs = get_data(l_vs_s_files, 'Tz', align_outputs_lvs)
+x_glob_lvs = get_data(l_vs_s_files, 'x_global', align_outputs_lvs)
+y_glob_lvs = get_data(l_vs_s_files, 'y_global', align_outputs_lvs)
+z_glob_lvs = get_data(l_vs_s_files, 'z_global', align_outputs_lvs)
+
 for n in range(12):
     tx_data = tx[n]
     ty_data = ty[n]
@@ -647,6 +681,13 @@ for n in range(12):
     x_g = x_glob[n]
     y_g = y_glob[n]
     z_g = z_glob[n]
+
+    tx_data_lvs = tx_lvs[n]
+    ty_data_lvs = ty_lvs[n]
+    tz_data_lvs = tz_lvs[n]
+    x_data_lvs = x_glob_lvs[n]
+    y_data_lvs = y_glob_lvs[n]
+    z_data_lvs = z_glob_lvs[n]
     # print(tx_data)
     # plot(tx_data, 'constants', 'plain_constants', labels_constants, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
     plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
