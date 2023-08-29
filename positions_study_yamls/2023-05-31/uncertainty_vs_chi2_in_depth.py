@@ -349,7 +349,7 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
     # print(layerID, total_num_runs)
     # print(data_arr)
     # for i in range(total_num_runs):  # when using 'constants'
-    for i in range(total_num_runs):  # when using 'compare'
+    for i in range(total_num_runs-1):  # when using 'compare'
         if survey_pos == 'constants':
             # print('range index i =', i)
             x1 = data_arr[i][0:5]    # Q0
@@ -399,7 +399,7 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
             count += 1
         plt.subplots_adjust(wspace=0, hspace=0)
         # l = ['base','Tx','Ty','Rx','Tz','Ry']
-        plt.savefig(f'{outname_prefix}{outfiles}' + run_labels[i] + outname + '_' + layerID + '_' + title_label + '.pdf')
+        plt.savefig(f'{outname_prefix}{outfiles}' + run_labels[i] + "_" + outname + '_' + layerID + '_' + title_label + '.pdf')
         # plt.savefig(f'{outname_prefix}{outfiles}{run_labels[i]}/' + outname + '_' + layerID + '_' + title_label + '.pdf')
 
     plt.clf()
@@ -579,7 +579,7 @@ plotting(Tx_err, chi2_values_from_Tx_changes, total_n_dofs, 'Tx', 'only_Tx')
 plotting(Ty_err, chi2_values_from_Ty_changes, total_n_dofs, 'Ty', 'Ty_with_set_Tx')
 plotting(Tz_err, chi2_values_from_Tz_changes, total_n_dofs, 'Tz', 'Tz_set_TxTzRx')
 plotting(Rx_err, chi2_values_from_Rx_changes, total_n_dofs, 'Rx', 'Rx_with_set_TxTy')
-plotting(Rx_OT_err, chi2_values_from_Rx_changes_OT, total_n_dofs, 'Rx', 'Rx_only_set_Tx')
+# plotting(Rx_OT_err, chi2_values_from_Rx_changes_OT, total_n_dofs, 'Rx', 'Rx_only_set_Tx')
 plotting(Ry_err, chi2_values_from_Ry_changes, total_n_dofs, 'Ry', 'everything_set_but_Ry')
 plotting(Rz_err, chi2_values_from_Rz_changes, total_n_dofs, 'Rz', 'only_Rz_variable')
 
@@ -626,7 +626,7 @@ constant_diff = [\
 
 l_vs_s_files = [\
     f'{path}/parsedlog_Ry_0_44_micro_rad.json',
-    'retest_uncertainty/json/parsedlog_200k_best_loose.json'
+    'retest_uncertainty/json/parsedlog_500k_i8_loose.json'
 ]
 
 l_vs_s_labels = [\
@@ -690,4 +690,5 @@ for n in range(12):
     z_data_lvs = z_glob_lvs[n]
     # print(tx_data)
     # plot(tx_data, 'constants', 'plain_constants', labels_constants, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
-    plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
+    # plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
+    plot(tx_data_lvs, 'compare', 'd_lvs', l_vs_s_labels, 'Tx', layers[n])
