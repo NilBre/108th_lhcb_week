@@ -30,7 +30,7 @@ trackInfo=["nTracks","nHits"]
 stations = ["T1", "T2", "T3"]
 layers = ["U", "V", "X1", "X2"]
 
-colors = ['black', 'blue', 'red', 'green', 'yellow', 'magenta', 'brown', 'cyan']
+colors = ['black', 'blue', 'red', 'green', 'magenta', 'yellow', 'brown', 'cyan']
 markers = ['o', 'x', 'd', 'D', '.', 'v', 's', 'p']
 
 # change to your own output directories
@@ -157,9 +157,9 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
     '''
     L = ['Q2', 'Q3', 'Q0', 'Q1']
     print(layerID, total_num_runs)
-    for i in range(total_num_runs-1):
+    for i in range(total_num_runs):
         if len(survey_pos) == 0:
-            print('range index i =', i)
+            # print('range index i =', i)
             x1 = data_arr[i][0:5] - data_arr[i+1][0:5]  # Q0
             x2 = data_arr[i][5:10] - data_arr[i+1][5:10]  # Q2
             x3 = data_arr[i][10:15] - data_arr[i+1][10:15]  # Q1
@@ -665,11 +665,11 @@ reduced_files = [\
          "align_logfiles_stability/json_files/parsedlog_256290.json",
 ]
 reduced_labels = [\
-        "..145-..159",
-        "..159-..163",
-        "..163-..272",
-        "..272-..278",
-        "..278-..290",
+        "256145->256159",
+        "256159->256163",
+        "256163->256272",
+        "256272->256278",
+        "256278->256290",
 ]
 diff_labels = [\
             "255949-256030",
@@ -869,7 +869,7 @@ for n in range(12):
     # for i in range(len(diff_labels)):
     #     print(f'diff_{i}: ', diffs[i])
     plot(tx_data_mu, [], 'diff_MU', diff_mu, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
-    plot(tz_data_mu, survey_Tz, 'diff_MU', legendlabels_mu, 'Tz', layers[n])
+    plot(tz_data_mu, survey_Tz, 'diff_MU', diff_mu, 'Tz', layers[n])
 
     tx_data_red = tx_red[n]
     ty_data_red = ty_red[n]

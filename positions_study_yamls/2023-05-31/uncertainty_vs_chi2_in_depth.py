@@ -353,7 +353,6 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
         if survey_pos == 'constants':
             # print('range index i =', i)
             x1 = data_arr[i][0:5]    # Q0
-            # print(x1)
             x2 = data_arr[i][5:10]   # Q2
             x3 = data_arr[i][10:15]  # Q1
             x4 = data_arr[i][15:20]  # Q3
@@ -579,7 +578,7 @@ plotting(Tx_err, chi2_values_from_Tx_changes, total_n_dofs, 'Tx', 'only_Tx')
 plotting(Ty_err, chi2_values_from_Ty_changes, total_n_dofs, 'Ty', 'Ty_with_set_Tx')
 plotting(Tz_err, chi2_values_from_Tz_changes, total_n_dofs, 'Tz', 'Tz_set_TxTzRx')
 plotting(Rx_err, chi2_values_from_Rx_changes, total_n_dofs, 'Rx', 'Rx_with_set_TxTy')
-plotting(Rx_OT_err, chi2_values_from_Rx_changes_OT, total_n_dofs, 'Rx', 'Rx_only_set_Tx')
+# plotting(Rx_OT_err, chi2_values_from_Rx_changes_OT, total_n_dofs, 'Rx', 'Rx_only_set_Tx')
 plotting(Ry_err, chi2_values_from_Ry_changes, total_n_dofs, 'Ry', 'everything_set_but_Ry')
 plotting(Rz_err, chi2_values_from_Rz_changes, total_n_dofs, 'Rz', 'only_Rz_variable')
 
@@ -691,3 +690,4 @@ for n in range(12):
     # print(tx_data)
     # plot(tx_data, 'constants', 'plain_constants', labels_constants, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
     plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
+    plot(tx_data_lvs, 'constants', 'diff_loose_strict', l_vs_s_labels, 'Tx', layers[n])
