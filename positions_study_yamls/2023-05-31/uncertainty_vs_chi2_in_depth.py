@@ -349,7 +349,7 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
     # print(layerID, total_num_runs)
     # print(data_arr)
     # for i in range(total_num_runs):  # when using 'constants'
-    for i in range(total_num_runs):  # when using 'compare'
+    for i in range(total_num_runs-1):  # when using 'compare'
         if survey_pos == 'constants':
             # print('range index i =', i)
             x1 = data_arr[i][0:5]    # Q0
@@ -398,7 +398,7 @@ def plot(data_arr, survey_pos, outname, run_labels, title_label, layerID):
             count += 1
         plt.subplots_adjust(wspace=0, hspace=0)
         # l = ['base','Tx','Ty','Rx','Tz','Ry']
-        plt.savefig(f'{outname_prefix}{outfiles}' + run_labels[i] + outname + '_' + layerID + '_' + title_label + '.pdf')
+        plt.savefig(f'{outname_prefix}{outfiles}' + run_labels[i] + "_" + outname + '_' + layerID + '_' + title_label + '.pdf')
         # plt.savefig(f'{outname_prefix}{outfiles}{run_labels[i]}/' + outname + '_' + layerID + '_' + title_label + '.pdf')
 
     plt.clf()
@@ -625,7 +625,7 @@ constant_diff = [\
 
 l_vs_s_files = [\
     f'{path}/parsedlog_Ry_0_44_micro_rad.json',
-    'retest_uncertainty/json/parsedlog_200k_best_loose.json'
+    'retest_uncertainty/json/parsedlog_500k_i8_loose.json'
 ]
 
 l_vs_s_labels = [\
@@ -689,5 +689,12 @@ for n in range(12):
     z_data_lvs = z_glob_lvs[n]
     # print(tx_data)
     # plot(tx_data, 'constants', 'plain_constants', labels_constants, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+<<<<<<< HEAD
     plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
     plot(tx_data_lvs, 'constants', 'diff_loose_strict', l_vs_s_labels, 'Tx', layers[n])
+||||||| 97bf4c5
+    plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
+=======
+    # plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
+    plot(tx_data_lvs, 'compare', 'd_lvs', l_vs_s_labels, 'Tx', layers[n])
+>>>>>>> 534afc7ebfa7e604ececdcb73ff4fde6c010d57b
