@@ -632,7 +632,10 @@ l_vs_s_labels = [\
     'strict',
     'loose'
 ]
-
+l_vs_s_compare = [\
+    'strict-loose',
+    'strict-loose'
+]
 # compare strict only
 align_outputs=[open_alignment(thisfile) for thisfile in input_constants]
 plotted_alignables=[]
@@ -688,13 +691,7 @@ for n in range(12):
     y_data_lvs = y_glob_lvs[n]
     z_data_lvs = z_glob_lvs[n]
     # print(tx_data)
-    # plot(tx_data, 'constants', 'plain_constants', labels_constants, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
-<<<<<<< HEAD
-    plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
-    plot(tx_data_lvs, 'constants', 'diff_loose_strict', l_vs_s_labels, 'Tx', layers[n])
-||||||| 97bf4c5
-    plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
-=======
-    # plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
-    plot(tx_data_lvs, 'compare', 'd_lvs', l_vs_s_labels, 'Tx', layers[n])
->>>>>>> 534afc7ebfa7e604ececdcb73ff4fde6c010d57b
+#    plot(tx_data, 'constants', 'plain_constants', labels_constants, 'Tx', layers[n])  # set [] to survey Tx if i want to compare to survey positions
+#    plot(tx_data, 'compare', 'diff_tuned_params', constant_diff, 'Tx', layers[n])
+#    plot(tx_data_lvs, 'constants', 'diff_loose_strict', l_vs_s_labels, 'Tx', layers[n])
+    plot(tx_data_lvs, 'compare', 'd_lvs', l_vs_s_compare, 'Tx', layers[n])
