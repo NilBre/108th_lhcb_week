@@ -758,12 +758,16 @@ f = [\
     "retest_uncertainty/json/parsedlog_500k_tuned_unc_loose.json",
     "retest_uncertainty/json/parsedlog_0_0001_Tx_retune.json",
     "retest_uncertainty/json/parsedlog_baseTx_tune_rest.json",
+    "retest_uncertainty/json/parsedlog_0_8_onlyTx.json",
+    "retest_uncertainty/json/parsedlog_0_6_onlyTx.json",
 ]
 lab = [\
     "old",
     "new",
     "0_0001_tx",
-    "baseTx_tuned"
+    "baseTx_tuned",
+    "0_8Tx",
+    "0_6Tx"
 ]
 
 # plot constants of only Tx tuning for strict particles
