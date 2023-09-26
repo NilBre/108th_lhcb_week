@@ -756,18 +756,20 @@ legendlabels_mu = [\
 f = [\
     "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json",
     "retest_uncertainty/json/parsedlog_500k_tuned_unc_loose.json",
-    "retest_uncertainty/json/parsedlog_0_0001_Tx_retune.json",
-    "retest_uncertainty/json/parsedlog_baseTx_tune_rest.json",
-    "retest_uncertainty/json/parsedlog_0_8_onlyTx.json",
-    "retest_uncertainty/json/parsedlog_0_6_onlyTx.json",
+    # "retest_uncertainty/json/parsedlog_0_0001_Tx_retune.json",
+    # "retest_uncertainty/json/parsedlog_baseTx_tune_rest.json",
+    # "retest_uncertainty/json/parsedlog_0_8_onlyTx.json",
+    # "retest_uncertainty/json/parsedlog_0_6_onlyTx.json",
+    "retest_uncertainty/json/parsedlog_2micron.json"
 ]
 lab = [\
     "old",
     "new",
-    "0_0001_tx",
-    "baseTx_tuned",
-    "0_8Tx",
-    "0_6Tx"
+    # "0_0001_tx",
+    # "baseTx_tuned",
+    # "0_8Tx",
+    # "0_6Tx",
+    "2micro"
 ]
 
 # plot constants of only Tx tuning for strict particles
