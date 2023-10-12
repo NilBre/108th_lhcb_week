@@ -30,7 +30,7 @@ trackInfo=["nTracks","nHits"]
 stations = ["T1", "T2", "T3"]
 
 colors = ['black', 'blue', 'red', 'green', 'magenta', 'yellow', 'brown', 'cyan', 'purple']
-markers = ['o', 'x', 'D', 'd', '.', 'v', 's', 'p', '1']
+markers = ['s', 'd', 'v', 'x', '*', 'v', '.', 'p', '1', '2']
 
 # change to your own output directories
 outname_prefix = 'SciFiAlignv3/'
@@ -74,46 +74,37 @@ def alt_modules(nums1, nums2, labels, ID, prefix):
     plt.savefig('10mu_old_comp_' + prefix + '.pdf')
     plt.clf()
 
+def global_local_combiner(global_data, local_data):
+    '''
+        needs data from only one iteration
+    '''
+    num_files = global_data.shape[0]
+    x_Q0_data = [[] for _ in range(num_files)]
+    x_Q2_data = [[] for _ in range(num_files)]
+    x_Q1_data = [[] for _ in range(num_files)]
+    x_Q3_data = [[] for _ in range(num_files)]
+    # for i in range(num_files):
+    #     x_Q0_data[i].append(local_data[i][0:5])
+    #     x_Q2_data[i].append(local_data[i][5:10])
+    #     x_Q1_data[i].append(local_data[i][10:15])
+    #     x_Q3_data[i].append(local_data[i][15:20])
+    for i in range(num_files):
+        x_Q0_data[i].append(global_data[i][0:5] + local_data[i][0:5])
+        x_Q2_data[i].append(global_data[i][5:10] + local_data[i][5:10])
+        x_Q1_data[i].append(global_data[i][10:15] + local_data[i][10:15])
+        x_Q3_data[i].append(global_data[i][15:20] + local_data[i][15:20])
+    return x_Q0_data, x_Q2_data, x_Q1_data, x_Q3_data
+
 def plot_x_y_constants(nums1, nums2, local1, local2, labels, ID):
     outfiles = 'out_x_y_pos/'
     total_layer_num = 12 # number of layers
     total_num_runs = len(labels)
-    # global
-    x_data1 = nums1[0]
-    x_data2 = nums1[1]
-    # x_data3 = nums1[2] ... for additional datafiles
-    y_data1 = nums2[0]
-    y_data2 = nums2[1]
 
-    # local
-    x_loc1 = local1[0]
-    x_loc2 = local1[1]
-
-    y_loc1 = local2[0]
-    y_loc2 = local2[1]
-
+    # x has 4 entries, 1 for each quarter, within these 4 we have as many as the number of input files
+    x_Q0, x_Q2, x_Q1, x_Q3 = global_local_combiner(nums1, local1)
+    y_Q0, y_Q2, y_Q1, y_Q3 = global_local_combiner(nums2, local2)
 
     L = ['Q2', 'Q3', 'Q0', 'Q1']
-
-    x1_file1 = x_data1[0:5] + x_loc1[0:5]# Q0
-    x2_file1 = x_data1[5:10] + x_loc1[5:10]# Q2
-    x3_file1 = x_data1[10:15] + x_loc1[10:15]# Q1
-    x4_file1 = x_data1[15:20] + x_loc1[15:20]# Q3
-
-    y1_file1 = y_data1[0:5] + y_loc1[0:5]  # Q0
-    y2_file1 = y_data1[5:10] + y_loc1[5:10] # Q2
-    y3_file1 = y_data1[10:15] + y_loc1[10:15] # Q1
-    y4_file1 = y_data1[15:20] + y_loc1[15:20] # Q3
-
-    x1_file2 = x_data2[0:5] + x_loc2[0:5]  # Q0
-    x2_file2 = x_data2[5:10] + x_loc2[5:10] # Q2
-    x3_file2 = x_data2[10:15] + x_loc2[10:15] # Q1
-    x4_file2 = x_data2[15:20] + x_loc2[15:20] # Q3
-
-    y1_file2 = y_data2[0:5] + y_loc2[0:5] # Q0
-    y2_file2 = y_data2[5:10] + y_loc2[5:10] # Q2
-    y3_file2 = y_data2[10:15] + y_loc2[10:15] # Q1
-    y4_file2 = y_data2[15:20] + y_loc2[15:20] # Q3
 
     ax = [plt.subplot(2,2,i+1) for i in range(4)]
     plt.figure()
@@ -125,57 +116,70 @@ def plot_x_y_constants(nums1, nums2, local1, local2, labels, ID):
         a.text(0.05, 0.9, L[count], transform=a.transAxes, weight="bold")
         plt.sca(a)
         if count == 0: # Q2
-            plt.scatter(x2_file1[::-1], y2_file1[::-1], color=colors[0:5], marker=markers[0], s=10)
-            plt.scatter(x2_file2[::-1], y2_file2[::-1], color=colors[0:5], marker=markers[1], s=10)
-            for i in range(len(modules)):
-                plt.text(x2_file1[i], y2_file1[i], modules[i], fontsize=9)
-                plt.text(x2_file2[i], y2_file2[i], modules[i], fontsize=9)
-            plt.ylabel(f'y pos [mm]')
-            plt.title(f'local translation')
-            a.invert_yaxis()
-            a.xaxis.tick_top()
+            for num in range(total_num_runs): # iterate through files for Q2
+                plt.scatter(x_Q2[num][0][::-1], y_Q2[num][0][::-1], color=colors[num], marker=markers[num], s=10)
+                for i in range(len(modules)):
+                    plt.text(x_Q2[num][0][i], y_Q2[num][0][i], modules[i], fontsize=9)
+                plt.ylabel(f'y pos [mm]')
+                plt.title(f'local translation')
+                a.invert_yaxis()
+                a.xaxis.tick_top()
         if count == 1: # Q3
-            plt.scatter(x4_file1, y4_file1, color=colors[0:5], marker=markers[0], s=10, label=f'{labels[0]}')
-            plt.scatter(x4_file2, y4_file2, color=colors[0:5], marker=markers[1], s=10, label=f'{labels[1]}')
-            plt.title(f'layer {ID}')
-            for i in range(len(modules)):
-                plt.text(x4_file1[i], y4_file1[i], modules[i], fontsize=9)
-                plt.text(x4_file2[i], y4_file2[i], modules[i], fontsize=9)
-            a.yaxis.tick_right()
-            a.xaxis.tick_top()
-            plt.legend(loc='best', fontsize='8')
+            for num in range(total_num_runs): # iterate through files for Q2
+                plt.scatter(x_Q3[num][0][::-1], y_Q3[num][0][::-1], color=colors[num], marker=markers[num], s=10, label=f'{labels[num]}')
+                for i in range(len(modules)):
+                    plt.text(x_Q3[num][0][i], y_Q3[num][0][i], modules[i], fontsize=9)                
+                    a.yaxis.tick_right()
+                a.xaxis.tick_top()
+                plt.legend(loc='best', fontsize='8')
         if count == 2: # Q0
-            plt.scatter(x1_file1[::-1], y1_file1[::-1], color=colors[0:5], marker=markers[0], s=10)
-            plt.scatter(x1_file2[::-1], y1_file2[::-1], color=colors[0:5], marker=markers[1], s=10)
-            for i in range(len(modules)):
-                plt.text(x1_file1[i], y1_file1[i], modules[i], fontsize=9)
-                plt.text(x1_file2[i], y1_file2[i], modules[i], fontsize=9)
+            for num in range(total_num_runs): # iterate through files for Q2
+                plt.scatter(x_Q0[num][0][::-1], y_Q0[num][0][::-1], color=colors[num], marker=markers[num], s=10)
+                for i in range(len(modules)):
+                    plt.text(x_Q0[num][0][i], y_Q0[num][0][i], modules[i], fontsize=9)
         if count == 3: # Q1
-            plt.scatter(x3_file1, y3_file1, color=colors[0:5], marker=markers[0], s=10)
-            plt.scatter(x3_file2, y3_file2, color=colors[0:5], marker=markers[1], s=10)
-            a.invert_yaxis()
-            for i in range(len(modules)):
-                plt.text(x3_file1[i], y3_file1[i], modules[i], fontsize=9)
-                plt.text(x3_file2[i], y3_file2[i], modules[i], fontsize=9)
-            a.yaxis.tick_right()
+            for num in range(total_num_runs): # iterate through files for Q2
+                plt.scatter(x_Q1[num][0][::-1], y_Q1[num][0][::-1], color=colors[num], marker=markers[num], s=10)
+                for i in range(len(modules)):
+                    plt.text(x_Q1[num][0][i], y_Q1[num][0][i], modules[i], fontsize=9)
+                    a.yaxis.tick_right()
         count += 1
     plt.subplots_adjust(wspace=0, hspace=0)
     plt.savefig(f'{outname_prefix}{outfiles}' + 'x_vs_y_old_and_10mu_' + ID + '.pdf')
     plt.clf()
 
-def hits_vs_tracks(arr1, arr2, labels, layerID):
-    keys = list(align_outputs[0]['FT/T1UHL0/Q0M0'].keys())
-    outfiles = 'hits_and_tracks/'
-    # arr has 8 arrays, 1 for each datafile
-    for i in range(len(arr1)):
-        plt.plot(arr1, arr2, label = f'{labels[i]}')
+# def global_vs_local_plotting(input_data, global_variable_data, labels, dof_local, dof_global)
+
+def glob_vs_glob(glob_data1, glob_data2, dof1, dof2, outname, labels):
+    run_labels = labels
+    num_files = glob_data1[0].shape[0]
+    n_layers = 12
+    layer_ticks = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
+    outfiles = 'outfiles_vs_global/'
+    # glob 1 is y coordinate, glob 2 is z coordinate
+    z_positions = []
+    for j in range(n_layers):
+        z_positions.append(glob_data2[j][0][0])
+    correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
+    for runs in range(num_files):
+        y_positions = []
+        for j in range(n_layers):
+            y_positions.append(glob_data1[j][0][j])
+
+        # print('y_positions', y_positions)
+        correct_x_order = [y_positions[iter] for iter in correct_order]
+        # print('z_positions', z_positions)
+        plt.plot(z_positions, y_positions, ls='', marker=markers[runs], c=colors[runs], markersize=11-runs, label=f'{run_labels[runs]}')
+        if runs == 0:
+            for i in range(n_layers):
+                plt.text(z_positions[i], 1100-(runs*50), layer_ticks[i], fontsize=9)
         if plt.grid(True):
             plt.grid()
         plt.legend(loc='best')
-        plt.xlabel(f'{keys[10]}')
-        plt.ylabel(f'{keys[9]}')
-        plt.title('nHits vs nTracks')
-    plt.savefig(f'{outname_prefix}{outfiles}' + 'nHitsVsnTracks_' + layerID + '.pdf')
+        plt.xlabel(f'{dof2} [mm]')
+        plt.ylabel(f'{dof1} [mm]')
+        plt.title(f'{dof1} vs {dof2}')
+    plt.savefig(f'{outname_prefix}/{outfiles}' + outname + '.pdf')
     plt.clf()
 
 def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, glob_data2, y_axis):
@@ -214,7 +218,7 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
         for runs in range(total_num_runs):
 
             correct_x_order = [x_means[runs][iter] for iter in correct_order]
-            plt.plot(x_means[runs], global_positions[runs], ls='', marker=markers[runs], c=colors[runs], label=f'{run_labels[runs]}')
+            plt.plot(x_means[runs], z_positions[runs], ls='', marker=markers[runs], c=colors[runs], markersize=10, label=f'{run_labels[runs]}')
             if runs == 0:
                 for i in range(total_layer_num):
                     plt.text(x_means[runs][i], z_positions[i]+((i/20) * (-1)**i), layers[i], fontsize=9)
@@ -226,21 +230,49 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
             plt.title(f'mean {y_axis} vs. global y')
         plt.savefig(f'{outname_prefix}/{outfiles}' + 'all_runs_' + outname + '.pdf')
         plt.clf()
-    else:
+    if y_axis == 'Rx' or y_axis == 'Tx':
         correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
         for runs in range(total_num_runs):
 
             correct_x_order = [x_means[runs][iter] for iter in correct_order]
             # print('correct_x_order', correct_x_order)
             # yerr=sem(x_means[runs]), 
-            plt.plot(z_positions, x_means[runs], ls='', marker=markers[runs], c=colors[runs], label=f'{run_labels[runs]}')
+            size = 10
+            if runs == 3:
+                size = 11
+            if runs == 5:
+                size = 8
+            plt.plot(z_positions, x_means[runs], ls='', marker=markers[runs], c=colors[runs], markersize=size, label=f'{run_labels[runs]}')
             if plt.grid(True):
                 plt.grid()
             plt.legend(loc='best')
             plt.ylabel(f'mean {y_axis} module position [mm]')
-            plt.title(f'mean {y_axis} vs. global z')
-            if y_axis == 'Tx' or y_axis == 'Rx':
-                plt.xticks(z_positions, ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2'], rotation=45, fontsize=10)
+            plt.title(f'mean position of layers in {y_axis} vs. global z position')
+            plt.xticks(z_positions, ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2'], rotation=45, fontsize=10)
+        plt.savefig(f'{outname_prefix}/{outfiles}' + 'all_runs_' + outname + '.pdf')
+        plt.clf()
+    if y_axis == 'Tz':
+        correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
+        for runs in range(total_num_runs):
+
+            correct_x_order = [x_means[runs][iter] for iter in correct_order]
+            # print('correct_x_order', correct_x_order)
+            # yerr=sem(x_means[runs]), 
+            # print('z pos local', x_means[runs])
+            # print('z pos global', z_positions)
+            size = 10
+            if runs == 3:
+                size = 11
+            if runs == 5:
+                size = 8
+            plt.plot(x_means[runs], z_positions, ls='', marker=markers[runs], c=colors[runs], markersize=size, label=f'{run_labels[runs]}')
+            if plt.grid(True):
+                plt.grid()
+            plt.legend(loc='best')
+            plt.ylabel(f'global position of SciFi Layers')
+            plt.xlabel('local mean Tz movement of Layers')
+            plt.title(f'mean position of layers in {y_axis} vs. global z position')
+            plt.yticks(z_positions, ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2'], rotation=45, fontsize=10)
         plt.savefig(f'{outname_prefix}/{outfiles}' + 'all_runs_' + outname + '.pdf')
         plt.clf()
 
@@ -940,16 +972,24 @@ legendlabels_mu = [\
 
 # compare red to blue
 f = [\
-    # "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json",
+    "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json",
     # "retest_uncertainty/json/parsedlog_500k_tuned_unc_loose.json",
     # "retest_uncertainty/json/parsedlog_0_0001_Tx_retune.json",
     # "retest_uncertainty/json/parsedlog_baseTx_tune_rest.json",
     # "retest_uncertainty/json/parsedlog_0_8_onlyTx.json",
     # "retest_uncertainty/json/parsedlog_0_6_onlyTx.json",
-    "retest_uncertainty/json/parsedlog_2micron.json",
+
+    # "retest_uncertainty/json/parsedlog_2micron.json",
     "retest_uncertainty/json/parsedlog_Tx_10micron_Rz_better.json",
     "retest_uncertainty/json/parsedlog_TxTzRxRz_iter4_10micron_tuned.json",
-    "retest_uncertainty/json/parsedlog_100mu_TxRz_iter15.json",
+    # "retest_uncertainty/json/parsedlog_100mu_TxTzRxRz_iter15.json",
+    # "retest_uncertainty/json/parsedlog_100mu_TxRz.json",
+    # "retest_uncertainty/json/parsedlog_small_joint_Rx_10mu_Tx_TxRz.json",
+    "retest_uncertainty/json/parsedlog_TxRxRz_smallRxSurveyUnc.json",
+    # "retest_uncertainty/json/parsedlog_RxJoints_0.json",
+    "retest_uncertainty/json/parsedlog_v2_fix_survey.json",
+    "retest_uncertainty/json/parsedlog_fix_V_layers.json",
+    'retest_uncertainty/json/parsedlog_global_TxTzRxRz.json',
 ]
 lab = [\
     # "old",
@@ -958,23 +998,45 @@ lab = [\
     # "baseTx_tuned",
     # "0_8Tx",
     # "0_6Tx",
-    "2micron",
-    "10micron",
-    "TxTzRxRz_10micron",
-    "100mu_TxTzRxRz"
+
+    'V9_old_joint_config',
+    'TxRz_10mu',
+    "TxTzRxRz_10mu",
+    # "100mu_TxTzRxRz",
+    # "100mu_TxRz",
+    # "10mu_smallRxJoint",
+    "10mu_TxRxRz_smallRxSurveyUnc",
+    # "10mu_RxJoints_small", 
+    '10mu_TxRxRz_T2V_fixed',
+    "10mu_TxRxRz_T1U_T2V",
+    '10mu_TxTzRxRz_with_globModules'
 ]
 
 xy_comp_input = [\
     "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json",
     "retest_uncertainty/json/parsedlog_Tx_10micron_Rz_better.json",
     "retest_uncertainty/json/parsedlog_TxTzRxRz_iter4_10micron_tuned.json",
-    "retest_uncertainty/json/parsedlog_100mu_TxRz_iter15.json"
+    # "retest_uncertainty/json/parsedlog_100mu_TxTzRxRz_iter15.json",
+    # "retest_uncertainty/json/parsedlog_100mu_TxRz.json",
+    # "retest_uncertainty/json/parsedlog_small_joint_Rx_10mu_Tx_TxRz.json",
+    "retest_uncertainty/json/parsedlog_TxRxRz_smallRxSurveyUnc.json",
+    # "retest_uncertainty/json/parsedlog_RxJoints_0.json", 
+    "retest_uncertainty/json/parsedlog_v2_fix_survey.json",
+    "retest_uncertainty/json/parsedlog_fix_V_layers.json",
+    'retest_uncertainty/json/parsedlog_global_TxTzRxRz.json',
 ]
 labels_xy = [\
-    'xy_old',
-    'TxRz_10micron',
-    "TxTzRxRz_10micron",
-    "100mu_TxTzRxRz"
+    'V9_old_joint_config',
+    'TxRz_10mu',
+    "TxTzRxRz_10mu",
+    # "100mu_TxTzRxRz",
+    # "100mu_TxRz",
+    # "10mu_smallRxJoint",
+    "10mu_TxRxRz_smallRxSurveyUnc",
+    # "10mu_RxJoints_small", 
+    '10mu_TxRxRz_T2V_fixed',
+    "10mu_TxRxRz_T1U_T2V",
+    '10mu_TxTzRxRz_with_globModules'
 ]
 
 # plot constants of only Tx tuning for strict particles
@@ -1192,7 +1254,7 @@ for n in range(12):
     glob_x_compxy = glob_x_xydiff[n]
     glob_y_compxy = glob_y_xydiff[n]
     glob_z_compxy = glob_z_xydiff[n]
-    # print('tz_compxy', tz_compxy)
+    # print(len(glob_z_compxy), len(glob_z_compxy[0]))
 
     plot_x_y_constants(glob_x_compxy, glob_y_compxy, tx_compxy, ty_compxy, labels_xy, layers[n])
     alt_modules(glob_x_compxy, glob_y_compxy, labels_xy, layers[n], 'plt_xy')
@@ -1203,5 +1265,5 @@ for n in range(12):
 plot_with_globals(tx_xydiff, 'glob_z_vs_local_Tx', labels_xy, layers, glob_z_xydiff, glob_x_xydiff, 'Tx')
 plot_with_globals(rx_xydiff, 'glob_z_vs_local_Rx', labels_xy, layers, glob_z_xydiff, glob_x_xydiff, 'Rx') 
 plot_with_globals(tz_xydiff, 'glob_z_vs_local_Tz', labels_xy, layers, glob_z_xydiff, glob_x_xydiff, 'Tz')
-# plot Tx vs global Ty
-plot_with_globals(tx_xydiff, 'glob_y_vs_local_Tx', labels_xy, layers, glob_y_xydiff, glob_x_xydiff, 'Ty')
+
+glob_vs_glob(glob_y_xydiff, glob_z_xydiff, 'global_y', 'global_z', 'global_y_vs_global_z', labels_xy)
