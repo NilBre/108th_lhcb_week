@@ -20,6 +20,7 @@ import mplhep as hep
 from matplotlib.backends.backend_pdf import PdfPages
 from mpl_toolkits.axes_grid1 import AxesGrid
 from scipy.stats import sem
+from matplotlib.patches import Rectangle
 
 regex_typelabel=re.compile("Q")
 regex_amodule=re.compile("dPosXYZ")
@@ -31,6 +32,12 @@ stations = ["T1", "T2", "T3"]
 
 colors = ['black', 'blue', 'red', 'green', 'magenta', 'yellow', 'brown', 'cyan', 'purple']
 markers = ['s', 'd', 'v', 'x', '*', 'v', '.', 'p', '1', '2']
+
+halfmodule_length = 4833 / 2  # in mm
+halfmodule_width = 536  # in mm
+num_modules_per_quarter = 5
+n_quarter = 4
+n_halves = 2
 
 # change to your own output directories
 outname_prefix = 'SciFiAlignv3/'
@@ -74,6 +81,143 @@ def alt_modules(nums1, nums2, labels, ID, prefix):
     plt.savefig('10mu_old_comp_' + prefix + '.pdf')
     plt.clf()
 
+def make_full_layer_plot():
+    fig, ax = plt.subplots()
+    for module in range(num_modules_per_quarter): # top right
+        ax.add_patch(Rectangle((bottom_left_corner[0] + ((module+1) * halfmodule_width), bottom_left_corner[1]), halfmodule_width, halfmodule_length, edgecolor='red', linewidth=2, fill=False))
+        ax.set_xlim(-4000, 4000)
+        ax.set_ylim(-3300, 3300)
+    for module in range(num_modules_per_quarter): # top left
+        ax.add_patch(Rectangle((bottom_left_corner[0] - (module * halfmodule_width), bottom_left_corner[1]), halfmodule_width, halfmodule_length, edgecolor='blue', linewidth=2, fill=False))
+    for module in range(num_modules_per_quarter): # bottom right
+        ax.add_patch(Rectangle((bottom_left_corner[0] + ((module+1) * halfmodule_width), bottom_left_corner[1] - halfmodule_length), halfmodule_width, halfmodule_length, edgecolor='green', linewidth=2, fill=False))
+    for module in range(num_modules_per_quarter): # bottom left
+        ax.add_patch(Rectangle((bottom_left_corner[0] - (module * halfmodule_width), bottom_left_corner[1] - halfmodule_length), halfmodule_width, halfmodule_length, edgecolor='black', linewidth=2, fill=False))
+    plt.title('module fitting at the joint')
+    plt.xlabel('global module position in x [mm]')
+    plt.ylabel('global module position in y [mm]')
+    plt.savefig('retest_uncertainty/out_rectangle/plot_global_positions.pdf')
+    plt.clf()
+
+def make_edges_plot(nums1, nums2, local1, local2, labels, ID, quarter_or_layer, local_or_global, x_rot, filenumbers='all'):
+    total_layer_num = 12 # number of layers
+    total_num_runs = len(labels)
+
+    # x has 4 entries, 1 for each quarter, within these 4 we have as many as the number of input files
+    x_Q0, x_Q2, x_Q1, x_Q3 = global_local_combiner(nums1, local1, quarter_or_layer, local_or_global)
+    y_Q0, y_Q2, y_Q1, y_Q3 = global_local_combiner(nums2, local2, quarter_or_layer, local_or_global)
+    # only the local numbers per layer
+    y1, y2, y3, y4 = global_local_combiner(nums2, local2, 'layer', 'local') # all y are the same because per layer, but have to define it this way
+    # rx rotation
+    rx_data = [[] for _ in range(total_num_runs)]
+    for i in range(total_num_runs):
+        rx_data[i].append(x_rot[i])
+
+    L = ['Q2', 'Q3', 'Q0', 'Q1']
+    len_long_module = 2417.5 # mm, dont use this
+    global_joint = [0, -1212.75, 0] # x, y, z
+    # for a test do one half layer -> test Q0 top edges and Q2 bottom edges
+    dim_modules = len(y_Q2[0][0])
+    x = np.linspace(0, 10, 10)
+    s1 = set(['T1X1', 'T1X2', 'T2X1', 'T2X2', 'T3X1', 'T3X2']) # X1, X2 layers, +- 1213 mm
+    s2 = set(['T1U', 'T1V', 'T2U', 'T2V', 'T3U', 'T3V']) #  U,  V layers, +- 1208 mm
+    fig, ax2 = plt.subplots()
+    if filenumbers == 'all':
+        for num in range(total_num_runs):
+            if ID in s2:
+                # print('U and V layers')
+                stereo_angle = np.cos(np.deg2rad(5))
+                y_data = [y_Q2[num][0][i] / stereo_angle for i in range(dim_modules)]
+            else:
+                y_data = [y_Q2[num][0][i] for i in range(dim_modules)]
+            y_final = [] # 20 entries, 1 for each module
+            edge_factor = [1,1,1,1,1,-1,-1,-1,-1,-1,1,1,1,1,1,-1,-1,-1,-1,-1]
+            for j in range(dim_modules):
+                y_final.append(y_data[j] * np.cos(rx_data[num][0][j]))
+                y_final[j] *= edge_factor[j]
+            top_idx = [5, 6, 7, 8, 9, 15, 16, 17, 18, 19]
+            bot_idx = [0, 1, 2, 3, 4, 10, 11, 12, 13, 14]
+            y_top = [y_final[i] for i in top_idx]
+            y_bot = [y_final[i] for i in bot_idx]
+    
+            top_blc = [] # blc = bottom left corner for top half modules
+            bottom_blc = [] # for bottomhalf modules
+            for i in range(len(y_top)):
+                if i < 5:
+                    top_blc.append([-halfmodule_width * (i+1), y_top[i], 0])
+                    bottom_blc.append([-halfmodule_width * (i+1), y_bot[i], 0])
+                else:
+                    top_blc.append([halfmodule_width * (i-5), y_top[i], 0])
+                    bottom_blc.append([halfmodule_width * (i-5), y_bot[i], 0])
+            y_top_min = min(y_top)
+            y_top_max = max(y_top)
+            y_bottom_min = min(y_bot)
+            y_bottom_max = max(y_bot)
+            print('y_top_min', y_top_min)
+            print('y_top_max', y_top_max)
+            print('y_bottom_min', y_bottom_min)
+            print('y_bottom_max', y_bottom_max)
+            for module in range(len(top_blc)): # top
+                ax2.add_patch(Rectangle((top_blc[module][0], top_blc[module][1]), halfmodule_width, 0, edgecolor=colors[num], linewidth=1, linestyle="--", fill=False))
+                ax2.set_xlim(-2700, 2700)
+                ax2.set_ylim(y_top_max, y_top_min)
+            for module in range(len(bottom_blc)): # bottom
+                ax2.add_patch(Rectangle((bottom_blc[module][0], bottom_blc[module][1]), halfmodule_width, 0, edgecolor=colors[num], linewidth=1, linestyle=":" , fill=False))
+                ax2.set_ylim(y_bottom_max, y_bottom_min)
+            plt.title('module fitting at the joint')
+            plt.xlabel('global module position in x [mm]')
+            plt.ylabel('global module position in y [mm]')
+            plt.savefig(f'retest_uncertainty/out_rectangle/plot_edges_positions_{filenumbers}_{ID}.pdf')
+        plt.clf()
+    if filenumbers == 'individual':
+        for num in range(total_num_runs):
+            if ID in s2:
+                # print('U and V layers')
+                stereo_angle = np.cos(np.deg2rad(5))
+                y_data = [y_Q2[num][0][i] / stereo_angle for i in range(dim_modules)]
+            else:
+                y_data = [y_Q2[num][0][i] for i in range(dim_modules)]
+            y_final = [] # 20 entries, 1 for each module
+            edge_factor = [1,1,1,1,1,-1,-1,-1,-1,-1,1,1,1,1,1,-1,-1,-1,-1,-1]
+            for j in range(dim_modules):
+                y_final.append(y_data[j] * np.cos(rx_data[num][0][j]))
+                y_final[j] *= edge_factor[j]
+            top_idx = [5, 6, 7, 8, 9, 15, 16, 17, 18, 19]
+            bot_idx = [0, 1, 2, 3, 4, 10, 11, 12, 13, 14]
+            y_top = [y_final[i] for i in top_idx]
+            y_bot = [y_final[i] for i in bot_idx]
+
+            top_blc = [] # blc = bottom left corner for top half modules
+            bottom_blc = [] # for bottomhalf modules
+            for i in range(len(y_top)):
+                if i < 5:
+                    top_blc.append([-halfmodule_width * (i+1), y_top[i], 0])
+                    bottom_blc.append([-halfmodule_width * (i+1), y_bot[i], 0])
+                else:
+                    top_blc.append([halfmodule_width * (i-5), y_top[i], 0])
+                    bottom_blc.append([halfmodule_width * (i-5), y_bot[i], 0])
+            y_top_min = min(y_top)
+            y_top_max = max(y_top)
+            y_bottom_min = min(y_bot)
+            y_bottom_max = max(y_bot)
+            print('y_top_min', y_top_min)
+            print('y_top_max', y_top_max)
+            print('y_bottom_min', y_bottom_min)
+            print('y_bottom_max', y_bottom_max)
+            for module in range(len(top_blc)): # top
+                ax2.add_patch(Rectangle((top_blc[module][0], top_blc[module][1]), halfmodule_width, 0, edgecolor=colors[num], linewidth=1, linestyle="--", fill=False))
+                ax2.set_xlim(-2700, 2700)
+                ax2.set_ylim(y_top_max, y_top_min)
+            for module in range(len(bottom_blc)): # bottom
+                ax2.add_patch(Rectangle((bottom_blc[module][0], bottom_blc[module][1]), halfmodule_width, 0, edgecolor=colors[num], linewidth=1, linestyle=":" , fill=False))
+                ax2.set_xlim(-2700, 2700)
+                ax2.set_ylim(y_bottom_max, y_bottom_min)
+            plt.title('module fitting at the joint')
+            plt.xlabel('global module position in x [mm]')
+            plt.ylabel('global module position in y [mm]')
+            plt.savefig(f'retest_uncertainty/out_rectangle/plot_edges_positions_{filenumbers}_{ID}_file{num}.pdf')
+            # plt.clf()
+
 def check_module_edges(nums1, nums2, local1, local2, labels, ID, quarter_or_layer, local_or_global, x_rot):
     '''
     instead of plotting x vs y -> check if the top and bottom module edges touch at the joint at 0 -1212.75 0
@@ -85,44 +229,64 @@ def check_module_edges(nums1, nums2, local1, local2, labels, ID, quarter_or_laye
     # x has 4 entries, 1 for each quarter, within these 4 we have as many as the number of input files
     x_Q0, x_Q2, x_Q1, x_Q3 = global_local_combiner(nums1, local1, quarter_or_layer, local_or_global)
     y_Q0, y_Q2, y_Q1, y_Q3 = global_local_combiner(nums2, local2, quarter_or_layer, local_or_global)
-
+    # only the local numbers per layer
+    y1, y2, y3, y4 = global_local_combiner(nums2, local2, 'layer', 'local') # all y are the same because per layer, but have to define it this way
     # rx rotation
     rx_data = [[] for _ in range(total_num_runs)]
     for i in range(total_num_runs):
         rx_data[i].append(x_rot[i])
 
     L = ['Q2', 'Q3', 'Q0', 'Q1']
-    len_long_module = 2417.5 # mm
+    len_long_module = 2417.5 # mm, dont use this
+    '''
+        procedure:
+        1.) if U, V: y_global *= cos(deg2rad(5))
+        1.5) else just use y_global
+        2.) erg1 = y_global +- y_local
+        3.) shift from Rx rotation: erg2 = np.sqrt(erg1**2 - (abs(erg1) * np.sin(Rx))**2)
+    '''
     global_joint = [0, -1212.75, 0] # x, y, z
     # for a test do one half layer -> test Q0 top edges and Q2 bottom edges
     dim_modules = len(y_Q2[0][0])
-    x = np.linspace(0, dim_modules, dim_modules)
-    s1 = set([2, 3, 6, 7, 10, 11]) # X1, X2 layers, +- 1213 mm
-    s2 = set([2, 3, 6, 7, 10, 11]) #  U,  V layers, +- 1208 mm
+    x = np.linspace(0, 10, 10)
+    s1 = set(['T1X1', 'T1X2', 'T2X1', 'T2X2', 'T3X1', 'T3X2']) # X1, X2 layers, +- 1213 mm
+    s2 = set(['T1U', 'T1V', 'T2U', 'T2V', 'T3U', 'T3V']) #  U,  V layers, +- 1208 mm
     for num in range(total_num_runs):
-        delta_z = (len_long_module/2) * np.sin(rx_data[num])
+        if ID in s2:
+            # print('U and V layers')
+            stereo_angle = np.cos(np.deg2rad(5))
+            y_data = [y_Q2[num][0][i] / stereo_angle for i in range(dim_modules)]
+            # print('y_data for U or V layer:', y_data)
+        else:
+            y_data = [y_Q2[num][0][i] for i in range(dim_modules)]
+            # print('y_data for X1 or X2 layer:', y_data)
+        # print('rx data from run[num]:', rx_data[num][0])
+        # shift from Rx on top
+        y_final = [] # 20 entries, 1 for each module
+        edge_factor = [1,1,1,1,1,-1,-1,-1,-1,-1,1,1,1,1,1,-1,-1,-1,-1,-1]
+        for j in range(dim_modules):
+            y_final.append(y_data[j] * np.cos(rx_data[num][0][j]))
+            y_final[j] *= edge_factor[j]
         # print('###################################')
-        print('Rx', rx_data[num])
-        print('y', y_Q2[num][0])
-        print('delta', delta_z)
-        shift = np.sqrt((len_long_module/2)**2 - delta_z[0]**2)
-        print('shift', shift)
-
-        # shift = np.sqrt((len_long_module/2)**2 - delta_z[0]**2)
-        # if num in s2:
-        #     print('not in s')
-        #     shift = np.sqrt((len_long_module/2)**2 - delta_z[0]**2)
-        y_data = [y_Q2[num][0][i]+shift[i] if y_Q2[num][0][i] < 0 else y_Q2[num][0][i]-shift[i] for i in range(dim_modules)]
-        # print(y_data)
-        plt.scatter(x, y_data, color=colors[num], marker='.', label=f'{labels[num]}')
-        # print('g')
-        plt.hlines(0, x[0], x[dim_modules-1], 'red')
+        # print('y_final', y_final)
+        top_idx = [5, 6, 7, 8, 9, 15, 16, 17, 18, 19]
+        bot_idx = [0, 1, 2, 3, 4, 10, 11, 12, 13, 14]
+        y_top = [y_final[i] for i in top_idx]
+        y_bot = [y_final[i] for i in bot_idx]
+        # print('y_top', y_top)
+        # print('y_bot', y_bot)
+        # make_edges_plot(y_top, y_bot, ID, num)
+        plt.scatter(x, y_top, color=colors[num], marker='.', label=f'{labels[num]}')
+        plt.scatter(x, y_bot, color=colors[num], marker='x')
+        plt.hlines(global_joint[1], x[0], x[9], 'red')
+        # plt.text(x[1], -1212.85, '. : top quarters')
+        # plt.text(x[1], -1212.86, 'x : bottom quarters')
         plt.grid()
         plt.legend()
         if len(x_Q2[num][0]) == 5:
             plt.xticks(x, ["Q0M0", "Q0M1", "Q0M2", "Q0M3", "Q0M4"])
         else:
-            plt.xticks(x, ["Q0M0", "Q0M1", "Q0M2", "Q0M3", "Q0M4", "Q2M0", "Q2M1", "Q2M2", "Q2M3", "Q2M4", "Q1M0", "Q1M1", "Q1M2", "Q1M3", "Q1M4", "Q3M0", "Q3M1", "Q3M2", "Q3M3", "Q3M4"], rotation=45)
+            plt.xticks(x, ["HL0/M0", "HL0/M1", "HL0/M2", "HL0/M3", "HL0/M4", "HL1/M0", "HL1/M1", "HL1/M2", "HL1/M3", "HL1/M4"], rotation=45)
         plt.ylabel(f'global module edge')
         plt.xlabel('modules')
         plt.title(f'local translation')
@@ -1099,7 +1263,7 @@ xy_comp_input = [\
     "retest_uncertainty/json/parsedlog_v2_fix_survey.json",
     "retest_uncertainty/json/parsedlog_fix_V_layers.json",
     'retest_uncertainty/json/parsedlog_global_TxTzRxRz.json',
-    'retest_uncertainty/json/parsedlog_wouter_constraint.json'
+    # 'retest_uncertainty/json/parsedlog_wouter_constraint.json'
 ]
 labels_xy = [\
     'V9_old_joint_config',
@@ -1113,7 +1277,7 @@ labels_xy = [\
     '10mu_TxRxRz_T2V_fixed',
     "10mu_TxRxRz_T1U_T2V",
     '10mu_TxTzRxRz_with_globModules',
-    'constraint_wouter'
+    # 'constraint_wouter'
 ]
 
 # plot constants of only Tx tuning for strict particles
@@ -1335,9 +1499,11 @@ for n in range(12):
 
     plot_x_y_constants(glob_x_compxy, glob_y_compxy, tx_compxy, ty_compxy, labels_xy, layers[n], 'quarter', 'global')
     check_module_edges(glob_x_compxy, glob_y_compxy, tx_compxy, ty_compxy, labels_xy, layers[n], 'layer', 'global', rx_compxy)
-    alt_modules(glob_x_compxy, glob_y_compxy, labels_xy, layers[n], 'plt_xy')
-    alt_modules(glob_z_compxy, glob_x_compxy, labels_xy, layers[n], 'plt_zx')
-
+    # do it for each individual datafile
+    # all files
+    make_edges_plot(glob_x_compxy, glob_y_compxy, tx_compxy, ty_compxy, labels_xy, layers[n], 'layer', 'global', rx_compxy, 'all')
+    # individual
+    make_edges_plot(glob_x_compxy, glob_y_compxy, tx_compxy, ty_compxy, labels_xy, layers[n], 'layer', 'global', rx_compxy, 'individual')
     # global plot for TxTzRxRz for 10 mu vs TxRz
     # make_3D_constants(tx_compxy, ty_compxy, tz_compxy, glob_x_compxy, glob_y_compxy, glob_z_compxy, labels_xy, layers[n])
 plot_with_globals(tx_xydiff, 'glob_z_vs_local_Tx', labels_xy, layers, glob_z_xydiff, glob_x_xydiff, 'Tx')
