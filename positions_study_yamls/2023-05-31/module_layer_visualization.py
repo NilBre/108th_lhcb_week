@@ -133,13 +133,13 @@ def make_edges_plot(nums1, nums2, local1, local2, labels, ID, quarter_or_layer, 
             y_final = [] # 20 entries, 1 for each module
             edge_factor = [1,1,1,1,1,-1,-1,-1,-1,-1,1,1,1,1,1,-1,-1,-1,-1,-1]
             for j in range(dim_modules):
-                y_final.append(y_data[j] * np.cos(rx_data[num][0][j]))
+                y_final.append(y_data[j])# * np.cos(rx_data[num][0][j]))
                 y_final[j] *= edge_factor[j]
             top_idx = [5, 6, 7, 8, 9, 15, 16, 17, 18, 19]
             bot_idx = [0, 1, 2, 3, 4, 10, 11, 12, 13, 14]
             y_top = [y_final[i] for i in top_idx]
             y_bot = [y_final[i] for i in bot_idx]
-    
+
             top_blc = [] # blc = bottom left corner for top half modules
             bottom_blc = [] # for bottomhalf modules
             for i in range(len(y_top)):
@@ -167,7 +167,7 @@ def make_edges_plot(nums1, nums2, local1, local2, labels, ID, quarter_or_layer, 
             plt.title('module fitting at the joint')
             plt.xlabel('global module position in x [mm]')
             plt.ylabel('global module position in y [mm]')
-            plt.savefig(f'retest_uncertainty/out_rectangle/plot_edges_positions_{filenumbers}_{ID}.pdf')
+            plt.savefig(f'retest_uncertainty/out_rectangle/plot_edges_positions_run{num}_{filenumbers}_{ID}.pdf')
         plt.clf()
     if filenumbers == 'individual':
         for num in range(total_num_runs):
