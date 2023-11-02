@@ -1,0 +1,73 @@
+Iteration: 0
+Values of constraint equations after solution (X=active,O=inactive): 
+Tx   O  -5.00478e-13 +/- -1.7645e-09
+Ty   O  2.20007e-13  +/- 3.81803e-10
+Tz   O  7.22997e-13  +/- -9.85035e-09
+Rx   O  -5.17038e-28 +/- 2.89235e-26
+Ry   O  9.58374e-17  +/- -3.18815e-13
+Rz   O  6.72453e-29  +/- 3.76175e-27
+Szx  O  -2.37636e-06 +/- 7.26645e-05
+Szy  O  2.40109e-07  +/- 5.34231e-05
+Szz  O  -1.12751e-05 +/- 0.000732487
+Sxx  O  -2.37636e-06 +/- 7.26645e-05
+SzRz O  -3.36226e-29 +/- 1.88088e-27
+Trx  O  -4.33675e-07 +/- 2.94905e-05
+Try  O  -2.35821e-07 +/- 1.509e-05
+Trtx O  -1.36631e-09 +/- 9.67112e-08
+Trty O  -7.49605e-10 +/- 4.91481e-08
+Trcur O  -1.1723e-13  +/- 6.50182e-12
+PVx  O  -5.46639e-07 +/- 4.16089e-05
+PVy  O  -3.2649e-07  +/- 2.26483e-05
+PVz  O  -1.31655e-05 +/- 0.000512035
+Sz2x O  -1.25119e-13 +/- -4.41124e-10
+Sz2y O  5.50018e-14  +/- 9.54506e-11
+Sz2z O  1.80749e-13  +/- -2.46259e-09
+Sz2Rz O  1.68113e-29  +/- 9.40438e-28
+Survey constraints with largest chisquare contribution: 
+  0 VP/MotionVPRight/VPRight       dof=5 active=0  chi2=773  survey=0 delta=-0.00278  surveyerr=0.0001 deltaerr=0
+  1 VP/MotionVPLeft/VPLeft         dof=5 active=0  chi2=773  survey=0 delta=0.00278  surveyerr=0.0001 deltaerr=0
+  2 VP/MotionVPRight/VPRight       dof=2 active=1  chi2=2.7  survey=0 delta=0.328  surveyerr=0.2 deltaerr=0.000732
+  3 VP/MotionVPLeft/VPLeft         dof=2 active=1  chi2=2.7  survey=0 delta=-0.328  surveyerr=0.2 deltaerr=0.000732
+  4 VP/MotionVPRight/VPRight       dof=4 active=1  chi2=1.93  survey=0 delta=0.000139  surveyerr=0.0001 deltaerr=1.39e-07
+  5 VP/MotionVPLeft/VPLeft         dof=4 active=1  chi2=1.9  survey=0 delta=-0.000138  surveyerr=0.0001 deltaerr=1.39e-07
+  6 VP/MotionVPLeft/VPLeft         dof=3 active=0  chi2=1.7  survey=0 delta=0.00013  surveyerr=0.0001 deltaerr=0
+  7 VP/MotionVPRight/VPRight       dof=3 active=0  chi2=1.68  survey=0 delta=-0.000129  surveyerr=0.0001 deltaerr=0
+  8 VP/MotionVPLeft/VPLeft         dof=0 active=1  chi2=0.695  survey=0 delta=-0.167  surveyerr=0.2 deltaerr=7.27e-05
+  9 VP/MotionVPRight/VPRight       dof=0 active=1  chi2=0.692  survey=0 delta=0.166  surveyerr=0.2 deltaerr=7.27e-05
+Alignable: VP
+Global position: (0,0,0) Average position of hits: (2.78956,1.07647,471.101)
+Number of tracks/hits/outliers seen: 1743901 33843174 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+survey chi2 / dof (before/after): 0 0 / 0
+align pars: 0, 0, 0, 0, 0, 0
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.5, 0.5, 0.5, 0.0001, 0.0001, 0.0001
+Alignable: VP/MotionVPLeft/VPLeft
+Global position: (25.6,1.53,5.55e-17) Average position of hits: (31.2,15,474)
+Number of tracks/hits/outliers seen: 874026 17493228 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= 25.43        cur= -0.1667      delta= -2.376e-06   +/- 7.266e-05    [ 0.0001244    ]  gcc= 0
+Ty  : curtot= 1.673        cur= 0.07258      delta= 2.401e-07    +/- 5.342e-05    [ 9.48e-05     ]  gcc= 0
+Tz  : curtot= -0.3247      cur= -0.3285      delta= -1.128e-05   +/- 0.0007325    [ 0.001461     ]  gcc= 0
+Ry  : curtot= -0.0001378   cur= -0.0001378   delta= -2.481e-09   +/- 1.388e-07    [ 1.802e-07    ]  gcc= 0
+contribution to hit uncertainty (absolute/relative): 4.505e-06 0.0003604
+local delta chi2 / dof: 0.0007856 / 4
+survey chi2 / dof (before/after): 5.424 5.424 / 4
+align pars: -0.1667, 0.07258, -0.3285, 0.0001302, -0.0001378, 0.00278
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.2, 0.2, 0.2, 0.0001, 0.0001, 0.0001
+Alignable: VP/MotionVPRight/VPRight
+Global position: (-23.4,1.53,0) Average position of hits: (-27.66,-13.79,468.2)
+Number of tracks/hits/outliers seen: 869875 16349946 0
+Local-to-global diagonal: 1 1 1 1 1 1 
+Tx  : curtot= -23.23       cur= 0.1663       delta= 2.376e-06    +/- 7.266e-05    [ 0.000125     ]  gcc= 0
+Ty  : curtot= 1.521        cur= -0.07402     delta= -2.401e-07   +/- 5.342e-05    [ 9.491e-05    ]  gcc= 0
+Tz  : curtot= 0.3315       cur= 0.3285       delta= 1.128e-05    +/- 0.0007325    [ 0.001459     ]  gcc= 0
+Ry  : curtot= 0.0001388    cur= 0.0001388    delta= 2.481e-09    +/- 1.388e-07    [ 2.04e-07     ]  gcc= 0
+contribution to hit uncertainty (absolute/relative): 4.505e-06 0.0003604
+local delta chi2 / dof: 0.0007328 / 4
+survey chi2 / dof (before/after): 5.453 5.453 / 4
+align pars: 0.1663, -0.07402, 0.3285, -0.0001294, 0.0001388, -0.00278
+survey pars:   0, 0, 0, 0, 0, 0
+survey uncertainties: 0.2, 0.2, 0.2, 0.0001, 0.0001, 0.0001
+********************* END OF ALIGNMENT LOG ************************

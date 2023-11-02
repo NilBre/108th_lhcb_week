@@ -160,7 +160,7 @@ def make_edges_plot(nums1, nums2, local1, local2, labels, ID, quarter_or_layer, 
             plt.xlabel('global module position in x [mm]')
             plt.ylabel('global module position in y [mm]')
             plt.savefig(f'{outname_prefix}{outfiles}' + f'{outname}_{filenumbers}_{ID}_file{num}.pdf')
-            # plt.clf()
+        plt.clf()
 
 def check_module_edges(nums1, nums2, local1, local2, labels, ID, quarter_or_layer, local_or_global, x_rot, outname):
     '''
@@ -222,7 +222,7 @@ def check_module_edges(nums1, nums2, local1, local2, labels, ID, quarter_or_laye
         # make_edges_plot(y_top, y_bot, ID, num)
         plt.scatter(x, y_top, color=colors[num], marker='.', label=f'{labels[num]}')
         plt.scatter(x, y_bot, color=colors[num], marker='x')
-        plt.hlines(global_joint[1], x[0], x[9], 'red')
+        # plt.hlines(global_joint[1], x[0], x[9], 'red')
         # plt.text(x[1], -1212.85, '. : top quarters')
         # plt.text(x[1], -1212.86, 'x : bottom quarters')
         plt.grid()
@@ -233,7 +233,7 @@ def check_module_edges(nums1, nums2, local1, local2, labels, ID, quarter_or_laye
             plt.xticks(x, ["HL0/M0", "HL0/M1", "HL0/M2", "HL0/M3", "HL0/M4", "HL1/M0", "HL1/M1", "HL1/M2", "HL1/M3", "HL1/M4"], rotation=45)
         plt.ylabel(f'global module edge')
         plt.xlabel('modules')
-        plt.title(f'local translation')
+        plt.title(f'global position of the touching edges')
         plt.savefig(f'{outname_prefix}{outfiles}' + f'{outname}' + ID + '.pdf')
     plt.clf()
 
@@ -312,13 +312,14 @@ def plot_x_y_constants(nums1, nums2, local1, local2, labels, ID, quarter_or_laye
     outfiles = 'out_x_y_pos/'
     total_layer_num = 12 # number of layers
     total_num_runs = len(labels)
-
+    # print('nums1:', nums1)
+    # print('local1:', local1)
     # x has 4 entries, 1 for each quarter, within these 4 we have as many as the number of input files
     x_Q0, x_Q2, x_Q1, x_Q3 = global_local_combiner(nums1, local1, quarter_or_layer, local_or_global)
     y_Q0, y_Q2, y_Q1, y_Q3 = global_local_combiner(nums2, local2, quarter_or_layer, local_or_global)
 
     L = ['Q2', 'Q3', 'Q0', 'Q1']
-
+    # print('x_Q2', x_Q2)
     ax = [plt.subplot(2,2,i+1) for i in range(4)]
     plt.figure()
     count = 0
@@ -334,7 +335,7 @@ def plot_x_y_constants(nums1, nums2, local1, local2, labels, ID, quarter_or_laye
                 for i in range(len(modules)):
                     plt.text(x_Q2[num][0][i], y_Q2[num][0][i], modules[i], fontsize=9)
                 plt.ylabel(f'y pos [mm]')
-                plt.title(f'local translation')
+                plt.title(f'{ID} module positions')
                 a.invert_yaxis()
                 a.xaxis.tick_top()
         if count == 1: # Q3
@@ -356,6 +357,7 @@ def plot_x_y_constants(nums1, nums2, local1, local2, labels, ID, quarter_or_laye
                 for i in range(len(modules)):
                     plt.text(x_Q1[num][0][i], y_Q1[num][0][i], modules[i], fontsize=9)
                     a.yaxis.tick_right()
+                plt.xlabel('x [mm]')
         count += 1
     plt.subplots_adjust(wspace=0, hspace=0)
     plt.savefig(f'{outname_prefix}{outfiles}' + f'{outname}' + ID + '.pdf')
@@ -376,10 +378,7 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
 
     x_means = [[] for _ in range(total_num_runs)]
     if y_axis == 'Tx':
-        '''
-         split it into A and C side
-        '''
-        x_shifted = np.array(x_data)
+        x_shifted = np.array(x_data) + np.array(x_glob)
 
         for run in range(total_num_runs):
             for layer in range(total_layer_num):
@@ -396,19 +395,21 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
         correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
         for runs in range(total_num_runs):
             correct_x_order = [x_means[runs][iter] for iter in correct_order]
-            plt.plot(x_means[runs], z_positions[runs], ls='', marker=markers[runs], c=colors[runs], markersize=10, label=f'{run_labels[runs]}')
-            if runs == 0:
-                for i in range(total_layer_num):
-                    plt.text(x_means[runs][i], z_positions[i]+((i/20) * (-1)**i), layers[i], fontsize=9)
+            size = 10
+            plt.plot(z_positions, x_means[runs], ls='', marker=markers[runs], c=colors[runs], markersize=size, label=f'{run_labels[runs]}')
+            # if runs == 0:
+            #     for i in range(total_layer_num):
+            #         plt.text(x_means[runs][i], z_positions[i]+((i/20) * (-1)**i), layers[i], fontsize=9)
             if plt.grid(True):
                 plt.grid()
             plt.legend(loc='best')
-            plt.xlabel(f'mean local x module position [mm]')
-            plt.ylabel(f'global y module position [mm]')
-            plt.title(f'mean {y_axis} vs. global y')
-        plt.savefig(f'{outname_prefix}/{outfiles}' + 'all_runs_' + outname + '.pdf')
+            plt.ylabel(f'mean {y_axis} module position [mm]')
+            plt.title(f'mean position of layers in {y_axis} vs. global z position')
+            plt.xticks(z_positions, ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2'], rotation=45, fontsize=10)
+        plt.savefig(f'{outname_prefix}/{outfiles}' + 'all_runs_' + outname + f'{y_axis}.pdf')
         plt.clf()
-    if y_axis == 'Rx' or y_axis == 'Tx':
+    # if y_axis == 'Rx' or y_axis == 'Tx':
+    else:
         correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
         for runs in range(total_num_runs):
             correct_x_order = [x_means[runs][iter] for iter in correct_order]
@@ -667,7 +668,7 @@ def get_data(files, DoF, align_output):
     # new spacing
     # print('files:', files)
     path = 'retest_uncertainty/input_txt/loose_particles/global_alignment_files'
-    if files[0] == f'{path}/v1/parsedlog_v1_global.json' or files[0] == f'{path}/v2/parsedlog_v2_global.json' or files[0] == f'{path}/v3/parsedlog_v3_global.json':
+    if files[0] == f'{path}/v1/parsedlog_v1_global.json' or files[0] == f'{path}/v2/parsedlog_v2_global.json' or files[0] == f'{path}/v3/parsedlog_v3_global.json' or files[0] == f"{path}/retest_v1_to_v4/v1/parsedlog.json":
     # files[0] == "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json":
         runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
                        "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
@@ -787,20 +788,33 @@ yaml.add_constructor('!alignment', meta_constructor)
 
 # input files
 path = 'retest_uncertainty/input_txt/loose_particles/global_alignment_files'
+path2 = 'retest_uncertainty/input_txt/loose_particles'
 '''
     configureGlobalAlignment(halfdofs="TxTyTzRy") from AlignmentScenarios.py in Humboldt (Alignment)
 '''
 files_v1 = [\
         f"{path}/v1/parsedlog_v1_global.json",
-        f"{path}/v1_1/parsedlog_v1_1_global.json",
+        # f"{path}/v1_1/parsedlog_v1_1_global.json",
         f"{path}/v1_2/parsedlog_v1_2_smallRxUnc_10mu.json",
         "retest_uncertainty/json/parsedlog_TxRxRz_smallRxSurveyUnc.json",
+        # f'{path}/v4_align_scenarios/parsedlog.json',
+        # f'{path}/vp_only/parsedlog_vp_only.json',
+        f'{path2}/v4_with_and_no_backframes/v4_no_backframes/parsedlog_no_backframes_v4.json',
+        f'{path2}/v4_with_and_no_backframes/v4_with_backframes/parsedlog_with_backframes_v4.json',
+        f"{path}/2023-10-31/T1_added/parsedlog_T1.json",
+        f"{path}/2023-10-31/T2_added/parsedlog_T2.json",
 ]
 legendlabels_v1=[\
               "global v1, wouter joints",
-              "global v1, 10mu Tx",
+              # "global v1, 10mu Tx",
               "global v1, 10mu Tx, smallRxUnc",
-              "TxRxRz, smallSurveyUnc"
+              "TxRxRz, smallSurveyUnc",
+              # 'v4',
+              # 'velo_only',
+              'v4_no_backframes',
+              'v4_with_backframes',
+              'T1_added',
+              'T2_added',
 ]
 
 '''
@@ -835,6 +849,24 @@ legendlabels_v3=[\
               "TxRxRz, smallSurveyUnc"
 ]
 
+# v1 to v4
+f_retest = [\
+        f"{path}/retest_v1_to_v4/v1/parsedlog.json",
+        # f"{path}/v1_2/parsedlog_v1_2_smallRxUnc_10mu.json",
+        f"{path}/retest_v1_to_v4/v2/parsedlog.json",
+        f"{path}/retest_v1_to_v4/v3/parsedlog.json",
+        f"{path}/retest_v1_to_v4/v4/parsedlog.json",
+        "retest_uncertainty/json/parsedlog_TxRxRz_smallRxSurveyUnc.json",
+]
+legendlabels_retest=[\
+        'v1',
+        # 'v1, smallSurveyRxUnc',
+        'v2',
+        'v3',
+        'v4',
+        'SciFi, TxRxRz, small Rx surveyUnc'
+]
+
 survey_module_positions = 'survey/survey_Modules.yml'
 
 layers = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
@@ -847,6 +879,7 @@ red_blue_vars = ['Tx', 'Ty', 'Tz', 'Rx', 'Ry', 'Rz', 'nHits', 'nTracks', 'x_glob
 align_outputs_v1 = make_outfiles(files_v1, red_blue_vars)
 align_outputs_v2 = make_outfiles(files_v2, red_blue_vars)
 align_outputs_v3 = make_outfiles(files_v3, red_blue_vars)
+align_outputs_retest = make_outfiles(f_retest, red_blue_vars)
 
 Tx_v1      = align_outputs_v1[0]
 Ty_v1      = align_outputs_v1[1]
@@ -884,6 +917,18 @@ x_glob_v3  = align_outputs_v3[8]
 y_glob_v3  = align_outputs_v3[9]
 z_glob_v3  = align_outputs_v3[10]
 
+Tx_retest      = align_outputs_retest[0]
+Ty_retest      = align_outputs_retest[1]
+Tz_retest      = align_outputs_retest[2]
+Rx_retest      = align_outputs_retest[3]
+Ry_retest      = align_outputs_retest[4]
+Rz_retest      = align_outputs_retest[5]
+nHits_retest   = align_outputs_retest[6]
+nTracks_retest = align_outputs_retest[7]
+x_glob_retest  = align_outputs_retest[8]
+y_glob_retest  = align_outputs_retest[9]
+z_glob_retest  = align_outputs_retest[10]
+
 for n in range(12):
     Tx_data_v1 = Tx_v1[n]
     Ty_data_v1 = Ty_v1[n]
@@ -915,14 +960,30 @@ for n in range(12):
     y_g_v3 = y_glob_v3[n]
     z_g_v3 = z_glob_v3[n]
 
+    Tx_data_retest = Tx_retest[n]
+    Ty_data_retest = Ty_retest[n]
+    Tz_data_retest = Tz_retest[n]
+    Rx_data_retest = Rx_retest[n]
+    Ry_data_retest = Ry_retest[n]
+    Rz_data_retest = Rz_retest[n]
+    x_g_retest = x_glob_retest[n]
+    y_g_retest = y_glob_retest[n]
+    z_g_retest = z_glob_retest[n]
+
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'global', 'v1_x_vs_z')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'global', 'v2_x_vs_z')
     plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'global', 'v3_x_vs_z')
+    plot_x_y_constants(x_g_retest, y_g_retest, Tx_data_retest, Ty_data_retest, legendlabels_retest, layers[n], 'quarter', 'global', 'retest_x_vs_z')
+
+    plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'local', 'v1_x_vs_y_local_')
+    plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'local', 'v2_x_vs_y_local_')
+    plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'local', 'v3_x_vs_y_local_')
+    plot_x_y_constants(x_g_retest, y_g_retest, Tx_data_retest, Ty_data_retest, legendlabels_retest, layers[n], 'quarter', 'local', 'retest_x_vs_y_local_')
 
     check_module_edges(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align')
     check_module_edges(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'layer', 'global', Rx_data_v2, 'v2_global_align')
     check_module_edges(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'layer', 'global', Rx_data_v3, 'v3_global_align')
-
+    check_module_edges(x_g_retest, y_g_retest, Tx_data_retest, Ty_data_retest, legendlabels_retest, layers[n], 'layer', 'global', Rx_data_retest, 'retest_global_align')
     # do it for each individual datafile
     # all files
     make_edges_plot(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align', 'all')
@@ -937,11 +998,31 @@ for n in range(12):
 plot_with_globals(Tx_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Tx')
 plot_with_globals(Tx_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Tx')
 plot_with_globals(Tx_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_v3, x_glob_v3, 'Tx')
+plot_with_globals(Tx_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Tx')
+
+plot_with_globals(Ty_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ty')
+plot_with_globals(Ty_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Ty')
+plot_with_globals(Ty_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_v3, x_glob_v3, 'Ty')
+plot_with_globals(Ty_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Ty')
+
 plot_with_globals(Tz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Tz')
 plot_with_globals(Tz_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Tz')
 plot_with_globals(Tz_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_v3, x_glob_v3, 'Tz')
+plot_with_globals(Tz_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Tz')
+
 plot_with_globals(Rx_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Rx')
 plot_with_globals(Rx_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Rx')
 plot_with_globals(Rx_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_v3, x_glob_v3, 'Rx')
+plot_with_globals(Rx_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Rx')
+
+plot_with_globals(Ry_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ry')
+plot_with_globals(Ry_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Ry')
+plot_with_globals(Ry_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_v3, x_glob_v3, 'Ry')
+plot_with_globals(Ry_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Ry')
+
+plot_with_globals(Rz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Rz')
+plot_with_globals(Rz_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Rz')
+plot_with_globals(Rz_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_v3, x_glob_v3, 'Rz')
+plot_with_globals(Rz_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Rz')
 
 glob_vs_glob(y_glob_v1, z_glob_v1, 'global_y', 'global_z', 'global_y_vs_global_z', legendlabels_v1)

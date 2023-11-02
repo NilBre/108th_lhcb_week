@@ -437,7 +437,7 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
         '''
          split it into A and C side
         '''
-        x_shifted = np.array(x_data)
+        x_shifted = np.array(x_data) + np.array(x_glob)
 
         for run in range(total_num_runs):
             for layer in range(total_layer_num):

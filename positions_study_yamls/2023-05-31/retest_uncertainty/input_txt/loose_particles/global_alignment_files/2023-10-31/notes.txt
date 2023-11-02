@@ -1,0 +1,11 @@
+runs are v3: TzRx
+CFrame Survey from Miguel added + joints
+Align Velo for TxTzTyRy
+
+constrain Velo Half average
+SciFi constrain backframes
+
+additional: constrain T1 or T2 for U and V layers
+
+additional constraints added in Survey: 0 +1213 0,  for frame anchor point
+________________________
