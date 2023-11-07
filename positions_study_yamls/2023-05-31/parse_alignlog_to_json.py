@@ -32,6 +32,8 @@ regex_chi2_Tz = re.compile("Tz_chi2")
 regex_chi2_Rx = re.compile("Rx_chi2")
 regex_chi2_Ry = re.compile("Ry_chi2")
 regex_chi2_Rz = re.compile("Rz_chi2")
+regex_X1U = re.compile('X1U')
+regex_VX2 = re.compile('VX2')
 
 # regex per alignable
 regex_alignable=re.compile("Alignable*")
