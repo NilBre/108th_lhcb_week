@@ -668,7 +668,7 @@ def get_data(files, DoF, align_output):
     # new spacing
     # print('files:', files)
     path = 'retest_uncertainty/input_txt/loose_particles/global_alignment_files'
-    if files[0] == f'{path}/v1/parsedlog_v1_global.json' or files[0] == f'{path}/v2/parsedlog_v2_global.json' or files[0] == f'{path}/v3/parsedlog_v3_global.json' or files[0] == f"{path}/retest_v1_to_v4/v1/parsedlog.json" or files[0] == "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json" or files[0] == f'{path}/2023-11-07/v5/parsedlog.json' or files[0] == f'{path}/2023-11-07/v6/parsedlog.json':
+    if files[0] == f'{path}/v1/parsedlog_v1_global.json' or files[0] == f'{path}/v2/parsedlog_v2_global.json' or files[0] == f'{path}/v3/parsedlog_v3_global.json' or files[0] == f"{path}/retest_v1_to_v4/v1/parsedlog.json" or files[0] == "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json" or files[0] == f'{path}/2023-11-07/v5/parsedlog.json' or files[0] == f'{path}/2023-11-07/v6/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_1/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_3/parsedlog.json':
         runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
                        "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
                        "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
@@ -909,17 +909,21 @@ legendlabels_v3=[\
 f_retest = [\
         f"{path}/retest_v1_to_v4/v1/parsedlog.json",
         # f"{path}/v1_2/parsedlog_v1_2_smallRxUnc_10mu.json",
-        f"{path}/retest_v1_to_v4/v2/parsedlog.json",
-        f"{path}/retest_v1_to_v4/v3/parsedlog.json",
+        # f"{path}/retest_v1_to_v4/v2/parsedlog.json",
+        # f"{path}/retest_v1_to_v4/v3/parsedlog.json",
         f"{path}/retest_v1_to_v4/v4/parsedlog.json",
+        f'{path}/2023-11-07/v1_with_velo/parsedlog.json',
+        f'{path}/2023-11-07/v4_with_velo/parsedlog.json',
         "retest_uncertainty/json/parsedlog_TxRxRz_smallRxSurveyUnc.json",
 ]
 legendlabels_retest=[\
         'v1',
         # 'v1, smallSurveyRxUnc',
-        'v2',
-        'v3',
+        # 'v2',
+        # 'v3',
         'v4',
+        'v1_with_velo',
+        'v4_with_velo',
         'SciFi, TxRxRz, small Rx surveyUnc'
 ]
 
@@ -947,6 +951,31 @@ v6_labels = [\
     'v6_1',
     'v6_2'
 ]
+
+v56_comp = [\
+        f'{path}/2023-11-07/v5_1/parsedlog.json',
+        f'{path}/2023-11-07/v5_2/parsedlog.json',
+        f'{path}/2023-11-07/v6_2/parsedlog.json',
+        # f"{path}/retest_v1_to_v4/v1/parsedlog.json",
+]
+
+v56_comp_labels = [\
+    'v5_1',
+    'v5_2',
+    'v6_2',
+    # 'v1',
+]
+
+mod_and_halfmod = [\
+    f'{path}/2023-11-07/v5_3/parsedlog.json',
+    f'{path}/2023-11-07/v6_3/parsedlog.json',
+]
+
+mod_and_halfmod_labels = [\
+    'v5_3',
+    'v6_3',
+]
+
 survey_module_positions = 'survey/survey_Modules.yml'
 
 layers = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
@@ -962,6 +991,8 @@ align_outputs_v3 = make_outfiles(files_v3, red_blue_vars)
 align_outputs_retest = make_outfiles(f_retest, red_blue_vars)
 align_out_v5 = make_outfiles(v5_var, red_blue_vars)
 align_out_v6 = make_outfiles(v6_var, red_blue_vars)
+align_out_v56_comp = make_outfiles(v56_comp, red_blue_vars)
+align_out_mod_and_halfmod = make_outfiles(mod_and_halfmod, red_blue_vars)
 
 Tx_v1      = align_outputs_v1[0]
 Ty_v1      = align_outputs_v1[1]
@@ -1035,6 +1066,30 @@ x_glob_v6  = align_out_v6[8]
 y_glob_v6  = align_out_v6[9]
 z_glob_v6  = align_out_v6[10]
 
+Tx_v56      = align_out_v56_comp[0]
+Ty_v56      = align_out_v56_comp[1]
+Tz_v56      = align_out_v56_comp[2]
+Rx_v56      = align_out_v56_comp[3]
+Ry_v56      = align_out_v56_comp[4]
+Rz_v56      = align_out_v56_comp[5]
+nHits_v56   = align_out_v56_comp[6]
+nTracks_v56 = align_out_v56_comp[7]
+x_glob_v56  = align_out_v56_comp[8]
+y_glob_v56  = align_out_v56_comp[9]
+z_glob_v56  = align_out_v56_comp[10]
+
+Tx_mod_and_halfmod      = align_out_mod_and_halfmod[0]
+Ty_mod_and_halfmod      = align_out_mod_and_halfmod[1]
+Tz_mod_and_halfmod      = align_out_mod_and_halfmod[2]
+Rx_mod_and_halfmod      = align_out_mod_and_halfmod[3]
+Ry_mod_and_halfmod      = align_out_mod_and_halfmod[4]
+Rz_mod_and_halfmod      = align_out_mod_and_halfmod[5]
+nHits_mod_and_halfmod   = align_out_mod_and_halfmod[6]
+nTracks_mod_and_halfmod = align_out_mod_and_halfmod[7]
+x_glob_mod_and_halfmod  = align_out_mod_and_halfmod[8]
+y_glob_mod_and_halfmod  = align_out_mod_and_halfmod[9]
+z_glob_mod_and_halfmod  = align_out_mod_and_halfmod[10]
+
 for n in range(12):
     Tx_data_v1 = Tx_v1[n]
     Ty_data_v1 = Ty_v1[n]
@@ -1096,12 +1151,34 @@ for n in range(12):
     y_g_v6 = y_glob_v6[n]
     z_g_v6 = z_glob_v6[n]
 
+    Tx_data_v56 = Tx_v56[n]
+    Ty_data_v56 = Ty_v56[n]
+    Tz_data_v56 = Tz_v56[n]
+    Rx_data_v56 = Rx_v56[n]
+    Ry_data_v56 = Ry_v56[n]
+    Rz_data_v56 = Rz_v56[n]
+    x_g_v56 = x_glob_v56[n]
+    y_g_v56 = y_glob_v56[n]
+    z_g_v56 = z_glob_v56[n]
+
+    Tx_data_mod_and_halfmod = Tx_mod_and_halfmod[n]
+    Ty_data_mod_and_halfmod = Ty_mod_and_halfmod[n]
+    Tz_data_mod_and_halfmod = Tz_mod_and_halfmod[n]
+    Rx_data_mod_and_halfmod = Rx_mod_and_halfmod[n]
+    Ry_data_mod_and_halfmod = Ry_mod_and_halfmod[n]
+    Rz_data_mod_and_halfmod = Rz_mod_and_halfmod[n]
+    x_g_mod_and_halfmod = x_glob_mod_and_halfmod[n]
+    y_g_mod_and_halfmod = y_glob_mod_and_halfmod[n]
+    z_g_mod_and_halfmod = z_glob_mod_and_halfmod[n]
+
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'global', 'v1_x_vs_z')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'global', 'v2_x_vs_z')
     plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'global', 'v3_x_vs_z')
     plot_x_y_constants(x_g_retest, y_g_retest, Tx_data_retest, Ty_data_retest, legendlabels_retest, layers[n], 'quarter', 'global', 'retest_x_vs_z')
     plot_x_y_constants(x_g_v5, y_g_v5, Tx_data_v5, Ty_data_v5, v5_labels, layers[n], 'quarter', 'global', 'v5_x_vs_z')
     plot_x_y_constants(x_g_v6, y_g_v6, Tx_data_v6, Ty_data_v6, v6_labels, layers[n], 'quarter', 'global', 'v6_x_vs_z')
+    plot_x_y_constants(x_g_v56, y_g_v56, Tx_data_v56, Ty_data_v56, v56_comp_labels, layers[n], 'quarter', 'global', 'v56_comp_x_vs_z')
+    plot_x_y_constants(x_g_mod_and_halfmod, y_g_mod_and_halfmod, Tx_data_mod_and_halfmod, Ty_data_mod_and_halfmod, mod_and_halfmod_labels, layers[n], 'quarter', 'global', 'mod_halfmod_x_vs_z')
 
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'local', 'v1_x_vs_y_local_')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'local', 'v2_x_vs_y_local_')
@@ -1109,6 +1186,8 @@ for n in range(12):
     plot_x_y_constants(x_g_retest, y_g_retest, Tx_data_retest, Ty_data_retest, legendlabels_retest, layers[n], 'quarter', 'local', 'retest_x_vs_y_local_')
     plot_x_y_constants(x_g_v5, y_g_v5, Tx_data_v5, Ty_data_v5, v5_labels, layers[n], 'quarter', 'local', 'v5_x_vs_z_local')
     plot_x_y_constants(x_g_v6, y_g_v6, Tx_data_v6, Ty_data_v6, v6_labels, layers[n], 'quarter', 'local', 'v6_x_vs_z_local')
+    plot_x_y_constants(x_g_v56, y_g_v56, Tx_data_v56, Ty_data_v56, v56_comp_labels, layers[n], 'quarter', 'local', 'v56_comp_x_vs_z')
+    plot_x_y_constants(x_g_mod_and_halfmod, y_g_mod_and_halfmod, Tx_data_mod_and_halfmod, Ty_data_mod_and_halfmod, mod_and_halfmod_labels, layers[n], 'quarter', 'local', 'mod_halfmod_x_vs_z')
 
     check_module_edges(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align')
     check_module_edges(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'layer', 'global', Rx_data_v2, 'v2_global_align')
@@ -1116,6 +1195,8 @@ for n in range(12):
     check_module_edges(x_g_retest, y_g_retest, Tx_data_retest, Ty_data_retest, legendlabels_retest, layers[n], 'layer', 'global', Rx_data_retest, 'retest_global_align')
     check_module_edges(x_g_v5, y_g_v5, Tx_data_v5, Ty_data_v5, v5_labels, layers[n], 'layer', 'global', Rx_data_v5, 'v5_global_align')
     check_module_edges(x_g_v6, y_g_v6, Tx_data_v6, Ty_data_v6, v6_labels, layers[n], 'layer', 'global', Rx_data_v6, 'v6_global_align')
+    check_module_edges(x_g_v56, y_g_v56, Tx_data_v56, Ty_data_v56, v56_comp_labels, layers[n], 'layer', 'global', Rx_data_v56, 'v56_comp_global_align')
+    check_module_edges(x_g_mod_and_halfmod, y_g_mod_and_halfmod, Tx_data_mod_and_halfmod, Ty_data_mod_and_halfmod, mod_and_halfmod_labels, layers[n], 'layer', 'global', Rx_data_mod_and_halfmod, 'mod_halfmod_global_align')
     # do it for each individual datafile
     # all files
     make_edges_plot(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align', 'all')
@@ -1133,6 +1214,8 @@ plot_with_globals(Tx_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_
 plot_with_globals(Tx_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Tx')
 plot_with_globals(Tx_v5, 'v5_glob_z_vs_local_', v5_labels, layers, z_glob_v5, x_glob_v5, 'Tx')
 plot_with_globals(Tx_v6, 'v6_glob_z_vs_local_', v6_labels, layers, z_glob_v6, x_glob_v6, 'Tx')
+plot_with_globals(Tx_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, z_glob_v56, x_glob_v56, 'Tx')
+plot_with_globals(Tx_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Tx')
 
 plot_with_globals(Ty_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ty')
 plot_with_globals(Ty_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Ty')
@@ -1140,6 +1223,8 @@ plot_with_globals(Ty_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_
 plot_with_globals(Ty_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Ty')
 plot_with_globals(Ty_v5, 'v5_glob_z_vs_local_', v5_labels, layers, z_glob_v5, x_glob_v5, 'Ty')
 plot_with_globals(Ty_v6, 'v6_glob_z_vs_local_', v6_labels, layers, z_glob_v6, x_glob_v6, 'Ty')
+plot_with_globals(Ty_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, z_glob_v56, x_glob_v56, 'Ty')
+plot_with_globals(Ty_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Ty')
 
 plot_with_globals(Tz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Tz')
 plot_with_globals(Tz_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Tz')
@@ -1147,6 +1232,8 @@ plot_with_globals(Tz_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_
 plot_with_globals(Tz_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Tz')
 plot_with_globals(Tz_v5, 'v5_glob_z_vs_local_', v5_labels, layers, z_glob_v5, x_glob_v5, 'Tz')
 plot_with_globals(Tz_v6, 'v6_glob_z_vs_local_', v6_labels, layers, z_glob_v6, x_glob_v6, 'Tz')
+plot_with_globals(Tz_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, z_glob_v56, x_glob_v56, 'Tz')
+plot_with_globals(Tz_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Tz')
 
 plot_with_globals(Rx_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Rx')
 plot_with_globals(Rx_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Rx')
@@ -1154,6 +1241,8 @@ plot_with_globals(Rx_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_
 plot_with_globals(Rx_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Rx')
 plot_with_globals(Rx_v5, 'v5_glob_z_vs_local_', v5_labels, layers, z_glob_v5, x_glob_v5, 'Rx')
 plot_with_globals(Rx_v6, 'v6_glob_z_vs_local_', v6_labels, layers, z_glob_v6, x_glob_v6, 'Rx')
+plot_with_globals(Rx_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, z_glob_v56, x_glob_v56, 'Rx')
+plot_with_globals(Rx_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Rx')
 
 plot_with_globals(Ry_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ry')
 plot_with_globals(Ry_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Ry')
@@ -1161,6 +1250,8 @@ plot_with_globals(Ry_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_
 plot_with_globals(Ry_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Ry')
 plot_with_globals(Ry_v5, 'v5_glob_z_vs_local_', v5_labels, layers, z_glob_v5, x_glob_v5, 'Ry')
 plot_with_globals(Ry_v6, 'v6_glob_z_vs_local_', v6_labels, layers, z_glob_v6, x_glob_v6, 'Ry')
+plot_with_globals(Ry_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, z_glob_v56, x_glob_v56, 'Ry')
+plot_with_globals(Ry_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Ry')
 
 plot_with_globals(Rz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Rz')
 plot_with_globals(Rz_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Rz')
@@ -1168,5 +1259,7 @@ plot_with_globals(Rz_v3, 'v3_glob_z_vs_local_', legendlabels_v3, layers, z_glob_
 plot_with_globals(Rz_retest, 'retest_glob_z_vs_local_', legendlabels_retest, layers, z_glob_retest, x_glob_retest, 'Rz')
 plot_with_globals(Rz_v5, 'v5_glob_z_vs_local_', v5_labels, layers, z_glob_v5, x_glob_v5, 'Rz')
 plot_with_globals(Rz_v6, 'v6_glob_z_vs_local_', v6_labels, layers, z_glob_v6, x_glob_v6, 'Rz')
+plot_with_globals(Rz_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, z_glob_v56, x_glob_v56, 'Rz')
+plot_with_globals(Rz_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Rz')
 
 glob_vs_glob(y_glob_v1, z_glob_v1, 'global_y', 'global_z', 'global_y_vs_global_z', legendlabels_v1)
