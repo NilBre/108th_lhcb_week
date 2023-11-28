@@ -976,6 +976,20 @@ mod_and_halfmod_labels = [\
     'v6_3',
 ]
 
+cframes_studies = [\
+    f'{path}/2023-11-09/v5_no_Cframes/parsedlog.json',
+    f'{path}/2023-11-09/v6_CFrames_Tx/parsedlog.json',
+    f'{path}/2023-11-09/v1_CFrames_Tz/parsedlog.json',
+    f'{path}/2023-11-09/v3_CFrames_TxRz/parsedlog.json',
+]
+
+cframes_label = [\
+    'v5_no_CFrames',
+    'v6_CFrames_Tx',
+    'v1_CFrames_Tz',
+    'v3_CFrames_TxRz',
+]
+
 survey_module_positions = 'survey/survey_Modules.yml'
 
 layers = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
