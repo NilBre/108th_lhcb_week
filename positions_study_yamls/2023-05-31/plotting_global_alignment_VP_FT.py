@@ -607,7 +607,7 @@ def convertGlobal(align_external,halfmoduleAlignables):
 
     return align_output
 
-def get_data(files, DoF, align_output):
+def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=False
     num_files = len(files)
     iter_num = 0
     deg = DoF
@@ -653,6 +653,7 @@ def get_data(files, DoF, align_output):
     T3X1_PosRot = [[] for _ in range(num_files)]
     T3X2_PosRot_yml = [[] for _ in range(num_files)]
     T3X2_PosRot = [[] for _ in range(num_files)]
+
     runs_T1 = ["FT/T1UHL0/Q0M0", "FT/T1UHL0/Q0M1", "FT/T1UHL0/Q0M2", "FT/T1UHL0/Q0M3", "FT/T1UHL0/Q0M4",
                "FT/T1UHL0/Q2M0", "FT/T1UHL0/Q2M1", "FT/T1UHL0/Q2M2", "FT/T1UHL0/Q2M3", "FT/T1UHL0/Q2M4",
                "FT/T1UHL1/Q1M0", "FT/T1UHL1/Q1M1", "FT/T1UHL1/Q1M2", "FT/T1UHL1/Q1M3", "FT/T1UHL1/Q1M4",
@@ -670,27 +671,90 @@ def get_data(files, DoF, align_output):
     # new spacing
     # print('files:', files)
     path = 'retest_uncertainty/input_txt/loose_particles/global_alignment_files'
-    if files[0] == f'{path}/v1/parsedlog_v1_global.json' or files[0] == f'{path}/v2/parsedlog_v2_global.json' or files[0] == f'{path}/v3/parsedlog_v3_global.json' or files[0] == f"{path}/retest_v1_to_v4/v1/parsedlog.json" or files[0] == "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json" or files[0] == f'{path}/2023-11-07/v5/parsedlog.json' or files[0] == f'{path}/2023-11-07/v6/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_1/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_3/parsedlog.json' or files[0] == f'{path}/2023-11-10/v3_CFrames_TxRz/parsedlog.json':
+    if files[0] == f'{path}/v1/parsedlog_v1_global.json' or files[0] == f'{path}/v2/parsedlog_v2_global.json' or files[0] == f'{path}/v3/parsedlog_v3_global.json' or files[0] == f"{path}/retest_v1_to_v4/v1/parsedlog.json" or files[0] == "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json" or files[0] == f'{path}/2023-11-07/v5/parsedlog.json' or files[0] == f'{path}/2023-11-07/v6/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_1/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_3/parsedlog.json' or files[0] == f'{path}/2023-11-10/v3_CFrames_TxRz/parsedlog.json' or files[0] == f'{path}/2023-11-09/v5_no_Cframes/parsedlog.json' or files[0] == f'{path}/2023-11-10/v4/parsedlog.json' or files[0] == f'{path}/2023-12-06/v10/parsedlog.json':
         runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
-                       "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
-                       "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
-                       "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
+                   "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+                   "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+                   "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
 
         runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
-                       "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
-                       "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
-                       "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
+                   "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+                   "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+                   "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
 
         runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
-                    "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
-                    "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
-                    "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
-
-
+                "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+                "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+                "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
+        # if withLongModules == True and withCFrames == False:
+        #     print('withLongModules == True and withCFrames == False')
+        #     runs_T1 = ['FT/T1/U/HL0/M0', 'FT/T1/U/HL0/M1', 'FT/T1/U/HL0/M2', 'FT/T1/U/HL0/M3', 'FT/T1/U/HL0/M4',
+        #                'FT/T1/U/HL1/M0', 'FT/T1/U/HL1/M1', 'FT/T1/U/HL1/M2', 'FT/T1/U/HL1/M3', 'FT/T1/U/HL1/M4']
+        #     runs_T2 = ['FT/T2/U/HL0/M0', 'FT/T2/U/HL0/M1', 'FT/T2/U/HL0/M2', 'FT/T2/U/HL0/M3', 'FT/T2/U/HL0/M4',
+        #                'FT/T2/U/HL1/M0', 'FT/T2/U/HL1/M1', 'FT/T2/U/HL1/M2', 'FT/T2/U/HL1/M3', 'FT/T2/U/HL1/M4']
+        #     runs = ['FT/T3/U/HL0/M0', 'FT/T3/U/HL0/M1', 'FT/T3/U/HL0/M2', 'FT/T3/U/HL0/M3', 'FT/T3/U/HL0/M4', # , 'FT/T3/U/HL0/M5'
+        #             'FT/T3/U/HL1/M0', 'FT/T3/U/HL1/M1', 'FT/T3/U/HL1/M2', 'FT/T3/U/HL1/M3', 'FT/T3/U/HL1/M4'] # , 'FT/T3/U/HL0/M5'
+        # if withLongModules == False and withCFrames == False:
+        #     print('withLongModules == False and withCFrames == False')
+        #     runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
+        #                "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+        #                "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+        #                "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
+        #
+        #     runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
+        #                "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+        #                "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+        #                "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
+        #
+        #     runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
+        #             "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+        #             "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+        #             "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
+        # if withLongModules == False and withCFrames == True:
+        #     print('withLongModules == False and withCFrames == True')
+        #     runs_T1 = ['FT/T1/X1U/HL0', "FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
+        #                'FT/T1/X1U/HL1', "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+        #                'FT/T1/VX2/HL0', "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+        #                'FT/T1/VX2/HL1', "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
+        #
+        #     runs_T2 = ['FT/T2/X1U/HL0', "FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
+        #                'FT/T2/X1U/HL1', "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+        #                'FT/T2/VX2/HL0', "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+        #                'FT/T2/VX2/HL1', "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
+        #
+        #     runs = ['FT/T3/X1U/HL0', "FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
+        #             'FT/T3/X1U/HL1', "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+        #             'FT/T3/VX2/HL0', "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+        #             'FT/T3/VX2/HL1', "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
+        # if withLongModules == True and withCFrames == True:
+        #     print('withLongModules == True and withCFrames == True')
+        #     runs_T1 = ['FT/T1/X1U/HL0', 'FT/T1/X1U/HL1', 'FT/T1/VX2/HL0', 'FT/T1/VX2/HL1',
+        #                'FT/T1/U/HL0/M0', 'FT/T1/U/HL0/M1', 'FT/T1/U/HL0/M2', 'FT/T1/U/HL0/M3', 'FT/T1/U/HL0/M4',
+        #                'FT/T1/U/HL1/M0', 'FT/T1/U/HL1/M1', 'FT/T1/U/HL1/M2', 'FT/T1/U/HL1/M3', 'FT/T1/U/HL1/M4',
+        #                "FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
+        #                "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+        #                "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+        #                "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
+        #
+        #     runs_T2 = ['FT/T2/X1U/HL0', 'FT/T2/X1U/HL1', 'FT/T2/VX2/HL0', 'FT/T2/VX2/HL1',
+        #                'FT/T2/U/HL0/M0', 'FT/T2/U/HL0/M1', 'FT/T2/U/HL0/M2', 'FT/T2/U/HL0/M3', 'FT/T2/U/HL0/M4',
+        #                'FT/T2/U/HL1/M0', 'FT/T2/U/HL1/M1', 'FT/T2/U/HL1/M2', 'FT/T2/U/HL1/M3', 'FT/T2/U/HL1/M4',
+        #                "FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
+        #                "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+        #                "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+        #                "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
+        #
+        #     runs = ['FT/T3/X1U/HL0', 'FT/T3/X1U/HL1', 'FT/T3/VX2/HL0', 'FT/T3/VX2/HL1',
+        #             'FT/T3/U/HL0/M0', 'FT/T3/U/HL0/M1', 'FT/T3/U/HL0/M2', 'FT/T3/U/HL0/M3', 'FT/T3/U/HL0/M4',
+        #             'FT/T3/U/HL1/M0', 'FT/T3/U/HL1/M1', 'FT/T3/U/HL1/M2', 'FT/T3/U/HL1/M3', 'FT/T3/U/HL1/M4',
+        #             "FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
+        #             "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+        #             "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+        #             "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
     for file in files:
         x = list(range(len(runs)))
-        for j in range(0,len(stations)):
-            for k in range(0,len(layers)):
+        for j in range(0,len(stations)): # 0 - 3
+            for k in range(0,len(layers)): # 0 - 11
                 if j==0 and k==0:
                     runs_T1_U[iter_num]=runs_T1
                     runs_T2_U[iter_num]=runs_T2
@@ -698,9 +762,11 @@ def get_data(files, DoF, align_output):
                 elif j==0 and k==1:
                     for i in range(0,len(runs)):
                         string1 = runs_T1[i]
+                        # print(f'string1 = runs_T1[{i}]:', runs_T1[i])
                         string2 = runs_T2[i]
                         string3 = runs[i]
                         runs_T1_V[iter_num].append(string1.replace("T1/U", "T1/V"))
+                        # print('runs_T1_V[iter_num]', runs_T1_V[iter_num])
                         runs_T2_V[iter_num].append(string2.replace("T2/U", "T2/V"))
                         runs_T3_V[iter_num].append(string3.replace("T3/U", "T3/V"))
                 elif j==0 and k==2:
@@ -719,14 +785,16 @@ def get_data(files, DoF, align_output):
                         runs_T1_X2[iter_num].append(string1.replace("T1/U", "T1/X2"))
                         runs_T2_X2[iter_num].append(string2.replace("T2/U", "T2/X2"))
                         runs_T3_X2[iter_num].append(string3.replace("T3/U", "T3/X2"))
-
+        # print('runs_T1_U', runs_T1_U)
+        # print('runs_T1_U', runs_T1_V)
         for i in range(0,len(runs)):
             # what is the json file used for
             with open(file, 'r') as stream:  # why do i do this???
                 data_loaded = align_output[iter_num]
+                # print(data_loaded)
                 # print(data_loaded[runs_T1_U[iter_num][i]].keys())
                 # print(deg, data_loaded[runs_T1_U[iter_num][i]].values())
-
+                # print(data_loaded[runs_T1_U['FT/T1/U/HL0/M0']])
                 T1U_PosRot_yml[iter_num].append(data_loaded[runs_T1_U[iter_num][i]][deg])
                 T1U_PosRot[iter_num].append(T1U_PosRot_yml[iter_num][i][0])
 
@@ -767,23 +835,43 @@ def get_data(files, DoF, align_output):
         iter_num += 1
     return np.array(T1U_PosRot), np.array(T1V_PosRot), np.array(T1X1_PosRot), np.array(T1X2_PosRot), np.array(T2U_PosRot), np.array(T2V_PosRot), np.array(T2X1_PosRot), np.array(T2X2_PosRot), np.array(T3U_PosRot), np.array(T3V_PosRot), np.array(T3X1_PosRot), np.array(T3X2_PosRot)
 
-def make_outfiles(files, output_variables):
+def make_outfiles(files, output_variables): # , withLongModules, withCFrames
     align_outputs=[open_alignment(thisfile) for thisfile in files]
     plotted_alignables=[]
     for align_block in align_outputs:
         thislist=[]
         for key in align_block.keys():
             if "FT" in key:
-                if key in cframe_objects_T3:
+                # print(key)
+                # thislist.append(key)
+                if key in long_modules_objects:
+                    continue
+                elif key in cframe_objects:
                     continue
                 else:
+                    # print(key)
                     thislist.append(key)
         plotted_alignables.append(thislist)
+    # if withLongModules == False:
     align_outputs=[convertGlobal(align_block,plotted_alignables[0]) for align_block in align_outputs]
-
+    # else:
+    #     align_output=deepcopy(align_block)
+    #     for alignable in plotted_alignables:
+    #         if "Quarter0" in alignable or "Quarter1" in alignable or "Q0" in alignable or "Q1" in alignable:
+    #             for label in ["Tx","Rx","Ry","Ty"]:
+    #                 if label in align_output[alignable].keys():
+    #                     align_output[alignable][label]=[-value for value in align_output[alignable][label]]
+    #         if "X1" in alignable or "V" in alignable:
+    #             if "Quarter0" in alignable or "Quarter1" in alignable or "Q0" in alignable or "Q1" in alignable:
+    #                 # minus sign on x and Rx and z and Rz for all iterations
+    #                 for label in ["Tx","Rx","Rz","Tz"]:
+    #                     if label in align_output[alignable].keys():
+    #                         align_output[alignable][label]=[-value for value in align_output[alignable][label]]
+    #             else:
+    #                 continue
     out_vars = []
     for var in output_variables:
-        out_vars.append(get_data(files, var, align_outputs))
+        out_vars.append(get_data(files, var, align_outputs)) # , withLongModules, withCFrames
     # return align_outputs
     return out_vars
 
@@ -794,7 +882,22 @@ yaml.add_constructor('!alignment', meta_constructor)
 
 # input files
 
-cframe_objects_T3 = [\
+cframe_objects = [\
+    'FT/T1/X1U/HL0',
+    'FT/T1/X1U/HL1',
+    'FT/T1/VX2/HL0',
+    'FT/T1/VX2/HL1',
+    'FT/T2/X1U/HL0',
+    'FT/T2/X1U/HL1',
+    'FT/T2/VX2/HL0',
+    'FT/T2/VX2/HL1',
+    'FT/T3/X1U/HL0',
+    'FT/T3/X1U/HL1',
+    'FT/T3/VX2/HL0',
+    'FT/T3/VX2/HL1'
+]
+
+long_modules_objects = [\
 'FT/T1/U/HL0/M0',  'FT/T2/U/HL0/M0',  'FT/T3/U/HL0/M0',
 'FT/T1/U/HL0/M1',  'FT/T2/U/HL0/M1',  'FT/T3/U/HL0/M1',
 'FT/T1/U/HL0/M2',  'FT/T2/U/HL0/M2',  'FT/T3/U/HL0/M2',
@@ -974,27 +1077,40 @@ mod_and_halfmod = [\
 ]
 
 mod_and_halfmod_labels = [\
-    'v5_3',
-    'v6_3',
+    'modules and halfmodules TxRz', # v5_3
+    'modules and halfmodules TxRxRz', # v6_3
 ]
 
-<<<<<<< HEAD
 cframes_studies = [\
     f'{path}/2023-11-09/v5_no_Cframes/parsedlog.json',
-    f'{path}/2023-11-09/v6_CFrames_Tx/parsedlog.json',
     f'{path}/2023-11-09/v1_CFrames_Tz/parsedlog.json',
-    f'{path}/2023-11-09/v3_CFrames_TxRz/parsedlog.json',
+    f'{path}/2023-11-09/v2_CFrames_Rz/parsedlog.json',
+    f'{path}/2023-12-01/v5_3_nominal_pos/parsedlog.json',
+    # f'{path}/2023-11-09/v6_CFrames_Tx/parsedlog.json',
+    # f'{path}/2023-11-09/v3_CFrames_TxRz/parsedlog.json',
 ]
 
-cframes_label = [\
+cframes_labels = [\
     'v5_no_CFrames',
-    'v6_CFrames_Tx',
     'v1_CFrames_Tz',
-    'v3_CFrames_TxRz',
+    'v2_CFrames_Rz',
+    'v5_3_nominal',
+    # 'v6_CFrames_Tx',
+    # 'v3_CFrames_TxRz',
 ]
 
-||||||| 7503f86
-=======
+velo_long_tracks = [\
+    f'{path}/2023-11-10/v4/parsedlog.json',
+    f'{path}/2023-11-10/v5/parsedlog.json',
+    f'{path}/2023-11-10/v6/parsedlog.json',
+]
+
+velo_long_tracks_labels = [\
+    'v4',
+    'v5',
+    'v6'
+]
+
 full_v1_tests = [\
     f'{path}/v1/parsedlog_v1_global.json',
     f'{path}/2023-11-07/v1_veloRx/parsedlog.json',
@@ -1023,8 +1139,19 @@ new_conf_labels = [\
     'v3_CFrames_TxRz',
     'v6_CFrames_Tx',
 ]
+# date: 203-12-06: v10 and first log modules then half modules
+combi = [\
+    f'{path}/2023-12-06/v10/parsedlog.json',
+    # f'{path}/2023-12-06/first_half_then_long_modules/parsedlog_iter5_after_longmodules.json',
+    f'{path}/2023-12-06/first_half_then_long_modules/parsedlog_iter14_after_halfmodules.json'
+]
 
->>>>>>> 9b51018baa4a03310dfe5d32dd48bf5fb8c8ca39
+combi_labels = [\
+    'CFr. TxTz, HMod. TxRxRz', #
+    # 'long+half mod, iter 5',
+    'long+half mod, iter 14',
+]
+
 survey_module_positions = 'survey/survey_Modules.yml'
 
 layers = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
@@ -1034,16 +1161,28 @@ runs = ["T3UHL0Q0M0", "T3UHL0Q0M1", "T3UHL0Q0M2", "T3UHL0Q0M3", "T3UHL0Q0M4", "T
 
 plotting_variables = ['Tx', 'Ty', 'Tz', 'nHits', 'nTracks', 'x_global', 'y_global', 'z_global']
 red_blue_vars = ['Tx', 'Ty', 'Tz', 'Rx', 'Ry', 'Rz', 'nHits', 'nTracks', 'x_global', 'y_global', 'z_global']
-align_outputs_v1 = make_outfiles(files_v1, red_blue_vars)
-align_outputs_v2 = make_outfiles(files_v2, red_blue_vars)
-align_outputs_v3 = make_outfiles(files_v3, red_blue_vars)
-align_outputs_retest = make_outfiles(f_retest, red_blue_vars)
-align_out_v5 = make_outfiles(v5_var, red_blue_vars)
-align_out_v6 = make_outfiles(v6_var, red_blue_vars)
-align_out_v56_comp = make_outfiles(v56_comp, red_blue_vars)
-align_out_mod_and_halfmod = make_outfiles(mod_and_halfmod, red_blue_vars)
-align_out_full_v1 = make_outfiles(full_v1_tests, red_blue_vars)
-align_out_new_conf = make_outfiles(new_conf, red_blue_vars)
+print('v1')
+align_outputs_v1 = make_outfiles(files_v1, red_blue_vars) # , withLongModules=False, withCFrames=False
+print('v2')
+align_outputs_v2 = make_outfiles(files_v2, red_blue_vars) # , withLongModules=False, withCFrames=False
+print('v3')
+align_outputs_v3 = make_outfiles(files_v3, red_blue_vars) # , withLongModules=False, withCFrames=False
+print('output retest')
+align_outputs_retest = make_outfiles(f_retest, red_blue_vars) # , withLongModules=False, withCFrames=False
+print('v5')
+align_out_v5 = make_outfiles(v5_var, red_blue_vars) # , withLongModules=True, withCFrames=True
+print('v6')
+align_out_v6 = make_outfiles(v6_var, red_blue_vars) # , withLongModules=True, withCFrames=True
+print('v56 comp')
+align_out_v56_comp = make_outfiles(v56_comp, red_blue_vars) # , withLongModules=True, withCFrames=True
+print('modules and halfmodules')
+align_out_mod_and_halfmod = make_outfiles(mod_and_halfmod, red_blue_vars) # , withLongModules=True, withCFrames=False
+
+align_out_full_v1 = make_outfiles(full_v1_tests, red_blue_vars) # , withLongModules=True, withCFrames=False
+align_out_new_conf = make_outfiles(new_conf, red_blue_vars) # , withLongModules=True, withCFrames=True
+align_out_cframes_studies = make_outfiles(cframes_studies, red_blue_vars) # , withLongModules=True, withCFrames=True
+align_out_velo_long_tracks = make_outfiles(velo_long_tracks, red_blue_vars) # , withLongModules=True, withCFrames=False
+align_out_combi = make_outfiles(combi, red_blue_vars) # , withLongModules=True, withCFrames=True
 
 Tx_v1      = align_outputs_v1[0]
 Ty_v1      = align_outputs_v1[1]
@@ -1165,6 +1304,44 @@ x_glob_new_conf  = align_out_new_conf[8]
 y_glob_new_conf  = align_out_new_conf[9]
 z_glob_new_conf  = align_out_new_conf[10]
 
+# cframes studies for global alignment, 2023-11-28
+Tx_cframes_studies      = align_out_cframes_studies[0]
+Ty_cframes_studies      = align_out_cframes_studies[1]
+Tz_cframes_studies      = align_out_cframes_studies[2]
+Rx_cframes_studies      = align_out_cframes_studies[3]
+Ry_cframes_studies      = align_out_cframes_studies[4]
+Rz_cframes_studies      = align_out_cframes_studies[5]
+nHits_cframes_studies   = align_out_cframes_studies[6]
+nTracks_cframes_studies = align_out_cframes_studies[7]
+x_glob_cframes_studies  = align_out_cframes_studies[8]
+y_glob_cframes_studies  = align_out_cframes_studies[9]
+z_glob_cframes_studies  = align_out_cframes_studies[10]
+
+# backwards tracks + velo tracks, 2023-11-28
+Tx_velo_long_tracks      = align_out_velo_long_tracks[0]
+Ty_velo_long_tracks      = align_out_velo_long_tracks[1]
+Tz_velo_long_tracks      = align_out_velo_long_tracks[2]
+Rx_velo_long_tracks      = align_out_velo_long_tracks[3]
+Ry_velo_long_tracks      = align_out_velo_long_tracks[4]
+Rz_velo_long_tracks      = align_out_velo_long_tracks[5]
+nHits_velo_long_tracks   = align_out_velo_long_tracks[6]
+nTracks_velo_long_tracks = align_out_velo_long_tracks[7]
+x_glob_velo_long_tracks  = align_out_velo_long_tracks[8]
+y_glob_velo_long_tracks  = align_out_velo_long_tracks[9]
+z_glob_velo_long_tracks  = align_out_velo_long_tracks[10]
+
+Tx_combi      = align_out_combi[0]
+Ty_combi      = align_out_combi[1]
+Tz_combi      = align_out_combi[2]
+Rx_combi      = align_out_combi[3]
+Ry_combi      = align_out_combi[4]
+Rz_combi      = align_out_combi[5]
+nHits_combi   = align_out_combi[6]
+nTracks_combi = align_out_combi[7]
+x_glob_combi  = align_out_combi[8]
+y_glob_combi  = align_out_combi[9]
+z_glob_combi  = align_out_combi[10]
+
 for n in range(12):
     Tx_data_v1 = Tx_v1[n]
     Ty_data_v1 = Ty_v1[n]
@@ -1266,6 +1443,38 @@ for n in range(12):
     y_g_new_conf = y_glob_new_conf[n]
     z_g_new_conf = z_glob_new_conf[n]
 
+    # cframes
+    Tx_data_cframes_studies = Tx_cframes_studies[n]
+    Ty_data_cframes_studies = Ty_cframes_studies[n]
+    Tz_data_cframes_studies = Tz_cframes_studies[n]
+    Rx_data_cframes_studies = Rx_cframes_studies[n]
+    Ry_data_cframes_studies = Ry_cframes_studies[n]
+    Rz_data_cframes_studies = Rz_cframes_studies[n]
+    x_g_cframes_studies = x_glob_cframes_studies[n]
+    y_g_cframes_studies = y_glob_cframes_studies[n]
+    z_g_cframes_studies = z_glob_cframes_studies[n]
+
+    # backwards tracks + long tracks
+    Tx_data_velo_long_tracks = Tx_velo_long_tracks[n]
+    Ty_data_velo_long_tracks = Ty_velo_long_tracks[n]
+    Tz_data_velo_long_tracks = Tz_velo_long_tracks[n]
+    Rx_data_velo_long_tracks = Rx_velo_long_tracks[n]
+    Ry_data_velo_long_tracks = Ry_velo_long_tracks[n]
+    Rz_data_velo_long_tracks = Rz_velo_long_tracks[n]
+    x_g_velo_long_tracks = x_glob_velo_long_tracks[n]
+    y_g_velo_long_tracks = y_glob_velo_long_tracks[n]
+    z_g_velo_long_tracks = z_glob_velo_long_tracks[n]
+
+    Tx_data_combi = Tx_combi[n]
+    Ty_data_combi = Ty_combi[n]
+    Tz_data_combi = Tz_combi[n]
+    Rx_data_combi = Rx_combi[n]
+    Ry_data_combi = Ry_combi[n]
+    Rz_data_combi = Rz_combi[n]
+    x_g_combi = x_glob_combi[n]
+    y_g_combi = y_glob_combi[n]
+    z_g_combi = z_glob_combi[n]
+
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'global', 'v1_x_vs_z')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'global', 'v2_x_vs_z')
     plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'global', 'v3_x_vs_z')
@@ -1275,18 +1484,24 @@ for n in range(12):
     plot_x_y_constants(x_g_v56, y_g_v56, Tx_data_v56, Ty_data_v56, v56_comp_labels, layers[n], 'quarter', 'global', 'v56_comp_x_vs_z')
     plot_x_y_constants(x_g_mod_and_halfmod, y_g_mod_and_halfmod, Tx_data_mod_and_halfmod, Ty_data_mod_and_halfmod, mod_and_halfmod_labels, layers[n], 'quarter', 'global', 'mod_halfmod_x_vs_z')
     plot_x_y_constants(x_g_full_v1, y_g_full_v1, Tx_data_full_v1, Ty_data_full_v1, full_v1_labels, layers[n], 'quarter', 'global', 'full_v1_x_vs_z')
-    plot_x_y_constants(x_g_new_conf, y_g_new_conf, Tx_data_new_conf, Ty_data_new_conf, new_conf_labels, layers[n], 'quarter', 'global', 'new_conf_x_vs_z')    
+    plot_x_y_constants(x_g_new_conf, y_g_new_conf, Tx_data_new_conf, Ty_data_new_conf, new_conf_labels, layers[n], 'quarter', 'global', 'new_conf_x_vs_z')
+    plot_x_y_constants(x_g_cframes_studies, y_g_cframes_studies, Tx_data_cframes_studies, Ty_data_cframes_studies, cframes_labels, layers[n], 'quarter', 'global', 'cframes_studies_x_vs_z')
+    plot_x_y_constants(x_g_velo_long_tracks, y_g_velo_long_tracks, Tx_data_velo_long_tracks, Ty_data_velo_long_tracks, velo_long_tracks_labels, layers[n], 'quarter', 'global', 'velo_long_tracks_x_vs_z')
+    plot_x_y_constants(x_g_combi, y_g_combi, Tx_data_combi, Ty_data_combi, combi_labels, layers[n], 'quarter', 'global', 'combi_x_vs_z')
 
-    plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'local', 'v1_x_vs_y_local_')
-    plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'local', 'v2_x_vs_y_local_')
-    plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'local', 'v3_x_vs_y_local_')
-    plot_x_y_constants(x_g_retest, y_g_retest, Tx_data_retest, Ty_data_retest, legendlabels_retest, layers[n], 'quarter', 'local', 'retest_x_vs_y_local_')
+    plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'local', 'v1_x_vs_y_local')
+    plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'local', 'v2_x_vs_y_local')
+    plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'local', 'v3_x_vs_y_local')
+    plot_x_y_constants(x_g_retest, y_g_retest, Tx_data_retest, Ty_data_retest, legendlabels_retest, layers[n], 'quarter', 'local', 'retest_x_vs_y_local')
     plot_x_y_constants(x_g_v5, y_g_v5, Tx_data_v5, Ty_data_v5, v5_labels, layers[n], 'quarter', 'local', 'v5_x_vs_z_local')
     plot_x_y_constants(x_g_v6, y_g_v6, Tx_data_v6, Ty_data_v6, v6_labels, layers[n], 'quarter', 'local', 'v6_x_vs_z_local')
-    plot_x_y_constants(x_g_v56, y_g_v56, Tx_data_v56, Ty_data_v56, v56_comp_labels, layers[n], 'quarter', 'local', 'v56_comp_x_vs_z')
-    plot_x_y_constants(x_g_mod_and_halfmod, y_g_mod_and_halfmod, Tx_data_mod_and_halfmod, Ty_data_mod_and_halfmod, mod_and_halfmod_labels, layers[n], 'quarter', 'local', 'mod_halfmod_x_vs_z')
+    plot_x_y_constants(x_g_v56, y_g_v56, Tx_data_v56, Ty_data_v56, v56_comp_labels, layers[n], 'quarter', 'local', 'v56_comp_x_vs_z_local')
+    plot_x_y_constants(x_g_mod_and_halfmod, y_g_mod_and_halfmod, Tx_data_mod_and_halfmod, Ty_data_mod_and_halfmod, mod_and_halfmod_labels, layers[n], 'quarter', 'local', 'mod_halfmod_x_vs_z_local')
     plot_x_y_constants(x_g_full_v1, y_g_full_v1, Tx_data_full_v1, Ty_data_full_v1, full_v1_labels, layers[n], 'quarter', 'local', 'full_v1_x_vs_z_local')
     plot_x_y_constants(x_g_new_conf, y_g_new_conf, Tx_data_new_conf, Ty_data_new_conf, new_conf_labels, layers[n], 'quarter', 'local', 'new_conf_x_vs_z_local')
+    plot_x_y_constants(x_g_cframes_studies, y_g_cframes_studies, Tx_data_cframes_studies, Ty_data_cframes_studies, cframes_labels, layers[n], 'quarter', 'local', 'cframes_studies_x_vs_z_local')
+    plot_x_y_constants(x_g_velo_long_tracks, y_g_velo_long_tracks, Tx_data_velo_long_tracks, Ty_data_velo_long_tracks, velo_long_tracks_labels, layers[n], 'quarter', 'local', 'velo_long_tracks_x_vs_z_local')
+    plot_x_y_constants(x_g_combi, y_g_combi, Tx_data_combi, Ty_data_combi, combi_labels, layers[n], 'quarter', 'local', 'combi_x_vs_z_local')
 
     check_module_edges(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align')
     check_module_edges(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'layer', 'global', Rx_data_v2, 'v2_global_align')
@@ -1298,7 +1513,9 @@ for n in range(12):
     check_module_edges(x_g_mod_and_halfmod, y_g_mod_and_halfmod, Tx_data_mod_and_halfmod, Ty_data_mod_and_halfmod, mod_and_halfmod_labels, layers[n], 'layer', 'global', Rx_data_mod_and_halfmod, 'mod_halfmod_global_align')
     check_module_edges(x_g_full_v1, y_g_full_v1, Tx_data_full_v1, Ty_data_full_v1, full_v1_labels, layers[n], 'layer', 'global', Rx_data_full_v1, 'full_v1_global_align')
     check_module_edges(x_g_new_conf, y_g_new_conf, Tx_data_new_conf, Ty_data_new_conf, new_conf_labels, layers[n], 'layer', 'global', Rx_data_new_conf, 'new_conf_global_align')
-
+    check_module_edges(x_g_cframes_studies, y_g_cframes_studies, Tx_data_cframes_studies, Ty_data_cframes_studies, cframes_labels, layers[n], 'layer', 'global', Rx_data_cframes_studies, 'cframes_studies_global_align')
+    check_module_edges(x_g_velo_long_tracks, y_g_velo_long_tracks, Tx_data_velo_long_tracks, Ty_data_velo_long_tracks, velo_long_tracks_labels, layers[n], 'layer', 'global', Rx_data_velo_long_tracks, 'velo_long_tracks_global_align')
+    check_module_edges(x_g_combi, y_g_combi, Tx_data_combi, Ty_data_combi, combi_labels, layers[n], 'layer', 'global', Rx_data_combi, 'combi_global_align')
     # do it for each individual datafile
     # all files
     make_edges_plot(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align', 'all')
@@ -1320,6 +1537,9 @@ plot_with_globals(Tx_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, 
 plot_with_globals(Tx_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Tx')
 plot_with_globals(Tx_full_v1, 'full_v1_glob_z_vs_local_', full_v1_labels, layers, z_glob_full_v1, x_glob_full_v1, 'Tx')
 plot_with_globals(Tx_new_conf, 'new_conf_glob_z_vs_local_', new_conf_labels, layers, z_glob_new_conf, x_glob_new_conf, 'Tx')
+plot_with_globals(Tx_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframes_labels, layers, z_glob_cframes_studies, x_glob_cframes_studies, 'Tx')
+plot_with_globals(Tx_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Tx')
+plot_with_globals(Tx_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Tx')
 
 plot_with_globals(Ty_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ty')
 plot_with_globals(Ty_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Ty')
@@ -1331,6 +1551,9 @@ plot_with_globals(Ty_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, 
 plot_with_globals(Ty_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Ty')
 plot_with_globals(Ty_full_v1, 'full_v1_glob_z_vs_local_', full_v1_labels, layers, z_glob_full_v1, x_glob_full_v1, 'Ty')
 plot_with_globals(Ty_new_conf, 'new_conf_glob_z_vs_local_', new_conf_labels, layers, z_glob_new_conf, x_glob_new_conf, 'Ty')
+plot_with_globals(Ty_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframes_labels, layers, z_glob_cframes_studies, x_glob_cframes_studies, 'Ty')
+plot_with_globals(Ty_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Ty')
+plot_with_globals(Ty_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Ty')
 
 plot_with_globals(Tz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Tz')
 plot_with_globals(Tz_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Tz')
@@ -1342,6 +1565,9 @@ plot_with_globals(Tz_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, 
 plot_with_globals(Tz_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Tz')
 plot_with_globals(Tz_full_v1, 'full_v1_glob_z_vs_local_', full_v1_labels, layers, z_glob_full_v1, x_glob_full_v1, 'Tz')
 plot_with_globals(Tz_new_conf, 'new_conf_glob_z_vs_local_', new_conf_labels, layers, z_glob_new_conf, x_glob_new_conf, 'Tz')
+plot_with_globals(Tz_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframes_labels, layers, z_glob_cframes_studies, x_glob_cframes_studies, 'Tz')
+plot_with_globals(Tz_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Tz')
+plot_with_globals(Tz_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Tz')
 
 plot_with_globals(Rx_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Rx')
 plot_with_globals(Rx_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Rx')
@@ -1353,6 +1579,9 @@ plot_with_globals(Rx_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, 
 plot_with_globals(Rx_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Rx')
 plot_with_globals(Rx_full_v1, 'full_v1_glob_z_vs_local_', full_v1_labels, layers, z_glob_full_v1, x_glob_full_v1, 'Rx')
 plot_with_globals(Rx_new_conf, 'new_conf_glob_z_vs_local_', new_conf_labels, layers, z_glob_new_conf, x_glob_new_conf, 'Rx')
+plot_with_globals(Rx_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframes_labels, layers, z_glob_cframes_studies, x_glob_cframes_studies, 'Rx')
+plot_with_globals(Rx_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Rx')
+plot_with_globals(Rx_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Rx')
 
 plot_with_globals(Ry_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ry')
 plot_with_globals(Ry_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Ry')
@@ -1364,6 +1593,9 @@ plot_with_globals(Ry_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, 
 plot_with_globals(Ry_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Ry')
 plot_with_globals(Ry_full_v1, 'full_v1_glob_z_vs_local_', full_v1_labels, layers, z_glob_full_v1, x_glob_full_v1, 'Ry')
 plot_with_globals(Ry_new_conf, 'new_conf_glob_z_vs_local_', new_conf_labels, layers, z_glob_new_conf, x_glob_new_conf, 'Ry')
+plot_with_globals(Ry_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframes_labels, layers, z_glob_cframes_studies, x_glob_cframes_studies, 'Ry')
+plot_with_globals(Ry_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Ry')
+plot_with_globals(Ry_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Ry')
 
 plot_with_globals(Rz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Rz')
 plot_with_globals(Rz_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Rz')
@@ -1375,5 +1607,8 @@ plot_with_globals(Rz_v56, 'v56_comp_glob_z_vs_local_', v56_comp_labels, layers, 
 plot_with_globals(Rz_mod_and_halfmod, 'mod_and_halfmod_glob_z_vs_local_', mod_and_halfmod_labels, layers, z_glob_mod_and_halfmod, x_glob_mod_and_halfmod, 'Rz')
 plot_with_globals(Rz_full_v1, 'full_v1_glob_z_vs_local_', full_v1_labels, layers, z_glob_full_v1, x_glob_full_v1, 'Rz')
 plot_with_globals(Rz_new_conf, 'new_conf_glob_z_vs_local_', new_conf_labels, layers, z_glob_new_conf, x_glob_new_conf, 'Rz')
+plot_with_globals(Rz_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframes_labels, layers, z_glob_cframes_studies, x_glob_cframes_studies, 'Rz')
+plot_with_globals(Rz_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Rz')
+plot_with_globals(Rz_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Rz')
 
 glob_vs_glob(y_glob_v1, z_glob_v1, 'global_y', 'global_z', 'global_y_vs_global_z', legendlabels_v1)
