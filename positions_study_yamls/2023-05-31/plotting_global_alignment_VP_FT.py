@@ -1038,6 +1038,7 @@ v5_var = [\
         f'{path}/2023-11-07/v5_1/parsedlog.json',
         f'{path}/2023-12-11/v5_retest_nominal/parsedlog.json',
         f'{path}/2023-11-07/v5_2/parsedlog.json',
+        f'{path}/2023-12-12/v5_nominal_Rx/parsedlog.json',
 ]
 
 v5_labels = [\
@@ -1045,7 +1046,8 @@ v5_labels = [\
     'v5_1',
     'v5_1_retest_nominal',
     'v5_2',
-]
+    'v5_nominal_Rx',
+] # 'v5_1_retest_nominal' and 'v5_nominal_Rx' are the same except for half modules added Rx
 
 v6_var = [\
         f'{path}/2023-11-07/v6/parsedlog.json',
