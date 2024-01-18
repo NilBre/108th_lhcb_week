@@ -671,7 +671,7 @@ def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=F
     # new spacing
     # print('files:', files)
     path = 'retest_uncertainty/input_txt/loose_particles/global_alignment_files'
-    if files[0] == f'{path}/v1/parsedlog_v1_global.json' or files[0] == f'{path}/v2/parsedlog_v2_global.json' or files[0] == f'{path}/v3/parsedlog_v3_global.json' or files[0] == f"{path}/retest_v1_to_v4/v1/parsedlog.json" or files[0] == "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json" or files[0] == f'{path}/2023-11-07/v5/parsedlog.json' or files[0] == f'{path}/2023-11-07/v6/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_1/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_3/parsedlog.json' or files[0] == f'{path}/2023-11-10/v3_CFrames_TxRz/parsedlog.json' or files[0] == f'{path}/2023-11-09/v5_no_Cframes/parsedlog.json' or files[0] == f'{path}/2023-11-10/v4/parsedlog.json' or files[0] == f'{path}/2023-12-06/v10/parsedlog.json':
+    if files[0] == f'{path}/v1/parsedlog_v1_global.json' or files[0] == f'{path}/v2/parsedlog_v2_global.json' or files[0] == f'{path}/v3/parsedlog_v3_global.json' or files[0] == f"{path}/retest_v1_to_v4/v1/parsedlog.json" or files[0] == "retest_uncertainty/json/parsedlog_500k_old_unc_loose.json" or files[0] == f'{path}/2023-11-07/v5/parsedlog.json' or files[0] == f'{path}/2023-11-07/v6/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_1/parsedlog.json' or files[0] == f'{path}/2023-11-07/v5_3/parsedlog.json' or files[0] == f'{path}/2023-11-10/v3_CFrames_TxRz/parsedlog.json' or files[0] == f'{path}/2023-11-09/v5_no_Cframes/parsedlog.json' or files[0] == f'{path}/2023-11-10/v4/parsedlog.json' or files[0] == f'{path}/2023-12-06/v10/parsedlog.json' or files[0] == f'{path}/2023-12-12/v2/parsedlog_v2.json':
         runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
                    "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
                    "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
@@ -1178,7 +1178,22 @@ only_long_module_files = [\
 only_long_module_labels = [\
     # 'long+half mod, iter 5',
     # 'long modules + no full VELO',
+]
 
+mass_constant_test = [\
+    f'{path}/2023-12-12/v2/parsedlog_v2.json',
+    f'{path}/2023-12-12/v3/parsedlog_v3.json',
+#    f'{path}/2023-12-12/v4/parsedlog_v4.json',
+    # f'{path}/2023-12-12/v5/parsedlog_v5.json',
+    # f'{path}/2023-12-12/v6/parsedlog_v6.json',
+]
+
+legendlabels_mass_const = [\
+    'v2_mass_constants',
+    'v3_mass_constants',
+    # 'v4_mass_constants',
+    # 'v5_mass_constants',
+    # 'v6_mass_constants',
 ]
 
 survey_module_positions = 'survey/survey_Modules.yml'
@@ -1206,6 +1221,8 @@ print('v56 comp')
 align_out_v56_comp = make_outfiles(v56_comp, red_blue_vars) # , withLongModules=True, withCFrames=True
 print('modules and halfmodules')
 align_out_mod_and_halfmod = make_outfiles(mod_and_halfmod, red_blue_vars) # , withLongModules=True, withCFrames=False
+print('mass constraint constants')
+align_out_mass_const = make_outfiles(mass_constant_test, red_blue_vars) # runs from 2023-12-12 with giulia's mass constraint constants
 
 align_out_full_v1 = make_outfiles(full_v1_tests, red_blue_vars) # , withLongModules=True, withCFrames=False
 align_out_new_conf = make_outfiles(new_conf, red_blue_vars) # , withLongModules=True, withCFrames=True
@@ -1384,6 +1401,18 @@ x_glob_combi2  = align_out_combi2[8]
 y_glob_combi2  = align_out_combi2[9]
 z_glob_combi2  = align_out_combi2[10]
 
+Tx_mass_const      = align_out_mass_const[0]
+Ty_mass_const      = align_out_mass_const[1]
+Tz_mass_const      = align_out_mass_const[2]
+Rx_mass_const      = align_out_mass_const[3]
+Ry_mass_const      = align_out_mass_const[4]
+Rz_mass_const      = align_out_mass_const[5]
+nHits_mass_const   = align_out_mass_const[6]
+nTracks_mass_const = align_out_mass_const[7]
+x_glob_mass_const  = align_out_mass_const[8]
+y_glob_mass_const  = align_out_mass_const[9]
+z_glob_mass_const  = align_out_mass_const[10]
+
 for n in range(12):
     Tx_data_v1 = Tx_v1[n]
     Ty_data_v1 = Ty_v1[n]
@@ -1527,6 +1556,16 @@ for n in range(12):
     y_g_combi2 = y_glob_combi2[n]
     z_g_combi2 = z_glob_combi2[n]
 
+    Tx_data_mass_const = Tx_mass_const[n]
+    Ty_data_mass_const = Ty_mass_const[n]
+    Tz_data_mass_const = Tz_mass_const[n]
+    Rx_data_mass_const = Rx_mass_const[n]
+    Ry_data_mass_const = Ry_mass_const[n]
+    Rz_data_mass_const = Rz_mass_const[n]
+    x_g_mass_const = x_glob_mass_const[n]
+    y_g_mass_const = y_glob_mass_const[n]
+    z_g_mass_const = z_glob_mass_const[n]
+
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'global', 'v1_x_vs_z')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'global', 'v2_x_vs_z')
     plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'global', 'v3_x_vs_z')
@@ -1541,6 +1580,7 @@ for n in range(12):
     plot_x_y_constants(x_g_velo_long_tracks, y_g_velo_long_tracks, Tx_data_velo_long_tracks, Ty_data_velo_long_tracks, velo_long_tracks_labels, layers[n], 'quarter', 'global', 'velo_long_tracks_x_vs_z')
     plot_x_y_constants(x_g_combi, y_g_combi, Tx_data_combi, Ty_data_combi, combi_labels, layers[n], 'quarter', 'global', 'combi_x_vs_z')
     plot_x_y_constants(x_g_combi2, y_g_combi2, Tx_data_combi2, Ty_data_combi2, combi2_labels, layers[n], 'quarter', 'global', 'combi2_x_vs_z')
+    plot_x_y_constants(x_g_mass_const, y_g_mass_const, Tx_data_mass_const, Ty_data_mass_const, legendlabels_mass_const, layers[n], 'quarter', 'global', 'mass_const_x_vs_z')
 
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'local', 'v1_x_vs_y_local')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'local', 'v2_x_vs_y_local')
@@ -1556,6 +1596,7 @@ for n in range(12):
     plot_x_y_constants(x_g_velo_long_tracks, y_g_velo_long_tracks, Tx_data_velo_long_tracks, Ty_data_velo_long_tracks, velo_long_tracks_labels, layers[n], 'quarter', 'local', 'velo_long_tracks_x_vs_z_local')
     plot_x_y_constants(x_g_combi, y_g_combi, Tx_data_combi, Ty_data_combi, combi_labels, layers[n], 'quarter', 'local', 'combi_x_vs_z_local')
     plot_x_y_constants(x_g_combi2, y_g_combi2, Tx_data_combi2, Ty_data_combi2, combi2_labels, layers[n], 'quarter', 'local', 'combi2_x_vs_z_local')
+    plot_x_y_constants(x_g_mass_const, y_g_mass_const, Tx_data_mass_const, Ty_data_mass_const, legendlabels_mass_const, layers[n], 'quarter', 'local', 'mass_const_x_vs_z_local')
 
     check_module_edges(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align')
     check_module_edges(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'layer', 'global', Rx_data_v2, 'v2_global_align')
@@ -1571,6 +1612,8 @@ for n in range(12):
     check_module_edges(x_g_velo_long_tracks, y_g_velo_long_tracks, Tx_data_velo_long_tracks, Ty_data_velo_long_tracks, velo_long_tracks_labels, layers[n], 'layer', 'global', Rx_data_velo_long_tracks, 'velo_long_tracks_global_align')
     check_module_edges(x_g_combi, y_g_combi, Tx_data_combi, Ty_data_combi, combi_labels, layers[n], 'layer', 'global', Rx_data_combi, 'combi_global_align')
     check_module_edges(x_g_combi2, y_g_combi2, Tx_data_combi2, Ty_data_combi2, combi2_labels, layers[n], 'layer', 'global', Rx_data_combi2, 'combi2_global_align')
+    check_module_edges(x_g_mass_const, y_g_mass_const, Tx_data_mass_const, Ty_data_mass_const, legendlabels_mass_const, layers[n], 'layer', 'global', Rx_data_mass_const, 'mass_const_global_align')
+
     # do it for each individual datafile
     # all files
     make_edges_plot(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align', 'all')
@@ -1596,6 +1639,7 @@ plot_with_globals(Tx_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframe
 plot_with_globals(Tx_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Tx')
 plot_with_globals(Tx_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Tx')
 plot_with_globals(Tx_combi2, 'combi2_glob_z_vs_local_', combi2_labels, layers, z_glob_combi2, x_glob_combi2, 'Tx')
+plot_with_globals(Tx_mass_const, 'mass_const_glob_z_vs_local_', legendlabels_mass_const, layers, z_glob_mass_const, x_glob_mass_const, 'Tx')
 
 plot_with_globals(Ty_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ty')
 plot_with_globals(Ty_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Ty')
@@ -1611,6 +1655,7 @@ plot_with_globals(Ty_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframe
 plot_with_globals(Ty_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Ty')
 plot_with_globals(Ty_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Ty')
 plot_with_globals(Ty_combi2, 'combi2_glob_z_vs_local_', combi2_labels, layers, z_glob_combi2, x_glob_combi2, 'Ty')
+plot_with_globals(Ty_mass_const, 'mass_const_glob_z_vs_local_', legendlabels_mass_const, layers, z_glob_mass_const, x_glob_mass_const, 'Ty')
 
 plot_with_globals(Tz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Tz')
 plot_with_globals(Tz_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Tz')
@@ -1626,6 +1671,7 @@ plot_with_globals(Tz_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframe
 plot_with_globals(Tz_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Tz')
 plot_with_globals(Tz_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Tz')
 plot_with_globals(Tz_combi2, 'combi2_glob_z_vs_local_', combi2_labels, layers, z_glob_combi2, x_glob_combi2, 'Tz')
+plot_with_globals(Tz_mass_const, 'mass_const_glob_z_vs_local_', legendlabels_mass_const, layers, z_glob_mass_const, x_glob_mass_const, 'Tz')
 
 plot_with_globals(Rx_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Rx')
 plot_with_globals(Rx_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Rx')
@@ -1641,6 +1687,7 @@ plot_with_globals(Rx_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframe
 plot_with_globals(Rx_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Rx')
 plot_with_globals(Rx_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Rx')
 plot_with_globals(Rx_combi2, 'combi2_glob_z_vs_local_', combi2_labels, layers, z_glob_combi2, x_glob_combi2, 'Rx')
+plot_with_globals(Rx_mass_const, 'mass_const_glob_z_vs_local_', legendlabels_mass_const, layers, z_glob_mass_const, x_glob_mass_const, 'Rx')
 
 plot_with_globals(Ry_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ry')
 plot_with_globals(Ry_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Ry')
@@ -1656,6 +1703,7 @@ plot_with_globals(Ry_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframe
 plot_with_globals(Ry_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Ry')
 plot_with_globals(Ry_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Ry')
 plot_with_globals(Ry_combi2, 'combi2_glob_z_vs_local_', combi2_labels, layers, z_glob_combi2, x_glob_combi2, 'Ry')
+plot_with_globals(Ry_mass_const, 'mass_const_glob_z_vs_local_', legendlabels_mass_const, layers, z_glob_mass_const, x_glob_mass_const, 'Ry')
 
 plot_with_globals(Rz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Rz')
 plot_with_globals(Rz_v2, 'v2_glob_z_vs_local_', legendlabels_v2, layers, z_glob_v2, x_glob_v2, 'Rz')
@@ -1671,5 +1719,6 @@ plot_with_globals(Rz_cframes_studies, 'cframes_studies_glob_z_vs_local_', cframe
 plot_with_globals(Rz_velo_long_tracks, 'velo_long_tracks_glob_z_vs_local_', velo_long_tracks_labels, layers, z_glob_velo_long_tracks, x_glob_velo_long_tracks, 'Rz')
 plot_with_globals(Rz_combi, 'combi_glob_z_vs_local_', combi_labels, layers, z_glob_combi, x_glob_combi, 'Rz')
 plot_with_globals(Rz_combi2, 'combi2_glob_z_vs_local_', combi2_labels, layers, z_glob_combi2, x_glob_combi2, 'Rz')
+plot_with_globals(Rz_mass_const, 'mass_const_glob_z_vs_local_', legendlabels_mass_const, layers, z_glob_mass_const, x_glob_mass_const, 'Rz')
 
 glob_vs_glob(y_glob_v1, z_glob_v1, 'global_y', 'global_z', 'global_y_vs_global_z', legendlabels_v1)

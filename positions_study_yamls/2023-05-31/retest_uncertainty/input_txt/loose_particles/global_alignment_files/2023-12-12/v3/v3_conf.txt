@@ -1,0 +1,31 @@
+def configureGlobalAlignment_v3(halfdofs="TxTyTz"):
+    setup = AlignmentScenario('GlobalAlignment')
+    setup.SubDetectors += ['VP', 'FT']
+
+    elements = Alignables()
+    elements.VP("RxRz")
+    elements.VPRight(halfdofs)
+    elements.VPLeft(halfdofs)
+
+#    elements.FTCFrames("TxTz") # added Tz, but need Tz survey unc. set to 0!
+#    elements.FTModules("TxRz")
+    elements.FTHalfModules("TxRxRz")
+    setup.Elements += list(elements)
+
+    surveyconstraints = SurveyConstraints()
+    if UseDD4Hep:
+        surveyconstraints.VP(ver='2023_dd4hep')
+        surveyconstraints.FT(addHalfModuleJoints=True)
+    else:
+        print('the wrong survey was used...')
+        surveyconstraints.VP(ver='latest')
+    setup.SurveyConstraints = surveyconstraints
+    print('survey constraints: ', setup.SurveyConstraints)
+
+    constraints = []
+    constraints.append("VPHalfAverage : .*?VP(Left|Right) : Tx Ty Tz")
+#    constraints.append("FT_T2FramesFixed : FT/T2/(U|V)/HL.*/M. : Tx Rz")
+    constraints.append("FTBackFramesFixed : FT/T3/X2/HL.*/M. : Tx Rz")
+    setup.LagrangeConstraints = constraints
+
+    return setup
