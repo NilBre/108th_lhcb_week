@@ -669,7 +669,7 @@ def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=F
     # new spacing
     # print('files:', files)
     path = '2024_global_alignment'
-    if files[0] == f'{path}/01-24/retest_pink_giulia_conditions/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_giulia_no_cframes/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_without_velo/Iter14/parsedlog.json' or files[0] == f"{path}/01-26/pink_giulia/last_iter/parsedlog.json" or files[0] == f"{path}/01-29/diff_survey_giulia_pink/Iter29/parsedlog.json":
+    if files[0] == f'{path}/01-24/retest_pink_giulia_conditions/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_giulia_no_cframes/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_without_velo/Iter14/parsedlog.json' or files[0] == f"{path}/01-26/pink_giulia/last_iter/parsedlog.json" or files[0] == f"{path}/01-29/diff_survey_giulia_pink/Iter29/parsedlog.json" or files[0] == f"{path}/02-07/fhtl_FT_VP/Iter4/parsedlog.json" or files[0] == f"{path}/02-09/flth_cframes/parsedlog.json":
         runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
                    "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
                    "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
@@ -1005,6 +1005,34 @@ legendlabels_scifi=[\
     "v3,pink,giulia condition,SciFi",
 ]
 
+# first half then long modules aligned until convergence
+# and other way round
+# TODO: being able to use json files which have only long modules
+# -> maybe make an input option?
+path3 = '2024_global_alignment/02-07'
+files_hm_first = [\
+    f"{path3}/fhtl_FT_VP/Iter4/parsedlog.json",
+    f"{path3}/flth_FT_VP/Iter9/parsedlog.json",
+]
+
+legendlabels_hm_first = [\
+    "SciFi+VELO, HM only",
+    "Scifi+Velo, half+long mod"
+]
+
+# 02-09 fixes for biljana meeting on 14th feb
+path4 = '2024_global_alignment/02-09'
+files_fixes = [\
+    f"{path4}/flth_cframes/parsedlog.json",
+    f"{path4}/flth_lagrange_T2/parsedlog.json",
+    f"{path4}/flth_lagrange_T2_total/parsedlog.json",
+]
+legendlabels_fixes = [\
+    "c-frames: long+half",
+    "c-frames: T2 lagrange",
+    "c-frames: lagrange total pos",
+]
+
 survey_module_positions = 'survey/survey_Modules.yml'
 
 layers = ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2']
@@ -1020,6 +1048,34 @@ align_outputs_v2 = make_outfiles(files_v2, red_blue_vars)
 align_outputs_v3 = make_outfiles(files_v3, red_blue_vars)
 align_outputs_both = make_outfiles(files_both_det, red_blue_vars)
 align_outputs_scifi = make_outfiles(files_scifi, red_blue_vars)
+align_outputs_hmf = make_outfiles(files_hm_first, red_blue_vars)
+align_outputs_fixes = make_outfiles(files_fixes, red_blue_vars)
+
+# fixes
+Tx_fix      = align_outputs_fixes[0]
+Ty_fix      = align_outputs_fixes[1]
+Tz_fix      = align_outputs_fixes[2]
+Rx_fix      = align_outputs_fixes[3]
+Ry_fix      = align_outputs_fixes[4]
+Rz_fix      = align_outputs_fixes[5]
+nHits_fix   = align_outputs_fixes[6]
+nTracks_fix = align_outputs_fixes[7]
+x_glob_fix  = align_outputs_fixes[8]
+y_glob_fix  = align_outputs_fixes[9]
+z_glob_fix  = align_outputs_fixes[10]
+
+# hmf = half modules first
+Tx_hmf      = align_outputs_hmf[0]
+Ty_hmf      = align_outputs_hmf[1]
+Tz_hmf      = align_outputs_hmf[2]
+Rx_hmf      = align_outputs_hmf[3]
+Ry_hmf      = align_outputs_hmf[4]
+Rz_hmf      = align_outputs_hmf[5]
+nHits_hmf   = align_outputs_hmf[6]
+nTracks_hmf = align_outputs_hmf[7]
+x_glob_hmf  = align_outputs_hmf[8]
+y_glob_hmf  = align_outputs_hmf[9]
+z_glob_hmf  = align_outputs_hmf[10]
 
 Tx_v1      = align_outputs_v1[0]
 Ty_v1      = align_outputs_v1[1]
@@ -1082,6 +1138,26 @@ y_glob_scifi  = align_outputs_scifi[9]
 z_glob_scifi  = align_outputs_scifi[10]
 
 for n in range(12):
+    Tx_data_fix = Tx_fix[n]
+    Ty_data_fix = Ty_fix[n]
+    Tz_data_fix = Tz_fix[n]
+    Rx_data_fix = Rx_fix[n]
+    Ry_data_fix = Ry_fix[n]
+    Rz_data_fix = Rz_fix[n]
+    x_g_fix = x_glob_fix[n]
+    y_g_fix = y_glob_fix[n]
+    z_g_fix = z_glob_fix[n]
+
+    Tx_data_hmf = Tx_hmf[n]
+    Ty_data_hmf = Ty_hmf[n]
+    Tz_data_hmf = Tz_hmf[n]
+    Rx_data_hmf = Rx_hmf[n]
+    Ry_data_hmf = Ry_hmf[n]
+    Rz_data_hmf = Rz_hmf[n]
+    x_g_hmf = x_glob_hmf[n]
+    y_g_hmf = y_glob_hmf[n]
+    z_g_hmf = z_glob_hmf[n]
+
     Tx_data_v1 = Tx_v1[n]
     Ty_data_v1 = Ty_v1[n]
     Tz_data_v1 = Tz_v1[n]
@@ -1136,18 +1212,24 @@ for n in range(12):
     plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'global', 'v3_x_vs_z')
     plot_x_y_constants(x_g_both, y_g_both, Tx_data_both, Ty_data_both, legendlabels_both, layers[n], 'quarter', 'global', 'both_x_vs_z')
     plot_x_y_constants(x_g_scifi, y_g_scifi, Tx_data_scifi, Ty_data_scifi, legendlabels_scifi, layers[n], 'quarter', 'global', 'scifi_x_vs_z')
+    plot_x_y_constants(x_g_hmf, y_g_hmf, Tx_data_hmf, Ty_data_hmf, legendlabels_hm_first, layers[n], 'quarter', 'global', 'hmf_x_vs_z')
+    plot_x_y_constants(x_g_fix, y_g_fix, Tx_data_fix, Ty_data_fix, legendlabels_fixes, layers[n], 'quarter', 'global', 'fix_x_vs_z')
 
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'local', 'v1_x_vs_y_local')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'local', 'v2_x_vs_y_local')
     plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'local', 'v3_x_vs_y_local')
     plot_x_y_constants(x_g_both, y_g_both, Tx_data_both, Ty_data_both, legendlabels_both, layers[n], 'quarter', 'local', 'both_x_vs_z_local')
     plot_x_y_constants(x_g_scifi, y_g_scifi, Tx_data_scifi, Ty_data_scifi, legendlabels_scifi, layers[n], 'quarter', 'local', 'scifi_x_vs_z_local')
+    plot_x_y_constants(x_g_hmf, y_g_hmf, Tx_data_hmf, Ty_data_hmf, legendlabels_hm_first, layers[n], 'quarter', 'local', 'hmf_x_vs_z_local')
+    plot_x_y_constants(x_g_fix, y_g_fix, Tx_data_fix, Ty_data_fix, legendlabels_fixes, layers[n], 'quarter', 'local', 'fix_x_vs_z')
 
     check_module_edges(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align')
     check_module_edges(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'layer', 'global', Rx_data_v2, 'v2_global_align')
     check_module_edges(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'layer', 'global', Rx_data_v3, 'v3_global_align')
     check_module_edges(x_g_both, y_g_both, Tx_data_both, Ty_data_both, legendlabels_both, layers[n], 'layer', 'global', Rx_data_both, 'both_global_align')
     check_module_edges(x_g_scifi, y_g_scifi, Tx_data_scifi, Ty_data_scifi, legendlabels_scifi, layers[n], 'layer', 'global', Rx_data_scifi, 'scifi_global_align')
+    check_module_edges(x_g_hmf, y_g_hmf, Tx_data_hmf, Ty_data_hmf, legendlabels_hm_first, layers[n], 'layer', 'global', Rx_data_hmf, 'hmf_global_align')
+    check_module_edges(x_g_fix, y_g_fix, Tx_data_fix, Ty_data_fix, legendlabels_fixes, layers[n], 'layer', 'global', Rx_data_fix, 'fix_global_align')
     # do it for each individual datafile
     # all files
 #    make_edges_plot(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align', 'all')
@@ -1155,6 +1237,20 @@ for n in range(12):
 #    make_edges_plot(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align', 'individual')
     # global plot for TxTzRxRz for 10 mu vs TxRz
     # make_3D_constants(tx_compxy, ty_compxy, tz_compxy, glob_x_compxy, glob_y_compxy, glob_z_compxy, labels_xy, layers[n])
+plot_with_globals(Tx_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Tx')
+plot_with_globals(Ty_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Ty')
+plot_with_globals(Tz_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Tz')
+plot_with_globals(Rx_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Rx')
+plot_with_globals(Ry_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Ry')
+plot_with_globals(Rz_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Rz')
+
+plot_with_globals(Tx_hmf, 'hmf_glob_z_vs_local_', legendlabels_hm_first, layers, z_glob_hmf, x_glob_hmf, 'Tx')
+plot_with_globals(Ty_hmf, 'hmf_glob_z_vs_local_', legendlabels_hm_first, layers, z_glob_hmf, x_glob_hmf, 'Ty')
+plot_with_globals(Tz_hmf, 'hmf_glob_z_vs_local_', legendlabels_hm_first, layers, z_glob_hmf, x_glob_hmf, 'Tz')
+plot_with_globals(Rx_hmf, 'hmf_glob_z_vs_local_', legendlabels_hm_first, layers, z_glob_hmf, x_glob_hmf, 'Rx')
+plot_with_globals(Ry_hmf, 'hmf_glob_z_vs_local_', legendlabels_hm_first, layers, z_glob_hmf, x_glob_hmf, 'Ry')
+plot_with_globals(Rz_hmf, 'hmf_glob_z_vs_local_', legendlabels_hm_first, layers, z_glob_hmf, x_glob_hmf, 'Rz')
+
 plot_with_globals(Tx_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Tx')
 plot_with_globals(Ty_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Ty')
 plot_with_globals(Tz_v1, 'v1_glob_z_vs_local_', legendlabels_v1, layers, z_glob_v1, x_glob_v1, 'Tz')
