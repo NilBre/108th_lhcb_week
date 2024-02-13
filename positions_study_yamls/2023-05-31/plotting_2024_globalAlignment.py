@@ -986,7 +986,7 @@ legendlabels_v3=[\
 files_both_det = [\
     f"{path}/retest_pink_giulia_conditions/Iter14/parsedlog.json",
     f"{path1}/pink_giulia/last_iter/parsedlog.json",
-    f"{path2}/diff_survey_giulia_pink/Iter29/parsedlog.json",
+    f"{path2}/diff_survey_giulia_pink/Iter29/parsedlog.json", # not converged
 ]
 legendlabels_both=[\
     "v1,pink,giulia condition,VELO+SciFi",
