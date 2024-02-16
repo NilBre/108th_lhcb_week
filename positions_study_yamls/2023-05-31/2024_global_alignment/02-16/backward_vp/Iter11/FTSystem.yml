@@ -1,0 +1,264 @@
+FTSystem: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X1HL0: !<!alignment>
+  position: [0.11070002568741542 * mm, 4.5639698640245165e-05 * mm, -6.902997913661338e-28 * mm]
+  rotation: [0 * rad, 1.726521663419736e-23 * rad, -0.0006206386224785875 * rad]
+T1X1HL1: !<!alignment>
+  position: [0.27865795020819706 * mm, 9.211236141158182e-05 * mm, 2.6416468912280242e-31 * mm]
+  rotation: [0 * rad, 1.4842959429875345e-24 * rad, -0.000865988000670261 * rad]
+T1X1HL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X1HL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X1HL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X1HL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1U: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1UHL0: !<!alignment>
+  position: [0.11070002568741542 * mm, 4.5639698640245185e-05 * mm, -6.902997913661338e-28 * mm]
+  rotation: [0 * rad, 1.726521663419736e-23 * rad, -0.0006206386224785875 * rad]
+T1UHL1: !<!alignment>
+  position: [0.27865795020819706 * mm, 9.211236141158179e-05 * mm, 2.6416468912280242e-31 * mm]
+  rotation: [0 * rad, 1.4842959429875345e-24 * rad, -0.000865988000670261 * rad]
+T1UHL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1UHL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1UHL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1UHL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1V: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1VHL0: !<!alignment>
+  position: [-0.2899958385830236 * mm, 7.890591777873038e-05 * mm, 1.4210854715202004e-14 * mm]
+  rotation: [0 * rad, 3.469228193340263e-26 * rad, -0.0004961153237215807 * rad]
+T1VHL1: !<!alignment>
+  position: [0.41985442406240797 * mm, 8.682854428147317e-05 * mm, 7.105427357600997e-15 * mm]
+  rotation: [0 * rad, -3.024972366864934e-23 * rad, -0.0007495415396709787 * rad]
+T1VHL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1VHL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1VHL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1VHL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X2HL0: !<!alignment>
+  position: [-0.2899958385830236 * mm, 7.890591777873038e-05 * mm, -1.4210854715202004e-14 * mm]
+  rotation: [0 * rad, 3.469228193340263e-26 * rad, -0.0004961153237215807 * rad]
+T1X2HL1: !<!alignment>
+  position: [0.41985442406240797 * mm, 8.682854428147298e-05 * mm, -7.105427357601007e-15 * mm]
+  rotation: [0 * rad, -3.024972366864934e-23 * rad, -0.0007495415396709787 * rad]
+T1X2HL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X2HL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X2HL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T1X2HL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X1HL0: !<!alignment>
+  position: [-0.26584647034440395 * mm, 0.00012742259158155872 * mm, 7.105427368131056e-15 * mm]
+  rotation: [0 * rad, -1.5801640119529157e-24 * rad, -0.0005423395313455797 * rad]
+T2X1HL1: !<!alignment>
+  position: [0.27800589770900275 * mm, 0.00010430214787726755 * mm, 3.0463429112270576e-24 * mm]
+  rotation: [0 * rad, 2.19331200185804e-24 * rad, -0.0007366761466750455 * rad]
+T2X1HL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X1HL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X1HL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X1HL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2U: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2UHL0: !<!alignment>
+  position: [-0.26584647034440395 * mm, 0.00012742259158155872 * mm, -7.105427347070948e-15 * mm]
+  rotation: [0 * rad, -1.5801640119529157e-24 * rad, -0.0005423395313455797 * rad]
+T2UHL1: !<!alignment>
+  position: [0.27800589770900275 * mm, 0.00010430214787726766 * mm, 3.0463429112270576e-24 * mm]
+  rotation: [0 * rad, 2.19331200185804e-24 * rad, -0.0007366761466750455 * rad]
+T2UHL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2UHL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2UHL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2UHL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2V: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2VHL0: !<!alignment>
+  position: [-0.47759922703233637 * mm, 0.00026670185834193057 * mm, 1.4210854711384827e-14 * mm]
+  rotation: [0 * rad, 6.3653507795119756e-24 * rad, -0.0006482374538631702 * rad]
+T2VHL1: !<!alignment>
+  position: [0.1698394559482501 * mm, 0.0001786269000080422 * mm, 7.105427357601002e-15 * mm]
+  rotation: [0 * rad, 2.5974835268692457e-24 * rad, -0.0007343226411253425 * rad]
+T2VHL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2VHL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2VHL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2VHL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X2HL0: !<!alignment>
+  position: [-0.4775992270323367 * mm, 0.0002667018583419307 * mm, -1.421085471901918e-14 * mm]
+  rotation: [0 * rad, 6.3653507795119756e-24 * rad, -0.0006482374538631702 * rad]
+T2X2HL1: !<!alignment>
+  position: [0.1698394559482501 * mm, 0.00017862690000804217 * mm, -7.105427357601002e-15 * mm]
+  rotation: [0 * rad, 2.5974835268692457e-24 * rad, -0.0007343226411253425 * rad]
+T2X2HL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X2HL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X2HL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T2X2HL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X1HL0: !<!alignment>
+  position: [-0.018841800134746407 * mm, 0.00013861692822747653 * mm, 2.424348021114801e-25 * mm]
+  rotation: [0 * rad, 3.9755589429297934e-23 * rad, -0.0006658441696516786 * rad]
+T3X1HL1: !<!alignment>
+  position: [0.5612604346315062 * mm, 8.132458081050865e-05 * mm, 2.1316282073109178e-14 * mm]
+  rotation: [0 * rad, -1.4823135595655321e-25 * rad, -0.000769055571485173 * rad]
+T3X1HL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X1HL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X1HL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X1HL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3U: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3UHL0: !<!alignment>
+  position: [-0.018841800134746484 * mm, 0.00013861692822747653 * mm, 2.4243480211148015e-25 * mm]
+  rotation: [0 * rad, 3.9755589429297934e-23 * rad, -0.0006658441696516786 * rad]
+T3UHL1: !<!alignment>
+  position: [0.5612604346315063 * mm, 8.13245808105087e-05 * mm, -2.1316282072496827e-14 * mm]
+  rotation: [0 * rad, -1.4823135595655321e-25 * rad, -0.000769055571485173 * rad]
+T3UHL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3UHL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3UHL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3UHL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3V: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3VHL0: !<!alignment>
+  position: [-0.14925228659564038 * mm, 0.00013358329213450322 * mm, 2.0331918862537262e-26 * mm]
+  rotation: [0 * rad, -3.160114436799163e-23 * rad, -0.000590038625808077 * rad]
+T3VHL1: !<!alignment>
+  position: [0.6176335132721358 * mm, 9.334628057445813e-05 * mm, 7.105427357481151e-15 * mm]
+  rotation: [0 * rad, 2.6181980573268278e-23 * rad, -0.0006259051224201476 * rad]
+T3VHL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3VHL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3VHL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3VHL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X2HL0: !<!alignment>
+  position: [-0.14925228659564038 * mm, 0.00013358329213450322 * mm, 2.0331918862537262e-26 * mm]
+  rotation: [0 * rad, -3.160114436799163e-23 * rad, -0.000590038625808077 * rad]
+T3X2HL1: !<!alignment>
+  position: [0.6176335132721358 * mm, 9.334628057445783e-05 * mm, -7.105427357720853e-15 * mm]
+  rotation: [0 * rad, 2.6181980573268278e-23 * rad, -0.0006259051224201476 * rad]
+T3X2HL0Q0: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X2HL1Q1: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X2HL0Q2: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]
+T3X2HL1Q3: !<!alignment>
+  position: [0.0, 0.0, 0.0]
+  rotation: [0.0, 0.0, 0.0]

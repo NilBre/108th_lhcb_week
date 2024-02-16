@@ -669,7 +669,7 @@ def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=F
     # new spacing
     # print('files:', files)
     path = '2024_global_alignment'
-    if files[0] == f'{path}/01-24/retest_pink_giulia_conditions/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_giulia_no_cframes/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_without_velo/Iter14/parsedlog.json' or files[0] == f"{path}/01-26/pink_giulia/last_iter/parsedlog.json" or files[0] == f"{path}/01-29/diff_survey_giulia_pink/Iter29/parsedlog.json" or files[0] == f"{path}/02-07/fhtl_FT_VP/Iter4/parsedlog.json" or files[0] == f"{path}/02-09/flth_cframes/parsedlog.json":
+    if files[0] == f'{path}/01-24/retest_pink_giulia_conditions/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_giulia_no_cframes/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_without_velo/Iter14/parsedlog.json' or files[0] == f"{path}/01-26/pink_giulia/last_iter/parsedlog.json" or files[0] == f"{path}/01-29/diff_survey_giulia_pink/Iter29/parsedlog.json" or files[0] == f"{path}/02-07/fhtl_FT_VP/Iter4/parsedlog.json" or files[0] == f"{path}/02-09/flth_cframes/parsedlog.json" or files[0] == f"{path}/02-16/backward_vp/Iter3/parsedlog.json":
         runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
                    "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
                    "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
@@ -1022,15 +1022,20 @@ legendlabels_hm_first = [\
 
 # 02-09 fixes for biljana meeting on 14th feb
 path4 = '2024_global_alignment/02-09'
+path5 = "2024_global_alignment/02-16"
 files_fixes = [\
     f"{path4}/flth_cframes/parsedlog.json",
     f"{path4}/flth_lagrange_T2/parsedlog.json",
     f"{path4}/flth_lagrange_T2_total/parsedlog.json",
+    # f"{path5}/backward_vp/Iter3/parsedlog.json",
+    # f"{path5}/backward_vp/Iter11/parsedlog.json"
 ]
 legendlabels_fixes = [\
     "c-frames: long+half",
     "c-frames: T2 lagrange",
     "c-frames: lagrange total pos",
+    # "c-frames: bw vp tracks",
+    # "c-frames: bw vp_tracks, iter11",
 ]
 
 survey_module_positions = 'survey/survey_Modules.yml'
