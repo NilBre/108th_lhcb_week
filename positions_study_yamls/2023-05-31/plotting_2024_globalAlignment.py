@@ -22,6 +22,8 @@ from mpl_toolkits.axes_grid1 import AxesGrid
 from scipy.stats import sem
 from matplotlib.patches import Rectangle
 
+matplotlib.rcParams['figure.figsize'] = [7.5, 5]
+
 regex_typelabel=re.compile("Q")
 regex_amodule=re.compile("dPosXYZ")
 regex_rmodule=re.compile("dRotXYZ")
@@ -391,7 +393,8 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
             for layer in range(total_layer_num):
                 x_means[run].append(np.mean(x_shifted[layer][run]))
     # change from json  order (U, V, X1, X2) to physical (X1, U, V, X2)
-    if y_axis == 'Ty':
+#    if y_axis == 'Ty':
+    if y_axis in ["Tx", "Ty", "Tz"]:    
         correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
         for runs in range(total_num_runs):
             correct_x_order = [x_means[runs][iter] for iter in correct_order]
@@ -418,7 +421,7 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
             if plt.grid(True):
                 plt.grid()
             plt.legend(loc='best')
-            plt.ylabel(f'mean {y_axis} module position [mm]')
+            plt.ylabel(f'mean {y_axis} module position [rad]')
             plt.title(f'mean position of layers in {y_axis} vs. global z position')
             plt.xticks(z_positions, ['T1U', 'T1V', 'T1X1', 'T1X2', 'T2U', 'T2V', 'T2X1', 'T2X2', 'T3U', 'T3V', 'T3X1', 'T3X2'], rotation=45, fontsize=10)
         plt.savefig(f'{outname_prefix}/{outfiles}' + 'all_runs_' + outname + f'{y_axis}.pdf')
@@ -1022,19 +1025,24 @@ legendlabels_hm_first = [\
 
 # 02-09 fixes for biljana meeting on 14th feb
 path4 = '2024_global_alignment/02-09'
-path5 = "2024_global_alignment/02-16"
+path5 = "2024_global_alignment/02-13"
+path6 = "2024_global_alignment/02-16"
 files_fixes = [\
     f"{path4}/flth_cframes/parsedlog.json",
-    f"{path4}/flth_lagrange_T2/parsedlog.json",
-    f"{path4}/flth_lagrange_T2_total/parsedlog.json",
-    # f"{path5}/backward_vp/Iter3/parsedlog.json",
-    # f"{path5}/backward_vp/Iter11/parsedlog.json"
+    # f"{path4}/flth_lagrange_T2/parsedlog.json",
+    # f"{path4}/flth_lagrange_T2_total/parsedlog.json",
+    f"{path5}/outer_inner/parsedlog.json",
+    # f"{path6}/only_T1/parsedlog.json",
+    f"{path6}/backward_vp/Iter3/parsedlog.json",
+    # f"{path6}/backward_vp/Iter11/parsedlog.json"
 ]
 legendlabels_fixes = [\
     "c-frames: long+half",
-    "c-frames: T2 lagrange",
-    "c-frames: lagrange total pos",
-    # "c-frames: bw vp tracks",
+    # "c-frames: T2 lagrange",
+    # "c-frames: lagrange total pos",
+    "c-frames: outer-inner lagrange T2",
+    # "c-frames: outer-inner lagrange T1",
+    "c-frames: bw vp tracks",
     # "c-frames: bw vp_tracks, iter11",
 ]
 
