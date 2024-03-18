@@ -655,103 +655,88 @@ def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=F
     T3X2_PosRot_yml = [[] for _ in range(num_files)]
     T3X2_PosRot = [[] for _ in range(num_files)]
 
-    runs_T1 = ["FT/T1UHL0/Q0M0", "FT/T1UHL0/Q0M1", "FT/T1UHL0/Q0M2", "FT/T1UHL0/Q0M3", "FT/T1UHL0/Q0M4",
-               "FT/T1UHL0/Q2M0", "FT/T1UHL0/Q2M1", "FT/T1UHL0/Q2M2", "FT/T1UHL0/Q2M3", "FT/T1UHL0/Q2M4",
-               "FT/T1UHL1/Q1M0", "FT/T1UHL1/Q1M1", "FT/T1UHL1/Q1M2", "FT/T1UHL1/Q1M3", "FT/T1UHL1/Q1M4",
-               "FT/T1UHL1/Q3M0", "FT/T1UHL1/Q3M1", "FT/T1UHL1/Q3M2", "FT/T1UHL1/Q3M3", "FT/T1UHL1/Q3M4"]
+    runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
+               "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+               "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+               "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
 
-    runs_T2 = ["FT/T2UHL0/Q0M0", "FT/T2UHL0/Q0M1", "FT/T2UHL0/Q0M2", "FT/T2UHL0/Q0M3", "FT/T2UHL0/Q0M4",
-               "FT/T2UHL0/Q2M0", "FT/T2UHL0/Q2M1", "FT/T2UHL0/Q2M2", "FT/T2UHL0/Q2M3", "FT/T2UHL0/Q2M4",
-               "FT/T2UHL1/Q1M0", "FT/T2UHL1/Q1M1", "FT/T2UHL1/Q1M2", "FT/T2UHL1/Q1M3", "FT/T2UHL1/Q1M4",
-               "FT/T2UHL1/Q3M0", "FT/T2UHL1/Q3M1", "FT/T2UHL1/Q3M2", "FT/T2UHL1/Q3M3", "FT/T2UHL1/Q3M4"]
+    runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
+               "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+               "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+               "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
 
-    runs = ["FT/T3UHL0/Q0M0", "FT/T3UHL0/Q0M1", "FT/T3UHL0/Q0M2", "FT/T3UHL0/Q0M3", "FT/T3UHL0/Q0M4",
-            "FT/T3UHL0/Q2M0", "FT/T3UHL0/Q2M1", "FT/T3UHL0/Q2M2", "FT/T3UHL0/Q2M3", "FT/T3UHL0/Q2M4",
-            "FT/T3UHL1/Q1M0", "FT/T3UHL1/Q1M1", "FT/T3UHL1/Q1M2", "FT/T3UHL1/Q1M3", "FT/T3UHL1/Q1M4",
-            "FT/T3UHL1/Q3M0", "FT/T3UHL1/Q3M1", "FT/T3UHL1/Q3M2", "FT/T3UHL1/Q3M3", "FT/T3UHL1/Q3M4"]
-    # new spacing
-    # print('files:', files)
+    runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
+            "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+            "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+            "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
+
     path = '2024_global_alignment'
-    if files[0] == f'{path}/01-24/retest_pink_giulia_conditions/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_giulia_no_cframes/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_without_velo/Iter14/parsedlog.json' or files[0] == f"{path}/01-26/pink_giulia/last_iter/parsedlog.json" or files[0] == f"{path}/01-29/diff_survey_giulia_pink/Iter29/parsedlog.json" or files[0] == f"{path}/02-07/fhtl_FT_VP/Iter4/parsedlog.json" or files[0] == f"{path}/02-09/flth_cframes/parsedlog.json" or files[0] == f"{path}/02-16/backward_vp/Iter3/parsedlog.json":
-        runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
-                   "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
-                   "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
-                   "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
-
-        runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
-                   "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
-                   "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
-                   "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
-
-        runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
-                "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
-                "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
-                "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
-        # if withLongModules == True and withCFrames == False:
-        #     print('withLongModules == True and withCFrames == False')
-        #     runs_T1 = ['FT/T1/U/HL0/M0', 'FT/T1/U/HL0/M1', 'FT/T1/U/HL0/M2', 'FT/T1/U/HL0/M3', 'FT/T1/U/HL0/M4',
-        #                'FT/T1/U/HL1/M0', 'FT/T1/U/HL1/M1', 'FT/T1/U/HL1/M2', 'FT/T1/U/HL1/M3', 'FT/T1/U/HL1/M4']
-        #     runs_T2 = ['FT/T2/U/HL0/M0', 'FT/T2/U/HL0/M1', 'FT/T2/U/HL0/M2', 'FT/T2/U/HL0/M3', 'FT/T2/U/HL0/M4',
-        #                'FT/T2/U/HL1/M0', 'FT/T2/U/HL1/M1', 'FT/T2/U/HL1/M2', 'FT/T2/U/HL1/M3', 'FT/T2/U/HL1/M4']
-        #     runs = ['FT/T3/U/HL0/M0', 'FT/T3/U/HL0/M1', 'FT/T3/U/HL0/M2', 'FT/T3/U/HL0/M3', 'FT/T3/U/HL0/M4', # , 'FT/T3/U/HL0/M5'
-        #             'FT/T3/U/HL1/M0', 'FT/T3/U/HL1/M1', 'FT/T3/U/HL1/M2', 'FT/T3/U/HL1/M3', 'FT/T3/U/HL1/M4'] # , 'FT/T3/U/HL0/M5'
-        # if withLongModules == False and withCFrames == False:
-        #     print('withLongModules == False and withCFrames == False')
-        #     runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
-        #                "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
-        #                "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
-        #                "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
-        #
-        #     runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
-        #                "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
-        #                "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
-        #                "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
-        #
-        #     runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
-        #             "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
-        #             "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
-        #             "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
-        # if withLongModules == False and withCFrames == True:
-        #     print('withLongModules == False and withCFrames == True')
-        #     runs_T1 = ['FT/T1/X1U/HL0', "FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
-        #                'FT/T1/X1U/HL1', "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
-        #                'FT/T1/VX2/HL0', "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
-        #                'FT/T1/VX2/HL1', "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
-        #
-        #     runs_T2 = ['FT/T2/X1U/HL0', "FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
-        #                'FT/T2/X1U/HL1', "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
-        #                'FT/T2/VX2/HL0', "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
-        #                'FT/T2/VX2/HL1', "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
-        #
-        #     runs = ['FT/T3/X1U/HL0', "FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
-        #             'FT/T3/X1U/HL1', "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
-        #             'FT/T3/VX2/HL0', "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
-        #             'FT/T3/VX2/HL1', "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
-        # if withLongModules == True and withCFrames == True:
-        #     print('withLongModules == True and withCFrames == True')
-        #     runs_T1 = ['FT/T1/X1U/HL0', 'FT/T1/X1U/HL1', 'FT/T1/VX2/HL0', 'FT/T1/VX2/HL1',
-        #                'FT/T1/U/HL0/M0', 'FT/T1/U/HL0/M1', 'FT/T1/U/HL0/M2', 'FT/T1/U/HL0/M3', 'FT/T1/U/HL0/M4',
-        #                'FT/T1/U/HL1/M0', 'FT/T1/U/HL1/M1', 'FT/T1/U/HL1/M2', 'FT/T1/U/HL1/M3', 'FT/T1/U/HL1/M4',
-        #                "FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
-        #                "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
-        #                "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
-        #                "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
-        #
-        #     runs_T2 = ['FT/T2/X1U/HL0', 'FT/T2/X1U/HL1', 'FT/T2/VX2/HL0', 'FT/T2/VX2/HL1',
-        #                'FT/T2/U/HL0/M0', 'FT/T2/U/HL0/M1', 'FT/T2/U/HL0/M2', 'FT/T2/U/HL0/M3', 'FT/T2/U/HL0/M4',
-        #                'FT/T2/U/HL1/M0', 'FT/T2/U/HL1/M1', 'FT/T2/U/HL1/M2', 'FT/T2/U/HL1/M3', 'FT/T2/U/HL1/M4',
-        #                "FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
-        #                "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
-        #                "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
-        #                "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
-        #
-        #     runs = ['FT/T3/X1U/HL0', 'FT/T3/X1U/HL1', 'FT/T3/VX2/HL0', 'FT/T3/VX2/HL1',
-        #             'FT/T3/U/HL0/M0', 'FT/T3/U/HL0/M1', 'FT/T3/U/HL0/M2', 'FT/T3/U/HL0/M3', 'FT/T3/U/HL0/M4',
-        #             'FT/T3/U/HL1/M0', 'FT/T3/U/HL1/M1', 'FT/T3/U/HL1/M2', 'FT/T3/U/HL1/M3', 'FT/T3/U/HL1/M4',
-        #             "FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
-        #             "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
-        #             "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
-        #             "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
+    # if files[0] == f'{path}/01-24/retest_pink_giulia_conditions/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_giulia_no_cframes/Iter14/parsedlog.json' or files[0] == f'{path}/01-24/retest_pink_without_velo/Iter14/parsedlog.json' or files[0] == f"{path}/01-26/pink_giulia/last_iter/parsedlog.json" or files[0] == f"{path}/01-29/diff_survey_giulia_pink/Iter29/parsedlog.json" or files[0] == f"{path}/02-07/fhtl_FT_VP/Iter4/parsedlog.json" or files[0] == f"{path}/02-09/flth_cframes/parsedlog.json" or files[0] == f"{path}/02-16/backward_vp/Iter3/parsedlog.json" or files[0] == f"{path}/02-28/v1_1/Iter9/parsedlog.json":
+    # if withLongModules == True and withCFrames == False:
+        # print('withLongModules == True and withCFrames == False')
+        # runs_T1 = ['FT/T1/U/HL0/M0', 'FT/T1/U/HL0/M1', 'FT/T1/U/HL0/M2', 'FT/T1/U/HL0/M3', 'FT/T1/U/HL0/M4',
+                #    'FT/T1/U/HL1/M0', 'FT/T1/U/HL1/M1', 'FT/T1/U/HL1/M2', 'FT/T1/U/HL1/M3', 'FT/T1/U/HL1/M4']
+        # runs_T2 = ['FT/T2/U/HL0/M0', 'FT/T2/U/HL0/M1', 'FT/T2/U/HL0/M2', 'FT/T2/U/HL0/M3', 'FT/T2/U/HL0/M4',
+                #    'FT/T2/U/HL1/M0', 'FT/T2/U/HL1/M1', 'FT/T2/U/HL1/M2', 'FT/T2/U/HL1/M3', 'FT/T2/U/HL1/M4']
+        # runs = ['FT/T3/U/HL0/M0', 'FT/T3/U/HL0/M1', 'FT/T3/U/HL0/M2', 'FT/T3/U/HL0/M3', 'FT/T3/U/HL0/M4', # , 'FT/T3/U/HL0/M5'
+                # 'FT/T3/U/HL1/M0', 'FT/T3/U/HL1/M1', 'FT/T3/U/HL1/M2', 'FT/T3/U/HL1/M3', 'FT/T3/U/HL1/M4'] # , 'FT/T3/U/HL0/M5'
+    # if withLongModules == False and withCFrames == False:
+        # print('withLongModules == False and withCFrames == False')
+        # runs_T1 = ["FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
+                #    "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+                #    "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+                #    "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
+    # 
+        # runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
+                #    "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+                #    "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+                #    "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
+    # 
+        # runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
+                # "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+                # "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+                # "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
+    # if withLongModules == False and withCFrames == True:
+        # print('withLongModules == False and withCFrames == True')
+        # runs_T1 = ['FT/T1/X1U/HL0', "FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
+                #    'FT/T1/X1U/HL1', "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+                #    'FT/T1/VX2/HL0', "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+                #    'FT/T1/VX2/HL1', "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
+    # 
+        # runs_T2 = ['FT/T2/X1U/HL0', "FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
+                #    'FT/T2/X1U/HL1', "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+                #    'FT/T2/VX2/HL0', "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+                #    'FT/T2/VX2/HL1', "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
+    # 
+        # runs = ['FT/T3/X1U/HL0', "FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
+                # 'FT/T3/X1U/HL1', "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+                # 'FT/T3/VX2/HL0', "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+                # 'FT/T3/VX2/HL1', "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
+    # if withLongModules == True and withCFrames == True:
+        # print('withLongModules == True and withCFrames == True')
+        # runs_T1 = ['FT/T1/X1U/HL0', 'FT/T1/X1U/HL1', 'FT/T1/VX2/HL0', 'FT/T1/VX2/HL1',
+                #    'FT/T1/U/HL0/M0', 'FT/T1/U/HL0/M1', 'FT/T1/U/HL0/M2', 'FT/T1/U/HL0/M3', 'FT/T1/U/HL0/M4',
+                #    'FT/T1/U/HL1/M0', 'FT/T1/U/HL1/M1', 'FT/T1/U/HL1/M2', 'FT/T1/U/HL1/M3', 'FT/T1/U/HL1/M4',
+                #    "FT/T1/U/HL0/Q0/M0", "FT/T1/U/HL0/Q0/M1", "FT/T1/U/HL0/Q0/M2", "FT/T1/U/HL0/Q0/M3", "FT/T1/U/HL0/Q0/M4",
+                #    "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
+                #    "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
+                #    "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
+    # 
+        # runs_T2 = ['FT/T2/X1U/HL0', 'FT/T2/X1U/HL1', 'FT/T2/VX2/HL0', 'FT/T2/VX2/HL1',
+                #    'FT/T2/U/HL0/M0', 'FT/T2/U/HL0/M1', 'FT/T2/U/HL0/M2', 'FT/T2/U/HL0/M3', 'FT/T2/U/HL0/M4',
+                #    'FT/T2/U/HL1/M0', 'FT/T2/U/HL1/M1', 'FT/T2/U/HL1/M2', 'FT/T2/U/HL1/M3', 'FT/T2/U/HL1/M4',
+                #    "FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
+                #    "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
+                #    "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
+                #    "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
+    # 
+        # runs = ['FT/T3/X1U/HL0', 'FT/T3/X1U/HL1', 'FT/T3/VX2/HL0', 'FT/T3/VX2/HL1',
+                # 'FT/T3/U/HL0/M0', 'FT/T3/U/HL0/M1', 'FT/T3/U/HL0/M2', 'FT/T3/U/HL0/M3', 'FT/T3/U/HL0/M4',
+                # 'FT/T3/U/HL1/M0', 'FT/T3/U/HL1/M1', 'FT/T3/U/HL1/M2', 'FT/T3/U/HL1/M3', 'FT/T3/U/HL1/M4',
+                # "FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
+                # "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
+                # "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
+                # "FT/T3/U/HL1/Q3/M0", "FT/T3/U/HL1/Q3/M1", "FT/T3/U/HL1/Q3/M2", "FT/T3/U/HL1/Q3/M3", "FT/T3/U/HL1/Q3/M4"]
     for file in files:
         x = list(range(len(runs)))
         for j in range(0,len(stations)): # 0 - 3
@@ -1027,6 +1012,8 @@ legendlabels_hm_first = [\
 path4 = '2024_global_alignment/02-09'
 path5 = "2024_global_alignment/02-13"
 path6 = "2024_global_alignment/02-16"
+path7 = "retest_uncertainty/input_txt/loose_particles/global_alignment_files/2023-11-07/v1_veloRx"
+path8 = "2024_global_alignment/01-31-debug_convergence/"
 files_fixes = [\
     f"{path4}/flth_cframes/parsedlog.json",
     # f"{path4}/flth_lagrange_T2/parsedlog.json",
@@ -1034,6 +1021,8 @@ files_fixes = [\
     f"{path5}/outer_inner/parsedlog.json",
     # f"{path6}/only_T1/parsedlog.json",
     f"{path6}/backward_vp/Iter3/parsedlog.json",
+    f"{path7}/parsedlog.json",
+    # f"{path8}/parsedlog.json"
     # f"{path6}/backward_vp/Iter11/parsedlog.json"
 ]
 legendlabels_fixes = [\
@@ -1043,7 +1032,52 @@ legendlabels_fixes = [\
     "c-frames: outer-inner lagrange T2",
     # "c-frames: outer-inner lagrange T1",
     "c-frames: bw vp tracks",
+    "SF HM + fullVP Rx + VPHalves TxTyTzRy",
+    # "SciFi only, HM TxRz"
     # "c-frames: bw vp_tracks, iter11",
+]
+
+# here: new input from wouter with Rx tests
+path_rx = "2024_global_alignment/02-28"
+files_Rx_test = [\
+    f"{path_rx}/v1_1/Iter9/parsedlog.json",
+    f"{path_rx}/v1_2/Iter9/parsedlog.json",
+    f"{path_rx}/v1_3/Iter9/parsedlog.json",
+]
+
+legendlabels_rx = [\
+    'v1_1',
+    'v1_2',
+    'v1_3',
+]
+
+# Halfmodules TxRz(Rx forv2_3 and v3_3)
+path_mar = "2024_global_alignment/03-13"
+path_mar2 = "2024_global_alignment/03-14"
+path_mar3 = "2024_global_alignment/03-15"
+# iD = in Depth
+files_iD = [\
+    f"{path_mar}/v2_2/parsedlog.json",
+    f"{path_mar}/v2_3/parsedlog.json",
+    f"{path_mar2}/v3_2/parsedlog.json",
+    f"{path_mar2}/v3_3/parsedlog.json",
+    f"{path_mar2}/0_0002/v1_2/parsedlog.json",
+    f"{path_mar2}/0_0002/v1_3/parsedlog.json",
+    f"{path_mar3}/v1_2/parsedlog.json",
+    f"{path_mar3}/v1_3/parsedlog.json",
+    f"{path_mar3}/0_01/v1_2/parsedlog.json",
+]
+
+legendlabels_iD = [\
+    '0.0001, VELO Rx, Giulia_starting conds',
+    '0.0001, VELO Rx, Giulia_starting conds',
+    '0.0001, VELO Rx, all0 conds',
+    '0.0001, VELO Rx, all0 conds',
+    '0.0002 VELO Rx, no SciFi Rx',
+    '0.0002 VELO Rx, with SciFi Rx',
+    '0.001 VELO Rx, no SciFi Rx',
+    '0.001 VELO Rx, with SciFi Rx',
+    '0.01 VELO Rx, with SciFi Ry',
 ]
 
 survey_module_positions = 'survey/survey_Modules.yml'
@@ -1063,6 +1097,34 @@ align_outputs_both = make_outfiles(files_both_det, red_blue_vars)
 align_outputs_scifi = make_outfiles(files_scifi, red_blue_vars)
 align_outputs_hmf = make_outfiles(files_hm_first, red_blue_vars)
 align_outputs_fixes = make_outfiles(files_fixes, red_blue_vars)
+align_outputs_rx = make_outfiles(files_Rx_test, red_blue_vars)
+align_outputs_iD = make_outfiles(files_iD, red_blue_vars)
+
+# inDepth
+Tx_iD      = align_outputs_iD[0]
+Ty_iD      = align_outputs_iD[1]
+Tz_iD      = align_outputs_iD[2]
+Rx_iD      = align_outputs_iD[3]
+Ry_iD      = align_outputs_iD[4]
+Rz_iD      = align_outputs_iD[5]
+nHits_iD   = align_outputs_iD[6]
+nTracks_iD = align_outputs_iD[7]
+x_glob_iD  = align_outputs_iD[8]
+y_glob_iD  = align_outputs_iD[9]
+z_glob_iD  = align_outputs_iD[10]
+
+# rx test
+Tx_rx      = align_outputs_rx[0]
+Ty_rx      = align_outputs_rx[1]
+Tz_rx      = align_outputs_rx[2]
+Rx_rx      = align_outputs_rx[3]
+Ry_rx      = align_outputs_rx[4]
+Rz_rx      = align_outputs_rx[5]
+nHits_rx   = align_outputs_rx[6]
+nTracks_rx = align_outputs_rx[7]
+x_glob_rx  = align_outputs_rx[8]
+y_glob_rx  = align_outputs_rx[9]
+z_glob_rx  = align_outputs_rx[10]
 
 # fixes
 Tx_fix      = align_outputs_fixes[0]
@@ -1151,6 +1213,26 @@ y_glob_scifi  = align_outputs_scifi[9]
 z_glob_scifi  = align_outputs_scifi[10]
 
 for n in range(12):
+    Tx_data_iD = Tx_iD[n]
+    Ty_data_iD = Ty_iD[n]
+    Tz_data_iD = Tz_iD[n]
+    Rx_data_iD = Rx_iD[n]
+    Ry_data_iD = Ry_iD[n]
+    Rz_data_iD = Rz_iD[n]
+    x_g_iD = x_glob_iD[n]
+    y_g_iD = y_glob_iD[n]
+    z_g_iD = z_glob_iD[n]
+
+    Tx_data_rx = Tx_rx[n]
+    Ty_data_rx = Ty_rx[n]
+    Tz_data_rx = Tz_rx[n]
+    Rx_data_rx = Rx_rx[n]
+    Ry_data_rx = Ry_rx[n]
+    Rz_data_rx = Rz_rx[n]
+    x_g_rx = x_glob_rx[n]
+    y_g_rx = y_glob_rx[n]
+    z_g_rx = z_glob_rx[n]
+
     Tx_data_fix = Tx_fix[n]
     Ty_data_fix = Ty_fix[n]
     Tz_data_fix = Tz_fix[n]
@@ -1220,6 +1302,7 @@ for n in range(12):
     x_g_scifi = x_glob_scifi[n]
     y_g_scifi = y_glob_scifi[n]
     z_g_scifi = z_glob_scifi[n]
+
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'global', 'v1_x_vs_z')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'global', 'v2_x_vs_z')
     plot_x_y_constants(x_g_v3, y_g_v3, Tx_data_v3, Ty_data_v3, legendlabels_v3, layers[n], 'quarter', 'global', 'v3_x_vs_z')
@@ -1227,6 +1310,8 @@ for n in range(12):
     plot_x_y_constants(x_g_scifi, y_g_scifi, Tx_data_scifi, Ty_data_scifi, legendlabels_scifi, layers[n], 'quarter', 'global', 'scifi_x_vs_z')
     plot_x_y_constants(x_g_hmf, y_g_hmf, Tx_data_hmf, Ty_data_hmf, legendlabels_hm_first, layers[n], 'quarter', 'global', 'hmf_x_vs_z')
     plot_x_y_constants(x_g_fix, y_g_fix, Tx_data_fix, Ty_data_fix, legendlabels_fixes, layers[n], 'quarter', 'global', 'fix_x_vs_z')
+    plot_x_y_constants(x_g_rx, y_g_rx, Tx_data_rx, Ty_data_rx, legendlabels_rx, layers[n], 'quarter', 'global', 'rx_x_vs_z')
+    plot_x_y_constants(x_g_iD, y_g_iD, Tx_data_iD, Ty_data_iD, legendlabels_iD, layers[n], 'quarter', 'global', 'iD_x_vs_z')
 
     plot_x_y_constants(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'quarter', 'local', 'v1_x_vs_y_local')
     plot_x_y_constants(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'quarter', 'local', 'v2_x_vs_y_local')
@@ -1234,7 +1319,9 @@ for n in range(12):
     plot_x_y_constants(x_g_both, y_g_both, Tx_data_both, Ty_data_both, legendlabels_both, layers[n], 'quarter', 'local', 'both_x_vs_z_local')
     plot_x_y_constants(x_g_scifi, y_g_scifi, Tx_data_scifi, Ty_data_scifi, legendlabels_scifi, layers[n], 'quarter', 'local', 'scifi_x_vs_z_local')
     plot_x_y_constants(x_g_hmf, y_g_hmf, Tx_data_hmf, Ty_data_hmf, legendlabels_hm_first, layers[n], 'quarter', 'local', 'hmf_x_vs_z_local')
-    plot_x_y_constants(x_g_fix, y_g_fix, Tx_data_fix, Ty_data_fix, legendlabels_fixes, layers[n], 'quarter', 'local', 'fix_x_vs_z')
+    plot_x_y_constants(x_g_fix, y_g_fix, Tx_data_fix, Ty_data_fix, legendlabels_fixes, layers[n], 'quarter', 'local', 'fix_x_vs_z_local')
+    plot_x_y_constants(x_g_rx, y_g_rx, Tx_data_rx, Ty_data_rx, legendlabels_rx, layers[n], 'quarter', 'local', 'rx_x_vs_z_local')
+    plot_x_y_constants(x_g_iD, y_g_iD, Tx_data_iD, Ty_data_iD, legendlabels_iD, layers[n], 'quarter', 'local', 'iD_x_vs_z_local')
 
     check_module_edges(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align')
     check_module_edges(x_g_v2, y_g_v2, Tx_data_v2, Ty_data_v2, legendlabels_v2, layers[n], 'layer', 'global', Rx_data_v2, 'v2_global_align')
@@ -1243,6 +1330,9 @@ for n in range(12):
     check_module_edges(x_g_scifi, y_g_scifi, Tx_data_scifi, Ty_data_scifi, legendlabels_scifi, layers[n], 'layer', 'global', Rx_data_scifi, 'scifi_global_align')
     check_module_edges(x_g_hmf, y_g_hmf, Tx_data_hmf, Ty_data_hmf, legendlabels_hm_first, layers[n], 'layer', 'global', Rx_data_hmf, 'hmf_global_align')
     check_module_edges(x_g_fix, y_g_fix, Tx_data_fix, Ty_data_fix, legendlabels_fixes, layers[n], 'layer', 'global', Rx_data_fix, 'fix_global_align')
+    check_module_edges(x_g_rx, y_g_rx, Tx_data_rx, Ty_data_rx, legendlabels_rx, layers[n], 'layer', 'global', Rx_data_rx, 'rx_global_align')
+    check_module_edges(x_g_iD, y_g_iD, Tx_data_iD, Ty_data_iD, legendlabels_iD, layers[n], 'layer', 'global', Rx_data_iD, 'iD_global_align')
+
     # do it for each individual datafile
     # all files
 #    make_edges_plot(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align', 'all')
@@ -1250,6 +1340,20 @@ for n in range(12):
 #    make_edges_plot(x_g_v1, y_g_v1, Tx_data_v1, Ty_data_v1, legendlabels_v1, layers[n], 'layer', 'global', Rx_data_v1, 'v1_global_align', 'individual')
     # global plot for TxTzRxRz for 10 mu vs TxRz
     # make_3D_constants(tx_compxy, ty_compxy, tz_compxy, glob_x_compxy, glob_y_compxy, glob_z_compxy, labels_xy, layers[n])
+plot_with_globals(Tx_iD, 'iD_glob_z_vs_local_', legendlabels_iD, layers, z_glob_iD, x_glob_iD, 'Tx')
+plot_with_globals(Ty_iD, 'iD_glob_z_vs_local_', legendlabels_iD, layers, z_glob_iD, x_glob_iD, 'Ty')
+plot_with_globals(Tz_iD, 'iD_glob_z_vs_local_', legendlabels_iD, layers, z_glob_iD, x_glob_iD, 'Tz')
+plot_with_globals(Rx_iD, 'iD_glob_z_vs_local_', legendlabels_iD, layers, z_glob_iD, x_glob_iD, 'Rx')
+plot_with_globals(Ry_iD, 'iD_glob_z_vs_local_', legendlabels_iD, layers, z_glob_iD, x_glob_iD, 'Ry')
+plot_with_globals(Rz_iD, 'iD_glob_z_vs_local_', legendlabels_iD, layers, z_glob_iD, x_glob_iD, 'Rz')
+
+plot_with_globals(Tx_rx, 'rx_glob_z_vs_local_', legendlabels_rx, layers, z_glob_rx, x_glob_rx, 'Tx')
+plot_with_globals(Ty_rx, 'rx_glob_z_vs_local_', legendlabels_rx, layers, z_glob_rx, x_glob_rx, 'Ty')
+plot_with_globals(Tz_rx, 'rx_glob_z_vs_local_', legendlabels_rx, layers, z_glob_rx, x_glob_rx, 'Tz')
+plot_with_globals(Rx_rx, 'rx_glob_z_vs_local_', legendlabels_rx, layers, z_glob_rx, x_glob_rx, 'Rx')
+plot_with_globals(Ry_rx, 'rx_glob_z_vs_local_', legendlabels_rx, layers, z_glob_rx, x_glob_rx, 'Ry')
+plot_with_globals(Rz_rx, 'rx_glob_z_vs_local_', legendlabels_rx, layers, z_glob_rx, x_glob_rx, 'Rz')
+
 plot_with_globals(Tx_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Tx')
 plot_with_globals(Ty_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Ty')
 plot_with_globals(Tz_fix, 'fix_glob_z_vs_local_', legendlabels_fixes, layers, z_glob_fix, x_glob_fix, 'Tz')
