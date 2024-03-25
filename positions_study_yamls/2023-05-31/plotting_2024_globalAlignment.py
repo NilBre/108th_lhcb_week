@@ -1039,45 +1039,58 @@ legendlabels_fixes = [\
 
 # here: new input from wouter with Rx tests
 path_rx = "2024_global_alignment/02-28"
-files_Rx_test = [\
-    f"{path_rx}/v1_1/Iter9/parsedlog.json",
-    f"{path_rx}/v1_2/Iter9/parsedlog.json",
-    f"{path_rx}/v1_3/Iter9/parsedlog.json",
-]
-
-legendlabels_rx = [\
-    'v1_1',
-    'v1_2',
-    'v1_3',
-]
-
-# Halfmodules TxRz(Rx forv2_3 and v3_3)
 path_mar = "2024_global_alignment/03-13"
 path_mar2 = "2024_global_alignment/03-14"
 path_mar3 = "2024_global_alignment/03-15"
-# iD = in Depth
-files_iD = [\
-    f"{path_mar}/v2_2/parsedlog.json",
-    f"{path_mar}/v2_3/parsedlog.json",
-    f"{path_mar2}/v3_2/parsedlog.json",
+path_mar4 = "2024_global_alignment/03-18"
+files_Rx_test = [\
+#    f"{path_rx}/v1_2/Iter9/parsedlog.json",
+    # f"{path_rx}/v1_3/Iter9/parsedlog.json",
+#    f"{path_mar3}/v1_2/parsedlog.json",
+    # f"{path_mar3}/v1_3/parsedlog.json",
+    # f"{path_mar}/v2_3/parsedlog.json",
     f"{path_mar2}/v3_3/parsedlog.json",
-    f"{path_mar2}/0_0002/v1_2/parsedlog.json",
-    f"{path_mar2}/0_0002/v1_3/parsedlog.json",
-    f"{path_mar3}/v1_2/parsedlog.json",
-    f"{path_mar3}/v1_3/parsedlog.json",
+    f"{path_mar4}/0_01/v1_2/parsedlog.json",
+    f"{path_mar4}/0_01/v1_3/parsedlog.json",
     f"{path_mar3}/0_01/v1_2/parsedlog.json",
 ]
 
+legendlabels_rx = [\
+#    'v1_2',
+    # 'v1_3',
+#    '0.001 VELO Rx, no SciFi Rx',
+    # '0.001 VELO Rx, SciFi TxRxRz',
+    # '0.0001, VELO Rx, Giulia_starting conds',
+    '0.0001, VELO Rx, all0 conds',
+    '0.01 VELO Rx, SciFi TxRz',
+    '0.01 VELO Rx, SciFi TxRxRz',
+    '0.01 VELO Rx, SciFi TxRxRyRz',
+]
+
+# Halfmodules TxRz(Rx forv2_3 and v3_3)
+# iD = in Depth
+files_iD = [\
+#    f"{path_mar}/v2_2/parsedlog.json",
+    f"{path_mar}/v2_2/parsedlog.json",
+#    f"{path_mar2}/v3_2/parsedlog.json",
+    f"{path_mar2}/v3_2/parsedlog.json",
+#    f"{path_mar2}/0_0002/v1_2/parsedlog.json",
+#    f"{path_mar2}/0_0002/v1_3/parsedlog.json",
+#    f"{path_mar3}/v1_2/parsedlog.json",
+    # f"{path_mar3}/v1_3/parsedlog.json",
+    # f"{path_mar3}/0_01/v1_2/parsedlog.json",
+]
+
 legendlabels_iD = [\
-    '0.0001, VELO Rx, Giulia_starting conds',
-    '0.0001, VELO Rx, Giulia_starting conds',
+#    '0.0001, VELO Rx, Giulia_starting conds',
+    '0.0001, VELO Rx, SciFi tag conds',
+#    '0.0001, VELO Rx, all0 conds',
     '0.0001, VELO Rx, all0 conds',
-    '0.0001, VELO Rx, all0 conds',
-    '0.0002 VELO Rx, no SciFi Rx',
-    '0.0002 VELO Rx, with SciFi Rx',
-    '0.001 VELO Rx, no SciFi Rx',
-    '0.001 VELO Rx, with SciFi Rx',
-    '0.01 VELO Rx, with SciFi Ry',
+#    '0.0002 VELO Rx, no SciFi Rx',
+#    '0.0002 VELO Rx, with SciFi Rx',
+#    '0.001 VELO Rx, no SciFi Rx',
+    # '0.001 VELO Rx, with SciFi Rx',
+    # '0.01 VELO Rx, with SciFi Ry',
 ]
 
 survey_module_positions = 'survey/survey_Modules.yml'
