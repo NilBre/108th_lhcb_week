@@ -1,0 +1,13 @@
+added a line in survey constraints
+
+        self.XmlUncertainties += [
+#            "VP : 0.5 0.5 0.5 0.01 0.0001 0.0001", # <---- this one
+            "VP/.*/Module(00|).. : 0.2 0.2 0.2 0.001 0.001 0.001",
+            "VP/.*/Ladder. : 0.005 0.005 0.01 0.0002 0.0002 0.0001",
+            "VP/.*/ladder_. : 0.005 0.005 0.01 0.0002 0.0002 0.0001"
+        ]
+because "XmlUncertainties" should be the uncertainties for the inout xml (we are using yml files so i dont know)
+
+and "Constraints" has the List of survey constraints for particular alignment element
+alongside the the survey uncertainties
+XmlUncertainties = List of uncertainties for survey from xml

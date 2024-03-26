@@ -1,0 +1,3 @@
+added the fix backlayer command from miguel, which uses the global keyword to fix the backlayer to
+global 0 not survey 0
+

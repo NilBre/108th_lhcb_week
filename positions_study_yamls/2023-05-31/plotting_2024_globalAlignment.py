@@ -394,7 +394,7 @@ def plot_with_globals(data_arr, outname, run_labels, layer_names, glob_data1, gl
                 x_means[run].append(np.mean(x_shifted[layer][run]))
     # change from json  order (U, V, X1, X2) to physical (X1, U, V, X2)
 #    if y_axis == 'Ty':
-    if y_axis in ["Tx", "Ty", "Tz"]:    
+    if y_axis in ["Tx", "Ty", "Tz"]:
         correct_order = [2, 0, 1, 3, 6, 4, 5, 7, 10, 8, 9, 11]
         for runs in range(total_num_runs):
             correct_x_order = [x_means[runs][iter] for iter in correct_order]
@@ -686,12 +686,12 @@ def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=F
                 #    "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
                 #    "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
                 #    "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
-    # 
+    #
         # runs_T2 = ["FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
                 #    "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
                 #    "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
                 #    "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
-    # 
+    #
         # runs = ["FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
                 # "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
                 # "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
@@ -702,12 +702,12 @@ def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=F
                 #    'FT/T1/X1U/HL1', "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
                 #    'FT/T1/VX2/HL0', "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
                 #    'FT/T1/VX2/HL1', "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
-    # 
+    #
         # runs_T2 = ['FT/T2/X1U/HL0', "FT/T2/U/HL0/Q0/M0", "FT/T2/U/HL0/Q0/M1", "FT/T2/U/HL0/Q0/M2", "FT/T2/U/HL0/Q0/M3", "FT/T2/U/HL0/Q0/M4",
                 #    'FT/T2/X1U/HL1', "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
                 #    'FT/T2/VX2/HL0', "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
                 #    'FT/T2/VX2/HL1', "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
-    # 
+    #
         # runs = ['FT/T3/X1U/HL0', "FT/T3/U/HL0/Q0/M0", "FT/T3/U/HL0/Q0/M1", "FT/T3/U/HL0/Q0/M2", "FT/T3/U/HL0/Q0/M3", "FT/T3/U/HL0/Q0/M4",
                 # 'FT/T3/X1U/HL1', "FT/T3/U/HL0/Q2/M0", "FT/T3/U/HL0/Q2/M1", "FT/T3/U/HL0/Q2/M2", "FT/T3/U/HL0/Q2/M3", "FT/T3/U/HL0/Q2/M4",
                 # 'FT/T3/VX2/HL0', "FT/T3/U/HL1/Q1/M0", "FT/T3/U/HL1/Q1/M1", "FT/T3/U/HL1/Q1/M2", "FT/T3/U/HL1/Q1/M3", "FT/T3/U/HL1/Q1/M4",
@@ -721,7 +721,7 @@ def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=F
                 #    "FT/T1/U/HL0/Q2/M0", "FT/T1/U/HL0/Q2/M1", "FT/T1/U/HL0/Q2/M2", "FT/T1/U/HL0/Q2/M3", "FT/T1/U/HL0/Q2/M4",
                 #    "FT/T1/U/HL1/Q1/M0", "FT/T1/U/HL1/Q1/M1", "FT/T1/U/HL1/Q1/M2", "FT/T1/U/HL1/Q1/M3", "FT/T1/U/HL1/Q1/M4",
                 #    "FT/T1/U/HL1/Q3/M0", "FT/T1/U/HL1/Q3/M1", "FT/T1/U/HL1/Q3/M2", "FT/T1/U/HL1/Q3/M3", "FT/T1/U/HL1/Q3/M4"]
-    # 
+    #
         # runs_T2 = ['FT/T2/X1U/HL0', 'FT/T2/X1U/HL1', 'FT/T2/VX2/HL0', 'FT/T2/VX2/HL1',
                 #    'FT/T2/U/HL0/M0', 'FT/T2/U/HL0/M1', 'FT/T2/U/HL0/M2', 'FT/T2/U/HL0/M3', 'FT/T2/U/HL0/M4',
                 #    'FT/T2/U/HL1/M0', 'FT/T2/U/HL1/M1', 'FT/T2/U/HL1/M2', 'FT/T2/U/HL1/M3', 'FT/T2/U/HL1/M4',
@@ -729,7 +729,7 @@ def get_data(files, DoF, align_output): # , withLongModules=False, withCFrames=F
                 #    "FT/T2/U/HL0/Q2/M0", "FT/T2/U/HL0/Q2/M1", "FT/T2/U/HL0/Q2/M2", "FT/T2/U/HL0/Q2/M3", "FT/T2/U/HL0/Q2/M4",
                 #    "FT/T2/U/HL1/Q1/M0", "FT/T2/U/HL1/Q1/M1", "FT/T2/U/HL1/Q1/M2", "FT/T2/U/HL1/Q1/M3", "FT/T2/U/HL1/Q1/M4",
                 #    "FT/T2/U/HL1/Q3/M0", "FT/T2/U/HL1/Q3/M1", "FT/T2/U/HL1/Q3/M2", "FT/T2/U/HL1/Q3/M3", "FT/T2/U/HL1/Q3/M4"]
-    # 
+    #
         # runs = ['FT/T3/X1U/HL0', 'FT/T3/X1U/HL1', 'FT/T3/VX2/HL0', 'FT/T3/VX2/HL1',
                 # 'FT/T3/U/HL0/M0', 'FT/T3/U/HL0/M1', 'FT/T3/U/HL0/M2', 'FT/T3/U/HL0/M3', 'FT/T3/U/HL0/M4',
                 # 'FT/T3/U/HL1/M0', 'FT/T3/U/HL1/M1', 'FT/T3/U/HL1/M2', 'FT/T3/U/HL1/M3', 'FT/T3/U/HL1/M4',
