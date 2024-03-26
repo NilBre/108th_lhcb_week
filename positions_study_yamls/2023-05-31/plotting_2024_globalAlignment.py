@@ -1043,6 +1043,10 @@ path_mar = "2024_global_alignment/03-13"
 path_mar2 = "2024_global_alignment/03-14"
 path_mar3 = "2024_global_alignment/03-15"
 path_mar4 = "2024_global_alignment/03-18"
+path_mar5 = "2024_global_alignment/2024-03-21"
+path_mar6 = "2024_global_alignment/2024-03-22/fix_back_layer_global"
+path_mar7 = "2024_global_alignment/03-26"
+
 files_Rx_test = [\
 #    f"{path_rx}/v1_2/Iter9/parsedlog.json",
     # f"{path_rx}/v1_3/Iter9/parsedlog.json",
@@ -1053,6 +1057,8 @@ files_Rx_test = [\
     f"{path_mar4}/0_01/v1_2/parsedlog.json",
     f"{path_mar4}/0_01/v1_3/parsedlog.json",
     f"{path_mar3}/0_01/v1_2/parsedlog.json",
+    f"{path_mar7}/parsedlog.json",
+
 ]
 
 legendlabels_rx = [\
@@ -1065,6 +1071,7 @@ legendlabels_rx = [\
     '0.01 VELO Rx, SciFi TxRz',
     '0.01 VELO Rx, SciFi TxRxRz',
     '0.01 VELO Rx, SciFi TxRxRyRz',
+    '0.0001 VELO Rx, SciFi TxTzRxRz',
 ]
 
 # Halfmodules TxRz(Rx forv2_3 and v3_3)
@@ -1072,8 +1079,12 @@ legendlabels_rx = [\
 files_iD = [\
 #    f"{path_mar}/v2_2/parsedlog.json",
     f"{path_mar}/v2_2/parsedlog.json",
-#    f"{path_mar2}/v3_2/parsedlog.json",
     f"{path_mar2}/v3_2/parsedlog.json",
+    # f"{path_mar5}/v1_2/parsedlog.json",
+    # f"{path_mar5}/v1_3/parsedlog.json",
+    f"{path_mar6}/v1_2/parsedlog.json",
+    f"{path_mar6}/v1_3/parsedlog.json",
+#    f"{path_mar2}/v3_2/parsedlog.json",
 #    f"{path_mar2}/0_0002/v1_2/parsedlog.json",
 #    f"{path_mar2}/0_0002/v1_3/parsedlog.json",
 #    f"{path_mar3}/v1_2/parsedlog.json",
@@ -1086,6 +1097,10 @@ legendlabels_iD = [\
     '0.0001, VELO Rx, SciFi tag conds',
 #    '0.0001, VELO Rx, all0 conds',
     '0.0001, VELO Rx, all0 conds',
+    # '0.01 xml unc., all0 conds, v1_2',
+    # '0.01 xml unc., all0 conds, v1_3',
+    'FixBackLayer, all0 conds, v1_2',
+    'FixBackLayer, all0 conds, v1_3',
 #    '0.0002 VELO Rx, no SciFi Rx',
 #    '0.0002 VELO Rx, with SciFi Rx',
 #    '0.001 VELO Rx, no SciFi Rx',
